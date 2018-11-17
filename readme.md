@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.15**
+
+- Fix: Make link color black when using the light theme
+
 **Version 1.14.1**
 
 - Added: score, app version, and number of cached words in the nav menu
