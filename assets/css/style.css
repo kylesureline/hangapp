@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	margin: 0px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+}
+
+body, #guessed-letters button, #hangman svg, #hangman svg line, #new-game button, svg path, #canvas_background, .sidebar, .openbtn, #game-screen {
+	transition: 0.5s;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#end-screen a {
+	font-style: italic;
+}
+
+button {
+	cursor: pointer;
+}
+
+/* Nav Menu */
+#nav-info {
+	padding-top: 32px;
+}
+#nav-info span {
+	display: block;
+    padding: 0px 8px 0px 32px;
+	font-size: 16px;
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+}
+.openbtn {
+	display: block;
+	width: 100%;
+}
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+	#nav-info {padding-top: 16px;}
+	#nav-info span {font-size: 12px;}
+}
+/* End Nav Menu*/
+#main {
+	height: 98vh;
+}
+#end-screen {
+	display: none;
+	width: 100%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+#word span {
+	font-size: 10vw;
+	padding-right: 1vw;
+}
+#guessed-letters {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+#guessed-letters button {
+	font-size: 9.5vw;
+	flex-grow: 2;
+	/*margin: 1vw;
+	width: 10vw;*/
+	text-align: center;
+	width: 11%;
+}
+#win-lose, #new-game, #new-game button {
+	font-size: 10vw;
+}
+#score-losses, #score-wins, #definition {
+	font-size: 6vw;
+}
+#day-night button {
+	font-size: 6vw;
+}
+
+#hangman #svg-container {
+	width: 100%;
+	padding: 0px;
+	display: block;
+	margin: auto;
+}
+/***************/
+
+#win-lose {
+	padding: 0px;
+	margin: 0px;
+}
+#definition {
+	font-style: italic;
+}
+#day-night, #day-night button {
+	float: right;
+	width: auto;
+	height: auto;
+}
+#day-night button {
+	border-radius: 0px;
+	position: absolute;
+	right: 0;
+}
+#day-mode {
+	background-color: white;
+	border-color: black;
+	border-style: groove;
+}
+
+#night-mode {
+	background-color: black;
+	border-color: white;
+	border-style: groove;
+}
+#hangman {
+	width: 50%;
+	margin: auto;
+}
+p {
+	margin: 0px;
+}
+button {
+	border-radius: 1vw;
+	text-align: center;
+}
+
+/*Media Queries*/
+@media screen and (min-width: 568px) and (orientation: landscape) {
+	#hangman {
+		float: left;
+		width: 40%;
+	}
+	#guessed-letters, #word {
+		float: right;
+		width: 60%;
+	}
+	#word span {
+		font-size: 7vw;
+		padding-right: 1vw;
+	}
+	#guessed-letters button {
+		font-size: 4vw;
+	}
+	#win-lose, #new-game, #new-game button {
+		font-size: 6vw;
+	}
+	#score-losses, #score-wins, #definition {
+		font-size: 3vw;
+	}
+	#day-night button {
+		font-size: 2vw;
+	}
+}

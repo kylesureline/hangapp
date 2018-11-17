@@ -1,0 +1,61 @@
+#end-screen a {
+	color: white;
+}
+
+#night {
+	display: none;
+}
+
+#guessed-letters button {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+
+#hangman svg {
+	border: 1px solid white;
+}
+
+body {
+	color: white;
+	background-color: black;
+}
+
+#hangman svg line {
+	stroke: white;
+}
+
+#new-game button {
+	background-color: black;
+	color: white;
+	border-color: white;
+}
+
+svg path {
+	stroke: white;
+}
+
+#canvas_background {
+	fill: black;
+}
+/* Navbar */
+.sidebar {
+    background-color: #202020;
+}
+
+.sidebar a, #nav-info span {
+	color: #818181;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.openbtn {
+    background-color: #111;
+    color: white;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}

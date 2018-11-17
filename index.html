@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hangapp</title>
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="" id="day-night-stylesheet">
+<script type="text/javascript" src="assets/js/wordList.min.js">
+</script>
+<script type="text/javascript" src="assets/js/wordBank.min.js">
+</script>
+<script type="text/javascript" src="assets/js/game.js">
+</script>
+<link rel="icon" href="favicon.ico" type="image/x-icon"> 
+
+<!--WEB APP-->
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000"/>
+<!--iOS-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Hangapp">
+
+<!--icons-->
+<link rel="apple-touch-icon" href="touch-icons/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="152x152" href="touch-icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="touch-icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="touch-icons/touch-icon-ipad-retina.png">
+
+<!--Splash Screens-->
+<link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+<link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+<link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+<link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+</head>
+
+<body ontouchstart="">
+	<div id="mySidebar" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<a id="day" href="javascript:setStyle('day')">Light Mode</a>
+		<a id="night" href="javascript:setStyle('night')">Dark Mode</a>
+		<a id="difficulty" href="javascript:hangman.toggleDifficultyCheck();">Easy</a>
+		<a href="javascript:hangman.beginGame()">New Game</a>
+		<a href="https://github.com/kylesureline">GitHub ➔</a>
+		<a href="mailto:kyle@kylesureline.com">Contact</a>
+		<div id="nav-info">
+			<span id="nav-wins"></span>
+			<span id="nav-losses"></span>
+			<span id="nav-cached-words"></span>
+			<span id="version">v1.14.1</span>
+		</div>
+	</div>
+	<div id="main">
+		<button id="openbtn" class="openbtn">☰ Hangapp</button>
+		<div id="end-screen">
+			<p id="win-lose">You lose! The word was ____</p>
+			<p id="definition"></p>
+			<div id="new-game"><button onClick="hangman.beginGame();">New Game</button></div>
+			<p id="score-wins">Wins: 0</p>
+			<p id="score-losses">Losses: 0</p>
+		</div>
+		<div id="game-screen">
+			<div id="hangman">
+				<div id="svg-container">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+				<g>
+				<rect fill="#fff" id="canvas_background" height="202" width="202" y="-1" x="-1"/>
+				<g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+				<rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+				</g>
+				</g>
+				<g>
+				<path id="svg_9" d="m21.16667,179.33333l159.00905,0" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_8" d="m126.83334,179l0,-160.00939" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_7" d="m128.16667,20.33333l-73.33637,0" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_6" d="m56.33333,18.91667l0,27.35162" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_5" d="m41.375,61.125c0,-8.21823 6.65677,-14.875 14.875,-14.875c8.21823,0 14.875,6.65677 14.875,14.875c0,8.21823 -6.65677,14.875 -14.875,14.875c-8.21823,0 -14.875,-6.65677 -14.875,-14.875z" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_4" d="m56.125,76.75l0,58.29344" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_3" d="m56.125,133.75l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_2" d="m56.875,133.75l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_1" d="m56.375,77l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
+				<path id="svg_0" d="m55.625,77l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
+				</g>
+				</svg>
+				</div>
+			</div>
+
+			<div id="word">
+			</div>
+
+			<div id="guessed-letters">
+				<button>A</button>
+				<button>B</button>
+				<button>C</button>
+				<button>D</button>
+				<button>E</button>
+				<button>F</button>
+				<button>G</button>
+				<button>H</button>
+				<button>I</button>
+				<button>J</button>
+				<button>K</button>
+				<button>L</button>
+				<button>M</button>
+				<button>N</button>
+				<button>O</button>
+				<button>P</button>
+				<button>Q</button>
+				<button>R</button>
+				<button>S</button>
+				<button>T</button>
+				<button>U</button>
+				<button>V</button>
+				<button>W</button>
+				<button>X</button>
+				<button>Y</button>
+				<button>Z</button>
+			</div>
+		</div>
+	</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', function() {
+		navigator.serviceWorker.register('sw.js').then(function(registration) {
+		// Registration was successful
+		console.log('ServiceWorker registration successful with scope: ', registration.scope);
+	}, function(err) {
+		// registration failed :(
+		console.log('ServiceWorker registration failed: ', err);
+	});
+});
+}
+</script>
+</body>
+</html>
