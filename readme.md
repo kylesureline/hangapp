@@ -1,6 +1,6 @@
 # Hangapp
 
-A simple Hangman game, built as a Progressive Web App. Playable [here](https://kylesureline.github.io). Also featured on [Appsco.pe](https://appsco.pe/app/hangapp)!
+A simple Hangman game, built as a Progressive Web App. Playable [here](https://kylesureline.github.io/hangapp/). Also featured on [Appsco.pe](https://appsco.pe/app/hangapp)!
 
 ## Features
 
