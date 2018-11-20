@@ -16,6 +16,8 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 **Version 1.15**
 
 - Fix: Make link color black when using the light theme
+- Add: source link for definitions
+- Change: Truncate definitions to 250 characters
 
 **Version 1.14.1**
 

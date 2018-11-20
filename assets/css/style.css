@@ -17,8 +17,8 @@ body, #guessed-letters button, #hangman svg, #hangman svg line, #new-game button
 	box-sizing: border-box;
 }
 
-#end-screen a {
-	font-style: italic;
+#end-screen p span {
+	text-decoration: underline;
 }
 
 button {

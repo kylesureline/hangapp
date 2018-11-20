@@ -155,8 +155,8 @@ var hangman = {
 				try {
 					var type = _json[0].fl;
 					var def = _json[0].shortdef[0];
-					if (def.length > 300) {
-						def = def.substring(0, 300);
+					if (def.length > 250) {
+						def = def.substring(0, 250);
 						def += "...";
 					}
 					if(toCache) {
@@ -216,12 +216,12 @@ var hangman = {
 		}
 	},
 	win: function() {
-		document.getElementById("win-lose").innerHTML = "You win! The word was <a href='https://www.merriam-webster.com/dictionary/" + hangman.answer + "/'>" + hangman.answer + "</a>!";
+		document.getElementById("win-lose").innerHTML = "You win! The word was <span>" + hangman.answer +"</span>!";
 		hangman.wins++;
 		hangman.endGame();
 	},
 	lose: function() {
-		document.getElementById("win-lose").innerHTML = "You lose! The word was <a href='https://www.merriam-webster.com/dictionary/" + hangman.answer + "/'>" + hangman.answer + "</a>!";
+		document.getElementById("win-lose").innerHTML = "You lose! The word was <span>" + hangman.answer +"</span>!";
 		hangman.losses++;
 		hangman.endGame();
 	},
@@ -267,6 +267,7 @@ var hangman = {
 		hangman.guessedWord = [];
 		hangman.guessedLetters = [];
 		document.getElementById("new-game").children[0].disabled = true;
+		document.getElementById("citation").setAttribute("href", "https://www.merriam-webster.com/dictionary/" + hangman.answer + "/");
 	},
 	init: function() {
 		if (typeof(Storage) !== "undefined") {
