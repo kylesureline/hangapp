@@ -41,7 +41,7 @@
 
 <body ontouchstart="">
 	<div id="mySidebar" class="sidebar">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
 		<a id="day" href="javascript:setStyle('day')">Light Mode</a>
 		<a id="night" href="javascript:setStyle('night')">Dark Mode</a>
 		<a id="difficulty" href="javascript:hangman.toggleDifficultyCheck();">Easy</a>
@@ -52,18 +52,18 @@
 			<span id="nav-wins"></span>
 			<span id="nav-losses"></span>
 			<span id="nav-cached-words"></span>
-			<span id="version">v1.15</span>
+			<span id="version">v1.16</span>
 		</div>
 	</div>
 	<div id="main">
-		<button id="openbtn" class="openbtn">☰ Hangapp</button>
+		<button id="openbtn" class="openbtn"><i class="fas fa-bars"></i> Hangapp</button>
 		<div id="end-screen">
 			<p id="win-lose">You lose! The word was ____</p>
 			<p id="definition"></p>
-			<p><a id="citation" href="">Provided by m-w.com<i class="fas fa-external-link-alt"></i></a></p>
 			<div id="new-game"><button onClick="hangman.beginGame();">New Game</button></div>
 			<p id="score-wins">Wins: 0</p>
 			<p id="score-losses">Losses: 0</p>
+			<div id="footer"><a id="citation" href="">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></div>
 		</div>
 		<div id="game-screen">
 			<div id="hangman">

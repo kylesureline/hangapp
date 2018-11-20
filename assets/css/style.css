@@ -112,6 +112,9 @@ button {
 #score-losses, #score-wins, #definition {
 	font-size: 6vw;
 }
+#citation {
+	font-size: 4vw;
+}
 #day-night button {
 	font-size: 6vw;
 }
@@ -186,6 +189,9 @@ button {
 	}
 	#score-losses, #score-wins, #definition {
 		font-size: 3vw;
+	}
+	#citation {
+		font-size: 2vw;
 	}
 	#day-night button {
 		font-size: 2vw;
