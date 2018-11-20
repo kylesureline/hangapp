@@ -13,6 +13,12 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.16**
+
+- Change: Use font-awesome for the menu 'burger'
+- Change: Use font-awesome for the menu 'x'
+- Change: Move link to M-W.com to the bottom
+
 **Version 1.15**
 
 - Fix: Make link color black when using the light theme
