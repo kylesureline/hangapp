@@ -18,6 +18,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 - Change: Use font-awesome for the menu 'burger'
 - Change: Use font-awesome for the menu 'x'
 - Change: Move link to M-W.com to the bottom
+- Change: Resize link to M-W.com
 
 **Version 1.15**
 
