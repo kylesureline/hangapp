@@ -15,21 +15,6 @@ function loadJSON(path, success, error) {
 	xhr.send();
 }
 
-function openNav() {
-	document.getElementById("mySidebar").style.width = "250px";
-}
-function closeNav() {
-	document.getElementById("mySidebar").style.width = "0";
-}
-function toggleNav() {
-	var mySidebar = document.getElementById("mySidebar");
-	var myMain = document.getElementById("main");
-	if(mySidebar.style.width == "250px") {
-		closeNav();
-	} else {
-		openNav();
-	}
-}
 var hangman = {
 	wins: 0,
 	losses: 0,
@@ -75,7 +60,6 @@ var hangman = {
 		}
 		hangman.guesses = hangman.getNumberOfGuesses();
 		document.getElementById("difficulty").innerHTML = hangman.difficulty;
-		setTimeout( closeNav, 250 );
 		hangman.drawFrame();
 	},
 	drawFrame: function() {
@@ -378,6 +362,46 @@ function setStyle(s) {
 		localStorage.setItem("style", s);
 	} else {
 		console.log("Sorry, your browser does not support Web Storage...");
+	}
+}
+
+function openNav() {
+	document.getElementById("mySidebar").style.width = "250px";
+    var slideTarget = document.getElementById("mySidebar");
+    var counter = 0;
+    slideTarget.style.width = counter + "px";
+    var slideEffect = setInterval(function() {
+        if( counter < 250 ) {
+            counter+=2;
+            slideTarget.style.width = counter + "px";
+        } else {
+            clearInterval(slideEffect);
+        }
+    }, 2);
+}
+function closeNav() {
+    var slideTarget = document.getElementById("mySidebar");
+    // only try to close if it is open
+    if(parseInt(slideTarget.style.width) > 0) {
+        var counter = 250;
+        slideTarget.style.width = counter + "px";
+        var slideEffect = setInterval(function() {
+            if( counter > 0 ) {
+                counter-=2;
+                slideTarget.style.width = counter + "px";
+            } else {
+                clearInterval(slideEffect);
+                document.getElementById("mySidebar").style.width = "0px";
+            }
+        }, 2);
+    }
+}
+function toggleNav() {
+	var mySidebar = document.getElementById("mySidebar");
+	if(mySidebar.style.width == "250px") {
+		closeNav();
+	} else {
+		openNav();
 	}
 }
 

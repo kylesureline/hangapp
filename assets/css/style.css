@@ -9,10 +9,6 @@ body {
 	-webkit-touch-callout: none;
 }
 
-body, #guessed-letters button, #hangman svg, #hangman svg line, #new-game button, svg path, #canvas_background, .sidebar, .openbtn, #game-screen {
-	transition: 0.5s;
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -101,8 +97,6 @@ button {
 #guessed-letters button {
 	font-size: 9.5vw;
 	flex-grow: 2;
-	/*margin: 1vw;
-	width: 10vw;*/
 	text-align: center;
 	width: 11%;
 }
