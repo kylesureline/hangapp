@@ -372,10 +372,11 @@ function openNav() {
     slideTarget.style.width = counter + "px";
     var slideEffect = setInterval(function() {
         if( counter < 250 ) {
-            counter+=2;
+            counter+=3;
             slideTarget.style.width = counter + "px";
         } else {
             clearInterval(slideEffect);
+            slideTarget.style.width = "250px";
         }
     }, 2);
 }
@@ -387,7 +388,7 @@ function closeNav() {
         slideTarget.style.width = counter + "px";
         var slideEffect = setInterval(function() {
             if( counter > 0 ) {
-                counter-=2;
+                counter-=3;
                 slideTarget.style.width = counter + "px";
             } else {
                 clearInterval(slideEffect);
