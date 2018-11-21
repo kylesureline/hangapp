@@ -17,6 +17,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 - Change: Resize link to M-W.com
 - Change: Use font-awesome for link to GitHub page
+- Change: Improve the performance of resizing the window
 
 **Version 1.16**
 
