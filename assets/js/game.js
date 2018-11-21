@@ -237,7 +237,7 @@ var hangman = {
 		}
 	},
 	beginGame: function() {
-		closeNav();
+		Nav.close();
 		fadeOutEffect("end-screen");
 		fadeInEffect("game-screen");
 		hangman.def = "";
@@ -292,10 +292,10 @@ var hangman = {
 		var except = document.getElementById("openbtn");
 
 		body.addEventListener("click", function () {
-			closeNav();
+			Nav.close();
 			}, false);
 		except.addEventListener("click", function (ev) {
-			toggleNav();
+			Nav.toggle();
 			ev.stopPropagation();
 		}, false);
 		
@@ -365,64 +365,70 @@ function setStyle(s) {
 	}
 }
 
-function openNav() {
-	document.getElementById("mySidebar").style.width = "250px";
-    var slideTarget = document.getElementById("mySidebar");
-    var counter = 0;
-    slideTarget.style.width = counter + "px";
-    var slideEffect = setInterval(function() {
-        if( counter < 250 ) {
-            counter+=3;
-            slideTarget.style.width = counter + "px";
-        } else {
-            clearInterval(slideEffect);
-            slideTarget.style.width = "250px";
-        }
-    }, 2);
-}
-function closeNav() {
-    var slideTarget = document.getElementById("mySidebar");
-    // only try to close if it is open
-    if(parseInt(slideTarget.style.width) > 0) {
-        var counter = 250;
-        slideTarget.style.width = counter + "px";
-        var slideEffect = setInterval(function() {
-            if( counter > 0 ) {
-                counter-=3;
-                slideTarget.style.width = counter + "px";
+var Nav = {
+    start: 0,
+    end: 250,
+    isOpening: false,
+    isClosing: false,
+    effect: "",
+    open: function() {
+        var target = document.getElementById("mySidebar");
+        var counter = parseInt(target.style.width);
+        Nav.effect = setInterval(function() {
+            Nav.isOpening = true;
+            Nav.isClosing = false;
+            if( counter < Nav.end ) {
+                counter+=3;
+                target.style.width = counter + "px";
             } else {
-                clearInterval(slideEffect);
-                document.getElementById("mySidebar").style.width = "0px";
+                // is open
+                clearInterval(Nav.effect);
+                target.style.width = Nav.end + "px";
+                Nav.isOpening = false;
             }
         }, 2);
+    },
+    close: function() {
+        var target = document.getElementById("mySidebar");
+        var counter = parseInt(target.style.width);
+        Nav.effect = setInterval(function() {
+            Nav.isOpening = false;
+            Nav.isClosing = true;
+            if( counter > Nav.start ) {
+                counter-=3;
+                target.style.width = counter + "px";
+            } else {
+                // is closed
+                clearInterval(Nav.effect);
+                target.style.width = Nav.start + "px";
+                Nav.isClosing = false;
+            }
+        }, 2);
+    },
+    toggle: function() {
+        var target = document.getElementById("mySidebar");
+        // check if opening or closing
+        if(Nav.isOpening) {
+            // stop interval
+            clearInterval(Nav.effect);
+            // close
+            Nav.close();
+        } else if(Nav.isClosing) {
+            // stop interval
+            clearInterval(Nav.effect);
+            // open
+            Nav.open();
+        } else if( parseInt(target.style.width) == Nav.start) {
+            Nav.open();
+        } else {
+            Nav.close();
+        }
     }
-}
-function toggleNav() {
-	var mySidebar = document.getElementById("mySidebar");
-	if(mySidebar.style.width == "250px") {
-		closeNav();
-	} else {
-		openNav();
-	}
 }
 
 function fadeOutEffect(target) {
 	document.getElementById(target).style.opacity = 0;
 	document.getElementById(target).style.display = "none";
-	/*
-	var fadeTarget = document.getElementById(target);
-	var counter = 1;
-	fadeTarget.style.opacity = counter;
-	var fadeEffect = setInterval(function () {
-		if (counter > 0.1) {
-			counter -= 0.1
-			fadeTarget.style.opacity = counter.toFixed(1);
-		} else {
-			clearInterval(fadeEffect);
-			document.getElementById(target).style.display = "none";
-		}
-	}, 50);
-	*/
 }
 
 function fadeInEffect(target) {
