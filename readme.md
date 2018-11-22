@@ -13,11 +13,19 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.17**
+
+- Change: Resize link to M-W.com
+- Change: Use font-awesome for link icon to GitHub page
+- Change: Improve the performance of resizing the window
+- Add: Link to clear localStorage
+
 **Version 1.16**
 
 - Change: Use font-awesome for the menu 'burger'
 - Change: Use font-awesome for the menu 'x'
 - Change: Move link to M-W.com to the bottom
+- Change: Resize link to M-W.com
 
 **Version 1.15**
 

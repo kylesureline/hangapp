@@ -9,10 +9,6 @@ body {
 	-webkit-touch-callout: none;
 }
 
-body, #guessed-letters button, #hangman svg, #hangman svg line, #new-game button, svg path, #canvas_background, .sidebar, .openbtn, #game-screen {
-	transition: 0.5s;
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -68,8 +64,8 @@ button {
 	display: block;
 	width: 100%;
 }
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
+@media screen and (max-height: 480px) {
+    .sidebar {padding-top: 40px;}
     .sidebar a {font-size: 18px;}
 	#nav-info {padding-top: 16px;}
 	#nav-info span {font-size: 12px;}
@@ -101,8 +97,6 @@ button {
 #guessed-letters button {
 	font-size: 9.5vw;
 	flex-grow: 2;
-	/*margin: 1vw;
-	width: 10vw;*/
 	text-align: center;
 	width: 11%;
 }
@@ -113,7 +107,7 @@ button {
 	font-size: 6vw;
 }
 #citation {
-	font-size: 4vw;
+	font-size: 5vw;
 }
 #day-night button {
 	font-size: 6vw;
@@ -191,7 +185,7 @@ button {
 		font-size: 3vw;
 	}
 	#citation {
-		font-size: 2vw;
+		font-size: 2.5vw;
 	}
 	#day-night button {
 		font-size: 2vw;
