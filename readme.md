@@ -13,6 +13,12 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.18**
+
+- Change: GitHub link points to this repo now, rather than old one (duh!)
+- Fix: Only cache words if online (double duh!)
+- Change: Instead of a blank definition, provide a message alerting the user to reconnect (if they are offline) to get definitions
+
 **Version 1.17**
 
 - Change: Resize link to M-W.com
