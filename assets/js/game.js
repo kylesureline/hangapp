@@ -93,19 +93,22 @@ var Hangman = {
 	wordBankWords: [],
 	wordBankDefs: [],
 	cacheWords: function() {
-		// cache 30 words at a time
-		if(Hangman.wordBankWords.length < 50) {
-			var w = Word_List.getRandomWord();
-			Hangman.getDef(w, true);
-			setTimeout( function() {
-				if(Hangman.cacheDef != "") {
-					// found a word with a definition!
-					Hangman.wordBankWords.push(w);
-					Hangman.wordBankDefs.push(Hangman.cacheDef);
-				}
-			}, 500);
+		var online = navigator.onLine;
+		if(online) {
+			// cache limited number of words
+			if(Hangman.wordBankWords.length < 50) {
+				var w = Word_List.getRandomWord();
+				Hangman.getDef(w, true);
+				setTimeout( function() {
+					if(Hangman.cacheDef != "") {
+						// found a word with a definition!
+						Hangman.wordBankWords.push(w);
+						Hangman.wordBankDefs.push(Hangman.cacheDef);
+					}
+				}, 500);
+			}
+			Hangman.saveWordBank();
 		}
-		Hangman.saveWordBank();
 		document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + Hangman.wordBankWords.length;
 	},
 	saveWordBank: function () {
@@ -180,6 +183,7 @@ var Hangman = {
 			});
 		} else {
 			Hangman.cacheDef = "";
+			Hangman.def = "User offline. Reconnect to get definitions.";
 		}
 	},
 	isGuessedLetter: function(ltr) {
@@ -255,7 +259,6 @@ var Hangman = {
 		}
 	},
 	beginGame: function() {
-		//Nav.close();
 		fadeOutEffect("end-screen");
 		fadeInEffect("game-screen");
 		Hangman.def = "";
@@ -370,10 +373,6 @@ var svgAnimator = {
 		}
 	}
 };
-
-function isLetter(str) {
-	return str.length === 1 && str.match(/[a-z]/i);
-}
 
 function setStyle(s) {
 	document.getElementById("day-night-stylesheet").setAttribute("href", "assets/css/" + s + ".css");
