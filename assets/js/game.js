@@ -15,7 +15,7 @@ function loadJSON(path, success, error) {
 	xhr.send();
 }
 
-var hangman = {
+var Hangman = {
 	wins: 0,
 	losses: 0,
 	guesses: 10,
@@ -27,9 +27,9 @@ var hangman = {
 	def: "",
 	cacheDef: "",
 	getNumberOfGuesses: function() {
-		if( hangman.difficulty == "Easy") {
+		if( Hangman.difficulty == "Easy") {
 			return 10;
-		} else if( hangman.difficulty == "Medium") {
+		} else if( Hangman.difficulty == "Medium") {
 			return 7;
 		} else {
 			return 4;
@@ -37,90 +37,110 @@ var hangman = {
 	},
 	toggleDifficultyCheck: function() {
 		// player has guessed something already
-		if(hangman.inProgress) {
+		if(Hangman.inProgress) {
 			var c = confirm("Changing difficulty in the middle of game will restart. Are you sure?");
 			if( c == true) {
-				hangman.toggleDifficulty();
-				hangman.beginGame();
+				Hangman.toggleDifficulty();
+				Hangman.beginGame();
 			}
 		}
 		// player hasn't yet guessed anything
 		// don't start new game
 		else {
-			hangman.toggleDifficulty();
+			Hangman.toggleDifficulty();
 		}
 	},
 	toggleDifficulty: function() {
-		if(hangman.difficulty == "Easy") {
-			hangman.difficulty = "Medium";
-		} else if( hangman.difficulty == "Medium") {
-			hangman.difficulty = "Hard";
+		if(Hangman.difficulty == "Easy") {
+			Hangman.difficulty = "Medium";
+		} else if( Hangman.difficulty == "Medium") {
+			Hangman.difficulty = "Hard";
 		} else {
-			hangman.difficulty = "Easy";
+			Hangman.difficulty = "Easy";
 		}
-		hangman.guesses = hangman.getNumberOfGuesses();
-		document.getElementById("difficulty").innerHTML = hangman.difficulty;
-		hangman.drawFrame();
+		Hangman.guesses = Hangman.getNumberOfGuesses();
+		document.getElementById("difficulty").innerHTML = Hangman.difficulty;
+		Hangman.drawFrame();
 	},
 	drawFrame: function() {
 		var frame = 10;
 		svgAnimator.draw(frame);
-		while(frame >= hangman.guesses) {
+		while(frame >= Hangman.guesses) {
 			svgAnimator.draw(frame);
 			frame--;
+		}
+	},
+	emptyCache: function() {
+		if (typeof(Storage) !== "undefined") {
+			var c = confirm("This will clear your score and all saved words and definitions. Are you sure?");
+			if(c) {
+				localStorage.removeItem("wins");
+				Hangman.wins = 0;
+				localStorage.removeItem("losses");
+				Hangman.losses = 0;
+				localStorage.removeItem("wordBankWords");
+				Hangman.wordBankWords = [];
+				localStorage.removeItem("wordBankDefs");
+				Hangman.wordBankDefs = [];
+			}
+			// update screen
+			document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + Hangman.wordBankWords.length;
+			Hangman.printScore();
+		} else {
+			console.log("Sorry, your browser does not support Web Storage...");
 		}
 	},
 	wordBankWords: [],
 	wordBankDefs: [],
 	cacheWords: function() {
 		// cache 30 words at a time
-		if(hangman.wordBankWords.length < 50) {
+		if(Hangman.wordBankWords.length < 50) {
 			var w = Word_List.getRandomWord();
-			hangman.getDef(w, true);
+			Hangman.getDef(w, true);
 			setTimeout( function() {
-				if(hangman.cacheDef != "") {
+				if(Hangman.cacheDef != "") {
 					// found a word with a definition!
-					hangman.wordBankWords.push(w);
-					hangman.wordBankDefs.push(hangman.cacheDef);
+					Hangman.wordBankWords.push(w);
+					Hangman.wordBankDefs.push(Hangman.cacheDef);
 				}
 			}, 500);
 		}
-		hangman.saveWordBank();
-		document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + hangman.wordBankWords.length;
+		Hangman.saveWordBank();
+		document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + Hangman.wordBankWords.length;
 	},
 	saveWordBank: function () {
 		if (typeof(Storage) !== "undefined") {
-			localStorage.setItem("wordBankWords", JSON.stringify(hangman.wordBankWords));
-			localStorage.setItem("wordBankDefs", JSON.stringify(hangman.wordBankDefs));
+			localStorage.setItem("wordBankWords", JSON.stringify(Hangman.wordBankWords));
+			localStorage.setItem("wordBankDefs", JSON.stringify(Hangman.wordBankDefs));
 		} else {
 			console.log("Sorry, your browser does not support Web Storage...");
 		}
 	},
 	guessedWordStr: function() {
-		return hangman.guessedWord.toString().replace(/,/g, '');
+		return Hangman.guessedWord.toString().replace(/,/g, '');
 	},
 	chooseWord: function() {
-		if(hangman.wordBankWords == "") {
-			hangman.answer = Word_List.getRandomWord();
-			for( var x = 0; x < hangman.answer.length; x++ ) {
-				hangman.guessedWord[x] = " ";
+		if(Hangman.wordBankWords == "") {
+			Hangman.answer = Word_List.getRandomWord();
+			for( var x = 0; x < Hangman.answer.length; x++ ) {
+				Hangman.guessedWord[x] = " ";
 			}
 		} else {
-			hangman.answer = hangman.wordBankWords[0];
-			hangman.def = hangman.wordBankDefs[0];
-			hangman.wordBankWords.splice(0, 1);
-			hangman.wordBankDefs.splice(0, 1);
-			hangman.saveWordBank();
+			Hangman.answer = Hangman.wordBankWords[0];
+			Hangman.def = Hangman.wordBankDefs[0];
+			Hangman.wordBankWords.splice(0, 1);
+			Hangman.wordBankDefs.splice(0, 1);
+			Hangman.saveWordBank();
 		}
 	},
 	placeBlanks: function() {
 		document.getElementById("word").innerHTML = "";
-		for( var i = 0; i < hangman.answer.length; i++ ) {
+		for( var i = 0; i < Hangman.answer.length; i++ ) {
 			var node = document.createElement("SPAN");
 			node.setAttribute("id", "answer-" + i);
 			var textNode = document.createTextNode("_");
 			node.appendChild(textNode);
-			if(hangman.answer[i] == " ") {
+			if(Hangman.answer[i] == " ") {
 				var b = document.createElement("BR");
 				document.getElementById("word").appendChild(b);
 			} else {
@@ -132,103 +152,101 @@ var hangman = {
 		var online = navigator.onLine;
 		if(online) {
 			var apiURL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/' + word + '?key=cb690753-1eb8-4661-a7f4-9adf25057760';
-			var _json;
 			loadJSON(apiURL, function(data) {
-				_json = data;
 				// got a definition! :)
 				try {
-					var type = _json[0].fl;
-					var def = _json[0].shortdef[0];
+					var type = data[0].fl;
+					var def = data[0].shortdef[0];
 					if (def.length > 250) {
 						def = def.substring(0, 250);
 						def += "...";
 					}
 					if(toCache) {
-						hangman.cacheDef = type + ": " + def;
+						Hangman.cacheDef = type + ": " + def;
 					} else {
-						hangman.def = type + ": " + def;
+						Hangman.def = type + ": " + def;
 					}
 				}
 				// couldn't get a definition! :(
 				catch(err) {
 					if(toCache) {
-						hangman.cacheDef = "";
+						Hangman.cacheDef = "";
 					} else {
-						hangman.def = "";
+						Hangman.def = "";
 					}
 				}
 			}, function(xhr) {
-				hangman.def = "Error";
+				Hangman.def = "Error";
 			});
 		} else {
-			hangman.cacheDef = "";
+			Hangman.cacheDef = "";
 		}
 	},
 	isGuessedLetter: function(ltr) {
-		for( var u = 0; u < hangman.guessedLetters.length; u++ ) {
-			if( ltr == hangman.guessedLetters[u] ) {
+		for( var u = 0; u < Hangman.guessedLetters.length; u++ ) {
+			if( ltr == Hangman.guessedLetters[u] ) {
 				return true;
 			}
 		}
 		return false;
 	},
 	guess: function() {
-		hangman.inProgress = true;
+		Hangman.inProgress = true;
 		var ltr = this.innerHTML.toLowerCase();
 		var wrongGuess = 0;
 		
-		if( !hangman.isGuessedLetter(ltr) ) {
-			hangman.guessedLetters.push(ltr);
-			for(var t = 0; t < hangman.answer.length; t++ ) {
-				if( ltr === hangman.answer[t] ) {
+		if( !Hangman.isGuessedLetter(ltr) ) {
+			Hangman.guessedLetters.push(ltr);
+			for(var t = 0; t < Hangman.answer.length; t++ ) {
+				if( ltr === Hangman.answer[t] ) {
 					document.getElementById("answer-" + t).innerHTML = ltr;
-					hangman.guessedWord[t] = ltr;
+					Hangman.guessedWord[t] = ltr;
 				} else {
 					wrongGuess++;
 				}
 				document.getElementById("guess-" + ltr).style.display = "none";
 			}
-			if( wrongGuess == hangman.answer.length ) {
-				hangman.guesses--;
-				svgAnimator.draw(hangman.guesses);
+			if( wrongGuess == Hangman.answer.length ) {
+				Hangman.guesses--;
+				svgAnimator.draw(Hangman.guesses);
 			}
-			if( hangman.answer == hangman.guessedWordStr() && hangman.guesses > 0) {
-				hangman.win();
-			} else if(hangman.guesses == 0) {
-				hangman.lose();
+			if( Hangman.answer == Hangman.guessedWordStr() && Hangman.guesses > 0) {
+				Hangman.win();
+			} else if(Hangman.guesses == 0) {
+				Hangman.lose();
 			}
 		}
 	},
 	win: function() {
-		document.getElementById("win-lose").innerHTML = "You win! The word was <span>" + hangman.answer +"</span>!";
-		hangman.wins++;
-		hangman.endGame();
+		document.getElementById("win-lose").innerHTML = "You win! The word was <span>" + Hangman.answer +"</span>!";
+		Hangman.wins++;
+		Hangman.endGame();
 	},
 	lose: function() {
-		document.getElementById("win-lose").innerHTML = "You lose! The word was <span>" + hangman.answer +"</span>!";
-		hangman.losses++;
-		hangman.endGame();
+		document.getElementById("win-lose").innerHTML = "You lose! The word was <span>" + Hangman.answer +"</span>!";
+		Hangman.losses++;
+		Hangman.endGame();
 	},
 	endGame: function() {
-		hangman.inProgress = false;
+		Hangman.inProgress = false;
 		if (typeof(Storage) !== "undefined") {
-			localStorage.setItem("wins", hangman.wins);
-			localStorage.setItem("losses", hangman.losses);
+			localStorage.setItem("wins", Hangman.wins);
+			localStorage.setItem("losses", Hangman.losses);
 		} else {
 			console.log("Sorry, your browser does not support Web Storage...");
 		}
-		document.getElementById("definition").innerHTML = hangman.def;
-		hangman.printScore();
+		document.getElementById("definition").innerHTML = Hangman.def;
+		Hangman.printScore();
 		fadeOutEffect("game-screen");
 		fadeInEffect("end-screen");
 		document.getElementById("end-screen").style.display = "inline";
 		document.getElementById("new-game").children[0].disabled = false;
 	},
 	printScore: function() {
-		document.getElementById("score-wins").innerHTML = "Wins: " + hangman.wins;
-		document.getElementById("score-losses").innerHTML = "Losses: " + hangman.losses;	
-		document.getElementById("nav-wins").innerHTML = "Wins: " + hangman.wins;
-		document.getElementById("nav-losses").innerHTML = "Losses: " + hangman.losses;
+		document.getElementById("score-wins").innerHTML = "Wins: " + Hangman.wins;
+		document.getElementById("score-losses").innerHTML = "Losses: " + Hangman.losses;	
+		document.getElementById("nav-wins").innerHTML = "Wins: " + Hangman.wins;
+		document.getElementById("nav-losses").innerHTML = "Losses: " + Hangman.losses;
 	},
 	showGuessedLetters: function() {
 		var guessedLetterChildren = document.getElementById("guessed-letters").children;
@@ -237,23 +255,24 @@ var hangman = {
 		}
 	},
 	beginGame: function() {
-		Nav.close();
+		//Nav.close();
 		fadeOutEffect("end-screen");
 		fadeInEffect("game-screen");
-		hangman.def = "";
-		hangman.printScore();
-		hangman.chooseWord();
-		hangman.getDef(hangman.answer, false);
-		hangman.guesses = hangman.getNumberOfGuesses();
-		hangman.drawFrame();
-		hangman.placeBlanks();
-		hangman.showGuessedLetters();
-		hangman.guessedWord = [];
-		hangman.guessedLetters = [];
+		Hangman.def = "";
+		Hangman.printScore();
+		Hangman.chooseWord();
+		Hangman.getDef(Hangman.answer, false);
+		Hangman.guesses = Hangman.getNumberOfGuesses();
+		Hangman.drawFrame();
+		Hangman.placeBlanks();
+		Hangman.showGuessedLetters();
+		Hangman.guessedWord = [];
+		Hangman.guessedLetters = [];
 		document.getElementById("new-game").children[0].disabled = true;
-		document.getElementById("citation").setAttribute("href", "https://www.merriam-webster.com/dictionary/" + hangman.answer + "/");
+		document.getElementById("citation").setAttribute("href", "https://www.merriam-webster.com/dictionary/" + Hangman.answer + "/");
 	},
 	init: function() {
+		Nav.init();
 		if (typeof(Storage) !== "undefined") {
 			// day/night mode
 			if(localStorage.getItem("style") !== null) {
@@ -265,27 +284,27 @@ var hangman = {
 			// wins/losses
 			if(localStorage.getItem("wins") !== null) {
 				var w = localStorage.getItem("wins");
-				hangman.wins = Number(w);
+				Hangman.wins = Number(w);
 			} else {
-				hangman.wins = 0;
+				Hangman.wins = 0;
 			}
 			if(localStorage.getItem("losses") !== null) {
 				var l = localStorage.getItem("losses");
-				hangman.losses = Number(l);
+				Hangman.losses = Number(l);
 			} else {
-				hangman.losses = 0;
+				Hangman.losses = 0;
 			}
 			if(localStorage.getItem("wordBankWords") !== null && localStorage.getItem("wordBankDefs") !== null) {
 				var c = localStorage.getItem("wordBankWords");
 				var d = localStorage.getItem("wordBankDefs");
-				hangman.wordBankWords = JSON.parse(c);
-				hangman.wordBankDefs = JSON.parse(d);
+				Hangman.wordBankWords = JSON.parse(c);
+				Hangman.wordBankDefs = JSON.parse(d);
 			}
 		} else {
 			console.log("Sorry, your browser does not support Web Storage...");
 		}
-		hangman.attachEventHandlers();
-		hangman.beginGame();
+		Hangman.attachEventHandlers();
+		Hangman.beginGame();
 	},
 	attachEventHandlers: function() {
 		var body = document.getElementById("main");
@@ -305,7 +324,7 @@ var hangman = {
 			var btn = guessedLetters.children[i];
 			var ltr = (btn.innerHTML).toLowerCase();
 			btn.setAttribute("id", "guess-" + ltr);
-			btn.onclick = hangman.guess;
+			btn.onclick = Hangman.guess;
 		}
 	},
 };
@@ -371,29 +390,33 @@ var Nav = {
     isOpening: false,
     isClosing: false,
     effect: "",
+	init: function() {
+		// ensure that first click opens the nav bar
+		document.getElementById("mySidebar").style.width = "0px";
+	},
     open: function() {
-        var target = document.getElementById("mySidebar");
-        var counter = parseInt(target.style.width);
-        Nav.effect = setInterval(function() {
-            Nav.isOpening = true;
-            Nav.isClosing = false;
-            if( counter < Nav.end ) {
-                counter+=3;
-                target.style.width = counter + "px";
-            } else {
-                // is open
-                clearInterval(Nav.effect);
-                target.style.width = Nav.end + "px";
-                Nav.isOpening = false;
-            }
-        }, 2);
+		var target = document.getElementById("mySidebar");
+		var counter = parseInt(target.style.width);
+		Nav.isOpening = true;
+		Nav.isClosing = false;
+		Nav.effect = setInterval(function() {
+			if( counter < Nav.end ) {
+				counter+=3;
+				target.style.width = counter + "px";
+			} else {
+				// is open
+				clearInterval(Nav.effect);
+				target.style.width = Nav.end + "px";
+				Nav.isOpening = false;
+			}
+		}, 2);
     },
     close: function() {
         var target = document.getElementById("mySidebar");
         var counter = parseInt(target.style.width);
+		Nav.isOpening = false;
+		Nav.isClosing = true;
         Nav.effect = setInterval(function() {
-            Nav.isOpening = false;
-            Nav.isClosing = true;
             if( counter > Nav.start ) {
                 counter-=3;
                 target.style.width = counter + "px";
@@ -419,7 +442,7 @@ var Nav = {
             // open
             Nav.open();
         } else if( parseInt(target.style.width) == Nav.start) {
-            Nav.open();
+			Nav.open();
         } else {
             Nav.close();
         }
@@ -447,7 +470,7 @@ function fadeInEffect(target) {
 }
 
 // start caching words
-setInterval( hangman.cacheWords, 1000);
+setInterval( Hangman.cacheWords, 1000);
 
 
-window.onload = hangman.init;
+window.onload = Hangman.init;

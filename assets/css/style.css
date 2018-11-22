@@ -64,8 +64,8 @@ button {
 	display: block;
 	width: 100%;
 }
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
+@media screen and (max-height: 480px) {
+    .sidebar {padding-top: 40px;}
     .sidebar a {font-size: 18px;}
 	#nav-info {padding-top: 16px;}
 	#nav-info span {font-size: 12px;}
