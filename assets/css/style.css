@@ -93,6 +93,7 @@ button {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
+	height: 40vh;
 }
 #guessed-letters button {
 	font-size: 9.5vw;
@@ -170,6 +171,9 @@ button {
 	#guessed-letters, #word {
 		float: right;
 		width: 60%;
+	}
+	#guessed-letters {
+		height: 35vh;
 	}
 	#word span {
 		font-size: 7vw;

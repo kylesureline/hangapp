@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.19**
+
+- Change: Make buttons taller
+
 **Version 1.18**
 
 - Change: GitHub link points to this repo now, rather than old one (duh!)
