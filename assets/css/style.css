@@ -93,13 +93,13 @@ button {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	height: 40vh;
 }
 #guessed-letters button {
 	font-size: 9.5vw;
-	flex-grow: 2;
+	flex-grow: 1;
 	text-align: center;
-	width: 11%;
+	width: 14%;
+	height: 10vh;
 }
 #win-lose, #new-game, #new-game button {
 	font-size: 10vw;
@@ -172,15 +172,13 @@ button {
 		float: right;
 		width: 60%;
 	}
-	#guessed-letters {
-		height: 35vh;
-	}
 	#word span {
 		font-size: 7vw;
 		padding-right: 1vw;
 	}
 	#guessed-letters button {
 		font-size: 4vw;
+		width: 15%;
 	}
 	#win-lose, #new-game, #new-game button {
 		font-size: 6vw;
