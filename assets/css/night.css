@@ -2,10 +2,6 @@
 	color: white;
 }
 
-#night {
-	display: none;
-}
-
 #guessed-letters button {
 	background-color: black;
 	border-color: white;
@@ -43,7 +39,7 @@ svg path {
     background-color: #202020;
 }
 
-.sidebar a, #nav-info span {
+.sidebar a, #mySidebar span {
 	color: #818181;
 }
 

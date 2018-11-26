@@ -51,6 +51,7 @@ var Hangman = {
 		}
 	},
 	toggleDifficulty: function() {
+		highlightEffect("difficulty", !dayTheme);
 		if(Hangman.difficulty == "Easy") {
 			Hangman.difficulty = "Medium";
 		} else if( Hangman.difficulty == "Medium") {
@@ -59,7 +60,7 @@ var Hangman = {
 			Hangman.difficulty = "Easy";
 		}
 		Hangman.guesses = Hangman.getNumberOfGuesses();
-		document.getElementById("difficulty").innerHTML = Hangman.difficulty;
+		document.getElementById("difficulty").innerHTML = "Difficulty: " + Hangman.difficulty;
 		Hangman.drawFrame();
 	},
 	drawFrame: function() {
@@ -198,7 +199,7 @@ var Hangman = {
 		Hangman.inProgress = true;
 		var ltr = this.innerHTML.toLowerCase();
 		var wrongGuess = 0;
-		
+
 		if( !Hangman.isGuessedLetter(ltr) ) {
 			Hangman.guessedLetters.push(ltr);
 			for(var t = 0; t < Hangman.answer.length; t++ ) {
@@ -248,7 +249,7 @@ var Hangman = {
 	},
 	printScore: function() {
 		document.getElementById("score-wins").innerHTML = "Wins: " + Hangman.wins;
-		document.getElementById("score-losses").innerHTML = "Losses: " + Hangman.losses;	
+		document.getElementById("score-losses").innerHTML = "Losses: " + Hangman.losses;
 		document.getElementById("nav-wins").innerHTML = "Wins: " + Hangman.wins;
 		document.getElementById("nav-losses").innerHTML = "Losses: " + Hangman.losses;
 	},
@@ -320,9 +321,9 @@ var Hangman = {
 			Nav.toggle();
 			ev.stopPropagation();
 		}, false);
-		
+
 		var guessedLetters = document.getElementById("guessed-letters");
-		
+
 		for(var i = 0; i < guessedLetters.childElementCount; i++) {
 			var btn = guessedLetters.children[i];
 			var ltr = (btn.innerHTML).toLowerCase();
@@ -374,12 +375,30 @@ var svgAnimator = {
 	}
 };
 
+var dayTheme = true; // default
+
+function toggleTheme() {
+	highlightEffect("theme", dayTheme);
+	if(dayTheme) {
+		setStyle("night");
+	} else {
+		setStyle("day");
+	}
+}
+
 function setStyle(s) {
 	document.getElementById("day-night-stylesheet").setAttribute("href", "assets/css/" + s + ".css");
+	var str = s.charAt(0).toUpperCase() + s.substr(1);
+	document.getElementById("theme").innerHTML = "Theme: " + str;
 	if(typeof(Storage) !== "undefined") {
 		localStorage.setItem("style", s);
 	} else {
 		console.log("Sorry, your browser does not support Web Storage...");
+	}
+	if(s == "day") {
+		dayTheme = true;
+	} else {
+		dayTheme = false;
 	}
 }
 
@@ -466,6 +485,21 @@ function fadeInEffect(target) {
 			clearInterval(fadeEffect);
 		}
 	}, 50);
+}
+
+function highlightEffect(target, t) {
+	var highlightTarget = document.getElementById(target);
+	if(t) {
+		highlightTarget.style.color = "white";
+		setTimeout(function() {
+			highlightTarget.style.color = "#818181";
+		}, 1000);
+	} else {
+		highlightTarget.style.color = "black";
+		setTimeout(function() {
+			highlightTarget.style.color = "#7E7E7E";
+		}, 1000);
+	}
 }
 
 // start caching words
