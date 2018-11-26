@@ -16,8 +16,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 **Version 1.19**
 
 - Change: Make buttons taller
-- Change: Reverse the light/dark mode button wording (now it's consistent with how the difficulty works)
-
+- Change: Adjust how theme/difficulty are changed
 
 **Version 1.18**
 
