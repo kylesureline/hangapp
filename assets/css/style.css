@@ -99,7 +99,6 @@ button {
 	flex-grow: 1;
 	text-align: center;
 	width: 14%;
-	height: 10vh;
 }
 #win-lose, #new-game, #new-game button {
 	font-size: 10vw;
