@@ -203,7 +203,6 @@ var Hangman = {
 		} catch{
 			var ltr = a;
 		}
-		console.log(ltr);
 		var wrongGuess = 0;
 
 		if( !Hangman.isGuessedLetter(ltr) ) {
@@ -322,6 +321,8 @@ var Hangman = {
 			var pattern = /^[a-z]/;
 			if( event.key.match(pattern)) {
 				Hangman.guess(event.key);
+			} else if(event.key == "Enter" && Hangman.inProgress == false) {
+				Hangman.beginGame();
 			}
 		});
 
