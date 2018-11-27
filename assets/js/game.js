@@ -321,8 +321,15 @@ var Hangman = {
 			var pattern = /^[a-z]/;
 			if( event.key.match(pattern)) {
 				Hangman.guess(event.key);
-			} else if(event.key == "Enter" && Hangman.inProgress == false) {
-				Hangman.beginGame();
+			} else if(event.key == "Enter") {
+				if(Hangman.inProgress) {
+					var c = confirm("Pressing enter starts a new game. Do you wish to continue?");
+					if(c) {
+						Hangman.beginGame();
+					}
+				} else {
+					Hangman.beginGame();
+				}
 			}
 		});
 
