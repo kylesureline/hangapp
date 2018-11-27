@@ -17,6 +17,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 - Change: Make buttons taller
 - Change: Adjust how theme/difficulty are changed
+- Change: Indicate when new words are cached for offline play
 
 **Version 1.18**
 
