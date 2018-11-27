@@ -25,6 +25,9 @@ button {
 #nav-info {
 	padding-top: 32px;
 }
+#theme, #difficulty {
+	font-size: 16px;
+}
 #nav-info span {
 	display: block;
     padding: 0px 8px 0px 32px;
@@ -96,9 +99,9 @@ button {
 }
 #guessed-letters button {
 	font-size: 9.5vw;
-	flex-grow: 2;
+	flex-grow: 1;
 	text-align: center;
-	width: 11%;
+	width: 14%;
 }
 #win-lose, #new-game, #new-game button {
 	font-size: 10vw;
@@ -177,6 +180,7 @@ button {
 	}
 	#guessed-letters button {
 		font-size: 4vw;
+		width: 15%;
 	}
 	#win-lose, #new-game, #new-game button {
 		font-size: 6vw;
