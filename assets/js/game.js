@@ -51,7 +51,7 @@ var Hangman = {
 		}
 	},
 	toggleDifficulty: function() {
-		highlightEffect("difficulty", !dayTheme);
+		highlightEffect("difficulty", !dayTheme, 500);
 		if(Hangman.difficulty == "Easy") {
 			Hangman.difficulty = "Medium";
 		} else if( Hangman.difficulty == "Medium") {
@@ -105,12 +105,13 @@ var Hangman = {
 						// found a word with a definition!
 						Hangman.wordBankWords.push(w);
 						Hangman.wordBankDefs.push(Hangman.cacheDef);
+						highlightEffect("nav-cached-words", !dayTheme, 200);
+						Hangman.saveWordBank();
+						document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + Hangman.wordBankWords.length;
 					}
 				}, 500);
 			}
-			Hangman.saveWordBank();
 		}
-		document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + Hangman.wordBankWords.length;
 	},
 	saveWordBank: function () {
 		if (typeof(Storage) !== "undefined") {
@@ -378,7 +379,7 @@ var svgAnimator = {
 var dayTheme = true; // default
 
 function toggleTheme() {
-	highlightEffect("theme", dayTheme);
+	highlightEffect("theme", dayTheme, 500);
 	if(dayTheme) {
 		setStyle("night");
 	} else {
@@ -487,18 +488,18 @@ function fadeInEffect(target) {
 	}, 50);
 }
 
-function highlightEffect(target, t) {
+function highlightEffect(target, t, length) {
 	var highlightTarget = document.getElementById(target);
 	if(t) {
 		highlightTarget.style.color = "white";
 		setTimeout(function() {
 			highlightTarget.style.color = "#818181";
-		}, 1000);
+		}, length);
 	} else {
 		highlightTarget.style.color = "black";
 		setTimeout(function() {
 			highlightTarget.style.color = "#7E7E7E";
-		}, 1000);
+		}, length);
 	}
 }
 
