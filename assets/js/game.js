@@ -196,9 +196,14 @@ var Hangman = {
 		}
 		return false;
 	},
-	guess: function() {
+	guess: function(a) {
 		Hangman.inProgress = true;
-		var ltr = this.innerHTML.toLowerCase();
+		try {
+			var ltr = this.innerHTML.toLowerCase();
+		} catch{
+			var ltr = a;
+		}
+		console.log(ltr);
 		var wrongGuess = 0;
 
 		if( !Hangman.isGuessedLetter(ltr) ) {
@@ -312,6 +317,15 @@ var Hangman = {
 		Hangman.beginGame();
 	},
 	attachEventHandlers: function() {
+		// keyboard input
+		document.addEventListener('keydown', function(event) {
+			var pattern = /^[a-z]/;
+			if( event.key.match(pattern)) {
+				Hangman.guess(event.key);
+			}
+		});
+
+		// close the nav by tapping anywhere else
 		var body = document.getElementById("main");
 		var except = document.getElementById("openbtn");
 
