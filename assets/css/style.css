@@ -30,38 +30,38 @@ button {
 }
 #nav-info span {
 	display: block;
-    padding: 0px 8px 0px 32px;
+  padding: 0px 8px 0px 32px;
 	font-size: 16px;
 }
 .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 60px;
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	padding-top: 60px;
 }
 .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    display: block;
-    transition: 0.3s;
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	display: block;
+	transition: 0.3s;
 }
 .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
 }
 .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    padding: 10px 15px;
-    border: none;
+	font-size: 20px;
+	cursor: pointer;
+	padding: 10px 15px;
+	border: none;
 }
 .openbtn {
 	display: block;
@@ -73,7 +73,10 @@ button {
 	#nav-info {padding-top: 16px;}
 	#nav-info span {font-size: 12px;}
 }
-/* End Nav Menu*/
+/* End Nav Menu */
+#instructions {
+	display: none;
+}
 #main {
 	height: 98vh;
 }
@@ -194,4 +197,28 @@ button {
 	#day-night button {
 		font-size: 2vw;
 	}
+	/* Instructions */
+	#instructions {
+		display: block;
+		clear: both;
+		padding-top: 16px;
+	}
+	#instructions .left {
+		float: left;
+		width: 50%;
+		padding-right: 4px;
+	}
+	#instructions .left span {
+		float: right;
+	}
+	#instructions .right {
+		float: right;
+		width: 50%;
+		padding-left: 4px;
+	}
+	#instructions .right span {
+		float: left;
+	}
+	/* End Instructions */
+
 }

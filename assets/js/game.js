@@ -15,6 +15,41 @@ function loadJSON(path, success, error) {
 	xhr.send();
 }
 
+function hasLocalStorage() {
+	var testingLS = 'testingLS';
+	try {
+		localStorage.setItem(testingLS, testingLS);
+		localStorage.removeItem(testingLS);
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
+
+var HangappData = {
+	style: "day",
+	wins: 0,
+	losses: 0,
+	words: [],
+	definitions: []
+}
+
+function saveData() {
+	if (hasLocalStorage()) {
+		localStorage.setItem("HangappData", JSON.stringify(HangappData));
+	} else {
+		console.log("Sorry, your browser does not support Web Storage...");
+	}
+}
+function loadData() {
+	if(localStorage.getItem("HangappData") !== null) {
+		var d = localStorage.getItem("HangappData");
+		HangappData = JSON.parse(d);
+		Hangman.wins = HangappData.wins;
+		Hangman.losses = HangappData.losses;
+	}
+}
+
 var Hangman = {
 	wins: 0,
 	losses: 0,
@@ -27,9 +62,9 @@ var Hangman = {
 	def: "",
 	cacheDef: "",
 	getNumberOfGuesses: function() {
-		if( Hangman.difficulty == "Easy") {
+		if( this.difficulty == "Easy") {
 			return 10;
-		} else if( Hangman.difficulty == "Medium") {
+		} else if( this.difficulty == "Medium") {
 			return 7;
 		} else {
 			return 4;
@@ -39,7 +74,7 @@ var Hangman = {
 		// player has guessed something already
 		if(Hangman.inProgress) {
 			var c = confirm("Changing difficulty in the middle of game will restart. Are you sure?");
-			if( c == true) {
+			if(c) {
 				Hangman.toggleDifficulty();
 				Hangman.beginGame();
 			}
@@ -52,16 +87,34 @@ var Hangman = {
 	},
 	toggleDifficulty: function() {
 		highlightEffect("difficulty", !dayTheme, 500);
-		if(Hangman.difficulty == "Easy") {
-			Hangman.difficulty = "Medium";
-		} else if( Hangman.difficulty == "Medium") {
-			Hangman.difficulty = "Hard";
+		if(this.difficulty == "Easy") {
+			this.difficulty = "Medium";
+		} else if( this.difficulty == "Medium") {
+			this.difficulty = "Hard";
 		} else {
-			Hangman.difficulty = "Easy";
+			this.difficulty = "Easy";
 		}
 		Hangman.guesses = Hangman.getNumberOfGuesses();
-		document.getElementById("difficulty").innerHTML = "Difficulty: " + Hangman.difficulty;
+		document.getElementById("difficulty").innerHTML = "Difficulty: " + this.difficulty;
 		Hangman.drawFrame();
+	},
+	chooseDifficulty: function(difficulty) {
+		if(Hangman.inProgress) {
+			var c = confirm("Changing difficulty in the middle of game will restart. Are you sure?");
+			if(c) {
+				this.difficulty = difficulty;
+				Hangman.guesses = Hangman.getNumberOfGuesses();
+				document.getElementById("difficulty").innerHTML = "Difficulty: " + this.difficulty;
+				Hangman.drawFrame();
+				Hangman.beginGame();
+			}
+		}
+		else {
+			this.difficulty = difficulty;
+			Hangman.guesses = Hangman.getNumberOfGuesses();
+			document.getElementById("difficulty").innerHTML = "Difficulty: " + this.difficulty;
+			Hangman.drawFrame();
+		}
 	},
 	drawFrame: function() {
 		var frame = 10;
@@ -72,70 +125,59 @@ var Hangman = {
 		}
 	},
 	emptyCache: function() {
-		if (typeof(Storage) !== "undefined") {
+		if (hasLocalStorage()) {
 			var c = confirm("This will clear your score and all saved words and definitions. Are you sure?");
 			if(c) {
-				localStorage.removeItem("wins");
+				localStorage.removeItem("HangappData");
 				Hangman.wins = 0;
-				localStorage.removeItem("losses");
 				Hangman.losses = 0;
-				localStorage.removeItem("wordBankWords");
-				Hangman.wordBankWords = [];
-				localStorage.removeItem("wordBankDefs");
-				Hangman.wordBankDefs = [];
+				HangappData.wins = 0;
+				HangappData.losses = 0;
+				HangappData.words = [];
+				HangappData.definitions = [];
 			}
 			// update screen
-			document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + Hangman.wordBankWords.length;
+			document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + HangappData.words.length;
 			Hangman.printScore();
 		} else {
 			console.log("Sorry, your browser does not support Web Storage...");
 		}
 	},
-	wordBankWords: [],
-	wordBankDefs: [],
 	cacheWords: function() {
 		var online = navigator.onLine;
 		if(online) {
 			// cache limited number of words
-			if(Hangman.wordBankWords.length < 50) {
+			if(HangappData.words.length < 50) {
 				var w = Word_List.getRandomWord();
 				Hangman.getDef(w, true);
 				setTimeout( function() {
 					if(Hangman.cacheDef != "") {
 						// found a word with a definition!
-						Hangman.wordBankWords.push(w);
-						Hangman.wordBankDefs.push(Hangman.cacheDef);
+						HangappData.words.push(w);
+						HangappData.definitions.push(Hangman.cacheDef);
 						highlightEffect("nav-cached-words", !dayTheme, 200);
-						Hangman.saveWordBank();
-						document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + Hangman.wordBankWords.length;
+						saveData();
+						document.getElementById("nav-cached-words").innerHTML = "Cached Words: " + HangappData.words.length;
 					}
 				}, 500);
 			}
-		}
-	},
-	saveWordBank: function () {
-		if (typeof(Storage) !== "undefined") {
-			localStorage.setItem("wordBankWords", JSON.stringify(Hangman.wordBankWords));
-			localStorage.setItem("wordBankDefs", JSON.stringify(Hangman.wordBankDefs));
-		} else {
-			console.log("Sorry, your browser does not support Web Storage...");
 		}
 	},
 	guessedWordStr: function() {
 		return Hangman.guessedWord.toString().replace(/,/g, '');
 	},
 	chooseWord: function() {
-		if(Hangman.wordBankWords == "") {
+		if(HangappData.words == "") {
 			Hangman.answer = Word_List.getRandomWord();
 			for( var x = 0; x < Hangman.answer.length; x++ ) {
 				Hangman.guessedWord[x] = " ";
 			}
 		} else {
-			Hangman.answer = Hangman.wordBankWords[0];
-			Hangman.def = Hangman.wordBankDefs[0];
-			Hangman.wordBankWords.splice(0, 1);
-			Hangman.wordBankDefs.splice(0, 1);
-			Hangman.saveWordBank();
+			Hangman.answer = HangappData.words[0];
+			Hangman.def = HangappData.definitions[0];
+			HangappData.words.splice(0, 1);
+			HangappData.definitions.splice(0, 1);
+			saveData();
 		}
 	},
 	placeBlanks: function() {
@@ -239,12 +281,9 @@ var Hangman = {
 	},
 	endGame: function() {
 		Hangman.inProgress = false;
-		if (typeof(Storage) !== "undefined") {
-			localStorage.setItem("wins", Hangman.wins);
-			localStorage.setItem("losses", Hangman.losses);
-		} else {
-			console.log("Sorry, your browser does not support Web Storage...");
-		}
+		HangappData.wins = Hangman.wins;
+		HangappData.losses = Hangman.losses;
+		saveData();
 		document.getElementById("definition").innerHTML = Hangman.def;
 		Hangman.printScore();
 		fadeOutEffect("game-screen");
@@ -265,6 +304,7 @@ var Hangman = {
 		}
 	},
 	beginGame: function() {
+		Hangman.inProgress = false;
 		fadeOutEffect("end-screen");
 		fadeInEffect("game-screen");
 		Hangman.def = "";
@@ -282,36 +322,8 @@ var Hangman = {
 	},
 	init: function() {
 		Nav.init();
-		if (typeof(Storage) !== "undefined") {
-			// day/night mode
-			if(localStorage.getItem("style") !== null) {
-				var s = localStorage.getItem("style");
-				setStyle(s);
-			} else {
-				setStyle("day"); // default theme
-			}
-			// wins/losses
-			if(localStorage.getItem("wins") !== null) {
-				var w = localStorage.getItem("wins");
-				Hangman.wins = Number(w);
-			} else {
-				Hangman.wins = 0;
-			}
-			if(localStorage.getItem("losses") !== null) {
-				var l = localStorage.getItem("losses");
-				Hangman.losses = Number(l);
-			} else {
-				Hangman.losses = 0;
-			}
-			if(localStorage.getItem("wordBankWords") !== null && localStorage.getItem("wordBankDefs") !== null) {
-				var c = localStorage.getItem("wordBankWords");
-				var d = localStorage.getItem("wordBankDefs");
-				Hangman.wordBankWords = JSON.parse(c);
-				Hangman.wordBankDefs = JSON.parse(d);
-			}
-		} else {
-			console.log("Sorry, your browser does not support Web Storage...");
-		}
+		loadData();
+		setStyle(HangappData.style);
 		Hangman.attachEventHandlers();
 		Hangman.beginGame();
 	},
@@ -319,9 +331,12 @@ var Hangman = {
 		// keyboard input
 		document.addEventListener('keydown', function(event) {
 			var pattern = /^[a-z]/;
+			// letter
 			if( event.key.match(pattern)) {
 				Hangman.guess(event.key);
-			} else if(event.key == "Enter") {
+			}
+			// new game
+			else if(event.key == "Enter" || event.key == "N") {
 				if(Hangman.inProgress) {
 					var c = confirm("Pressing enter starts a new game. Do you wish to continue?");
 					if(c) {
@@ -330,6 +345,26 @@ var Hangman = {
 				} else {
 					Hangman.beginGame();
 				}
+			}
+			// Dark theme
+			else if(event.key == "D") {
+				setStyle("night");
+			}
+			// Light theme
+			else if(event.key == "L") {
+				setStyle("day");
+			}
+			// Easy difficulty
+			else if(event.key == "E") {
+				Hangman.chooseDifficulty("Easy");
+			}
+			// Medium difficulty
+			else if(event.key == "M") {
+				Hangman.chooseDifficulty("Medium");
+			}
+			// Hard difficulty
+			else if(event.key == "H") {
+				Hangman.chooseDifficulty("Hard");
 			}
 		});
 
@@ -401,7 +436,6 @@ var svgAnimator = {
 var dayTheme = true; // default
 
 function toggleTheme() {
-	highlightEffect("theme", dayTheme, 500);
 	if(dayTheme) {
 		setStyle("night");
 	} else {
@@ -410,14 +444,12 @@ function toggleTheme() {
 }
 
 function setStyle(s) {
+	highlightEffect("theme", dayTheme, 500);
 	document.getElementById("day-night-stylesheet").setAttribute("href", "assets/css/" + s + ".css");
 	var str = s.charAt(0).toUpperCase() + s.substr(1);
 	document.getElementById("theme").innerHTML = "Theme: " + str;
-	if(typeof(Storage) !== "undefined") {
-		localStorage.setItem("style", s);
-	} else {
-		console.log("Sorry, your browser does not support Web Storage...");
-	}
+	HangappData.style = s
+	saveData();
 	if(s == "day") {
 		dayTheme = true;
 	} else {
