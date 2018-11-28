@@ -17,7 +17,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 - Add: Instructions for keyboard controls
 - Add: Keyboard controls for new game, color theme, and difficulty
-- Change: Store all data in one localStorage key
+- Change: Consolidate localStorage into one key
 
 **Version 1.20**
 
