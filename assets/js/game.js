@@ -39,7 +39,7 @@ var Hangman = {
 		// player has guessed something already
 		if(Hangman.inProgress) {
 			var c = confirm("Changing difficulty in the middle of game will restart. Are you sure?");
-			if( c == true) {
+			if(c) {
 				Hangman.toggleDifficulty();
 				Hangman.beginGame();
 			}
@@ -62,6 +62,24 @@ var Hangman = {
 		Hangman.guesses = Hangman.getNumberOfGuesses();
 		document.getElementById("difficulty").innerHTML = "Difficulty: " + Hangman.difficulty;
 		Hangman.drawFrame();
+	},
+	chooseDifficulty: function(difficulty) {
+		if(Hangman.inProgress) {
+			var c = confirm("Changing difficulty in the middle of game will restart. Are you sure?");
+			if(c) {
+				Hangman.difficulty = difficulty;
+				Hangman.guesses = Hangman.getNumberOfGuesses();
+				document.getElementById("difficulty").innerHTML = "Difficulty: " + Hangman.difficulty;
+				Hangman.drawFrame();
+				Hangman.beginGame();
+			}
+		}
+		else {
+			Hangman.difficulty = difficulty;
+			Hangman.guesses = Hangman.getNumberOfGuesses();
+			document.getElementById("difficulty").innerHTML = "Difficulty: " + Hangman.difficulty;
+			Hangman.drawFrame();
+		}
 	},
 	drawFrame: function() {
 		var frame = 10;
@@ -319,9 +337,12 @@ var Hangman = {
 		// keyboard input
 		document.addEventListener('keydown', function(event) {
 			var pattern = /^[a-z]/;
+			// letter
 			if( event.key.match(pattern)) {
 				Hangman.guess(event.key);
-			} else if(event.key == "Enter") {
+			}
+			// new game
+			else if(event.key == "Enter" || event.key == "N") {
 				if(Hangman.inProgress) {
 					var c = confirm("Pressing enter starts a new game. Do you wish to continue?");
 					if(c) {
@@ -330,6 +351,26 @@ var Hangman = {
 				} else {
 					Hangman.beginGame();
 				}
+			}
+			// Dark theme
+			else if(event.key == "D") {
+				setStyle("night");
+			}
+			// Light theme
+			else if(event.key == "L") {
+				setStyle("day");
+			}
+			// Easy difficulty
+			else if(event.key == "E") {
+				Hangman.chooseDifficulty("Easy");
+			}
+			// Medium difficulty
+			else if(event.key == "M") {
+				Hangman.chooseDifficulty("Medium");
+			}
+			// Hard difficulty
+			else if(event.key == "H") {
+				Hangman.chooseDifficulty("Hard");
 			}
 		});
 
@@ -401,7 +442,6 @@ var svgAnimator = {
 var dayTheme = true; // default
 
 function toggleTheme() {
-	highlightEffect("theme", dayTheme, 500);
 	if(dayTheme) {
 		setStyle("night");
 	} else {
@@ -410,6 +450,7 @@ function toggleTheme() {
 }
 
 function setStyle(s) {
+	highlightEffect("theme", dayTheme, 500);
 	document.getElementById("day-night-stylesheet").setAttribute("href", "assets/css/" + s + ".css");
 	var str = s.charAt(0).toUpperCase() + s.substr(1);
 	document.getElementById("theme").innerHTML = "Theme: " + str;

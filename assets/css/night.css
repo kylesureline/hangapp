@@ -55,3 +55,10 @@ svg path {
 .openbtn:hover {
     background-color: #444;
 }
+/* Instructions */
+#instructions .left {
+	border-right: solid #818181 2px;
+}
+#instructions h3, #instructions span {
+	color: #818181;
+}
