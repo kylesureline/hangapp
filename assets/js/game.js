@@ -253,7 +253,7 @@ var Hangman = {
 			var ltr = this.innerHTML.toLowerCase();
 		}
 		// keyboard guess
-		catch{
+		catch (e) {
 			var ltr = a;
 		}
 

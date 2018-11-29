@@ -15,7 +15,8 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 **Version 1.22**
 
--
+- Code refactoring
+- Add: Use a minified game.js file
 
 **Version 1.21**
 
