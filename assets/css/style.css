@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 body {
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
@@ -8,19 +7,15 @@ body {
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 }
-
 * {
 	box-sizing: border-box;
 }
-
 #end-screen p span {
 	text-decoration: underline;
 }
-
 button {
 	cursor: pointer;
 }
-
 /* Nav Menu */
 #nav-info {
 	padding-top: 32px;
@@ -118,7 +113,6 @@ button {
 #day-night button {
 	font-size: 6vw;
 }
-
 #hangman #svg-container {
 	width: 100%;
 	padding: 0px;
@@ -126,7 +120,6 @@ button {
 	margin: auto;
 }
 /***************/
-
 #win-lose {
 	padding: 0px;
 	margin: 0px;
@@ -149,7 +142,6 @@ button {
 	border-color: black;
 	border-style: groove;
 }
-
 #night-mode {
 	background-color: black;
 	border-color: white;
@@ -166,7 +158,6 @@ button {
 	border-radius: 1vw;
 	text-align: center;
 }
-
 /*Media Queries*/
 @media screen and (min-width: 568px) and (orientation: landscape) {
 	#hangman {
@@ -220,5 +211,4 @@ button {
 		float: left;
 	}
 	/* End Instructions */
-
 }
