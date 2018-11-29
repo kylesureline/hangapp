@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.22**
+
+-
+
 **Version 1.21**
 
 - Add: Instructions for keyboard controls
