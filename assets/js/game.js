@@ -130,11 +130,8 @@ var Hangapp = {
 			var c = confirm('This will clear your score and all saved words and definitions. Are you sure?');
 			if(c) {
 				localStorage.removeItem('HangappData');
-				Hangapp.Data = DEFAULT_DATA;
+				location.reload();
 			}
-			// update screen
-			document.getElementById('nav-cached-words').innerHTML = 'Cached Words: ' + Hangapp.Data.words.length;
-			Hangapp.printScore();
 		}
 	},
 	cacheWords: function() {
@@ -488,21 +485,21 @@ var Nav = {
 		document.getElementById('mySidebar').style.width = '0px';
 	},
   open: function() {
-	var target = document.getElementById('mySidebar');
-	var counter = parseInt(target.style.width);
-	Nav.isOpening = true;
-	Nav.isClosing = false;
-	Nav.effect = setInterval(function() {
-		if(counter < Nav.end) {
-			counter+=3;
-			target.style.width = counter + 'px';
-		} else {
-			// is open
-			clearInterval(Nav.effect);
-			target.style.width = Nav.end + 'px';
-			Nav.isOpening = false;
-		}
-	}, 2);
+		var target = document.getElementById('mySidebar');
+		var counter = parseInt(target.style.width);
+		Nav.isOpening = true;
+		Nav.isClosing = false;
+		Nav.effect = setInterval(function() {
+			if(counter < Nav.end) {
+				counter+=3;
+				target.style.width = counter + 'px';
+			} else {
+				// is open
+				clearInterval(Nav.effect);
+				target.style.width = Nav.end + 'px';
+				Nav.isOpening = false;
+			}
+		}, 2);
   },
   close: function() {
     var target = document.getElementById('mySidebar');
