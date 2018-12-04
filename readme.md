@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.25**
+
+- Bug fixes
+
 **Version 1.24**
 
 - Fix displaying which difficulty is set (when loading from save)

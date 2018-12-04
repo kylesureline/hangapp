@@ -114,6 +114,7 @@ var Hangapp = {
 				document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
 				Hangapp.drawFrame();
 			}
+			highlightEffect("difficulty", !Hangapp.isDayTheme(), 500);
 			saveData();
 		}
 	},
@@ -323,6 +324,7 @@ var Hangapp = {
 		document.getElementById('new-game').children[0].disabled = true;
 		// update the link for the end screen
 		document.getElementById('citation').setAttribute('href', 'https://www.merriam-webster.com/dictionary/' + Hangapp.Data.answer + '/');
+		document.getElementById('nav-cached-words').innerHTML = 'Cached Words: ' + Hangapp.Data.words.length;
 	},
 	beginGame: function() {
 		Hangapp.Data.guessedWord = [];
@@ -340,6 +342,7 @@ var Hangapp = {
 		document.getElementById('new-game').children[0].disabled = true;
 		// update the link for the end screen
 		document.getElementById('citation').setAttribute('href', 'https://www.merriam-webster.com/dictionary/' + Hangapp.Data.answer + '/');
+		document.getElementById('nav-cached-words').innerHTML = 'Cached Words: ' + Hangapp.Data.words.length;
 		saveData();
 	},
 	init: function() {
