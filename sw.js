@@ -5,7 +5,7 @@ var urlsToCache = [
 	'assets/css/style.css',
 	'assets/css/day.css',
 	'assets/css/night.css',
-	'assets/js/game.min.js',
+	'assets/js/game.js',
 	'assets/js/wordBank.min.js',
 	'assets/js/wordList.min.js'
 ];

@@ -10,7 +10,7 @@
 </script>
 <script type="text/javascript" src="assets/js/wordBank.min.js">
 </script>
-<script type="text/javascript" src="assets/js/game.min.js">
+<script type="text/javascript" src="assets/js/game.js">
 </script>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -43,9 +43,9 @@
 	<div id="mySidebar" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="Nav.close()"><i class="fas fa-times"></i></a>
 		<a id="toggle-theme" href="javascript:toggleTheme();">Theme</a>
-		<a href="javascript:Hangman.toggleDifficultyCheck();">Difficulty</a>
-		<a href="javascript:Hangman.beginGame()">New Game</a>
-		<a href="javascript:Hangman.emptyCache()">Empty Cache</a>
+		<a href="javascript:Hangapp.Difficulty.toggle();">Difficulty</a>
+		<a href="javascript:Hangapp.beginGame()">New Game</a>
+		<a href="javascript:Hangapp.emptyCache()">Empty Cache</a>
 		<a href="https://github.com/kylesureline/hangapp">GitHub <i class="fas fa-external-link-alt"></i></a>
 		<a href="mailto:kyle@kylesureline.com">Contact</a>
 		<div id="nav-info">
@@ -62,7 +62,7 @@
 		<div id="end-screen">
 			<p id="win-lose">You lose! The word was ____</p>
 			<p id="definition"></p>
-			<div id="new-game"><button onClick="Hangman.beginGame();">New Game</button></div>
+			<div id="new-game"><button onClick="Hangapp.beginGame();">New Game</button></div>
 			<p id="score-wins">Wins: 0</p>
 			<p id="score-losses">Losses: 0</p>
 			<div id="footer"><a id="citation" href="">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></div>
