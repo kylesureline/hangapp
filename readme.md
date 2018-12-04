@@ -15,7 +15,8 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 **Version 1.22**
 
-- Code refactoring
+- Add: Save difficulty in localStorage
+- Add: Save game state between sessions!
 
 **Version 1.21**
 
