@@ -43,9 +43,9 @@
 	<div id="mySidebar" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="Nav.close()"><i class="fas fa-times"></i></a>
 		<a id="toggle-theme" href="javascript:toggleTheme();">Theme</a>
-		<a href="javascript:Hangman.toggleDifficultyCheck();">Difficulty</a>
-		<a href="javascript:Hangman.beginGame()">New Game</a>
-		<a href="javascript:Hangman.emptyCache()">Empty Cache</a>
+		<a href="javascript:Hangapp.Difficulty.toggle();">Difficulty</a>
+		<a href="javascript:Hangapp.beginGame()">New Game</a>
+		<a href="javascript:Hangapp.emptyCache()">Empty Cache</a>
 		<a href="https://github.com/kylesureline/hangapp">GitHub <i class="fas fa-external-link-alt"></i></a>
 		<a href="mailto:kyle@kylesureline.com">Contact</a>
 		<div id="nav-info">
@@ -54,7 +54,7 @@
 			<span id="nav-wins"></span>
 			<span id="nav-losses"></span>
 			<span id="nav-cached-words">Cached Words:</span>
-			<span id="version">v1.21</span>
+			<span id="version">v1.22</span>
 		</div>
 	</div>
 	<div id="main">
@@ -62,7 +62,7 @@
 		<div id="end-screen">
 			<p id="win-lose">You lose! The word was ____</p>
 			<p id="definition"></p>
-			<div id="new-game"><button onClick="Hangman.beginGame();">New Game</button></div>
+			<div id="new-game"><button onClick="Hangapp.beginGame();">New Game</button></div>
 			<p id="score-wins">Wins: 0</p>
 			<p id="score-losses">Losses: 0</p>
 			<div id="footer"><a id="citation" href="">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></div>
@@ -142,15 +142,6 @@
 					<span>Medium Difficulty</span><br>
 					<span>Hard Difficulty</span>
 				</div>
-				<!--
-				<span>a-z : guess</span>
-				<span>N or Enter : New Game</span>
-				<span>L : Light Theme</span>
-				<span>D : Dark Theme</span>
-				<span>E : Easy Difficulty</span>
-				<span>M : Medium Difficulty</span>
-				<span>H : Hard Difficulty</span>
-				-->
 			</div>
 		</div>
 	</div>
