@@ -345,6 +345,7 @@ var Hangapp = {
 	init: function() {
 		Nav.init();
 		loadData();
+		document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
 		setStyle(Hangapp.Data.style);
 		Hangapp.attachEventHandlers();
 		if(!Hangapp.inProgress()) {
