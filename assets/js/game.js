@@ -59,8 +59,11 @@ var DEFAULT_DATA = {
 
 var Hangapp = {
 	Data: {},
-	inProgress: function() {
+	hasGuessed: function() {
 		return Hangapp.Data.guessedLetters.length !== 0;
+	},
+	hasEnded: function() {
+    return Hangapp.Data.guessedLetters.length === 0 && Hangapp.Data.guessedWord.length === 0;
 	},
 	cacheDef: '',
 	isDayTheme: function() {
@@ -85,6 +88,8 @@ var Hangapp = {
 		check: function() {
 			var c = confirm('Changing difficulty in the middle of game will restart. Are you sure?');
 			if(c) {
+				Hangapp.Data.guessedLetters = [];
+				Hangapp.Data.guessedWord = [];
 				return true;
 			}
 			return false;
@@ -99,7 +104,7 @@ var Hangapp = {
 			}
 		},
 		choose: function(d) {
-			if(Hangapp.inProgress()) {
+			if(Hangapp.hasGuessed()) {
 				if(Hangapp.Difficulty.check()) {
 					Hangapp.Data.difficulty = d;
 					Hangapp.Data.guesses = Hangapp.getNumberOfGuesses();
@@ -238,7 +243,7 @@ var Hangapp = {
 		return false;
 	},
 	guess: function(a) {
-    if(Hangapp.Data.guesses !== 0) {
+    if(!Hangapp.hasEnded()) {
 			// click guess
 			try {
 				var ltr = this.innerHTML.toLowerCase();
@@ -327,6 +332,12 @@ var Hangapp = {
 		document.getElementById('nav-cached-words').innerHTML = 'Cached Words: ' + Hangapp.Data.words.length;
 	},
 	beginGame: function() {
+    if(Hangapp.hasGuessed()) {
+			var c = confirm('Are you sure you want to start a new game?');
+			if(!c) {
+				return false;
+			}
+		}
 		Hangapp.Data.guessedWord = [];
 		Hangapp.Data.guessedLetters = [];
 		fadeOutEffect('end-screen');
@@ -351,7 +362,7 @@ var Hangapp = {
 		document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
 		setStyle(Hangapp.Data.style);
 		Hangapp.attachEventHandlers();
-		if(!Hangapp.inProgress()) {
+		if(!Hangapp.hasGuessed()) {
 			Hangapp.beginGame();
 		} else {
 			Hangapp.loadGame();
@@ -368,7 +379,7 @@ var Hangapp = {
 			}
 			// new game
 			else if(event.key == 'Enter' || event.key == 'N') {
-				if(Hangapp.inProgress()) {
+				if(Hangapp.hasGuessed()) {
 					var c = confirm('Do you want to start a new game?');
 					if(c) {
 						Hangapp.Data.guessedLetters = [];
