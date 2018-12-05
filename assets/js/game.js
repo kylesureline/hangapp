@@ -575,5 +575,5 @@ function highlightEffect(target, t, length) {
 	}
 }
 // start caching words
-setInterval(Hangapp.cacheWords, 1000);
+setInterval(Hangapp.cacheWords, 700);
 window.onload = Hangapp.init;

@@ -16,6 +16,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 **Version 1.25**
 
 - Bug fixes
+- Fix slow navigation menu
 
 **Version 1.24**
 
