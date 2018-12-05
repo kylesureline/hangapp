@@ -16,6 +16,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 **Version 1.26**
 
 - Fix: Prevent typing guesses when game has ended
+- Add: Confirm with player before allowing "New Game" to proceed during an existing game
 
 **Version 1.25**
 
