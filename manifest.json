@@ -1,6 +1,8 @@
 {
   "short_name": "Hangapp",
   "name": "Hangapp",
+  "description": "A simple hangman game. Retrieves definitions from m-w.com and caches them for offline use.",
+  "categories": ["games"],
   "icons": [
     {
       "src": "touch-icons/touch-icon-iphone.png",
