@@ -67,7 +67,7 @@ var Hangapp = {
 	},
 	cacheDef: '',
 	isDayTheme: function() {
-		if(Hangapp.Data.style == 'day') {
+		if(Hangapp.Data.style === 'day') {
 			return true;
 		} else {
 			return false;
