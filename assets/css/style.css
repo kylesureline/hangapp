@@ -76,7 +76,7 @@ svg {
 
 .sidebar {
 	height: 100%;
-	width: 0; /* hidden at start */
+	width: 300px; /* hidden at start */
 	position: fixed;
 	z-index: 1;
 	top: 0;
@@ -86,6 +86,9 @@ svg {
 	transition: 1s;
 	transition-property: width;
 	text-align: center;
+}
+.sidebar nav {
+	font-size: 24px;
 }
 .sidebar .closebtn {
 	position: absolute;
@@ -114,7 +117,7 @@ button {
 	border-radius: 0;
 }
 
-footer {
+.instructions {
 	display: none;
 }
 
@@ -128,7 +131,7 @@ footer {
 	svg,
 	.input {
 	}
-	footer {
+	.instructions {
 		text-align: center;
 		display: flex;
 		justify-content: center;
@@ -136,23 +139,23 @@ footer {
 		padding: 2em 0;
 	}
 
-	footer p {
+	.instructions p {
 		margin: 0;
 	}
 
-	footer h3 {
+	.instructions h3 {
 		flex: 0 1 100%;
 	}
 
-	footer div {
+	.instructions div {
 		padding: 0 6px;
 	}
 
-	footer .left {
+	.instructions .left {
 		text-align: right;
 	}
 
-	footer .right {
+	.instructions .right {
 		text-align: left;
 	}
 }

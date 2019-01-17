@@ -38,22 +38,29 @@
 		<nav class="main-nav">
 			<ul>
 				<li><i class="fas fa-times closebtn"></i></li>
-				<li>Theme</li>
-				<li>Difficulty</li>
 				<li>New Game</li>
 				<li>Empty Cache</li>
 				<li><a href="https://github.com/kylesureline/hangapp">GitHub <i class="fas fa-external-link-alt"></i></a></li>
 				<li><a href="mailto:kyle@kylesureline.com">Contact</a></li>
 			</ul>
 		</nav>
+
+		<form>
+			<label for="theme">Theme:</label><br>
+			<input id="light" type="radio" name="theme" value="light" checked><label for="light">Light</label>
+			<input id="dark" type="radio" name="theme" value="dark"><label for="dark">Dark</label><br>
+			<label for="difficulty">Difficulty:</label><br>
+			<input id="easy" type="radio" name="difficulty" value="easy" checked><label for="easy">Easy</label>
+			<input id="medium" type="radio" name="difficulty" value="medium"><label for="medium">Medium</label>
+			<input id="hard" type="radio" name="difficulty" value="hard"><label for="hard">Hard</label>
+		</form>
+
 		<div class="nav-info">
 			<ul>
-				<li>Theme: <span>Night</span></li>
-				<li>Difficulty: <span>Easy</span></li>
 				<li>Wins: <span>5</span></li>
 				<li>Losses: <span>7</span></li>
 				<li>Cached Words: <span>50</span></li>
-				<li>v<span>1.26</span></li>
+				<li>Version<span>1.26</span></li>
 			</ul>
 		</div>
 	</div>
@@ -124,28 +131,28 @@
 				</div>
 			</div>
 		</div>
+		<div class="instructions">
+			<h3>Keyboard Controls</h3>
+			<div class="left">
+				<p>a-z</p>
+				<p>Enter or N</p>
+				<p>D</p>
+				<p>L</p>
+				<p>E</p>
+				<p>M</p>
+				<p>H</p>
+			</div>
+			<div class="right">
+				<p>Guess</p>
+				<p>New Game</p>
+				<p>Dark Theme</p>
+				<p>Light Theme</p>
+				<p>Easy Difficulty</p>
+				<p>Medium Difficulty</p>
+				<p>Hard Difficulty</p>
+			</div>
+		</div>
 	</main>
-	<footer>
-		<h3>Keyboard Controls</h3>
-		<div class="left">
-			<p>a-z</p>
-			<p>Enter or N</p>
-			<p>D</p>
-			<p>L</p>
-			<p>E</p>
-			<p>M</p>
-			<p>H</p>
-		</div>
-		<div class="right">
-			<p>Guess</p>
-			<p>New Game</p>
-			<p>Dark Theme</p>
-			<p>Light Theme</p>
-			<p>Easy Difficulty</p>
-			<p>Medium Difficulty</p>
-			<p>Hard Difficulty</p>
-		</div>
-	</footer>
 <!-- <script type="text/javascript" src="assets/js/wordList.min.js">
 </script>
 <script type="text/javascript" src="assets/js/wordBank.min.js">

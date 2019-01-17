@@ -14,15 +14,15 @@ header,
   color: black;
 }
 
-.sidebar {
-  background-color: #DFDFDF;
-}
-.sidebar li,
+.sidebar,
 .sidebar a {
+  background-color: #DFDFDF;
   color: #7E7E7E;
 }
-.sidebar .main-nav li:hover,
-.sidebar a:hover {
+.main-nav li:hover,
+a:hover,
+form input:hover + label,
+form input + label:hover {
   color: #0E0E0E;
 }
 .openbtn {
