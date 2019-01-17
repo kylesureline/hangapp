@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Hangapp</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/day.css" id="day-night-stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/day.css" id="day-night-stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -57,46 +57,50 @@
 			</ul>
 		</div>
 	</div>
-	<div class="wrapper">
-		<main>
-			<button class="openbtn"><i class="fas fa-bars"></i> Hangapp</button>
-			<!-- <div class="end-screen" style="opacity: 0; display: none;">
-				<p>You <span>lose</span>! The word was <span>____</span></p>
-				<p>insert definition here</p>
-				<div id="new-game"><button onclick="Hangapp.beginGame();" disabled="">New Game</button></div>
-				<p id="score-wins">Wins: 5</p>
-				<p id="score-losses">Losses: 7</p>
-				<div id="footer"><a id="citation" href="https://www.merriam-webster.com/dictionary/maillot/">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></div>
-			</div> -->
-			<div class="game-screen" style="display: inline; opacity: 1;">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-					<g>
-						<rect fill="#fff" id="canvas_background" height="202" width="202" y="-1" x="-1"></rect>
+	<header>
+		<button class="openbtn"><i class="fas fa-bars"></i> Settings</button>
+		<h1>Hangapp</h1>
+	</header>
+
+	<main>
+		<!-- <div class="end-screen" style="opacity: 0; display: none;">
+			<p>You <span>lose</span>! The word was <span>____</span></p>
+			<p>insert definition here</p>
+			<div id="new-game"><button onclick="Hangapp.beginGame();" disabled="">New Game</button></div>
+			<p id="score-wins">Wins: 5</p>
+			<p id="score-losses">Losses: 7</p>
+			<div id="footer"><a id="citation" href="https://www.merriam-webster.com/dictionary/maillot/">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></div>
+		</div> -->
+		<div class="game-screen">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+				<g>
+					<rect fill="#fff" id="canvas_background" height="202" width="202" y="-1" x="-1"/>
 						<g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
-							<rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"></rect>
-						</g>
-					</g>
-					<g>
-						<path id="svg_9" d="m21.16667,179.33333l159.00905,0" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 159.009, 159.009; stroke-dashoffset: 0;"></path>
-						<path id="svg_8" d="m126.83334,179l0,-160.00939" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 160.009, 160.009; stroke-dashoffset: 0;"></path>
-						<path id="svg_7" d="m128.16667,20.33333l-73.33637,0" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 73.3364, 73.3364; stroke-dashoffset: 0;"></path>
-						<path id="svg_6" d="m56.33333,18.91667l0,27.35162" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 27.3516, 27.3516; stroke-dashoffset: 0;"></path>
-						<path id="svg_5" d="m41.375,61.125c0,-8.21823 6.65677,-14.875 14.875,-14.875c8.21823,0 14.875,6.65677 14.875,14.875c0,8.21823 -6.65677,14.875 -14.875,14.875c-8.21823,0 -14.875,-6.65677 -14.875,-14.875z" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 93.4808, 93.4808; stroke-dashoffset: 0;"></path>
-						<path id="svg_4" d="m56.125,76.75l0,58.29344" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 58.2934, 58.2934; stroke-dashoffset: 58.2934;"></path>
-						<path id="svg_3" d="m56.125,133.75l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 28.1036, 28.1036; stroke-dashoffset: 28.1036;"></path>
-						<path id="svg_2" d="m56.875,133.75l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 27.4966, 27.4966; stroke-dashoffset: 27.4966;"></path>
-						<path id="svg_1" d="m56.375,77l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 28.1036, 28.1036; stroke-dashoffset: 28.1036;"></path>
-						<path id="svg_0" d="m55.625,77l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none" style="transition: stroke-dashoffset 2s ease-in-out 0s; stroke-dasharray: 27.4966, 27.4966; stroke-dashoffset: 27.4966;"></path>
-					</g>
-				</svg>
+					<rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+				</g>
+				</g>
+				<g>
+					<path id="svg_9" d="m21.16667,179.33333l159.00905,0" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_8" d="m126.83334,179l0,-160.00939" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_7" d="m128.16667,20.33333l-73.33637,0" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_6" d="m56.33333,18.91667l0,27.35162" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_5" d="m41.375,61.125c0,-8.21823 6.65677,-14.875 14.875,-14.875c8.21823,0 14.875,6.65677 14.875,14.875c0,8.21823 -6.65677,14.875 -14.875,14.875c-8.21823,0 -14.875,-6.65677 -14.875,-14.875z" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_4" d="m56.125,76.75l0,58.29344" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_3" d="m56.125,133.75l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_2" d="m56.875,133.75l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_1" d="m56.375,77l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_0" d="m55.625,77l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
+				</g>
+			</svg>
+			<div class="input">
 				<h2><span id="answer-0">_</span><span id="answer-1">a</span><span id="answer-2">_</span><span id="answer-3">_</span><span id="answer-4">_</span><span id="answer-5">_</span><span id="answer-6">_</span></h2>
 				<div class="letters">
-					<button style="display: none;">A</button>
-					<button style="display: none;">B</button>
-					<button style="display: none;">C</button>
-					<button style="display: none;">D</button>
-					<button style="display: none;">E</button>
-					<button style="display: none;">F</button>
+					<button>A</button>
+					<button>B</button>
+					<button>C</button>
+					<button>D</button>
+					<button>E</button>
+					<button>F</button>
 					<button>G</button>
 					<button>H</button>
 					<button>I</button>
@@ -119,29 +123,29 @@
 					<button>Z</button>
 				</div>
 			</div>
-		</main>
-		<footer>
-			<h3>Keyboard Controls</h3>
-			<div class="left">
-				<p>a-z</p>
-				<p>Enter or N</p>
-				<p>D</p>
-				<p>L</p>
-				<p>E</p>
-				<p>M</p>
-				<p>H</p>
-			</div>
-			<div class="right">
-				<p>Guess</p>
-				<p>New Game</p>
-				<p>Dark Theme</p>
-				<p>Light Theme</p>
-				<p>Easy Difficulty</p>
-				<p>Medium Difficulty</p>
-				<p>Hard Difficulty</p>
-			</div>
-		</footer>
-	</div>
+		</div>
+	</main>
+	<footer>
+		<h3>Keyboard Controls</h3>
+		<div class="left">
+			<p>a-z</p>
+			<p>Enter or N</p>
+			<p>D</p>
+			<p>L</p>
+			<p>E</p>
+			<p>M</p>
+			<p>H</p>
+		</div>
+		<div class="right">
+			<p>Guess</p>
+			<p>New Game</p>
+			<p>Dark Theme</p>
+			<p>Light Theme</p>
+			<p>Easy Difficulty</p>
+			<p>Medium Difficulty</p>
+			<p>Hard Difficulty</p>
+		</div>
+	</footer>
 <!-- <script type="text/javascript" src="assets/js/wordList.min.js">
 </script>
 <script type="text/javascript" src="assets/js/wordBank.min.js">

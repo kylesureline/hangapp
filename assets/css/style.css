@@ -10,16 +10,73 @@ body {
 	-webkit-user-select: none;
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
+	height: 100vh;
 }
 
+header {
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	font-size: 1.5em;
+}
 ul {
 	list-style: none;
 	padding: 0;
 }
 
+button {
+	outline: none;
+}
+
+main {
+	height: calc(100vh - 86px);
+}
+
+.game-screen {
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+svg {
+	flex: 0 1 40%;
+}
+
+.input {
+	flex: 0 1 60%;
+}
+
+.input {
+	display: flex;
+	flex-direction: column;
+}
+
+.input h2 {
+	flex: 0 1 10%;
+	padding: 1em 0;
+	margin: 0;
+}
+
+.letters {
+	flex: 0 1 90%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.letters button {
+	flex: 0 1 15%;
+	font-size: 24px;
+	padding: 0;
+	margin: 2px;
+}
+
 .sidebar {
 	height: 100%;
-	width: 250px; /* hidden at start */
+	width: 0; /* hidden at start */
 	position: fixed;
 	z-index: 1;
 	top: 0;
@@ -44,18 +101,58 @@ ul {
 .sidebar li a {
 	text-decoration: none;
 }
-.sidebar li,
+.sidebar .main-nav li,
 .closebtn,
 button {
 	cursor: pointer;
 }
-
-button {
-	outline: none;
-}
-
 .openbtn {
 	width: 100%;
-	font-size: 1.2em;
+	font-size: 20px;
 	padding: .5em;
+	border: none;
+	border-radius: 0;
+}
+
+footer {
+	display: none;
+}
+
+@media (min-width: 568px) {
+	.game-screen {
+		flex-direction: row;
+	}
+	.game-screen > * {
+		border: 1px solid red;
+	}
+	svg,
+	.input {
+	}
+	footer {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 2em 0;
+	}
+
+	footer p {
+		margin: 0;
+	}
+
+	footer h3 {
+		flex: 0 1 100%;
+	}
+
+	footer div {
+		padding: 0 6px;
+	}
+
+	footer .left {
+		text-align: right;
+	}
+
+	footer .right {
+		text-align: left;
+	}
 }

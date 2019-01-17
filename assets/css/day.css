@@ -1,4 +1,51 @@
-#end-screen a {
+body {
+  color: black;
+}
+
+header,
+.letters,
+.game-screen {
+  background-color: white;
+}
+
+.letters button {
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.sidebar {
+  background-color: #DFDFDF;
+}
+.sidebar li,
+.sidebar a {
+  color: #7E7E7E;
+}
+.sidebar .main-nav li:hover,
+.sidebar a:hover {
+  color: #0E0E0E;
+}
+.openbtn {
+  background-color: #fff;
+  color: black;
+}
+.openbtn:hover {
+  background-color: #BBB;
+}
+
+footer {
+  color: #7E7E7E;
+  background-color: #DFDFDF;
+}
+
+footer .left {
+  border-right: solid #7E7E7E 2px;
+}
+
+
+
+
+/* #end-screen a {
 	color: black;
 }
 #guessed-letters button {
@@ -26,9 +73,9 @@ svg path {
 }
 #canvas_background {
 	fill: white;
-}
+} */
 /* Navbar */
-.sidebar {
+/* .sidebar {
   background-color: #DFDFDF;
 }
 .sidebar a, #mySidebar span {
@@ -43,11 +90,11 @@ svg path {
 }
 .openbtn:hover {
   background-color: #BBB;
-}
+} */
 /* Instructions */
-#instructions .left {
+/* #instructions .left {
 	border-right: solid #7E7E7E 2px;
 }
 #instructions h3, #instructions span {
 	color: #7E7E7E;
-}
+} */
