@@ -19,30 +19,41 @@ header,
   background-color: #DFDFDF;
   color: #7E7E7E;
 }
-.main-nav li:hover,
-a:hover,
+
+.closebtn:hover,
+.main-nav li:hover > a,
 form input:hover + label,
 form input + label:hover {
   color: #0E0E0E;
 }
+
 .openbtn {
   background-color: #fff;
   color: black;
 }
+
 .openbtn:hover {
   background-color: #BBB;
 }
 
-footer {
+.instructions {
   color: #7E7E7E;
   background-color: #DFDFDF;
 }
 
-footer .left {
+.instructions .left p {
   border-right: solid #7E7E7E 2px;
 }
 
+.modal {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
+.modal-content {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+}
 
 
 /* #end-screen a {
