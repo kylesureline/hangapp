@@ -1,0 +1,86 @@
+body,
+.instructions,
+.openbtn,
+.letters button {
+  color: #000;
+}
+
+.sidebar {
+  background-color: rgba(224, 224, 224, 0.95);
+}
+
+.sidebar a,
+.new-game,
+.sidebar {
+  color: #707070;
+}
+
+form input + label,
+.sidebar a,
+.new-game {
+  background-color: #e0e0e0;
+}
+
+.closebtn:hover,
+form input:hover + label,
+form input + label:hover,
+.new-game:hover,
+.social-link:hover,
+input[type=radio]:checked + label {
+  color: #383838;
+}
+
+header,
+.letters,
+.game-screen,
+.letters button,
+.openbtn,
+.modal-content {
+  background-color: #fff;
+}
+
+.letters button {
+  border-color: #000;
+}
+
+.openbtn:hover,
+.instructions,
+input[type=radio]:checked + label,
+.new-game:hover,
+form input:hover + label {
+  background-color: #a8a8a8;
+}
+
+.instructions .left p {
+  border-right: solid #707070 2px;
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modal-content {
+  border: 1px solid #000;
+}
+
+svg line {
+  stroke: #000;
+}
+
+svg path {
+  stroke: #000;
+}
+
+svg rect {
+  fill: #fff;
+}
+
+.letters button:hover {
+  background-color: #e0e0e0;
+}
+
+.letters button:active {
+  background-color: #a8a8a8;
+}
+
+/*# sourceMappingURL=light.css.map */

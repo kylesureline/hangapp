@@ -1,0 +1,86 @@
+body,
+.instructions,
+.openbtn,
+.letters button {
+  color: white;
+}
+
+.sidebar {
+  background-color: rgba(31, 31, 31, 0.95);
+}
+
+.sidebar a,
+.new-game,
+.sidebar {
+  color: #8f8f8f;
+}
+
+form input + label,
+.sidebar a,
+.new-game {
+  background-color: #1f1f1f;
+}
+
+.closebtn:hover,
+form input:hover + label,
+form input + label:hover,
+.new-game:hover,
+.social-link:hover,
+input[type=radio]:checked + label {
+  color: #c7c7c7;
+}
+
+header,
+.letters,
+.game-screen,
+.letters button,
+.openbtn,
+.modal-content {
+  background-color: black;
+}
+
+.letters button {
+  border-color: white;
+}
+
+.openbtn:hover,
+.instructions,
+input[type=radio]:checked + label,
+.new-game:hover,
+form input:hover + label {
+  background-color: #575757;
+}
+
+.instructions .left p {
+  border-right: solid #8f8f8f 2px;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  border: 1px solid white;
+}
+
+svg line {
+  stroke: white;
+}
+
+svg path {
+  stroke: white;
+}
+
+svg rect {
+  fill: black;
+}
+
+.letters button:hover {
+  background-color: #1f1f1f;
+}
+
+.letters button:active {
+  background-color: #575757;
+}
+
+/*# sourceMappingURL=dark.css.map */

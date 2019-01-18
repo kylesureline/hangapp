@@ -5,7 +5,8 @@
 .sidebar {
   padding-top: 60px;
 	height: 100%;
-	width: 0; // open is 275px
+  width: 0;
+	// width: 275px;
  	position: fixed;
 	z-index: 1;
 	top: 0;
@@ -33,6 +34,7 @@ ul {
 
 .new-game {
   padding: .5em 0;
+  margin: 0 .5em;
   font-size: 1.5em;
 }
 
@@ -70,6 +72,12 @@ input[type="radio"]:checked + label:hover {
 .closebtn,
 input[type="radio"] + label {
 	cursor: pointer;
+}
+
+.new-game,
+input[type="radio"] + label {
+  border: 2px solid;
+  border-radius: 6px;
 }
 
 .openbtn {

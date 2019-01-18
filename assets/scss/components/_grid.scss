@@ -1,3 +1,30 @@
 // ======================================
 //  Grid Layout
 // ======================================
+
+.modal {
+  position: absolute;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	transition: 1s;
+	transition-property: background-color;
+}
+
+.modal-content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	width: 80%;
+	margin: 0 auto;
+  border-radius: 8px;
+  padding: 0 1em;
+}
+
+.modal-content button {
+	width: auto;
+	margin: 0 auto;
+	padding: 0.5em 1em;
+	font-size: 16px;
+}

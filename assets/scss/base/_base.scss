@@ -32,7 +32,7 @@ button {
 main,
 .modal {
 	height: calc(100vh - 94px);
-	min-height: 480px;
+	// min-height: 425px;
 }
 
 .game-screen {
@@ -111,31 +111,6 @@ svg {
 	padding-left: 6px;
 }
 
-.modal {
-  position: absolute;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	transition: 1s;
-	transition-property: background-color;
-}
-
-.modal-content {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center;
-	width: 80%;
-	margin: 0 auto;
-}
-
-.modal-content button {
-	width: auto;
-	margin: 0 auto;
-	padding: 0.5em 1em;
-	font-size: 16px;
-}
-
 @media (min-height: 725px) {
 	svg {
 		flex: 0 1 25%;
@@ -168,6 +143,11 @@ svg {
 	.modal-content button {
 		font-size: 20px;
 	}
+	@media (max-height: 375px) {
+		.letters button {
+			flex: 0 1 10%;
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -179,5 +159,8 @@ svg {
 	}
 	.modal-content {
 		width: 60%;
+	}
+	.instructions {
+		font-size: 1.2em;
 	}
 }

@@ -367,7 +367,6 @@ button {
 main,
 .modal {
   height: calc(100vh - 94px);
-  min-height: 480px;
 }
 
 .game-screen {
@@ -445,31 +444,6 @@ svg {
   padding-left: 6px;
 }
 
-.modal {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  transition: 1s;
-  transition-property: background-color;
-}
-
-.modal-content {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.modal-content button {
-  width: auto;
-  margin: 0 auto;
-  padding: 0.5em 1em;
-  font-size: 16px;
-}
-
 @media (min-height: 725px) {
   svg {
     flex: 0 1 25%;
@@ -508,6 +482,11 @@ svg {
     font-size: 20px;
   }
 }
+@media screen and (min-width: 568px) and (orientation: landscape) and (max-height: 375px) {
+  .letters button {
+    flex: 0 1 10%;
+  }
+}
 @media (min-width: 768px) {
   .input h2 {
     font-size: 40px;
@@ -519,6 +498,10 @@ svg {
 
   .modal-content {
     width: 60%;
+  }
+
+  .instructions {
+    font-size: 1.2em;
   }
 }
 .sidebar {
@@ -552,6 +535,7 @@ ul {
 
 .new-game {
   padding: 0.5em 0;
+  margin: 0 0.5em;
   font-size: 1.5em;
 }
 
@@ -590,6 +574,12 @@ input[type=radio] + label {
   cursor: pointer;
 }
 
+.new-game,
+input[type=radio] + label {
+  border: 2px solid;
+  border-radius: 6px;
+}
+
 .openbtn {
   width: 100%;
   font-size: 20px;
@@ -598,8 +588,40 @@ input[type=radio] + label {
   border-radius: 0;
 }
 
+.letters button {
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 .instructions p {
   padding: 0;
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: 1s;
+  transition-property: background-color;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 0 1em;
+}
+
+.modal-content button {
+  width: auto;
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */

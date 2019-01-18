@@ -1,8 +1,7 @@
 // ======================================
-//  Buttons
+//  Light Theme
 // ======================================
 
-.letters button {
-  border-radius: 6px;
-  cursor: pointer;
-}
+@import 'colors';
+
+@import 'theme';

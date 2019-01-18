@@ -1,0 +1,18 @@
+// ======================================
+//  Dark Theme
+// ======================================
+
+@import 'colors';
+
+// invert the colors
+$theme: (
+  1: invert(map-get($theme, 1)),
+  2: invert(map-get($theme, 2)),
+  3: invert(map-get($theme, 3)),
+  4: invert(map-get($theme, 4)),
+);
+
+$black: invert($black);
+$white: invert($black);
+
+@import 'theme';
