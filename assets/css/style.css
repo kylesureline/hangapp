@@ -568,7 +568,7 @@ input[type=radio]:checked + label:hover {
   margin: 0 0.2em;
 }
 
-.sidebar li,
+.new-game,
 .closebtn,
 input[type=radio] + label {
   cursor: pointer;

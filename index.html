@@ -50,9 +50,9 @@
 			<input id="light" type="radio" name="theme" value="light" checked><label for="light">Light</label>
 			<input id="dark" type="radio" name="theme" value="dark"><label for="dark">Dark</label><br>
 			<label class="setting" for="difficulty">Difficulty:</label>
-			<input id="easy" type="radio" name="difficulty" value="easy" checked><label for="easy">Easy</label>
-			<input id="medium" type="radio" name="difficulty" value="medium"><label for="medium">Medium</label>
-			<input id="hard" type="radio" name="difficulty" value="hard"><label for="hard">Hard</label>
+			<input id="easy" type="radio" name="difficulty" value="Easy" checked><label for="easy">Easy</label>
+			<input id="medium" type="radio" name="difficulty" value="Medium"><label for="medium">Medium</label>
+			<input id="hard" type="radio" name="difficulty" value="Hard"><label for="hard">Hard</label>
 		</form>
 
 		<div class="nav-info">
@@ -65,109 +65,111 @@
 			<p><a class="social-link" href="https://github.com/kylesureline/hangapp/"><i class="fab fa-github-square"></i></a> <a class="social-link" href="mailto:kyle@kylesureline.com"><i class="fas fa-envelope-square"></i></a></p>
 		</div>
 	</div>
-	<header>
-		<h1>Hangapp</h1>
-		<button class="openbtn"><i class="fas fa-bars"></i> Settings</button>
-	</header>
+	<div class="container">
+		<header>
+			<h1>Hangapp</h1>
+			<button class="openbtn"><i class="fas fa-bars"></i> Settings</button>
+		</header>
 
-	<main class="game-screen">
-		<!-- <div class="modal">
-			<div class="modal-content">
-				<p>You <span>lose</span>! The word was <span>jazz</span>!</p>
-				<p>American music developed especially from ragtime and blues and characterized by propulsive syncopated rhythms, polyphonic ensemble playing, varying degrees of improvisation, and often deliberate distortions of pitch and timbre</p>
-				<button>New Game</button>
-				<p><span>Wins: <span>5</span></span>
-					<span>Losses: <span>7</span></span></p>
-				<p><a>Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></p>
+		<main class="game-screen">
+			<!-- <div class="modal">
+				<div class="modal-content">
+					<p>You <span>lose</span>! The word was <span>jazz</span>!</p>
+					<p>American music developed especially from ragtime and blues and characterized by propulsive syncopated rhythms, polyphonic ensemble playing, varying degrees of improvisation, and often deliberate distortions of pitch and timbre</p>
+					<button>New Game</button>
+					<p><span>Wins: <span>5</span></span>
+						<span>Losses: <span>7</span></span></p>
+					<p><a>Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></p>
+				</div>
+			</div> -->
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+				<g>
+					<rect fill="#fff" id="canvas_background" height="202" width="202" y="-1" x="-1"/>
+						<g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+					<rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+				</g>
+				</g>
+				<g>
+					<path id="svg_9" d="m21.16667,179.33333l159.00905,0" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_8" d="m126.83334,179l0,-160.00939" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_7" d="m128.16667,20.33333l-73.33637,0" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_6" d="m56.33333,18.91667l0,27.35162" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_5" d="m41.375,61.125c0,-8.21823 6.65677,-14.875 14.875,-14.875c8.21823,0 14.875,6.65677 14.875,14.875c0,8.21823 -6.65677,14.875 -14.875,14.875c-8.21823,0 -14.875,-6.65677 -14.875,-14.875z" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_4" d="m56.125,76.75l0,58.29344" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_3" d="m56.125,133.75l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_2" d="m56.875,133.75l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_1" d="m56.375,77l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
+					<path id="svg_0" d="m55.625,77l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
+				</g>
+			</svg>
+			<div class="input">
+				<h2><span id="answer-0">_</span>
+					<span id="answer-1">a</span>
+					<span id="answer-2">_</span>
+					<span id="answer-3">_</span>
+					<span id="answer-4">_</span>
+					<span id="answer-5">_</span>
+					<span id="answer-6">_</span></h2>
+				<div class="letters">
+					<button>A</button>
+					<button>B</button>
+					<button>C</button>
+					<button>D</button>
+					<button>E</button>
+					<button>F</button>
+					<button>G</button>
+					<button>H</button>
+					<button>I</button>
+					<button>J</button>
+					<button>K</button>
+					<button>L</button>
+					<button>M</button>
+					<button>N</button>
+					<button>O</button>
+					<button>P</button>
+					<button>Q</button>
+					<button>R</button>
+					<button>S</button>
+					<button>T</button>
+					<button>U</button>
+					<button>V</button>
+					<button>W</button>
+					<button>X</button>
+					<button>Y</button>
+					<button>Z</button>
+				</div>
 			</div>
-		</div> -->
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-			<g>
-				<rect fill="#fff" id="canvas_background" height="202" width="202" y="-1" x="-1"/>
-					<g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
-				<rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
-			</g>
-			</g>
-			<g>
-				<path id="svg_9" d="m21.16667,179.33333l159.00905,0" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_8" d="m126.83334,179l0,-160.00939" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_7" d="m128.16667,20.33333l-73.33637,0" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_6" d="m56.33333,18.91667l0,27.35162" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_5" d="m41.375,61.125c0,-8.21823 6.65677,-14.875 14.875,-14.875c8.21823,0 14.875,6.65677 14.875,14.875c0,8.21823 -6.65677,14.875 -14.875,14.875c-8.21823,0 -14.875,-6.65677 -14.875,-14.875z" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_4" d="m56.125,76.75l0,58.29344" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_3" d="m56.125,133.75l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_2" d="m56.875,133.75l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_1" d="m56.375,77l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
-				<path id="svg_0" d="m55.625,77l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
-			</g>
-		</svg>
-		<div class="input">
-			<h2><span id="answer-0">_</span>
-				<span id="answer-1">a</span>
-				<span id="answer-2">_</span>
-				<span id="answer-3">_</span>
-				<span id="answer-4">_</span>
-				<span id="answer-5">_</span>
-				<span id="answer-6">_</span></h2>
-			<div class="letters">
-				<button>A</button>
-				<button>B</button>
-				<button>C</button>
-				<button>D</button>
-				<button>E</button>
-				<button>F</button>
-				<button>G</button>
-				<button>H</button>
-				<button>I</button>
-				<button>J</button>
-				<button>K</button>
-				<button>L</button>
-				<button>M</button>
-				<button>N</button>
-				<button>O</button>
-				<button>P</button>
-				<button>Q</button>
-				<button>R</button>
-				<button>S</button>
-				<button>T</button>
-				<button>U</button>
-				<button>V</button>
-				<button>W</button>
-				<button>X</button>
-				<button>Y</button>
-				<button>Z</button>
+			<div class="instructions">
+				<h3>Keyboard Controls</h3>
+				<div class="left">
+					<p>a-z</p>
+					<p>Enter or N</p>
+					<p>D</p>
+					<p>L</p>
+					<p>E</p>
+					<p>M</p>
+					<p>H</p>
+				</div>
+				<div class="right">
+					<p>Guess</p>
+					<p>New Game</p>
+					<p>Dark Theme</p>
+					<p>Light Theme</p>
+					<p>Easy Difficulty</p>
+					<p>Medium Difficulty</p>
+					<p>Hard Difficulty</p>
+				</div>
 			</div>
-		</div>
-		<div class="instructions">
-			<h3>Keyboard Controls</h3>
-			<div class="left">
-				<p>a-z</p>
-				<p>Enter or N</p>
-				<p>D</p>
-				<p>L</p>
-				<p>E</p>
-				<p>M</p>
-				<p>H</p>
-			</div>
-			<div class="right">
-				<p>Guess</p>
-				<p>New Game</p>
-				<p>Dark Theme</p>
-				<p>Light Theme</p>
-				<p>Easy Difficulty</p>
-				<p>Medium Difficulty</p>
-				<p>Hard Difficulty</p>
-			</div>
-		</div>
-	</main>
-<!-- <script type="text/javascript" src="assets/js/wordList.min.js">
+		</main>
+	</div>
+<script type="text/javascript" src="assets/js/wordList.min.js">
 </script>
 <script type="text/javascript" src="assets/js/wordBank.min.js">
 </script>
 <script type="text/javascript" src="assets/js/game.js">
-</script> -->
+</script>
 
-<script>
+<!-- <script>
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', function() {
 		navigator.serviceWorker.register('sw.js').then(function(registration) {
@@ -179,7 +181,7 @@ if ('serviceWorker' in navigator) {
 	});
 });
 }
-</script>
+</script> -->
 
 
 </body></html>
