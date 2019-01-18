@@ -3,10 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hangapp</title>
+
+	<!--Stylesheets-->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/day.css" id="day-night-stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/day.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<!--WEB APP-->
 	<link rel="manifest" href="manifest.json">
@@ -18,6 +20,7 @@
 	<meta name="apple-mobile-web-app-title" content="Hangapp">
 
 	<!--icons-->
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon" href="touch-icons/touch-icon-iphone.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="touch-icons/touch-icon-ipad.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="touch-icons/touch-icon-iphone-retina.png">
@@ -38,18 +41,15 @@
 		<nav class="main-nav">
 			<ul>
 				<li><i class="fas fa-times closebtn"></i></li>
-				<li><a>New Game</a></li>
-				<li><a>Empty Cache</a></li>
-				<li><a href="https://github.com/kylesureline/hangapp">GitHub <i class="fas fa-external-link-alt"></i></a></li>
-				<li><a href="mailto:kyle@kylesureline.com">Contact</a></li>
+				<li class="new-game">New Game</li>
 			</ul>
 		</nav>
 
 		<form>
-			<label for="theme">Theme:</label><br>
+			<label class="setting" for="theme">Theme:</label>
 			<input id="light" type="radio" name="theme" value="light" checked><label for="light">Light</label>
 			<input id="dark" type="radio" name="theme" value="dark"><label for="dark">Dark</label><br>
-			<label for="difficulty">Difficulty:</label><br>
+			<label class="setting" for="difficulty">Difficulty:</label>
 			<input id="easy" type="radio" name="difficulty" value="easy" checked><label for="easy">Easy</label>
 			<input id="medium" type="radio" name="difficulty" value="medium"><label for="medium">Medium</label>
 			<input id="hard" type="radio" name="difficulty" value="hard"><label for="hard">Hard</label>
@@ -60,13 +60,14 @@
 				<li>Wins: <span>5</span></li>
 				<li>Losses: <span>7</span></li>
 				<li>Cached Words: <span>50</span></li>
-				<li>Version<span>1.26</span></li>
+				<li>Version: <span>1.26</span></li>
 			</ul>
+			<p><a class="social-link" href="https://github.com/kylesureline/hangapp/"><i class="fab fa-github-square"></i></a> <a class="social-link" href="mailto:kyle@kylesureline.com"><i class="fas fa-envelope-square"></i></a></p>
 		</div>
 	</div>
 	<header>
-		<button class="openbtn"><i class="fas fa-bars"></i> Settings</button>
 		<h1>Hangapp</h1>
+		<button class="openbtn"><i class="fas fa-bars"></i> Settings</button>
 	</header>
 
 	<main class="game-screen">

@@ -1,0 +1,183 @@
+// ======================================
+//  Base
+// ======================================
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	height: 100vh;
+}
+
+header {
+	text-align: center;
+}
+
+h1 {
+	padding: .5em 0;
+	margin: 0;
+	font-size: 1.5em;
+}
+
+button {
+	outline: none;
+}
+
+main,
+.modal {
+	height: calc(100vh - 94px);
+	min-height: 480px;
+}
+
+.game-screen {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+svg {
+	flex: 0 1 40%;
+}
+
+.input {
+	flex: 0 1 60%;
+	display: flex;
+	flex-direction: column;
+}
+
+.input h2 {
+	flex: 0 1 10%;
+	padding: 1em 0;
+	margin: 0;
+}
+
+.letters {
+	flex: 0 1 90%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.letters button {
+	flex: 0 1 15%;
+	font-size: 24px;
+	padding: 0;
+	margin: 2px;
+}
+
+.instructions {
+	display: none;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.instructions p {
+	margin: 0;
+}
+
+.instructions h3 {
+	flex: 0 1 100%;
+	margin: 0.5em 0;
+}
+
+.instructions div {
+}
+
+.instructions .left,
+.instructions .right {
+	flex: 0 1 50%;
+	display: inline;
+}
+
+.instructions .left {
+	text-align: right;
+}
+
+.instructions .right {
+	text-align: left;
+}
+
+.instructions .left p {
+	padding-right: 6px;
+}
+.instructions .right p {
+	padding-left: 6px;
+}
+
+.modal {
+  position: absolute;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	transition: 1s;
+	transition-property: background-color;
+}
+
+.modal-content {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.modal-content button {
+	width: auto;
+	margin: 0 auto;
+	padding: 0.5em 1em;
+	font-size: 16px;
+}
+
+@media (min-height: 725px) {
+	svg {
+		flex: 0 1 25%;
+	}
+	.input {
+		flex: 0 1 40%;
+	}
+	.instructions {
+		flex: 0 1 35%;
+		display: flex;
+	}
+}
+
+@media screen and (min-width: 568px) and (orientation: landscape) {
+	.game-screen {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	svg,
+	.input {
+		flex: 0 1 50%;
+	}
+	.instructions {
+		flex: 0 1 100%;
+	}
+	.modal-content {
+		width: 70%;
+	}
+	.modal-content,
+	.modal-content button {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 768px) {
+	.input h2 {
+		font-size: 40px;
+	}
+	.input button {
+		font-size: 36px;
+	}
+	.modal-content {
+		width: 60%;
+	}
+}
