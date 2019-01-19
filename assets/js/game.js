@@ -401,7 +401,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		setInterval(cacheWords, 700);
 
 		loadData();
-		setStyle(Data.style);
 
 		if(!hasGuessed()) {
 			beginGame();
@@ -420,6 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		function selectRadioButtons() {
 			const radioButtons = sidebarForm.querySelectorAll('input');
+
 			for(let i = 0; i < radioButtons.length; i += 1) {
 				let radioButton = radioButtons[i];
 				if(Data.style === radioButton.id) {
@@ -428,9 +428,10 @@ document.addEventListener('DOMContentLoaded', () => {
 					radioButton.checked = true;
 				}
 			}
+
 			setStyle(Data.style);
 			Difficulty.choose(Data.difficulty);
-		}
+		} // end selectRadioButtons()
 
 	  if(hasLocalStorage() && localStorage.getItem('HangappData') !== null) {
 	    const d = JSON.parse(localStorage.getItem('HangappData'));
@@ -444,7 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		printScore();
-	}
+	} // end loadData()
 
 	function insertModal(content) {
 
