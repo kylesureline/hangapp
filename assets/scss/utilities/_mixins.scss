@@ -26,39 +26,3 @@
   flex-wrap: $wrap;
   justify-content: $just;
 }
-
-// Media queries
-@mixin mq($break, $heightOrWidth) {
-  $value: map-get($breakpoints, $break);
-  $sm: map-get($breakpoints, 'sm');
-
-  @if $value == null {
-    @error "`#{$break}` is not a valid breakpoint name.";
-  }
-
-  @else if $value < $sm {
-    @media (max-width: $value) {
-      @content;
-    }
-  }
-  @else {
-    @media (min-width: $value) {
-      @content;
-    }
-  }
-}
-
-@mixin mqLandscape {
-  @media sceen and (min-width: map-get($breakpoints, 'med') and (orientation: landscape)) {
-    @content;
-  }
-}
-
-// Colors
-@mixin themes($map) {
-  @each $theme, $color in $map {
-    &--#{$theme} {
-      background-color: $color;
-    }
-  }
-}

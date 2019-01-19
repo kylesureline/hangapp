@@ -4,22 +4,24 @@
 
 .modal {
   position: absolute;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
+  @include flexy($disp: flex, $just: center, $dir: column);
 	transition: 1s;
 	transition-property: background-color;
 }
 
 .modal-content {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center;
+  @include flexy($disp: flex, $dir: column, $wrap: wrap, $just: center);
 	width: 80%;
 	margin: 0 auto;
   border-radius: 8px;
   padding: 0 1em;
+  @media screen and (min-width: 568px) and (orientation: landscape) {
+    width: 70%;
+    font-size: 20px;
+  }
+  @media (min-width: 768px) {
+    width: 60%;
+  }
 }
 
 .modal-content button {
@@ -27,4 +29,60 @@
 	margin: 0 auto;
 	padding: 0.5em 1em;
 	font-size: 16px;
+  @media screen and (min-width: 568px) and (orientation: landscape) {
+    font-size: 20px;
+  }
+}
+
+.game-screen {
+	text-align: center;
+  @include flexy($disp: flex, $dir: column, $just: flex-start);
+  @media screen and (min-width: 568px) and (orientation: landscape) {
+    @include flexy($dir: row, $wrap: wrap);
+  }
+}
+
+.letters {
+	flex: 0 1 90%;
+  @include flexy($disp: flex, $wrap: wrap, $just: space-around);
+}
+
+.instructions {
+	display: none;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+  @media (min-height: 725px) {
+    flex: 0 1 35%;
+    display: flex;
+    @include flexy();
+	}
+  @media screen and (min-width: 568px) and (orientation: landscape) {
+    flex: 0 1 100%;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.2em;
+  }
+}
+
+.instructions {
+  & .left,
+  & .right {
+  	flex: 0 1 50%;
+  	display: inline;
+  }
+  & .left {
+  	text-align: right;
+  }
+  & .right {
+  	text-align: left;
+  }
+  & p {
+  	margin: 0;
+    padding: 0 6px;
+  }
+  & h3 {
+  	flex: 0 1 100%;
+  	margin: 0.5em 0;
+  }
 }
