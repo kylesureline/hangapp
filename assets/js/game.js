@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function loadData() {
 
-		function selectRadioButtons() {
+		function checkRadioButtons() {
 			const radioButtons = sidebarForm.querySelectorAll('input');
 
 			for(let i = 0; i < radioButtons.length; i += 1) {
@@ -431,14 +431,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			setStyle(Data.style);
 			Difficulty.choose(Data.difficulty);
-		} // end selectRadioButtons()
+		} // end checkRadioButtons()
 
 	  if(hasLocalStorage() && localStorage.getItem('HangappData') !== null) {
 	    const d = JSON.parse(localStorage.getItem('HangappData'));
 			for(p in d) {
 				Data[p] = d[p];
 			}
-			selectRadioButtons();
+			checkRadioButtons();
 		} else {
 			console.log('No support for localStorage or none previously saved. Loading default data.');
 			Data = DEFAULT_DATA;
