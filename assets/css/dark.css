@@ -1,7 +1,8 @@
 body,
 .instructions,
 .openbtn,
-.letters button {
+.letters button,
+.modal-content button {
   color: white;
 }
 
@@ -35,7 +36,8 @@ header,
 .game-screen,
 .letters button,
 .openbtn,
-.modal-content {
+.modal-content,
+.modal-content button {
   background-color: black;
 }
 
@@ -47,7 +49,8 @@ header,
 .instructions,
 input[type=radio]:checked + label,
 .new-game:hover,
-form input:hover + label {
+form input:hover + label,
+.modal-content button:hover {
   background-color: #575757;
 }
 

@@ -364,8 +364,7 @@ button {
   outline: none;
 }
 
-main,
-.modal {
+main {
   height: calc(100vh - 94px);
 }
 
@@ -472,6 +471,11 @@ input[type=radio] + label {
   }
 }
 
+.modal-content button {
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 svg {
   flex: 0 1 40%;
 }
@@ -513,7 +517,9 @@ svg {
 }
 
 .modal {
+  text-align: center;
   position: absolute;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
