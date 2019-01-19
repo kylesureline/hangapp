@@ -10,6 +10,9 @@
 		flex: 0 1 10%;
 		padding: 1em 0;
 		margin: 0;
+		& span {
+			margin: 0 .15em;
+		}
 	  @media (min-width: 768px) {
 	    font-size: 40px;
 	  }
