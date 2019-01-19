@@ -35,13 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const Difficulty = {
 		confirmChange: () => {
-			const c = confirm('Changing difficulty in the middle of game will restart. Are you sure?');
-			if(c) {
-				Data.guessedLetters = [];
-				Data.guessedWord = [];
+			// const c = confirm('Changing difficulty in the middle of game will restart. Are you sure?');
+			// if(c) {
+			// 	Data.guessedLetters = [];
+			// 	Data.guessedWord = [];
 				return true;
-			}
-			return false;
+			// }
+			// return false;
 		},
 		choose: (d) => {
 			if(hasGuessed()) {
@@ -369,22 +369,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		} // end chooseWord()
 
-		if(hasGuessed()) {
-			const c = confirm('Are you sure you want to start a new game?');
-			if(!c) {
-				return false;
-			}
+		// if(hasGuessed()) {
+		// 	const c = confirm('Are you sure you want to start a new game?');
+		// 	if(!c) {
+		// 		return false;
+		// 	}
+		// }
+		if(!hasGuessed()) {
+
 		}
-		Data.guessedWord = [];
-		Data.guessedLetters = [];
-		removeModal();
-		chooseWord();
-		getDef(Data.answer, false);
-		Data.guesses = getNumberOfGuesses();
-		showGuessedLetters();
-		drawFrame();
-		placeBlanks();
-		saveData();
 	} // end beginGame
 
 	function init() {
@@ -417,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function loadData() {
 
-		function selectRadioButtons() {
+		function checkRadioButtons() {
 			const radioButtons = sidebarForm.querySelectorAll('input');
 
 			for(let i = 0; i < radioButtons.length; i += 1) {
@@ -431,14 +424,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			setStyle(Data.style);
 			Difficulty.choose(Data.difficulty);
-		} // end selectRadioButtons()
+		} // end checkRadioButtons()
 
 	  if(hasLocalStorage() && localStorage.getItem('HangappData') !== null) {
 	    const d = JSON.parse(localStorage.getItem('HangappData'));
 			for(p in d) {
 				Data[p] = d[p];
 			}
-			selectRadioButtons();
+			checkRadioButtons();
 		} else {
 			console.log('No support for localStorage or none previously saved. Loading default data.');
 			Data = DEFAULT_DATA;
