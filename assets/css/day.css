@@ -2,7 +2,8 @@ body,
 .instructions,
 .openbtn,
 .letters button,
-.modal-content button {
+.modal-content button,
+.modal-content a {
   color: #000;
 }
 
