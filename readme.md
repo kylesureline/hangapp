@@ -13,6 +13,25 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.27**
+
+- Complete rewrite
+- HTML
+  - Remove IDs cluttering up markup
+  - Use semantic HTML Form markup for game settings
+  - Load JavaScript file last
+- CSS
+  - Split into SASS partials to organize
+  - Vastly improved flexbox layout for all screens
+  - Hide keyboard controls on short screens
+- JavaScript
+  - Use const and let, not var
+  - Nest functions in parent functions
+  - Re-organize the order of functions
+  - Use separate functions, rather than one Hangapp object with methods
+  - Use event handlers, not onClick HTML attributes
+  - Insert a modal for the end screen
+
 **Version 1.26**
 
 - Fix: Prevent typing guesses when game has ended
