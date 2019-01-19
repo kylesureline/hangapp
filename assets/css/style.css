@@ -520,11 +520,10 @@ svg {
   text-align: center;
   position: absolute;
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: 1s;
-  transition-property: background-color;
 }
 
 .modal-content {
