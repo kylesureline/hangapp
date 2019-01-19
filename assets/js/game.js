@@ -1,4 +1,4 @@
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
 	const body = document.getElementsByTagName('body')[0];
 	const openbtn = document.querySelector('.openbtn');
@@ -43,21 +43,11 @@
 			}
 			return false;
 		},
-		toggle: () => {
-			if(Data.difficulty === 'Easy') {
-				Difficulty.choose('Medium');
-			} else if(Data.difficulty === 'Medium') {
-				Difficulty.choose('Hard');
-			} else {
-				Difficulty.choose('Easy');
-			}
-		},
 		choose: (d) => {
 			if(hasGuessed()) {
 				if(Difficulty.confirmChange()) {
 					Data.difficulty = d;
 					Data.guesses = getNumberOfGuesses();
-					// document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
 					drawFrame();
 					beginGame();
 				}
@@ -65,13 +55,28 @@
 			else {
 				Data.difficulty = d;
 				Data.guesses = getNumberOfGuesses();
-				// document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
 				drawFrame();
 			}
-			// highlightEffect("difficulty", !Hangapp.isDayTheme(), 500);
-			saveData();
 		}
 	};
+
+	function setStyle(s) {
+		themeLink.href = 'assets/css/' + s + '.css';
+		Data.style = s;
+	}
+
+	function hasLocalStorage() {
+		var testingLS = 'testingLS';
+		try {
+			localStorage.setItem(testingLS, testingLS);
+			localStorage.removeItem(testingLS);
+			return true;
+		}
+		catch (e) {
+			console.log('Sorry, your browser does not support Web Storage...');
+			return false;
+		}
+	}
 
 	function hasGuessed() {
 		return Data.guessedLetters.length !== 0;
@@ -83,6 +88,10 @@
 
 	function isDayTheme() {
 		return Data.style === 'day';
+	}
+
+	function isOnline() {
+		return navigator.onLine;
 	}
 
 	function getNumberOfGuesses() {
@@ -104,8 +113,67 @@
 		}
 	}
 
-	function isOnline() {
-		return navigator.onLine;
+	function inputHandler(event) {
+
+		let letter = '';
+
+		if(event.key === undefined) {
+			if(event.target.tagName === 'BUTTON') {
+				letter = event.target.textContent.toLowerCase();
+			}
+		} else {
+			letter = event.key;
+		}
+
+		const pattern = /^[a-z]/;
+		switch(letter) {
+			case 'Enter':
+			case 'N':
+				if(hasGuessed()) {
+					let c = confirm('Do you want to start a new game?');
+					if(c) {
+						Data.guessedLetters = [];
+						Data.guessedWord = [];
+						beginGame();
+					}
+				} else {
+					beginGame();
+				}
+				break;
+			case 'D':
+				setStyle('night');
+				break;
+			case 'L':
+				setStyle('light');
+				break;
+			case 'E':
+				Difficulty.choose('Easy');
+				break;
+			case 'M':
+				Difficulty.choose('Medium');
+				break;
+			case 'H':
+				Difficulty.choose('Hard');
+				break;
+			default:
+				if(letter.match(pattern) && !hasEnded()) {
+					guess(letter);
+					hideGuessedLetters();
+				}
+				break;
+		}
+		saveData();
+	}
+
+	function addMultipleListeners(element,events,handler) {
+	  if (!(events instanceof Array)){
+	    throw 'addMultipleListeners: '+
+	          'please supply an array of eventstrings '+
+	          '(like ["click","mouseover"])';
+	  }
+	  for (let i = 0;i < events.length; i += 1){
+	    element.addEventListener(events[i],handler);
+	  }
 	}
 
 	function cacheWords() {
@@ -119,9 +187,7 @@
 						// found a word with a definition!
 						Data.words.push(w);
 						Data.definitions.push(cacheDef);
-						highlightEffect('nav-cached-words', !isDayTheme(), 200);
 						saveData();
-						// document.getElementById('nav-cached-words').innerHTML = 'Cached Words: ' + Hangapp.Data.words.length;
 					}
 				}, 500);
 			}
@@ -129,28 +195,8 @@
 		}
 	}
 
-	function guessedWordStr() {
-		return Data.guessedWord.toString().replace(/,/g, '');
-	}
-
-	function chooseWord() {
-		// no words in cache
-		if(Data.words.length === 0) {
-			Data.answer = Word_List.getRandomWord();
-		}
-		// words in cache
-		else {
-			Data.answer = Data.words.shift();
-			Data.def = Data.definitions.shift();
-		}
-		for(let x = 0; x < Data.answer.length; x += 1) {
-			Data.guessedWord[x] = ' ';
-		}
-		saveData();
-	}
-
 	function placeBlanks() {
-		// clear the value on the page
+		// remove the answer word from the page
 		while(wordH2.firstChild) {
 			wordH2.removeChild(wordH2.firstChild);
 		}
@@ -167,6 +213,24 @@
 	}
 
 	function getDef(word, toCache) {
+
+		function loadJSON(path, success, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == XMLHttpRequest.DONE) {
+					if (xhr.status == 200) {
+						if (success)
+							success(JSON.parse(xhr.responseText));
+					} else {
+						if (error)
+							error(xhr);
+					}
+				}
+			};
+			xhr.open('GET', path, true);
+			xhr.send();
+		}
+
 		if(isOnline()) {
 			const apiURL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/' + word + '?key=cb690753-1eb8-4661-a7f4-9adf25057760';
 			loadJSON(apiURL, function(data) {
@@ -203,16 +267,41 @@
 		}
 	}
 
-	function isGuessedLetter(letter) {
-		for(let i = 0; i < Data.guessedLetters.length; i += 1) {
-			if(letter === Data.guessedLetters[i]) {
-				return true;
-			}
-		}
-		return false;
-	}
-
 	function guess(letter) {
+
+		function isGuessedLetter(letter) {
+			for(let i = 0; i < Data.guessedLetters.length; i += 1) {
+				if(letter === Data.guessedLetters[i]) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		function guessedWordStr() {
+			return Data.guessedWord.toString().replace(/,/g, '');
+		}
+
+		function win() {
+			wonOrLost = 'won';
+			Data.wins += 1;
+			endGame();
+		}
+
+		function lose() {
+			wonOrLost = 'lost';
+			Data.losses += 1;
+			endGame();
+		}
+
+		function endGame() {
+			insertModal(true);
+			saveData();
+			printScore();
+			Data.guessedLetters = [];
+			Data.guessedWord = [];
+		}
+
 		let wrongGuess = 0;
 		if(!isGuessedLetter(letter)) {
 			Data.guessedLetters.push(letter);
@@ -236,35 +325,7 @@
 				win();
 			}
 		}
-		saveData();
-	}
-
-	function win() {
-		// document.getElementById('win-lose').innerHTML = 'You win! The word was <span>' + Hangapp.Data.answer +'</span>!';
-		wonOrLost = 'won';
-		Data.wins += 1;
-		endGame();
-	}
-
-	function lose() {
-		// document.getElementById('win-lose').innerHTML = 'You lose! The word was <span>' + Hangapp.Data.answer +'</span>!';
-		wonOrLost = 'lost';
-		Data.losses += 1;
-		endGame();
-	}
-
-	function endGame() {
-		insertModal(true);
-		saveData();
-		// document.getElementById('definition').innerHTML = Hangapp.Data.def;
-		printScore();
-		// fadeOutEffect('game-screen');
-		// fadeInEffect('end-screen');
-		Data.guessedLetters = [];
-		Data.guessedWord = [];
-		// document.getElementById('end-screen').style.display = 'inline';
-		// document.getElementById('new-game').children[0].disabled = false;
-	}
+	} // end guess()
 
 	function printScore() {
 		navInfo.wins.textContent = Data.wins;
@@ -291,14 +352,23 @@
 		}
 	}
 
-	function loadGame() {
-		hideGuessedLetters();
-		// printScore();
-		drawFrame();
-		placeBlanks();
-	}
-
 	function beginGame() {
+
+		function chooseWord() {
+			// no words in cache
+			if(Data.words.length === 0) {
+				Data.answer = Word_List.getRandomWord();
+			}
+			// words in cache
+			else {
+				Data.answer = Data.words.shift();
+				Data.def = Data.definitions.shift();
+			}
+			for(let x = 0; x < Data.answer.length; x += 1) {
+				Data.guessedWord[x] = ' ';
+			}
+		} // end chooseWord()
+
 		if(hasGuessed()) {
 			const c = confirm('Are you sure you want to start a new game?');
 			if(!c) {
@@ -312,16 +382,27 @@
 		getDef(Data.answer, false);
 		Data.guesses = getNumberOfGuesses();
 		showGuessedLetters();
-		// printScore();
 		drawFrame();
 		placeBlanks();
 		saveData();
-	}
+	} // end beginGame
 
 	function init() {
+
+		function loadGame() {
+			hideGuessedLetters();
+			drawFrame();
+			placeBlanks();
+		}
+
+		addMultipleListeners(document, ['keydown', 'click'], inputHandler);
+
+		// start caching
+		setInterval(cacheWords, 700);
+
 		loadData();
 		setStyle(Data.style);
-		// Hangapp.attachEventHandlers();
+
 		if(!hasGuessed()) {
 			beginGame();
 		} else {
@@ -329,41 +410,10 @@
 		}
 	}
 
-
-	function loadJSON(path, success, error) {
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == XMLHttpRequest.DONE) {
-				if (xhr.status == 200) {
-					if (success)
-						success(JSON.parse(xhr.responseText));
-				} else {
-					if (error)
-						error(xhr);
-				}
-			}
-		};
-		xhr.open('GET', path, true);
-		xhr.send();
-	}
-
-	function hasLocalStorage() {
-		var testingLS = 'testingLS';
-		try {
-			localStorage.setItem(testingLS, testingLS);
-			localStorage.removeItem(testingLS);
-			return true;
-		}
-		catch (e) {
-			console.log('Sorry, your browser does not support Web Storage...');
-			return false;
-		}
-	}
-
 	function saveData() {
-		// if(hasLocalStorage()) {
-		// 	localStorage.setItem('HangappData', JSON.stringify(Data));
-		// }
+		if(hasLocalStorage()) {
+			localStorage.setItem('HangappData', JSON.stringify(Data));
+		}
 	}
 
 	function loadData() {
@@ -387,34 +437,28 @@
 			for(p in d) {
 				Data[p] = d[p];
 			}
-			printScore();
 			selectRadioButtons();
 		} else {
 			console.log('No support for localStorage or none previously saved. Loading default data.');
 			Data = DEFAULT_DATA;
 		}
+
+		printScore();
 	}
 
 	function insertModal(content) {
+
 		function createElement(tagName) {
 			return document.createElement(tagName);
 		}
-		function generateModalContent() {
 
-			// <div class="modal-content">
-			// 	<p>You <span>lose</span>! The word was <span>jazz</span>!</p>
-			// 	<p>American music developed especially from ragtime and blues and characterized by propulsive syncopated rhythms, polyphonic ensemble playing, varying degrees of improvisation, and often deliberate distortions of pitch and timbre</p>
-			// 	<button>New Game</button>
-			// 	<p><span>Wins: <span>5</span></span>
-			// 		<span>Losses: <span>7</span></span></p>
-			// 	<p><a>Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></p>
-			// </div>
+		function generateModalContent() {
 
 			const div = createElement('DIV');
 			div.className = 'modal-content';
 
 			const pMessage = createElement('p');
-			pMessage.innerHTML = 'You <span>' + wonOrLost + '</span>! The word was <span>' + Data.answer + '</span>!';
+			pMessage.innerHTML = 'You ' + wonOrLost + '! The word was ' + Data.answer + '!';
 			div.appendChild(pMessage);
 
 			const pDef = createElement('p');
@@ -430,7 +474,7 @@
 			div.appendChild(button);
 
 			const pScore = createElement('p');
-			pScore.innerHTML = '<span>Wins: <span>' + Data.wins + '</span></span><span>Losses: <span>' + Data.losses + '</span></span>';
+			pScore.innerHTML = 'Wins: ' + Data.wins + ' Losses: ' + Data.losses;
 			div.appendChild(pScore);
 
 			const pCitation = createElement('p');
@@ -438,7 +482,8 @@
 			div.appendChild(pCitation);
 
 			return div;
-		}
+		} // end generateModalContent()
+
 		const modal = document.createElement('DIV');
 		modal.className = 'modal';
 		if(content != undefined) {
@@ -446,7 +491,7 @@
 		}
 		const firstChild = body.children[0];
 		body.insertBefore(modal, firstChild);
-	}
+	} // end insertModal()
 
 	function removeModal() {
 		const modal = document.querySelector('.modal');
@@ -493,38 +538,7 @@
 			// Go!
 			path.style.strokeDashoffset = '0';
 		}
-	}
-
-	function toggleTheme() {
-		if(isDayTheme()) {
-			setStyle('night');
-		} else {
-			setStyle('day');
-		}
-	}
-
-	function setStyle(s) {
-		// highlightEffect('theme', isDayTheme(), 500);
-		themeLink.href = 'assets/css/' + s + '.css';
-		Data.style = s
-		saveData();
-	}
-
-	function highlightEffect(target, t, length) {
-		// var highlightTarget = document.getElementById(target);
-		// if(t) {
-		// 	highlightTarget.style.color = 'white';
-		// 	setTimeout(function() {
-		// 		highlightTarget.style.color = '#818181';
-		// 	}, length);
-		// } else {
-		// 	highlightTarget.style.color = 'black';
-		// 	setTimeout(function() {
-		// 		highlightTarget.style.color = '#7E7E7E';
-		// 	}, length);
-		// }
-	}
-	// start caching words
+	} // end svgAnimator()
 
 	/* Event listeners */
 	openbtn.addEventListener('click', (e) => {
@@ -549,62 +563,14 @@
 		const value = e.target.value;
 		if(value === 'day' || value === 'night') {
 			themeLink.href = 'assets/css/' + value + '.css';
+			Data.style = value;
 		} else if('Easy Medium Hard'.includes(value) ) {
 			Difficulty.choose(value);
 		}
+		saveData();
 	});
 
-	letters.addEventListener('click', (e) => {
-		const letter = e.target.textContent.toLowerCase();
-		guess(letter);
-		e.target.style.display = 'none';
-	});
-
-	document.addEventListener('keydown', (event) => {
-		const pattern = /^[a-z]/;
-		const key = event.key;
-		// letter
-		if(key.match(pattern) && !hasEnded()) {
-			guess(key);
-			hideGuessedLetters();
-		}
-		// new game
-		else if(key === 'Enter' || key === 'N') {
-			if(hasGuessed()) {
-				let c = confirm('Do you want to start a new game?');
-				if(c) {
-					Data.guessedLetters = [];
-					Data.guessedWord = [];
-					saveData();
-					beginGame();
-				}
-			} else {
-				beginGame();
-			}
-		}
-		// Dark theme
-		else if(key === 'D') {
-			setStyle('night');
-		}
-		// Light theme
-		else if(key === 'L') {
-			setStyle('day');
-		}
-		// Easy difficulty
-		else if(key === 'E') {
-			Difficulty.choose('Easy');
-		}
-		// Medium difficulty
-		else if(key === 'M') {
-			Difficulty.choose('Medium');
-		}
-		// Hard difficulty
-		else if(key == 'H') {
-			Difficulty.choose('Hard');
-		}
-	});
-
+	// initialize Hangapp
 	init();
 
-	setInterval(cacheWords, 700);
-// });
+});
