@@ -1,53 +1,90 @@
-#end-screen a {
-	color: black;
+body,
+.instructions,
+.openbtn,
+.letters button,
+.modal-content button,
+.modal-content a {
+  color: #000;
 }
-#guessed-letters button {
-	background-color: white;
-	border-color: black;
-	color: black;
-}
-#hangman svg {
-	border: 1px solid black;
-}
-body {
-	color: black;
-	background-color: white;
-}
-#hangman svg line {
-	stroke:black;
-}
-#new-game button {
-	background-color: white;
-	color: black;
-	border-color: black;
-}
-svg path {
-	stroke: black;
-}
-#canvas_background {
-	fill: white;
-}
-/* Navbar */
+
 .sidebar {
-  background-color: #DFDFDF;
+  background-color: rgba(224, 224, 224, 0.95);
 }
-.sidebar a, #mySidebar span {
-  color: #7E7E7E;
+
+.sidebar a,
+.new-game,
+.sidebar {
+  color: #707070;
 }
-.sidebar a:hover {
-  color: #0E0E0E;
+
+form input + label,
+.sidebar a,
+.new-game {
+  background-color: #e0e0e0;
 }
-.openbtn {
-  background-color: #FFF;
-  color: black;
+
+.closebtn:hover,
+form input:hover + label,
+form input + label:hover,
+.new-game:hover,
+.social-link:hover,
+input[type=radio]:checked + label {
+  color: #383838;
 }
-.openbtn:hover {
-  background-color: #BBB;
+
+header,
+.letters,
+.game-screen,
+.letters button,
+.openbtn,
+.modal-content,
+.modal-content button {
+  background-color: #fff;
 }
-/* Instructions */
-#instructions .left {
-	border-right: solid #7E7E7E 2px;
+
+.letters button {
+  border-color: #000;
 }
-#instructions h3, #instructions span {
-	color: #7E7E7E;
+
+.openbtn:hover,
+.instructions,
+input[type=radio]:checked + label,
+.new-game:hover,
+form input:hover + label,
+.modal-content button:hover {
+  background-color: #a8a8a8;
 }
+
+.instructions .left p {
+  border-right: solid #707070 2px;
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modal-content {
+  border: 1px solid #000;
+}
+
+svg line {
+  stroke: #000;
+}
+
+svg path {
+  stroke: #000;
+}
+
+svg rect {
+  fill: #fff;
+}
+
+.letters button:hover {
+  background-color: #e0e0e0;
+}
+
+.letters button:active {
+  background-color: #a8a8a8;
+}
+
+/*# sourceMappingURL=day.css.map */

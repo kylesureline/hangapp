@@ -1,0 +1,35 @@
+// ======================================
+//  Base
+// ======================================
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	height: 100vh;
+}
+
+header {
+	text-align: center;
+}
+
+h1 {
+	padding: .5em 0;
+	margin: 0;
+	font-size: 1.5em;
+}
+
+button {
+	outline: none;
+}
+
+main {
+	height: calc(100vh - 94px);
+	// min-height: 375px;
+}

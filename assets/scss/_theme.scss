@@ -1,0 +1,146 @@
+// ======================================
+//  All Color Rules
+// ======================================
+
+body,
+.instructions,
+.openbtn,
+.letters button,
+.modal-content button,
+.modal-content a {
+  color: $black;
+}
+
+.sidebar {
+  background-color: rgba(map-get($theme, 4), 0.95);
+}
+
+.sidebar a,
+.new-game,
+.sidebar {
+  color: map-get($theme, 2);
+}
+
+form input + label,
+.sidebar a,
+.new-game {
+  background-color: map-get($theme, 4);
+}
+
+.closebtn:hover,
+form input:hover + label,
+form input + label:hover,
+.new-game:hover,
+.social-link:hover,
+input[type="radio"]:checked + label {
+  color: map-get($theme, 1);
+}
+
+header,
+.letters,
+.game-screen,
+.letters button,
+.openbtn,
+.modal-content,
+.modal-content button {
+  background-color: $white;
+}
+
+.letters button {
+  border-color: $black;
+}
+
+.openbtn:hover,
+.instructions,
+input[type="radio"]:checked + label,
+.new-game:hover,
+form input:hover + label,
+.modal-content button:hover {
+  background-color: map-get($theme, 3);
+}
+
+.instructions .left p {
+  border-right: solid map-get($theme, 2) 2px;
+}
+
+.modal {
+  background-color: rgba($white, 0.8);
+}
+
+.modal-content {
+  border: 1px solid $black;
+}
+
+// SVG Rules
+svg line {
+  stroke: $black;
+}
+
+svg path {
+  stroke: $black;
+}
+
+svg rect {
+  fill: $white;
+}
+
+// letters
+.letters button:hover {
+  background-color: map-get($theme, 4);
+}
+.letters button:active {
+  background-color: map-get($theme, 3);
+}
+// #end-screen a {
+// 	color: black;
+// }
+// #guessed-letters button {
+// 	background-color: white;
+// 	border-color: black;
+// 	color: black;
+// }
+// #hangman svg {
+// 	border: 1px solid black;
+// }
+// body {
+// 	color: black;
+// 	background-color: white;
+// }
+// #hangman svg line {
+// 	stroke:black;
+// }
+// #new-game button {
+// 	background-color: white;
+// 	color: black;
+// 	border-color: black;
+// }
+// svg path {
+// 	stroke: black;
+// }
+// #canvas_background {
+// 	fill: white;
+// } */
+//
+// .sidebar {
+//   background-color: #DFDFDF;
+// }
+// .sidebar a, #mySidebar span {
+//   color: #7E7E7E;
+// }
+// .sidebar a:hover {
+//   color: #0E0E0E;
+// }
+// .openbtn {
+//   background-color: #FFF;
+//   color: black;
+// }
+// .openbtn:hover {
+//   background-color: #BBB;
+// }
+//
+// #instructions .left {
+// 	border-right: solid #7E7E7E 2px;
+// }
+// #instructions h3, #instructions span {
+// 	color: #7E7E7E;
+// }

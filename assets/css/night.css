@@ -1,53 +1,90 @@
-#end-screen a {
-	color: white;
-}
-#guessed-letters button {
-	background-color: black;
-	border-color: white;
-	color: white;
-}
-#hangman svg {
-	border: 1px solid white;
-}
-body {
-	color: white;
-	background-color: black;
-}
-#hangman svg line {
-	stroke: white;
-}
-#new-game button {
-	background-color: black;
-	color: white;
-	border-color: white;
-}
-svg path {
-	stroke: white;
-}
-#canvas_background {
-	fill: black;
-}
-/* Navbar */
-.sidebar {
-  background-color: #202020;
-}
-.sidebar a, #mySidebar span {
-	color: #818181;
-}
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-.openbtn {
-  background-color: #111;
+body,
+.instructions,
+.openbtn,
+.letters button,
+.modal-content button,
+.modal-content a {
   color: white;
 }
-.openbtn:hover {
-  background-color: #444;
+
+.sidebar {
+  background-color: rgba(31, 31, 31, 0.95);
 }
-/* Instructions */
-#instructions .left {
-	border-right: solid #818181 2px;
+
+.sidebar a,
+.new-game,
+.sidebar {
+  color: #8f8f8f;
 }
-#instructions h3, #instructions span {
-	color: #818181;
+
+form input + label,
+.sidebar a,
+.new-game {
+  background-color: #1f1f1f;
 }
+
+.closebtn:hover,
+form input:hover + label,
+form input + label:hover,
+.new-game:hover,
+.social-link:hover,
+input[type=radio]:checked + label {
+  color: #c7c7c7;
+}
+
+header,
+.letters,
+.game-screen,
+.letters button,
+.openbtn,
+.modal-content,
+.modal-content button {
+  background-color: black;
+}
+
+.letters button {
+  border-color: white;
+}
+
+.openbtn:hover,
+.instructions,
+input[type=radio]:checked + label,
+.new-game:hover,
+form input:hover + label,
+.modal-content button:hover {
+  background-color: #575757;
+}
+
+.instructions .left p {
+  border-right: solid #8f8f8f 2px;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  border: 1px solid white;
+}
+
+svg line {
+  stroke: white;
+}
+
+svg path {
+  stroke: white;
+}
+
+svg rect {
+  fill: black;
+}
+
+.letters button:hover {
+  background-color: #1f1f1f;
+}
+
+.letters button:active {
+  background-color: #575757;
+}
+
+/*# sourceMappingURL=night.css.map */

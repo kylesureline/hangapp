@@ -1,83 +1,84 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Hangapp</title>
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<link rel="stylesheet" type="text/css" href="" id="day-night-stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<script type="text/javascript" src="assets/js/wordList.min.js">
-</script>
-<script type="text/javascript" src="assets/js/wordBank.min.js">
-</script>
-<script type="text/javascript" src="assets/js/game.js">
-</script>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<meta charset="UTF-8">
+	<title>Hangapp</title>
 
-<!--WEB APP-->
-<link rel="manifest" href="manifest.json">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#000000"/>
-<!--iOS-->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="Hangapp">
+	<!--Stylesheets-->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/day.css" class="theme">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-<!--icons-->
-<link rel="apple-touch-icon" href="touch-icons/touch-icon-iphone.png">
-<link rel="apple-touch-icon" sizes="152x152" href="touch-icons/touch-icon-ipad.png">
-<link rel="apple-touch-icon" sizes="180x180" href="touch-icons/touch-icon-iphone-retina.png">
-<link rel="apple-touch-icon" sizes="167x167" href="touch-icons/touch-icon-ipad-retina.png">
+	<!--WEB APP-->
+	<link rel="manifest" href="manifest.json">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#000000">
+	<!--iOS-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Hangapp">
 
-<!--Splash Screens-->
-<link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-<link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
-<link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
-<link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+	<!--icons-->
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="touch-icons/touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="touch-icons/touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="touch-icons/touch-icon-iphone-retina.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="touch-icons/touch-icon-ipad-retina.png">
+
+	<!--Splash Screens-->
+	<link href="splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+	<link href="splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+	<link href="splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image">
+	<link href="splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image">
+	<link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+	<link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+	<link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 </head>
 
 <body ontouchstart="">
-	<div id="mySidebar" class="sidebar">
-		<a href="javascript:void(0)" class="closebtn" onclick="Nav.close()"><i class="fas fa-times"></i></a>
-		<a id="toggle-theme" href="javascript:toggleTheme();">Theme</a>
-		<a href="javascript:Hangapp.Difficulty.toggle();">Difficulty</a>
-		<a href="javascript:Hangapp.beginGame()">New Game</a>
-		<a href="javascript:Hangapp.emptyCache()">Empty Cache</a>
-		<a href="https://github.com/kylesureline/hangapp">GitHub <i class="fas fa-external-link-alt"></i></a>
-		<a href="mailto:kyle@kylesureline.com">Contact</a>
-		<div id="nav-info">
-			<span id="theme">Theme: Day</span>
-			<span id="difficulty">Difficulty: Easy</span>
-			<span id="nav-wins"></span>
-			<span id="nav-losses"></span>
-			<span id="nav-cached-words">Cached Words:</span>
-			<span id="version">v1.26</span>
+	<div class="sidebar">
+		<nav class="main-nav">
+			<ul>
+				<li><i class="fas fa-times closebtn"></i></li>
+				<li class="new-game">New Game</li>
+			</ul>
+		</nav>
+
+		<form>
+			<label class="setting" for="theme">Theme:</label>
+			<input id="day" type="radio" name="theme" value="day" checked><label for="day">Day</label>
+			<input id="night" type="radio" name="theme" value="night"><label for="night">Night</label><br>
+			<label class="setting" for="difficulty">Difficulty:</label>
+			<input id="Easy" type="radio" name="difficulty" value="Easy" checked><label for="Easy">Easy</label>
+			<input id="Medium" type="radio" name="difficulty" value="Medium"><label for="Medium">Medium</label>
+			<input id="Hard" type="radio" name="difficulty" value="Hard"><label for="Hard">Hard</label>
+		</form>
+
+		<div class="nav-info">
+			<ul>
+				<li>Wins: <span>0</span></li>
+				<li>Losses: <span>0</span></li>
+				<li>Cached Words: <span>0</span></li>
+				<li>Version: <span>1.27</span></li>
+			</ul>
+			<p><a class="social-link" href="https://github.com/kylesureline/hangapp/"><i class="fab fa-github-square"></i></a> <a class="social-link" href="mailto:kyle@kylesureline.com"><i class="fas fa-envelope-square"></i></a></p>
 		</div>
 	</div>
-	<div id="main">
-		<button id="openbtn" class="openbtn"><i class="fas fa-bars"></i> Hangapp</button>
-		<div id="end-screen">
-			<p id="win-lose">You lose! The word was ____</p>
-			<p id="definition"></p>
-			<div id="new-game"><button onClick="Hangapp.beginGame();">New Game</button></div>
-			<p id="score-wins">Wins: 0</p>
-			<p id="score-losses">Losses: 0</p>
-			<div id="footer"><a id="citation" href="">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a></div>
-		</div>
-		<div id="game-screen">
-			<div id="hangman">
-				<div id="svg-container">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-				<g>
+	<header>
+		<h1>Hangapp</h1>
+		<button class="openbtn"><i class="fas fa-bars"></i> Settings</button>
+	</header>
+
+	<main class="game-screen">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+			<g>
 				<rect fill="#fff" id="canvas_background" height="202" width="202" y="-1" x="-1"/>
-				<g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+					<g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
 				<rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
-				</g>
-				</g>
-				<g>
+			</g>
+			</g>
+			<g>
 				<path id="svg_9" d="m21.16667,179.33333l159.00905,0" stroke-width="3" stroke="#000" fill="none"/>
 				<path id="svg_8" d="m126.83334,179l0,-160.00939" stroke-width="3" stroke="#000" fill="none"/>
 				<path id="svg_7" d="m128.16667,20.33333l-73.33637,0" stroke-width="3" stroke="#000" fill="none"/>
@@ -88,13 +89,11 @@
 				<path id="svg_2" d="m56.875,133.75l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
 				<path id="svg_1" d="m56.375,77l-19.87225,19.87225" stroke-width="3" stroke="#000" fill="none"/>
 				<path id="svg_0" d="m55.625,77l19.44302,19.44302" stroke-width="3" stroke="#000" fill="none"/>
-				</g>
-				</svg>
-				</div>
-			</div>
-			<div id="word">
-			</div>
-			<div id="guessed-letters">
+			</g>
+		</svg>
+		<div class="input">
+			<h2></h2>
+			<div class="letters">
 				<button>A</button>
 				<button>B</button>
 				<button>C</button>
@@ -122,29 +121,35 @@
 				<button>Y</button>
 				<button>Z</button>
 			</div>
-			<div id="instructions">
-				<h3>Keyboard Controls</h3>
-				<div class="left">
-					<span>a-z</span><br>
-					<span>Enter or N</span><br>
-					<span>D</span><br>
-					<span>L</span><br>
-					<span>E</span><br>
-					<span>M</span><br>
-					<span>H</span>
-				</div>
-				<div class="right">
-					<span>Guess</span><br>
-					<span>New Game</span><br>
-					<span>Dark Theme</span><br>
-					<span>Light Theme</span><br>
-					<span>Easy Difficulty</span><br>
-					<span>Medium Difficulty</span><br>
-					<span>Hard Difficulty</span>
-				</div>
+		</div>
+		<div class="instructions">
+			<h3>Keyboard Controls</h3>
+			<div class="left">
+				<p>a-z</p>
+				<p>Enter or N</p>
+				<p>D</p>
+				<p>L</p>
+				<p>E</p>
+				<p>M</p>
+				<p>H</p>
+			</div>
+			<div class="right">
+				<p>Guess</p>
+				<p>New Game</p>
+				<p>Dark Theme</p>
+				<p>Light Theme</p>
+				<p>Easy Difficulty</p>
+				<p>Medium Difficulty</p>
+				<p>Hard Difficulty</p>
 			</div>
 		</div>
-	</div>
+	</main>
+<script type="text/javascript" src="assets/js/wordList.min.js">
+</script>
+<script type="text/javascript" src="assets/js/wordBank.min.js">
+</script>
+<script type="text/javascript" src="assets/js/game.js">
+</script>
 
 <script>
 if ('serviceWorker' in navigator) {
@@ -159,5 +164,6 @@ if ('serviceWorker' in navigator) {
 });
 }
 </script>
+
 </body>
 </html>

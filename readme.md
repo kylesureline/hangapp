@@ -1,6 +1,6 @@
 # Hangapp
 
-A simple Hangman game, built as a Progressive Web App. Playable [here](https://kylesureline.github.io/hangapp/). Also featured on [Appsco.pe](https://appsco.pe/app/hangapp)!
+A simple Hangman game, built as a Progressive Web App. Playable [here](https://kylesureline.github.io/hangapp/). Also featured on [Appsco.pe](https://appsco.pe/app/hangapp) and [Outweb.io](https://outweb.io/1545291231468)!
 
 ## Features
 
@@ -12,6 +12,25 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 - While online, some definitions will be cached for offline use, else no definition will be provided
 
 ### Changelog
+
+**Version 1.27**
+
+- Complete rewrite
+- HTML
+  - Remove IDs cluttering up markup
+  - Use semantic HTML Form markup for game settings
+  - Load JavaScript file last
+- CSS
+  - Split into SASS partials to organize
+  - Vastly improved flexbox layout for all screens
+  - Hide keyboard controls on short screens
+- JavaScript
+  - Use const and let, not var
+  - Nest functions in parent functions
+  - Re-organize the order of functions
+  - Use separate functions, rather than one Hangapp object with methods
+  - Use event handlers, not onClick HTML attributes
+  - Insert a modal for the end screen
 
 **Version 1.26**
 
