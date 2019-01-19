@@ -1,4 +1,253 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
+
+	const body = document.getElementsByTagName('body')[0];
+	const openbtn = document.querySelector('.openbtn');
+	const sidebar = document.querySelector('.sidebar');
+	const sidebarNav = sidebar.querySelector('ul');
+	const sidebarForm = sidebar.querySelector('form');
+	const themeLink = document.querySelector('.theme');
+	const inputDiv = document.querySelector('.input');
+	const wordH2 = inputDiv.querySelector('h2');
+	const letters = document.querySelector('.letters');
+	const DEFAULT_DATA = {
+		style: 'day',
+		wins: 0,
+		losses: 0,
+		guesses: 10,
+		words: [],
+		definitions: [],
+		answer: '',
+		guessedWord: [],
+		guessedLetters: [],
+		def: '',
+		difficulty: 'Easy'
+	};
+	let Data = {};
+	let cacheDef = '';
+
+	const Difficulty = {
+		confirmChange: () => {
+			const c = confirm('Changing difficulty in the middle of game will restart. Are you sure?');
+			if(c) {
+				Data.guessedLetters = [];
+				Data.guessedWord = [];
+				return true;
+			}
+			return false;
+		},
+		toggle: () => {
+			if(Data.difficulty === 'Easy') {
+				Difficulty.choose('Medium');
+			} else if(Data.difficulty === 'Medium') {
+				Difficulty.choose('Hard');
+			} else {
+				Difficulty.choose('Easy');
+			}
+		},
+		choose: (d) => {
+			if(hasGuessed()) {
+				if(Difficulty.confirmChange()) {
+					Data.difficulty = d;
+					Data.guesses = getNumberOfGuesses();
+					// document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
+					drawFrame();
+					beginGame();
+				}
+			}
+			else {
+				Data.difficulty = d;
+				Data.guesses = getNumberOfGuesses();
+				// document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
+				drawFrame();
+			}
+			// highlightEffect("difficulty", !Hangapp.isDayTheme(), 500);
+			saveData();
+		}
+	};
+
+	function hasGuessed() {
+		return Data.guessedLetters.length !== 0;
+	}
+
+	function hasEnded() {
+		return Data.guessedLetters.length === 0 && Data.guessedWord.length === 0;
+	}
+
+	function isDayTheme() {
+		return Data.style === 'day';
+	}
+
+	function getNumberOfGuesses() {
+		if(Data.difficulty === 'Easy') {
+			return 10;
+		}
+		else if(Data.difficulty === 'Medium') {
+			return 7;
+		}
+		return 4;
+	}
+
+	function drawFrame() {
+		let frame = 10;
+		svgAnimator(frame);
+		while(frame >= Data.guesses) {
+			svgAnimator(frame);
+			frame -= 1;
+		}
+	}
+
+	function isOnline() {
+		return navigator.onLine;
+	}
+
+	function cacheWords() {
+		if(isOnline()) {
+			// cache limited number of words
+			if(Data.words.length < 50) {
+				let w = Word_List.getRandomWord();
+				getDef(w, true);
+				setTimeout(() => {
+					if(cacheDef !== '') {
+						// found a word with a definition!
+						Data.words.push(w);
+						Data.definitions.push(cacheDef);
+						highlightEffect('nav-cached-words', !isDayTheme(), 200);
+						saveData();
+						// document.getElementById('nav-cached-words').innerHTML = 'Cached Words: ' + Hangapp.Data.words.length;
+					}
+				}, 500);
+			}
+		}
+	}
+
+	function guessedWordStr() {
+		return Data.guessedWord.toString().replace(/,/g, '');
+	}
+
+	function chooseWord() {
+		// no words in cache
+		if(Data.words.length === 0) {
+			Data.answer = Word_List.getRandomWord();
+		}
+		// words in cache
+		else {
+			Data.answer = Data.words.shift();
+			Data.def = Data.definitions.shift();
+		}
+		for(let x = 0; x < Data.answer.length; x += 1) {
+			Data.guessedWord[x] = ' ';
+		}
+		saveData();
+	}
+
+	function placeBlanks() {
+		// clear the value on the page
+		while(wordH2.firstChild) {
+			wordH2.removeChild(wordH2.firstChild);
+		}
+		// create a span with an underscore for each character of the answer
+		for(let i = 0; i < Data.answer.length; i += 1) {
+			let span = document.createElement('SPAN');
+			if(Data.guessedWord[i] === ' ') {
+				span.textContent = '_';
+			} else {
+				span.textContent = Data.guessedWord[i];
+			}
+			wordH2.appendChild(span);
+		}
+	}
+
+	function getDef(word, toCache) {
+		if(isOnline()) {
+			const apiURL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/' + word + '?key=cb690753-1eb8-4661-a7f4-9adf25057760';
+			loadJSON(apiURL, function(data) {
+				// got a definition! :)
+				try {
+					const type = data[0].fl;
+					const def = data[0].shortdef[0];
+					if (def.length > 250) {
+						def = def.substring(0, 250);
+						def += '...';
+					}
+					if(toCache) {
+						cacheDef = type + ': ' + def;
+					}
+					else {
+						Data.def = type + ': ' + def;
+					}
+				}
+				// couldn't get a definition! :(
+				catch(err) {
+					if(toCache) {
+						cacheDef = '';
+					}
+					else {
+						Data.def = '';
+					}
+				}
+			}, function(xhr) {
+				Data.def = 'Error';
+			});
+		} else {
+			cacheDef = '';
+			Data.def = 'User offline. Reconnect to get definitions.';
+		}
+	}
+
+	function isGuessedLetter(letter) {
+		for(let i = 0; i < Data.guessedLetters.length; i += 1) {
+			if(letter === Data.guessedLetters[i]) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	letters.addEventListener('click', (e) => {
+		const letter = e.target.textContent.toLowerCase();
+		// guess(letter);
+		e.target.style.display = 'none';
+	});
+
+	function guess(letter) {
+		let wrongGuess = 0;
+		if(!isGuessedLetter(letter)) {
+			Data.guessedLetters.push(letter);
+			for(let t = 0; t < Data.answer.length; t += 1) {
+				if(letter === Data.answer[t]) {
+					wordH2.children[t].textContent = letter;
+					Data.guessedWord[t] = letter;
+				}
+				else {
+					wrongGuess += 1;
+				}
+			}
+			if(wrongGuess === Data.answer.length) {
+				Data.guesses -= 1;
+				svgAnimator(Data.guesses);
+			}
+			if(Data.guesses === 0) {
+				lose();
+			}
+			else if(Data.answer === guessedWordStr()) {
+				win();
+			}
+		}
+		saveData();
+	}
+
+	function win() {
+		// document.getElementById('win-lose').innerHTML = 'You win! The word was <span>' + Hangapp.Data.answer +'</span>!';
+		Data.wins += 1;
+		endGame();
+	}
+
+	function lose() {
+		// document.getElementById('win-lose').innerHTML = 'You lose! The word was <span>' + Hangapp.Data.answer +'</span>!';
+		Data.losses += 1;
+		endGame();
+	}
+
 
 	function loadJSON(path, success, error) {
 		var xhr = new XMLHttpRequest();
@@ -45,272 +294,47 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	const DEFAULT_DATA = {
-		style: 'light',
-		wins: 0,
-		losses: 0,
-		guesses: 10,
-		words: [],
-		definitions: [],
-		answer: '',
-		guessedWord: [],
-		guessedLetters: [],
-		def: '',
-		difficulty: 'Easy'
-	};
+	function insertModal(content) {
+		const modal = document.createElement('DIV');
+		const firstChild = body.children[0];
+		modal.className = 'modal';
+		body.insertBefore(modal, firstChild);
+	}
 
-	const openbtn = document.querySelector('.openbtn');
-	const sidebar = document.querySelector('.sidebar');
-	sidebar.style.width = '0'; // give it an initial inline style
-	const closebtn = document.querySelector('.closebtn');
+	function removeModal() {
+		const modal = document.querySelector('.modal');
+		body.removeChild(modal);
+	}
 
+	/* Event listeners */
 	openbtn.addEventListener('click', (e) => {
-		// assume it's closed on load
-		let width = parseInt(sidebar.style.width);
-		if(width === 0) {
-			sidebar.style.width = '275px';
-		} else {
+		insertModal();
+		sidebar.style.width = '275px';
+	});
+
+	sidebarNav.addEventListener('click', (e) => {
+		if(e.target.className.includes('new-game')) {
+			// NEW GAME!!!
+		} else if(e.target.className.includes('closebtn')) {
+			removeModal();
 			sidebar.style.width = '0';
 		}
 	});
 
-	closebtn.addEventListener('click', (e) => {
-		sidebar.style.width = '0';
+	sidebarForm.addEventListener('change', (e) => {
+		const value = e.target.value;
+		if(value === 'day' || value === 'night') {
+			themeLink.href = 'assets/css/' + value + '.css';
+		} else if(value === 'Easy') {
+
+		} else if(value === 'Medium') {
+
+		} else if(value === 'Hard') {
+
+		}
 	});
 
 	const Hangapp = {
-		Data: {},
-		hasGuessed: () => {
-			return Hangapp.Data.guessedLetters.length !== 0;
-		},
-		hasEnded: () => {
-	    return Hangapp.Data.guessedLetters.length === 0 && Hangapp.Data.guessedWord.length === 0;
-		},
-		cacheDef: '',
-		isDayTheme: () => {
-			if(Hangapp.Data.style === 'light') {
-				return true;
-			} else {
-				return false;
-			}
-		},
-		getNumberOfGuesses: () => {
-			if(Hangapp.Data.difficulty == 'Easy') {
-				return 10;
-			}
-			else if(Hangapp.Data.difficulty == 'Medium') {
-				return 7;
-			}
-			else {
-				return 4;
-			}
-		},
-		Difficulty: {
-			check: function() {
-				var c = confirm('Changing difficulty in the middle of game will restart. Are you sure?');
-				if(c) {
-					Hangapp.Data.guessedLetters = [];
-					Hangapp.Data.guessedWord = [];
-					return true;
-				}
-				return false;
-			},
-			toggle: function() {
-				if(Hangapp.Data.difficulty == 'Easy') {
-					Hangapp.Difficulty.choose('Medium');
-				} else if(Hangapp.Data.difficulty == 'Medium') {
-					Hangapp.Difficulty.choose('Hard');
-				} else {
-					Hangapp.Difficulty.choose('Easy');
-				}
-			},
-			choose: function(d) {
-				if(Hangapp.hasGuessed()) {
-					if(Hangapp.Difficulty.check()) {
-						Hangapp.Data.difficulty = d;
-						Hangapp.Data.guesses = Hangapp.getNumberOfGuesses();
-						document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
-						Hangapp.drawFrame();
-						Hangapp.beginGame();
-					}
-				}
-				else {
-					Hangapp.Data.difficulty = d;
-					Hangapp.Data.guesses = Hangapp.getNumberOfGuesses();
-					document.getElementById('difficulty').innerHTML = 'Difficulty: ' + Hangapp.Data.difficulty;
-					Hangapp.drawFrame();
-				}
-				highlightEffect("difficulty", !Hangapp.isDayTheme(), 500);
-				saveData();
-			}
-		},
-		drawFrame: function() {
-			var frame = 10;
-			svgAnimator(frame);
-			while(frame >= Hangapp.Data.guesses) {
-				svgAnimator(frame);
-				frame--;
-			}
-		},
-		emptyCache: function() {
-			if (hasLocalStorage()) {
-				var c = confirm('This will clear your score and all saved words and definitions. Are you sure?');
-				if(c) {
-					localStorage.removeItem('HangappData');
-					location.reload();
-				}
-			}
-		},
-		cacheWords: function() {
-			var online = navigator.onLine;
-			if(online) {
-				// cache limited number of words
-				if(Hangapp.Data.words.length < 50) {
-					var w = Word_List.getRandomWord();
-					Hangapp.getDef(w, true);
-					setTimeout(function() {
-						if(Hangapp.cacheDef != '') {
-							// found a word with a definition!
-							Hangapp.Data.words.push(w);
-							Hangapp.Data.definitions.push(Hangapp.cacheDef);
-							highlightEffect('nav-cached-words', !Hangapp.isDayTheme(), 200);
-							saveData();
-							document.getElementById('nav-cached-words').innerHTML = 'Cached Words: ' + Hangapp.Data.words.length;
-						}
-					}, 500);
-				}
-			}
-		},
-		guessedWordStr: function() {
-			return Hangapp.Data.guessedWord.toString().replace(/,/g, '');
-		},
-		chooseWord: function() {
-			// no words in cache
-			if(Hangapp.Data.words == '') {
-				console.log('No words in cache');
-				Hangapp.Data.answer = Word_List.getRandomWord();
-			}
-			// words in cache
-			else {
-				console.log('Words in cache');
-				Hangapp.Data.answer = Hangapp.Data.words.shift();
-				Hangapp.Data.def = Hangapp.Data.definitions.shift();
-			}
-			for(var x = 0; x < Hangapp.Data.answer.length; x++) {
-				Hangapp.Data.guessedWord[x] = ' ';
-			}
-	    saveData();
-		},
-		placeBlanks: function() {
-			// clear the value on the page
-			document.getElementById('word').innerHTML = '';
-			// create a span with an underscore for each character of the answer
-			for(var i = 0; i < Hangapp.Data.answer.length; i++) {
-				var node = document.createElement('SPAN');
-				node.setAttribute('id', 'answer-' + i);
-				if(Hangapp.Data.guessedWord[i] === ' ') {
-					var textNode = document.createTextNode('_');
-				}
-				else {
-					var textNode = document.createTextNode(Hangapp.Data.guessedWord[i]);
-				}
-				node.appendChild(textNode);
-				document.getElementById('word').appendChild(node);
-			}
-		},
-		getDef: function(word, toCache) {
-			var online = navigator.onLine;
-			if(online) {
-				var apiURL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/' + word + '?key=cb690753-1eb8-4661-a7f4-9adf25057760';
-				loadJSON(apiURL, function(data) {
-					// got a definition! :)
-					try {
-						var type = data[0].fl;
-						var def = data[0].shortdef[0];
-						if (def.length > 250) {
-							def = def.substring(0, 250);
-							def += '...';
-						}
-						if(toCache) {
-							Hangapp.cacheDef = type + ': ' + def;
-						}
-						else {
-							Hangapp.Data.def = type + ': ' + def;
-						}
-					}
-					// couldn't get a definition! :(
-					catch(err) {
-						if(toCache) {
-							Hangapp.cacheDef = '';
-						}
-						else {
-							Hangapp.Data.def = '';
-						}
-					}
-				}, function(xhr) {
-					Hangapp.Data.def = 'Error';
-				});
-			} else {
-				Hangapp.cacheDef = '';
-				Hangapp.Data.def = 'User offline. Reconnect to get definitions.';
-			}
-		},
-		isGuessedLetter: function(ltr) {
-			for(var u = 0; u < Hangapp.Data.guessedLetters.length; u++) {
-				if(ltr == Hangapp.Data.guessedLetters[u]) {
-					return true;
-				}
-			}
-			return false;
-		},
-		guess: function(a) {
-	    if(!Hangapp.hasEnded()) {
-				// click guess
-				try {
-					var ltr = this.innerHTML.toLowerCase();
-				}
-				// keyboard guess
-				catch (e) {
-					var ltr = a;
-				}
-
-				var wrongGuess = 0;
-				if(!Hangapp.isGuessedLetter(ltr)) {
-					Hangapp.Data.guessedLetters.push(ltr);
-					for(var t = 0; t < Hangapp.Data.answer.length; t++) {
-						if(ltr == Hangapp.Data.answer[t]) {
-							document.getElementById('answer-' + t).innerHTML = ltr;
-							Hangapp.Data.guessedWord[t] = ltr;
-						}
-						else {
-							wrongGuess++;
-						}
-						document.getElementById('guess-' + ltr).style.display = 'none';
-					}
-					if(wrongGuess == Hangapp.Data.answer.length) {
-						Hangapp.Data.guesses--;
-						svgAnimator(Hangapp.Data.guesses);
-					}
-					if(Hangapp.Data.guesses == 0) {
-						Hangapp.lose();
-					}
-					else if(Hangapp.Data.answer == Hangapp.guessedWordStr()) {
-						Hangapp.win();
-					}
-				}
-				saveData();
-			}
-		},
-		win: function() {
-			document.getElementById('win-lose').innerHTML = 'You win! The word was <span>' + Hangapp.Data.answer +'</span>!';
-			Hangapp.Data.wins++;
-			Hangapp.endGame();
-		},
-		lose: function() {
-			document.getElementById('win-lose').innerHTML = 'You lose! The word was <span>' + Hangapp.Data.answer +'</span>!';
-			Hangapp.Data.losses++;
-			Hangapp.endGame();
-		},
 		endGame: function() {
 			saveData();
 			document.getElementById('definition').innerHTML = Hangapp.Data.def;
@@ -608,4 +632,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	// start caching words
 	// setInterval(Hangapp.cacheWords, 700);
-});
+// });
