@@ -541,25 +541,24 @@ svg {
 @media screen and (min-width: 568px) and (orientation: landscape) {
   .modal-content {
     width: 70%;
-    font-size: 20px;
   }
 }
 @media (min-width: 768px) {
   .modal-content {
     width: 60%;
+    max-width: 800px;
   }
+}
+
+.modal-content,
+.modal-content button {
+  font-size: 1.2em;
 }
 
 .modal-content button {
   width: auto;
   margin: 0 auto;
   padding: 0.5em 1em;
-  font-size: 16px;
-}
-@media screen and (min-width: 568px) and (orientation: landscape) {
-  .modal-content button {
-    font-size: 20px;
-  }
 }
 
 .game-screen {

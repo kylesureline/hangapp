@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			return false;
 		},
 		choose: (d) => {
+			if(Data.difficulty === d) {
+				return true;
+			}
 			if(hasGuessed()) {
 				if(Difficulty.confirmChange()) {
 					Data.difficulty = d;
@@ -118,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		let letter = '';
 
 		if(event.key === undefined) {
-			if(event.target.tagName === 'BUTTON') {
+			if(event.target.tagName === 'BUTTON' && event.target.textContent != 'New Game') {
 				letter = event.target.textContent.toLowerCase();
 			}
 		} else {
@@ -303,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		let wrongGuess = 0;
-		if(!isGuessedLetter(letter)) {
+		if(letter.length < 2 && !isGuessedLetter(letter)) {
 			Data.guessedLetters.push(letter);
 			for(let t = 0; t < Data.answer.length; t += 1) {
 				if(letter === Data.answer[t]) {
