@@ -485,7 +485,7 @@ svg {
 }
 @media screen and (min-width: 568px) and (orientation: landscape) {
   svg {
-    flex: 0 1 50%;
+    flex: 0 1 35%;
   }
 }
 
@@ -514,7 +514,7 @@ svg {
 }
 @media screen and (min-width: 568px) and (orientation: landscape) {
   .input {
-    flex: 0 1 50%;
+    flex: 0 1 65%;
   }
 }
 
