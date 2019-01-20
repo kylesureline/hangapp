@@ -9,6 +9,7 @@ body,
 .modal-content button,
 .modal-content a {
   color: $black;
+  background-color: $white;
 }
 
 .sidebar {
@@ -72,6 +73,10 @@ form input:hover + label,
 }
 
 // SVG Rules
+svg {
+  stroke-width: 2;
+  stroke: $black;
+}
 svg line {
   stroke: $black;
 }

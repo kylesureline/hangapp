@@ -28,6 +28,11 @@
 .modal-content,
 .modal-content button {
   font-size: 1.2em;
+  @media screen and (min-width: 568px) and (orientation: landscape) {
+    @media (max-height: 375px) {
+      font-size: 1em;
+    }
+  }
 }
 
 .modal-content button {

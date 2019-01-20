@@ -5,6 +5,7 @@ body,
 .modal-content button,
 .modal-content a {
   color: white;
+  background-color: black;
 }
 
 .sidebar {
@@ -65,6 +66,11 @@ form input:hover + label,
 
 .modal-content {
   border: 1px solid white;
+}
+
+svg {
+  stroke-width: 2;
+  stroke: white;
 }
 
 svg line {
