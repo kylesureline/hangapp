@@ -465,9 +465,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			pMessage.innerHTML = 'You ' + wonOrLost + '! The word was ' + Data.answer + '!';
 			div.appendChild(pMessage);
 
-			const pDef = createElement('p');
-			pDef.textContent = Data.def;
-			div.appendChild(pDef);
+			if(Data.def !== '') {
+				const pDef = createElement('p');
+				pDef.textContent = Data.def;
+				div.appendChild(pDef);
+			}
 
 			const button = createElement('button');
 			button.textContent = 'New Game';

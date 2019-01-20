@@ -349,6 +349,13 @@ body {
   -webkit-touch-callout: none;
   height: 100vh;
 }
+@media screen and (min-width: 568px) and (orientation: landscape) and (max-height: 375px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
 
 header {
   text-align: center;
@@ -359,13 +366,18 @@ h1 {
   margin: 0;
   font-size: 1.5em;
 }
+@media screen and (min-width: 568px) and (orientation: landscape) and (max-height: 375px) {
+  h1 {
+    display: none;
+  }
+}
 
 button {
   outline: none;
 }
 
 main {
-  height: calc(100vh - 94px);
+  height: calc(100% - 94px);
 }
 
 .sidebar {
@@ -455,18 +467,18 @@ input[type=radio] + label {
   border-radius: 6px;
   cursor: pointer;
   flex: 0 1 15%;
-  font-size: 24px;
+  font-size: 1.5em;
   padding: 0;
   margin: 2px;
 }
 @media screen and (min-width: 568px) and (orientation: landscape) and (max-height: 375px) {
   .letters button {
-    flex: 0 1 10%;
+    flex: 0 1 12%;
   }
 }
 @media (min-width: 768px) {
   .letters button {
-    font-size: 36px;
+    font-size: 2em;
   }
 }
 
@@ -485,7 +497,7 @@ svg {
 }
 @media screen and (min-width: 568px) and (orientation: landscape) {
   svg {
-    flex: 0 1 35%;
+    flex: 0 1 30%;
   }
 }
 
@@ -496,7 +508,7 @@ svg {
 }
 .input h2 {
   flex: 0 1 10%;
-  padding: 1em 0;
+  padding: 0.5em 0;
   margin: 0;
 }
 .input h2 span {
@@ -514,7 +526,7 @@ svg {
 }
 @media screen and (min-width: 568px) and (orientation: landscape) {
   .input {
-    flex: 0 1 65%;
+    flex: 0 1 70%;
   }
 }
 
@@ -553,6 +565,12 @@ svg {
 .modal-content,
 .modal-content button {
   font-size: 1.2em;
+}
+@media screen and (min-width: 568px) and (orientation: landscape) and (max-height: 375px) {
+  .modal-content,
+.modal-content button {
+    font-size: 1em;
+  }
 }
 
 .modal-content button {
