@@ -13,6 +13,12 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.30**
+
+- Change: Remove empty background-modal between sidebar and game screen
+- Fix: Quirky behavior involving using the keyboard to start a new game at certain points in the app
+- Fix: Choosing the day theme now correctly inserts the "day.css" file, not "light.css" which doesn't exist
+
 **Version 1.29**
 
 - Change: Disable a letter if you've guessed it, rather than hide it

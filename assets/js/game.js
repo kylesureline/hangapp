@@ -138,16 +138,20 @@ document.addEventListener('DOMContentLoaded', () => {
 						Data.guessedLetters = [];
 						Data.guessedWord = [];
 						beginGame();
+						removeModal();
+						sidebar.style.width = '';
 					}
 				} else {
 					beginGame();
+					removeModal();
+					sidebar.style.width = '';
 				}
 				break;
 			case 'D':
 				setStyle('night');
 				break;
 			case 'L':
-				setStyle('light');
+				setStyle('day');
 				break;
 			case 'E':
 				Difficulty.choose('Easy');
@@ -497,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const modal = document.createElement('DIV');
 		modal.className = 'modal';
-		if(content != undefined) {
+		if(content !== undefined) {
 			modal.appendChild(generateModalContent());
 		}
 		const firstChild = body.children[0];
@@ -553,14 +557,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	/* Event listeners */
 	openbtn.addEventListener('click', (e) => {
-		insertModal();
+		// insertModal();
 		sidebar.style.width = '275px';
 	});
 
 	sidebarNav.addEventListener('click', (e) => {
 		function close() {
 			removeModal();
-			sidebar.style.width = '0';
+			sidebar.style.width = '';
 		}
 		if(e.target.className.includes('new-game')) {
 			beginGame();
