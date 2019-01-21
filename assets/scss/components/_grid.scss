@@ -27,7 +27,7 @@
 
 .modal-content,
 .modal-content button {
-  font-size: 1.2em;
+  font-size: 1.1em;
   @media screen and (min-width: 568px) and (orientation: landscape) {
     @media (max-height: 375px) {
       font-size: 1em;
@@ -39,6 +39,11 @@
 	width: auto;
 	margin: 0 auto;
 	padding: 0.5em 1em;
+}
+
+.modal-content p {
+  line-height: 1.2;
+  margin: .5em 0;
 }
 
 .game-screen {

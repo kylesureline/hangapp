@@ -13,6 +13,14 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.29**
+
+- Change: Disable a letter if you've guessed it, rather than hide it
+- Change: Add a border to the new game button on the end screen
+- Change: Make the sidebar more transparent
+- Fix: Don't remove modal while sidebar is open when starting a new game with keydown
+- Fix: Starting a new game while offline wasn't updating the number of remaining cached words
+
 **Version 1.28**
 
 - Small tweaks to layout to fix landscape on mobile

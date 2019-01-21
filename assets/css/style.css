@@ -530,6 +530,10 @@ svg {
   }
 }
 
+input[type=radio] + label {
+  font-size: 1.2em;
+}
+
 .modal {
   text-align: center;
   position: absolute;
@@ -564,7 +568,7 @@ svg {
 
 .modal-content,
 .modal-content button {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 @media screen and (min-width: 568px) and (orientation: landscape) and (max-height: 375px) {
   .modal-content,
@@ -577,6 +581,11 @@ svg {
   width: auto;
   margin: 0 auto;
   padding: 0.5em 1em;
+}
+
+.modal-content p {
+  line-height: 1.2;
+  margin: 0.5em 0;
 }
 
 .game-screen {
