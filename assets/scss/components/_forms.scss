@@ -24,3 +24,7 @@
     flex: 0 1 70%;
   }
 }
+
+input[type="radio"] + label {
+	font-size: 1.2em;
+}

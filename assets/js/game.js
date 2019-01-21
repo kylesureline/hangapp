@@ -338,7 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function showGuessedLetters() {
 		for(let i = 0; i < letters.children.length; i += 1) {
-			letters.children[i].style.display = '';
+			// letters.children[i].style.display = '';
+			let button = letters.children[i];
+			button.className = '';
+			button.disabled = false;
 		}
 	}
 
@@ -349,7 +352,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				let button = letters.children[t];
 				let buttonLetter = button.textContent.toLowerCase();
 				if(guessedLetter === buttonLetter) {
-					button.style.display = 'none';
+					// button.style.display = 'none';
+					button.className = 'chosen';
+					button.disabled = true;
 				}
 			}
 		}
@@ -380,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		Data.guessedWord = [];
 		Data.guessedLetters = [];
-		removeModal();
+		printScore();
 		chooseWord();
 		getDef(Data.answer, false);
 		Data.guesses = getNumberOfGuesses();

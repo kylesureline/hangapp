@@ -13,7 +13,7 @@ body,
 }
 
 .sidebar {
-  background-color: rgba(map-get($theme, 4), 0.95);
+  background-color: rgba(map-get($theme, 4), 0.65);
 }
 
 .sidebar a,
@@ -23,7 +23,6 @@ body,
 }
 
 form input + label,
-.sidebar a,
 .new-game {
   background-color: map-get($theme, 4);
 }
@@ -72,6 +71,10 @@ form input:hover + label,
   border: 1px solid $black;
 }
 
+.modal-content button {
+  border: 2px solid;
+}
+
 // SVG Rules
 svg {
   stroke-width: 2;
@@ -95,6 +98,12 @@ svg rect {
 }
 .letters button:active {
   background-color: map-get($theme, 3);
+}
+.letters .chosen:hover,
+.letters .chosen:active,
+.letters .chosen {
+  background-color: map-get($theme, 2);
+  cursor: default;
 }
 // #end-screen a {
 // 	color: black;

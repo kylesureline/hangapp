@@ -9,7 +9,7 @@ body,
 }
 
 .sidebar {
-  background-color: rgba(31, 31, 31, 0.95);
+  background-color: rgba(31, 31, 31, 0.65);
 }
 
 .sidebar a,
@@ -19,7 +19,6 @@ body,
 }
 
 form input + label,
-.sidebar a,
 .new-game {
   background-color: #1f1f1f;
 }
@@ -68,6 +67,10 @@ form input:hover + label,
   border: 1px solid white;
 }
 
+.modal-content button {
+  border: 2px solid;
+}
+
 svg {
   stroke-width: 2;
   stroke: white;
@@ -91,6 +94,13 @@ svg rect {
 
 .letters button:active {
   background-color: #575757;
+}
+
+.letters .chosen:hover,
+.letters .chosen:active,
+.letters .chosen {
+  background-color: #8f8f8f;
+  cursor: default;
 }
 
 /*# sourceMappingURL=night.css.map */
