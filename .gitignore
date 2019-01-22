@@ -1,2 +1,5 @@
 .DS_Store
-assets/css/style.css.map
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
