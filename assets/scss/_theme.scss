@@ -13,7 +13,7 @@ body,
 }
 
 .sidebar {
-  background-color: rgba(map-get($theme, 4), 0.75);
+  background-color: rgba(map-get($theme, 4), 0.85);
 }
 
 .sidebar a,
@@ -23,7 +23,9 @@ body,
 }
 
 form input + label,
-.new-game {
+.new-game,
+.nav-info ul,
+.home-link {
   background-color: map-get($theme, 4);
 }
 
@@ -32,7 +34,8 @@ form input:hover + label,
 form input + label:hover,
 .new-game:hover,
 .social-link:hover,
-input[type="radio"]:checked + label {
+input[type="radio"]:checked + label,
+.home-link:hover {
   color: map-get($theme, 1);
 }
 
@@ -55,7 +58,8 @@ header,
 input[type="radio"]:checked + label,
 .new-game:hover,
 form input:hover + label,
-.modal-content button:hover {
+.modal-content button:hover,
+.home-link:hover {
   background-color: map-get($theme, 3);
 }
 

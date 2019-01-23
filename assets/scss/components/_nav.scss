@@ -19,7 +19,6 @@
 
 ul {
 	list-style: none;
-	padding: 0;
 }
 
 .closebtn {
@@ -54,7 +53,9 @@ form input[type="radio"] {
   display: none;
 }
 
-input[type="radio"] + label {
+input[type="radio"] + label,
+.nav-info ul,
+.home-link {
   padding: .2em .5em;
 }
 
@@ -67,6 +68,10 @@ input[type="radio"]:checked + label:hover {
   margin: 0 .2em;
 }
 
+.home-link {
+  font-size: 1.2em;
+}
+
 .new-game,
 .closebtn,
 input[type="radio"] + label {
@@ -74,9 +79,15 @@ input[type="radio"] + label {
 }
 
 .new-game,
-input[type="radio"] + label {
+input[type="radio"] + label,
+.nav-info ul,
+.home-link {
   border: 2px solid;
   border-radius: 6px;
+}
+
+.nav-info ul {
+  display: inline-block;
 }
 
 .openbtn {
