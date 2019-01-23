@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.33**
+
+- Change: Nav fits better on smaller screens
+
 **Version 1.32**
 
 - Fix: re-center the new game button on the nav bar

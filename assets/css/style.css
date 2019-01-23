@@ -393,10 +393,21 @@ main {
   transition-property: width;
   text-align: center;
 }
+@media screen and (max-height: 480px) {
+  .sidebar {
+    font-size: 0.8em;
+    padding-top: 40px;
+  }
+}
 
 ul {
   list-style: none;
   padding: 0;
+}
+@media screen and (max-height: 480px) {
+  ul {
+    margin: 0.5em 0;
+  }
 }
 
 .closebtn {
@@ -421,9 +432,31 @@ ul {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+@media screen and (max-height: 480px) {
+  .setting {
+    margin: 0.5em 0;
+  }
+}
 
 form {
-  padding: 1em 0;
+  padding-bottom: 1em;
+}
+@media screen and (max-height: 480px) {
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+  }
+}
+
+@media screen and (max-height: 480px) {
+  form .form-left,
+form .form-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 
 form input[type=radio] {
@@ -434,6 +467,13 @@ input[type=radio] + label,
 .nav-info ul,
 .home-link {
   padding: 0.2em 0.5em;
+}
+@media screen and (max-height: 480px) {
+  input[type=radio] + label,
+.nav-info ul,
+.home-link {
+    padding: 0.4em 0.75em;
+  }
 }
 
 input[type=radio]:checked + label:hover {
