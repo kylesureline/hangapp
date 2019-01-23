@@ -15,11 +15,18 @@
 	transition: 1s;
 	transition-property: width;
 	text-align: center;
+  @media screen and (max-height: 480px) {
+    font-size: .8em;
+    padding-top: 40px;
+  }
 }
 
 ul {
 	list-style: none;
   padding: 0;
+  @media screen and (max-height: 480px) {
+    margin: .5em 0;
+  }
 }
 
 .closebtn {
@@ -44,10 +51,24 @@ ul {
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
+  @media screen and (max-height: 480px) {
+    margin: .5em 0;
+  }
 }
 
 form {
-  padding: 1em 0;
+  padding-bottom: 1em;
+  @media screen and (max-height: 480px) {
+    @include flexy($disp: flex, $dir: row, $just: space-around);
+    padding: 0;
+  }
+}
+
+form .form-left,
+form .form-right {
+  @media screen and (max-height: 480px) {
+    @include flexy($disp: flex, $dir: column, $just: space-around);
+  }
 }
 
 form input[type="radio"] {
@@ -58,6 +79,9 @@ input[type="radio"] + label,
 .nav-info ul,
 .home-link {
   padding: .2em .5em;
+  @media screen and (max-height: 480px) {
+    padding: .4em .75em;
+  }
 }
 
 input[type="radio"]:checked + label:hover {
