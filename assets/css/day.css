@@ -9,7 +9,7 @@ body,
 }
 
 .sidebar {
-  background-color: rgba(224, 224, 224, 0.75);
+  background-color: rgba(224, 224, 224, 0.85);
 }
 
 .sidebar a,
@@ -19,7 +19,9 @@ body,
 }
 
 form input + label,
-.new-game {
+.new-game,
+.nav-info ul,
+.home-link {
   background-color: #e0e0e0;
 }
 
@@ -28,7 +30,8 @@ form input:hover + label,
 form input + label:hover,
 .new-game:hover,
 .social-link:hover,
-input[type=radio]:checked + label {
+input[type=radio]:checked + label,
+.home-link:hover {
   color: #383838;
 }
 
@@ -51,7 +54,8 @@ header,
 input[type=radio]:checked + label,
 .new-game:hover,
 form input:hover + label,
-.modal-content button:hover {
+.modal-content button:hover,
+.home-link:hover {
   background-color: #a8a8a8;
 }
 
