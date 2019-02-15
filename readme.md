@@ -17,6 +17,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 - Added: The type of word (ie. noun) now displays under the word you're guessing
 - Change: Refactored AJAX call to use Fetch API
+- Change: Skip words that are 4 letters or shorter
 
 **Version 1.33**
 

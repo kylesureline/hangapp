@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 			wordH2.appendChild(span);
 		}
-		hint.textContent = `(${Data.answer.type})`;
+		hint.textContent = `${Data.answer.type}`;
 	}
 
 	function cacheWords() {
@@ -236,7 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
 							type: type,
 							def: def
 						};
-						Data.cache.push(wordObj);
+						// skip words 4 letters or shorter
+						if(word.length >= 5) {
+							Data.cache.push(wordObj);
+						}
 						printScore();
 					} catch (err) {
 						console.log(`No definition retrieved. Skipping ${word}.`);
