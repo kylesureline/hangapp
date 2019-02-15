@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.35**
+
+- Fix: Display hint on mobile
+
 **Version 1.34**
 
 - Added: The type of word (ie. noun) now displays under the word you're guessing

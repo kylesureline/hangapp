@@ -596,6 +596,7 @@ svg {
 .hint {
   font-style: italic;
   padding: 0.25em 0;
+  flex: 0 1 10%;
 }
 
 input[type=radio] + label {
@@ -671,7 +672,7 @@ input[type=radio] + label {
 }
 
 .letters {
-  flex: 0 1 90%;
+  flex: 0 1 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
