@@ -1,6 +1,6 @@
 # Hangapp
 
-A simple Hangman game, built as a Progressive Web App. Playable [here](https://kylesureline.github.io/hangapp/). Also featured on [Appsco.pe](https://appsco.pe/app/hangapp) and [Outweb.io](https://outweb.io/1545291231468)!
+A simple Hangman game, built as a Progressive Web App. Playable [here](https://kylesureline.com/hangapp/). Also featured on [Appsco.pe](https://appsco.pe/app/hangapp) and [Outweb.io](https://outweb.io/1545291231468)!
 
 ## Features
 
@@ -12,6 +12,12 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 - While online, some definitions will be cached for offline use, else no definition will be provided
 
 ### Changelog
+
+**Version 1.34**
+
+- Added: The type of word (ie. noun) now displays under the word you're guessing
+- Change: Refactored AJAX call to use Fetch API
+- Change: Skip words that are 4 letters or shorter
 
 **Version 1.33**
 
