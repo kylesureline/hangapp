@@ -393,7 +393,7 @@ main {
   transition-property: width;
   text-align: center;
 }
-@media screen and (max-height: 560px) {
+@media screen and (max-height: 540px) {
   .sidebar {
     font-size: 0.8em;
     padding-top: 40px;
@@ -404,7 +404,7 @@ ul {
   list-style: none;
   padding: 0;
 }
-@media screen and (max-height: 560px) {
+@media screen and (max-height: 540px) {
   ul {
     margin: 0.5em 0;
   }
@@ -432,7 +432,7 @@ ul {
   margin-top: 1em;
   margin-bottom: 1em;
 }
-@media screen and (max-height: 560px) {
+@media screen and (max-height: 540px) {
   .setting {
     margin: 0.5em 0;
   }
@@ -441,7 +441,7 @@ ul {
 form {
   padding-bottom: 1em;
 }
-@media screen and (max-height: 560px) {
+@media screen and (max-height: 540px) {
   form {
     display: flex;
     flex-direction: row;
@@ -450,7 +450,7 @@ form {
   }
 }
 
-@media screen and (max-height: 560px) {
+@media screen and (max-height: 540px) {
   form .form-left,
 form .form-right {
     display: flex;
@@ -468,7 +468,7 @@ input[type=radio] + label,
 .home-link {
   padding: 0.2em 0.5em;
 }
-@media screen and (max-height: 560px) {
+@media screen and (max-height: 540px) {
   input[type=radio] + label,
 .nav-info ul,
 .home-link {
@@ -512,7 +512,7 @@ input[type=radio] + label,
   }
 }
 
-@media screen and (max-height: 560px) {
+@media screen and (max-height: 540px) {
   .sidebar p {
     margin: 0.7em 0;
   }
