@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
 	const body = document.getElementsByTagName('body')[0];
 	const openbtn = document.querySelector('.openbtn');
@@ -217,11 +217,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		            .catch(error => console.log('Looks like there was a problem', error));
 		}
 
+		// skip words shorter than 5 letters
+		let word = Word_List.getRandomWord();
+		while(word.length < 5) {
+			word = Word_List.getRandomWord();
+		}
+
 		if(Data.cache.length < 50 && isOnline()) {
-
-			// main
-			const word = Word_List.getRandomWord();
-
 			fetchData(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=cb690753-1eb8-4661-a7f4-9adf25057760`)
 				.then(data => {
 					try {
@@ -236,10 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 							type: type,
 							def: def
 						};
-						// skip words 4 letters or shorter
-						if(word.length >= 5) {
-							Data.cache.push(wordObj);
-						}
+						Data.cache.push(wordObj);
 						printScore();
 					} catch (err) {
 						console.log(`No definition retrieved. Skipping ${word}.`);
@@ -247,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				});
 		}
 
-		setTimeout(cacheWords, 250);
+		setTimeout(cacheWords, 100);
 	}
 
 	function guess(letter) {
@@ -564,4 +563,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	// initialize Hangapp
 	init();
 
-});
+// });
