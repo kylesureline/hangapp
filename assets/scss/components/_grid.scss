@@ -55,7 +55,7 @@
 }
 
 .letters {
-	flex: 0 1 90%;
+	flex: 0 1 80%;
   @include flexy($disp: flex, $wrap: wrap, $just: space-around);
 }
 
