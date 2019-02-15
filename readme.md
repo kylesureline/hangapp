@@ -13,6 +13,11 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.34**
+
+- Added: The type of word (ie. noun) now displays under the word you're guessing
+- Change: Refactored AJAX call to use Fetch API
+
 **Version 1.33**
 
 - Change: Nav fits better on smaller screens

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const themeLink = document.querySelector('.theme');
 	const inputDiv = document.querySelector('.input');
 	const wordH2 = inputDiv.querySelector('h2');
+	const hint = inputDiv.querySelector('.hint');
 	const letters = document.querySelector('.letters');
 	const navInfoUL = sidebar.querySelector('.nav-info ul');
 	let wonOrLost = '';
@@ -22,12 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		wins: 0,
 		losses: 0,
 		guesses: 10,
-		words: [],
-		definitions: [],
-		answer: '',
+		cache: [],
+		answer: {},
 		guessedWord: [],
 		guessedLetters: [],
-		def: '',
 		difficulty: 'Easy'
 	};
 	let Data = {};
@@ -183,32 +182,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	  }
 	}
 
-	function cacheWords() {
-		if(isOnline()) {
-			// cache limited number of words
-			if(Data.words.length < 50) {
-				let w = Word_List.getRandomWord();
-				getDef(w, true);
-				setTimeout(() => {
-					if(cacheDef !== '') {
-						// found a word with a definition!
-						Data.words.push(w);
-						Data.definitions.push(cacheDef);
-						saveData();
-					}
-				}, 500);
-			}
-			printScore();
-		}
-	}
-
 	function placeBlanks() {
 		// remove the answer word from the page
 		while(wordH2.firstChild) {
 			wordH2.removeChild(wordH2.firstChild);
 		}
 		// create a span with an underscore for each character of the answer
-		for(let i = 0; i < Data.answer.length; i += 1) {
+		for(let i = 0; i < Data.answer.word.length; i += 1) {
 			let span = document.createElement('SPAN');
 			if(Data.guessedWord[i] === ' ') {
 				span.textContent = '_';
@@ -217,61 +197,54 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 			wordH2.appendChild(span);
 		}
+		hint.textContent = `(${Data.answer.type})`;
 	}
 
-	function getDef(word, toCache) {
+	function cacheWords() {
 
-		function loadJSON(path, success, error) {
-			var xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState == XMLHttpRequest.DONE) {
-					if (xhr.status == 200) {
-						if (success)
-							success(JSON.parse(xhr.responseText));
-					} else {
-						if (error)
-							error(xhr);
-					}
-				}
-			};
-			xhr.open('GET', path, true);
-			xhr.send();
+		// helper functions
+		function checkStatus(response) {
+		  if(response.ok) {
+		    return Promise.resolve(response);
+		  } else {
+		    return Promise.reject(new Error(response.statusText));
+		  }
+		}
+		function fetchData(url) {
+		  return fetch(url)
+		            .then(checkStatus)
+		            .then(res => res.json())
+		            .catch(error => console.log('Looks like there was a problem', error));
 		}
 
-		if(isOnline()) {
-			const apiURL = 'https://dictionaryapi.com/api/v3/references/collegiate/json/' + word + '?key=cb690753-1eb8-4661-a7f4-9adf25057760';
-			loadJSON(apiURL, function(data) {
-				// got a definition! :)
-				try {
-					const type = data[0].fl;
-					const def = data[0].shortdef[0];
-					if (def.length > 250) {
-						def = def.substring(0, 250);
-						def += '...';
+		if(Data.cache.length < 50 && isOnline()) {
+
+			// main
+			const word = Word_List.getRandomWord();
+
+			fetchData(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=cb690753-1eb8-4661-a7f4-9adf25057760`)
+				.then(data => {
+					try {
+						const type = data[0].fl;
+						const def = data[0].shortdef[0];
+						if (def.length > 250) {
+							def = def.substring(0, 250);
+							def += '...';
+						}
+						let wordObj = {
+							word: word,
+							type: type,
+							def: def
+						};
+						Data.cache.push(wordObj);
+						printScore();
+					} catch (err) {
+						console.log(`No definition retrieved. Skipping ${word}.`);
 					}
-					if(toCache) {
-						cacheDef = type + ': ' + def;
-					}
-					else {
-						Data.def = type + ': ' + def;
-					}
-				}
-				// couldn't get a definition! :(
-				catch(err) {
-					if(toCache) {
-						cacheDef = '';
-					}
-					else {
-						Data.def = '';
-					}
-				}
-			}, function(xhr) {
-				Data.def = 'Error';
-			});
-		} else {
-			cacheDef = '';
-			Data.def = 'User offline. Reconnect to get definitions.';
+				});
 		}
+
+		setTimeout(cacheWords, 250);
 	}
 
 	function guess(letter) {
@@ -312,8 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		let wrongGuess = 0;
 		if(letter.length < 2 && !isGuessedLetter(letter)) {
 			Data.guessedLetters.push(letter);
-			for(let t = 0; t < Data.answer.length; t += 1) {
-				if(letter === Data.answer[t]) {
+			for(let t = 0; t < Data.answer.word.length; t += 1) {
+				if(letter === Data.answer.word[t]) {
 					wordH2.children[t].textContent = letter;
 					Data.guessedWord[t] = letter;
 				}
@@ -321,14 +294,14 @@ document.addEventListener('DOMContentLoaded', () => {
 					wrongGuess += 1;
 				}
 			}
-			if(wrongGuess === Data.answer.length) {
+			if(wrongGuess === Data.answer.word.length) {
 				Data.guesses -= 1;
 				svgAnimator(Data.guesses);
 			}
 			if(Data.guesses === 0) {
 				lose();
 			}
-			else if(Data.answer === guessedWordStr()) {
+			else if(Data.answer.word === guessedWordStr()) {
 				win();
 			}
 		}
@@ -337,12 +310,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	function printScore() {
 		navInfo.wins.textContent = Data.wins;
 		navInfo.losses.textContent = Data.losses;
-		navInfo.cachedWords.textContent = Data.words.length;
+		navInfo.cachedWords.textContent = Data.cache.length;
 	}
 
 	function showGuessedLetters() {
 		for(let i = 0; i < letters.children.length; i += 1) {
-			// letters.children[i].style.display = '';
 			let button = letters.children[i];
 			button.className = '';
 			button.disabled = false;
@@ -356,7 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				let button = letters.children[t];
 				let buttonLetter = button.textContent.toLowerCase();
 				if(guessedLetter === buttonLetter) {
-					// button.style.display = 'none';
 					button.className = 'chosen';
 					button.disabled = true;
 				}
@@ -368,15 +339,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		function chooseWord() {
 			// no words in cache
-			if(Data.words.length === 0) {
-				Data.answer = Word_List.getRandomWord();
+			if(Data.cache.length === 0) {
+				Data.answer.word = Word_List.getRandomWord();
+				Data.answer.type = '';
+				Data.answer.def = '';
 			}
 			// words in cache
 			else {
-				Data.answer = Data.words.shift();
-				Data.def = Data.definitions.shift();
+				let wordObj = Data.cache.shift();
+				Data.answer.word = wordObj.word;
+				Data.answer.type = wordObj.type;
+				Data.answer.def = wordObj.def;
 			}
-			for(let x = 0; x < Data.answer.length; x += 1) {
+			for(let x = 0; x < Data.answer.word.length; x += 1) {
 				Data.guessedWord[x] = ' ';
 			}
 		} // end chooseWord()
@@ -391,7 +366,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		Data.guessedLetters = [];
 		printScore();
 		chooseWord();
-		getDef(Data.answer, false);
 		Data.guesses = getNumberOfGuesses();
 		showGuessedLetters();
 		drawFrame();
@@ -409,10 +383,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		addMultipleListeners(document, ['keydown', 'click'], inputHandler);
 
-		// start caching
-		setInterval(cacheWords, 700);
-
 		loadData();
+
+		// start caching
+		cacheWords();
 
 		if(!hasGuessed()) {
 			beginGame();
@@ -471,12 +445,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			div.className = 'modal-content';
 
 			const pMessage = createElement('p');
-			pMessage.innerHTML = 'You ' + wonOrLost + '! The word was ' + Data.answer + '!';
+			pMessage.innerHTML = `You ${wonOrLost}! The word was ${Data.answer.word}!`;
 			div.appendChild(pMessage);
 
-			if(Data.def !== '') {
+			if(Data.answer.def !== '') {
 				const pDef = createElement('p');
-				pDef.textContent = Data.def;
+				pDef.textContent = `${Data.answer.type}: ${Data.answer.def}`;
 				div.appendChild(pDef);
 			}
 
@@ -493,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			div.appendChild(pScore);
 
 			const pCitation = createElement('p');
-			pCitation.innerHTML = '<a href="https://www.merriam-webster.com/dictionary/' + Data.answer + '/">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a>';
+			pCitation.innerHTML = '<a href="https://www.merriam-webster.com/dictionary/' + Data.answer.word + '/">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a>';
 			div.appendChild(pCitation);
 
 			return div;
@@ -557,7 +531,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	/* Event listeners */
 	openbtn.addEventListener('click', (e) => {
-		// insertModal();
 		sidebar.style.width = '275px';
 	});
 

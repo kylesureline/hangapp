@@ -571,7 +571,7 @@ svg {
 }
 .input h2 {
   flex: 0 1 10%;
-  padding: 0.5em 0;
+  padding-top: 0.5em;
   margin: 0;
 }
 .input h2 span {
@@ -591,6 +591,11 @@ svg {
   .input {
     flex: 0 1 70%;
   }
+}
+
+.hint {
+  font-style: italic;
+  padding: 0.25em 0;
 }
 
 input[type=radio] + label {
