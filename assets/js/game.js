@@ -405,6 +405,23 @@
 
 	function loadData() {
 
+		function backwardsCompatFix() {
+			if(Data.words !== undefined) {
+				console.log('Old localStorage format found! Fixing...');
+				Data.cache = Data.words.map((word, index) => {
+					let wordObj = {
+						word: word,
+						type: '',
+						def: Data.definitions[index]
+					}
+					return wordObj;
+				});
+				delete Data.words;
+				delete Data.definitions;
+				console.log('Fixed!');
+			}
+		}
+
 		function checkRadioButtons() {
 			const radioButtons = sidebarForm.querySelectorAll('input');
 
@@ -426,6 +443,7 @@
 			for(p in d) {
 				Data[p] = d[p];
 			}
+			backwardsCompatFix();
 			checkRadioButtons();
 		} else {
 			console.log('No support for localStorage or none previously saved. Loading default data.');
