@@ -16,6 +16,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 **Version 1.37**
 
 - Refactor cacheWords() algorithm
+- Add fix for old localStorage format
 
 **Version 1.36**
 
