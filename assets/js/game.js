@@ -409,10 +409,14 @@
 			if(Data.words !== undefined) {
 				console.log('Old localStorage format found! Fixing...');
 				Data.cache = Data.words.map((word, index) => {
+					let typeAndDefinition = Data.definitions[index].split(': ');
+					let type = typeAndDefinition[0];
+					let def = typeAndDefinition[1];
+
 					let wordObj = {
 						word: word,
-						type: '',
-						def: Data.definitions[index]
+						type: type,
+						def: def
 					}
 					return wordObj;
 				});
