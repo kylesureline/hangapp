@@ -223,7 +223,7 @@
 			word = Word_List.getRandomWord();
 		}
 
-		if(Data.cache.length < 50 && isOnline()) {
+		if(Data.cache.length < 49 && isOnline()) {
 			fetchData(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=cb690753-1eb8-4661-a7f4-9adf25057760`)
 				.then(data => {
 					try {
@@ -245,6 +245,8 @@
 					}
 				});
 		}
+
+		saveData();
 
 		setTimeout(cacheWords, 100);
 	}
