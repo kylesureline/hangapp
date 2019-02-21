@@ -1,4 +1,4 @@
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
 	const body = document.getElementsByTagName('body')[0];
 	const openbtn = document.querySelector('.openbtn');
@@ -594,4 +594,4 @@
 	// initialize Hangapp
 	init();
 
-// });
+});
