@@ -411,7 +411,6 @@
 
 		function backwardsCompatFix() {
 			if(Data.words !== undefined) {
-				console.log('Old localStorage format found! Fixing...');
 				Data.cache = Data.words.map((word, index) => {
 					let typeAndDefinition = Data.definitions[index].split(': ');
 					let type = typeAndDefinition[0];
@@ -426,8 +425,13 @@
 				});
 				delete Data.words;
 				delete Data.definitions;
-				beginGame();
-				console.log('Fixed!');
+			}
+			if(typeof Data.answer === 'string') {
+				Data.answer = {
+					word: Data.answer,
+					type: '',
+					def: ''
+				}
 			}
 		}
 
