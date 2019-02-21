@@ -217,13 +217,14 @@
 		            .catch(error => console.log('Looks like there was a problem', error));
 		}
 
-		// skip words shorter than 5 letters
-		let word = Word_List.getRandomWord();
-		while(word.length < 5) {
-			word = Word_List.getRandomWord();
-		}
+		if(Data.cache.length < 49 && isOnline()) {
 
-		if(Data.cache.length < 50 && isOnline()) {
+			// skip words shorter than 5 letters
+			let word = Word_List.getRandomWord();
+			while(word.length < 5) {
+				word = Word_List.getRandomWord();
+			}
+
 			fetchData(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=cb690753-1eb8-4661-a7f4-9adf25057760`)
 				.then(data => {
 					try {
@@ -244,6 +245,9 @@
 						console.log(`No definition retrieved. Skipping ${word}.`);
 					}
 				});
+
+			saveData();
+
 		}
 
 		setTimeout(cacheWords, 100);
@@ -407,18 +411,27 @@
 
 		function backwardsCompatFix() {
 			if(Data.words !== undefined) {
-				console.log('Old localStorage format found! Fixing...');
 				Data.cache = Data.words.map((word, index) => {
+					let typeAndDefinition = Data.definitions[index].split(': ');
+					let type = typeAndDefinition[0];
+					let def = typeAndDefinition[1];
+
 					let wordObj = {
 						word: word,
-						type: '',
-						def: Data.definitions[index]
+						type: type,
+						def: def
 					}
 					return wordObj;
 				});
 				delete Data.words;
 				delete Data.definitions;
-				console.log('Fixed!');
+			}
+			if(typeof Data.answer === 'string') {
+				Data.answer = {
+					word: Data.answer,
+					type: '',
+					def: ''
+				}
 			}
 		}
 
