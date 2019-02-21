@@ -217,13 +217,14 @@
 		            .catch(error => console.log('Looks like there was a problem', error));
 		}
 
-		// skip words shorter than 5 letters
-		let word = Word_List.getRandomWord();
-		while(word.length < 5) {
-			word = Word_List.getRandomWord();
-		}
-
 		if(Data.cache.length < 49 && isOnline()) {
+
+			// skip words shorter than 5 letters
+			let word = Word_List.getRandomWord();
+			while(word.length < 5) {
+				word = Word_List.getRandomWord();
+			}
+
 			fetchData(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=cb690753-1eb8-4661-a7f4-9adf25057760`)
 				.then(data => {
 					try {
@@ -244,9 +245,10 @@
 						console.log(`No definition retrieved. Skipping ${word}.`);
 					}
 				});
-		}
 
-		saveData();
+			saveData();
+
+		}
 
 		setTimeout(cacheWords, 100);
 	}
@@ -424,6 +426,7 @@
 				});
 				delete Data.words;
 				delete Data.definitions;
+				beginGame();
 				console.log('Fixed!');
 			}
 		}
