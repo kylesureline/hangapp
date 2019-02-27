@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.39**
+
+- Fix: limit cache to 50 words (really)
+
 **Version 1.38**
 
 - Refactor fix for old localStorage format

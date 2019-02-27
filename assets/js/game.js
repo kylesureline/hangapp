@@ -217,7 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		            .catch(error => console.log('Looks like there was a problem', error));
 		}
 
-		if(Data.cache.length < 49 && isOnline()) {
+		// stop sending new requests when you reach 50 (or are offline)
+		if(Data.cache.length < 50 && isOnline()) {
 
 			// skip words shorter than 5 letters
 			let word = Word_List.getRandomWord();
@@ -249,8 +250,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			saveData();
 
 		}
-
-		setTimeout(cacheWords, 100);
+		// send requests slower the more words in cache
+		let delay = Data.cache.length * 20;
+		if(delay < 100) {
+			delay += 100;
+		} else if(delay > 1000) {
+			delay = 1000;
+		}
+		setTimeout(cacheWords, delay);
 	}
 
 	function guess(letter) {
