@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.40**
+
+- Change: If offline, wait 10 seconds before trying to fetch another definition to cache
+
 **Version 1.39**
 
 - Fix: limit cache to 50 words (really)

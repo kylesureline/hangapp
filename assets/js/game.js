@@ -202,6 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function cacheWords() {
 
+		const CACHE_MAX = 50;
+
 		// helper functions
 		function checkStatus(response) {
 		  if(response.ok) {
@@ -218,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		// stop sending new requests when you reach 50 (or are offline)
-		if(Data.cache.length < 50 && isOnline()) {
+		if(Data.cache.length < CACHE_MAX && isOnline()) {
 
 			// skip words shorter than 5 letters
 			let word = Word_List.getRandomWord();
@@ -250,13 +252,28 @@ document.addEventListener('DOMContentLoaded', () => {
 			saveData();
 
 		}
-		// send requests slower the more words in cache
+
+		// trim cache to 50 if slow fetch results in more than 50 words
+		while(Data.cache.length > CACHE_MAX) {
+			Data.cache.pop();
+			saveData();
+			printScore();
+		}
+
+		// send requests slower the more words already in cache
 		let delay = Data.cache.length * 20;
 		if(delay < 100) {
 			delay += 100;
 		} else if(delay > 1000) {
 			delay = 1000;
 		}
+		// offline? wait 10 seconds before attempting to fetch another definition
+		if(!isOnline()) {
+			delay = 10000;
+		}
+
+		console.log(delay);
+
 		setTimeout(cacheWords, delay);
 	}
 
