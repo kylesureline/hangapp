@@ -272,8 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			delay = 10000;
 		}
 
-		console.log(delay);
-
 		setTimeout(cacheWords, delay);
 	}
 
