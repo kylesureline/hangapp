@@ -138,12 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
 						Data.guessedWord = [];
 						beginGame();
 						removeModal();
-						sidebar.style.width = '';
+						sidebar.style.left = '-275px';
 					}
 				} else {
 					beginGame();
 					removeModal();
-					sidebar.style.width = '';
+					sidebar.style.left = '-275px';
 				}
 				break;
 			case 'D':
@@ -271,8 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		if(!isOnline()) {
 			delay = 10000;
 		}
-
-		console.log(delay);
 
 		setTimeout(cacheWords, delay);
 	}
@@ -588,13 +586,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	/* Event listeners */
 	openbtn.addEventListener('click', (e) => {
-		sidebar.style.width = '275px';
+		sidebar.style.left = '0px';
 	});
 
 	sidebarNav.addEventListener('click', (e) => {
 		function close() {
 			removeModal();
-			sidebar.style.width = '';
+			sidebar.style.left = '-275px';
 		}
 		if(e.target.className.includes('new-game')) {
 			beginGame();
