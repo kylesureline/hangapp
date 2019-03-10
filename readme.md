@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.42**
+
+- Link to definition on m-w.com now opens in a new tab
+
 **Version 1.41**
 
 - Change how sidebar slides into view

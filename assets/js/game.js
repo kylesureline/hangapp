@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			div.appendChild(pScore);
 
 			const pCitation = createElement('p');
-			pCitation.innerHTML = '<a href="https://www.merriam-webster.com/dictionary/' + Data.answer.word + '/">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a>';
+			pCitation.innerHTML = '<a href="https://www.merriam-webster.com/dictionary/' + Data.answer.word + '/" target="_blank">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a>';
 			div.appendChild(pCitation);
 
 			return div;
