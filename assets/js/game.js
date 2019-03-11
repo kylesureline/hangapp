@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		let wrongGuess = 0;
-		if(letter.length < 2 && !isGuessedLetter(letter)) {
+		if(!isGuessedLetter(letter)) {
 			Data.guessedLetters.push(letter);
 			for(let t = 0; t < Data.answer.word.length; t += 1) {
 				if(letter === Data.answer.word[t]) {
@@ -354,17 +354,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function disableGuessedLetters() {
-		for(let i = 0; i < Data.guessedLetters.length; i += 1) {
-			let guessedLetter = Data.guessedLetters[i];
-			for(let t = 0; t < letters.children.length; t += 1) {
-				let button = letters.children[t];
-				let buttonLetter = button.textContent.toLowerCase();
-				if(guessedLetter === buttonLetter) {
-					button.className = 'chosen';
-					button.disabled = true;
-				}
-			}
-		}
+		Data.guessedLetters.forEach( letter => {
+			let i = 0;
+			let button;
+			let buttonLetter;
+			do {
+				button = letters.children[i];
+				buttonLetter = button.textContent.toLowerCase();
+				i += 1;
+			} while(letter !== buttonLetter); // button found, stop searching
+			button.className = 'chosen';
+			button.disabled = true;
+		});
 	}
 
 	function beginGame() {
