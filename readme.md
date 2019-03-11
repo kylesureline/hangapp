@@ -17,6 +17,7 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 - Refactoring
 - Use LinkedIn link instead of Twitter
+- Display % of cache, rather than # of words
 
 **Version 1.42**
 
