@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		difficulty: 'Easy'
 	};
 	let Data = {};
-	let cacheDef = '';
 
 	const Difficulty = {
 		confirmChange: () => {
@@ -68,16 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function hasLocalStorage() {
-		var testingLS = 'testingLS';
 		try {
-			localStorage.setItem(testingLS, testingLS);
-			localStorage.removeItem(testingLS);
-			return true;
-		}
-		catch (e) {
-			console.log('Sorry, your browser does not support Web Storage...');
-			return false;
-		}
+      return 'localStorage' in window && window['localStorage'] !== null;
+    } catch(e){
+      return false;
+    }
 	}
 
 	function hasGuessed() {
