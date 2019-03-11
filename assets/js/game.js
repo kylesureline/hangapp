@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		            .catch(error => console.log('Looks like there was a problem', error));
 		}
 
-		// stop sending new requests when you reach 50 (or are offline)
+		// stop sending new requests when you reach max (or are offline)
 		if(Data.cache.length < CACHE_MAX && isOnline()) {
 
 			// skip words shorter than 5 letters
