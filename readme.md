@@ -13,6 +13,11 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.43**
+
+- Refactoring
+- Use LinkedIn link instead of Twitter
+
 **Version 1.42**
 
 - Link to definition on m-w.com now opens in a new tab
