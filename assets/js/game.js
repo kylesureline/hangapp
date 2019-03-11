@@ -82,10 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		return Data.guessedLetters.length === 0 && Data.guessedWord.length === 0;
 	}
 
-	function isDayTheme() {
-		return Data.style === 'day';
-	}
-
 	function isOnline() {
 		return navigator.onLine;
 	}
