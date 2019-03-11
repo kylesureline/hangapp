@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		function endGame() {
-			insertModal(true);
+			insertModal();
 			saveData();
 			printScore();
 			Data.guessedLetters = [];
@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		printScore();
 	} // end loadData()
 
-	function insertModal(content) {
+	function insertModal() {
 
 		function createElement(tagName) {
 			return document.createElement(tagName);
@@ -501,45 +501,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		function generateModalContent() {
 
-			const div = createElement('DIV');
-			div.className = 'modal-content';
-
-			const pMessage = createElement('p');
-			pMessage.innerHTML = `You ${wonOrLost}! The word was ${Data.answer.word}!`;
-			div.appendChild(pMessage);
-
-			if(Data.answer.def !== '') {
-				const pDef = createElement('p');
-				pDef.textContent = `${Data.answer.type}: ${Data.answer.def}`;
-				div.appendChild(pDef);
+			function hasDefinition() {
+				if(Data.answer.def !== '') {
+					return `<p>${Data.answer.type}: ${Data.answer.def}</p>`;
+				}
+				return '';
 			}
 
-			const button = createElement('button');
-			button.textContent = 'New Game';
-			button.addEventListener('click', () => {
-				beginGame();
-				removeModal();
-			});
-			div.appendChild(button);
-
-			const pScore = createElement('p');
-			pScore.innerHTML = 'Wins: ' + Data.wins + ' Losses: ' + Data.losses;
-			div.appendChild(pScore);
-
-			const pCitation = createElement('p');
-			pCitation.innerHTML = '<a href="https://www.merriam-webster.com/dictionary/' + Data.answer.word + '/" target="_blank">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a>';
-			div.appendChild(pCitation);
-
+			const div = `
+<div class="modal-content">
+	<p>You ${wonOrLost}! The word was ${Data.answer.word}!</p>
+	${hasDefinition()}
+	<button>New Game</button>
+	<p>Wins: ${Data.wins} Losses: ${Data.losses}</p>
+	<p>
+		<a href="https://www.merriam-webster.com/dictionary/${Data.answer.word}/" target="_blank">Definitions provided by m-w.com<i class="fas fa-external-link-alt"></i></a>
+	</p>
+</div>`;
 			return div;
 		} // end generateModalContent()
 
 		const modal = document.createElement('DIV');
 		modal.className = 'modal';
-		if(content !== undefined) {
-			modal.appendChild(generateModalContent());
-		}
-		const firstChild = body.children[0];
-		body.insertBefore(modal, firstChild);
+		// modal.appendChild(generateModalContent());
+		modal.innerHTML = generateModalContent();
+		modal.querySelector('button').addEventListener('click', () => {
+			beginGame();
+			removeModal();
+		});
+		body.insertBefore(modal, body.children[0]);
 	} // end insertModal()
 
 	function removeModal() {
