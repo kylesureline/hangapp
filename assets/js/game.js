@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		function trim() {
 			console.log('Trimming cache...');
-			// trim cache to 50 if slow fetch results in more than 50 words
+			// trim cache if a late fetch results in more than max
 			while(Data.cache.length > CACHE_MAX) {
 				Data.cache.pop();
 				saveData();
