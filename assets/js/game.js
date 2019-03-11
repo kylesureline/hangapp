@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const hint = inputDiv.querySelector('.hint');
 	const letters = document.querySelector('.letters');
 	const navInfoUL = sidebar.querySelector('.nav-info ul');
+	const CACHE_MAX = 50;
 	let wonOrLost = '';
 	const navInfo = {
 		wins: navInfoUL.children[0].firstElementChild,
@@ -30,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		difficulty: 'Easy'
 	};
 	let Data = {};
-	let cacheDef = '';
 
 	const Difficulty = {
 		confirmChange: () => {
@@ -68,16 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function hasLocalStorage() {
-		var testingLS = 'testingLS';
 		try {
-			localStorage.setItem(testingLS, testingLS);
-			localStorage.removeItem(testingLS);
-			return true;
-		}
-		catch (e) {
-			console.log('Sorry, your browser does not support Web Storage...');
-			return false;
-		}
+      return 'localStorage' in window && window['localStorage'] !== null;
+    } catch(e){
+      return false;
+    }
 	}
 
 	function hasGuessed() {
@@ -86,10 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function hasEnded() {
 		return Data.guessedLetters.length === 0 && Data.guessedWord.length === 0;
-	}
-
-	function isDayTheme() {
-		return Data.style === 'day';
 	}
 
 	function isOnline() {
@@ -164,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			default:
 				if(letter.match(pattern) && !hasEnded()) {
 					guess(letter);
-					hideGuessedLetters();
+					disableGuessedLetters();
 				}
 				break;
 		}
@@ -202,7 +193,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function cacheWords() {
 
-		const CACHE_MAX = 50;
+		function trim() {
+			console.log('Trimming cache...');
+			// trim cache to 50 if slow fetch results in more than 50 words
+			while(Data.cache.length > CACHE_MAX) {
+				Data.cache.pop();
+				saveData();
+				printScore();
+			}
+			console.log('Done.');
+		}
 
 		// helper functions
 		function checkStatus(response) {
@@ -253,23 +253,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		}
 
-		// trim cache to 50 if slow fetch results in more than 50 words
-		while(Data.cache.length > CACHE_MAX) {
-			Data.cache.pop();
-			saveData();
-			printScore();
+		// trim cache if a late fetch results in more than max
+		if(Data.cache.length > CACHE_MAX) {
+			trim();
 		}
 
 		// send requests slower the more words already in cache
-		let delay = Data.cache.length * 20;
+		let delay = Data.cache.length * 10;
 		if(delay < 100) {
 			delay += 100;
-		} else if(delay > 1000) {
-			delay = 1000;
+		} else if(delay > 500) {
+			delay = 500;
 		}
 		// offline? wait 10 seconds before attempting to fetch another definition
 		if(!isOnline()) {
 			delay = 10000;
+			console.log('Offline. Will check again in 10 seconds.');
 		}
 
 		setTimeout(cacheWords, delay);
@@ -336,12 +335,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	} // end guess()
 
 	function printScore() {
+
+		function cachePercentage() {
+			return Math.round((Data.cache.length / CACHE_MAX) * 100) + '%';
+		}
+
 		navInfo.wins.textContent = Data.wins;
 		navInfo.losses.textContent = Data.losses;
-		navInfo.cachedWords.textContent = Data.cache.length;
+		navInfo.cachedWords.textContent = cachePercentage();
 	}
 
-	function showGuessedLetters() {
+	function enableLetterButtons() {
 		for(let i = 0; i < letters.children.length; i += 1) {
 			let button = letters.children[i];
 			button.className = '';
@@ -349,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	function hideGuessedLetters() {
+	function disableGuessedLetters() {
 		for(let i = 0; i < Data.guessedLetters.length; i += 1) {
 			let guessedLetter = Data.guessedLetters[i];
 			for(let t = 0; t < letters.children.length; t += 1) {
@@ -395,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		printScore();
 		chooseWord();
 		Data.guesses = getNumberOfGuesses();
-		showGuessedLetters();
+		enableLetterButtons();
 		drawFrame();
 		placeBlanks();
 		saveData();
@@ -404,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	function init() {
 
 		function loadGame() {
-			hideGuessedLetters();
+			disableGuessedLetters();
 			drawFrame();
 			placeBlanks();
 		}
