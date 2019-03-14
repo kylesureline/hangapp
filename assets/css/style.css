@@ -421,10 +421,14 @@ ul {
   cursor: pointer;
 }
 
-.new-game {
+.nav-btn {
   padding: 0.5em 0;
-  margin: 0 0.5em;
+  margin: 0.5em 0.5em;
   font-size: 1.5em;
+}
+
+.install {
+  display: none;
 }
 
 .setting {
@@ -490,13 +494,13 @@ input[type=radio]:checked + label:hover {
   font-size: 1.2em;
 }
 
-.new-game,
+.nav-btn,
 .closebtn,
 input[type=radio] + label {
   cursor: pointer;
 }
 
-.new-game,
+.nav-btn,
 input[type=radio] + label,
 .nav-info ul,
 .home-link {
@@ -654,7 +658,7 @@ input[type=radio] + label {
 }
 
 .modal-content p {
-  line-height: 1.2;
+  line-height: 1.5;
   margin: 0.5em 0;
 }
 

@@ -13,13 +13,13 @@ body,
 }
 
 .sidebar a,
-.new-game,
+.nav-btn,
 .sidebar {
   color: #707070;
 }
 
 form input + label,
-.new-game,
+.nav-btn,
 .nav-info ul,
 .home-link {
   background-color: #e0e0e0;
@@ -28,7 +28,7 @@ form input + label,
 .closebtn:hover,
 form input:hover + label,
 form input + label:hover,
-.new-game:hover,
+.nav-btn:hover,
 .social-link:hover,
 input[type=radio]:checked + label,
 .home-link:hover {
@@ -52,7 +52,7 @@ header,
 .openbtn:hover,
 .instructions,
 input[type=radio]:checked + label,
-.new-game:hover,
+.nav-btn:hover,
 form input:hover + label,
 .modal-content button:hover,
 .home-link:hover {

@@ -39,10 +39,14 @@ ul {
 	cursor: pointer;
 }
 
-.new-game {
+.nav-btn {
   padding: .5em 0;
-  margin: 0 .5em;
+  margin: .5em .5em;
   font-size: 1.5em;
+}
+
+.install {
+  display: none;
 }
 
 // Settings
@@ -97,13 +101,13 @@ input[type="radio"]:checked + label:hover {
   font-size: 1.2em;
 }
 
-.new-game,
+.nav-btn,
 .closebtn,
 input[type="radio"] + label {
 	cursor: pointer;
 }
 
-.new-game,
+.nav-btn,
 input[type="radio"] + label,
 .nav-info ul,
 .home-link {
