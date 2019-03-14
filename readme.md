@@ -13,6 +13,11 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.45**
+
+- Fix modal link line height on small devices
+- Add button to install the app on Chrome
+
 **Version 1.44**
 
 - Refactoring
