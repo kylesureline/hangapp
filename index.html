@@ -34,6 +34,20 @@
 	<link href="splashscreens/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 	<link href="splashscreens/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 	<link href="splashscreens/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+	<!-- Start of Woopra Code -->
+	<script>
+	  (function(){
+	    var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+	  })("woopra");
+
+	  woopra.config({
+	      domain: 'kylesureline.com'
+	  });
+	  woopra.track();
+	</script>
+	<!-- End of Woopra Code -->
+
 </head>
 
 <body ontouchstart="">
@@ -65,7 +79,7 @@
 				<li>Wins: <span>0</span></li>
 				<li>Losses: <span>0</span></li>
 				<li>Cache: <span>0%</span></li>
-				<li>Version: <span>1.45</span></li>
+				<li>Version: <span>1.46</span></li>
 			</ul>
 			<p><a class="social-link" href="https://github.com/kylesureline/hangapp/"><i class="fab fa-github-square"></i></a>
 				<a class="social-link" href="mailto:kyle@kylesureline.com"><i class="fas fa-envelope-square"></i></a>
