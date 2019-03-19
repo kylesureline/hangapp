@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const letters = document.querySelector('.letters');
 	const navInfoUL = sidebar.querySelector('.nav-info ul');
 	const CACHE_MAX = 50;
+	let gamesPerSession = 0;
 	let wonOrLost = '';
 	const navInfo = {
 		wins: navInfoUL.children[0].firstElementChild,
@@ -302,9 +303,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		function endGame() {
+			gamesPerSession += 1;
 			insertModal();
 			saveData();
 			printScore();
+
+		  woopra.track('finish hangman game', {
+		    word: Data.answer.word,
+		    wonOrLost: wonOrLost,
+				guessedWord: Data.guessedWord,
+				guesses: Data.guessedLetters.length,
+				gamesPerSession: gamesPerSession,
+				difficulty: Data.difficulty
+		  });
+
 			Data.guessedLetters = [];
 			Data.guessedWord = [];
 		}

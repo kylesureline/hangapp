@@ -13,6 +13,10 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.47**
+
+- Track custom events with Woopra
+
 **Version 1.46**
 
 - Add Woopra site analytics
