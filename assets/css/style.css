@@ -1,3 +1,7 @@
+.blurred {
+  filter: blur(8px);
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -359,6 +363,7 @@ body {
 
 header {
   text-align: center;
+  transition: 0.4s filter;
 }
 
 h1 {
@@ -378,6 +383,7 @@ button {
 
 main {
   height: calc(100% - 94px);
+  transition: 0.4s filter;
 }
 
 .sidebar {
@@ -390,7 +396,7 @@ main {
   top: 0;
   left: -275px;
   overflow-x: hidden;
-  transition: 1s;
+  transition: 1s left, 0.4s filter;
   transition-property: left;
   text-align: center;
 }
@@ -616,6 +622,7 @@ input[type=radio] + label {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 1000;
 }
 
 .modal-content {

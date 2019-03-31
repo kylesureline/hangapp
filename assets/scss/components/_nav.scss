@@ -12,7 +12,7 @@
 	top: 0;
 	left: -275px;
 	overflow-x: hidden;
-	transition: 1s;
+	transition: 1s left, .4s filter;
 	transition-property: left;
 	text-align: center;
   @media screen and (max-height: 540px) {

@@ -67,10 +67,6 @@ form input:hover + label,
   border-right: solid map-get($theme, 2) 2px;
 }
 
-.modal {
-  background-color: rgba($white, 0.8);
-}
-
 .modal-content {
   border: 1px solid $black;
 }

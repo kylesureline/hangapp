@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	const hint = inputDiv.querySelector('.hint');
 	const letters = document.querySelector('.letters');
 	const navInfoUL = sidebar.querySelector('.nav-info ul');
+	const header = document.querySelector('header');
+	const main = document.querySelector('main');
 	const CACHE_MAX = 50;
 	let gamesPerSession = 0;
 	let wonOrLost = '';
@@ -533,21 +535,32 @@ document.addEventListener('DOMContentLoaded', () => {
 			return div;
 		} // end generateModalContent()
 
+
 		const modal = document.createElement('DIV');
 		modal.className = 'modal';
 		// modal.appendChild(generateModalContent());
 		modal.innerHTML = generateModalContent();
-		modal.querySelector('button').addEventListener('click', () => {
-			beginGame();
-			removeModal();
+		modal.addEventListener('click', (e) => {
+			let target = e.target;
+			if(target.tagName === 'BUTTON' || target.className === 'modal') {
+				beginGame();
+				removeModal();
+			}
 		});
 		body.insertBefore(modal, body.children[0]);
+		// blur effect
+		sidebar.classList.add('blurred');
+		header.classList.add('blurred');
+		main.classList.add('blurred');
 	} // end insertModal()
 
 	function removeModal() {
 		const modal = document.querySelector('.modal');
 		if(modal) {
 			body.removeChild(modal);
+			sidebar.classList.remove('blurred');
+			header.classList.remove('blurred');
+			main.classList.remove('blurred');
 		}
 	}
 
