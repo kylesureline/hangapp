@@ -13,6 +13,11 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.48**
+
+- Clicking outside the modal will now begin a new game
+- Applied a blur effect instead of transparent background behind modal
+
 **Version 1.47**
 
 - Track custom events with Woopra

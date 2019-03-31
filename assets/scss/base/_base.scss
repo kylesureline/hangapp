@@ -22,6 +22,7 @@ body {
 
 header {
 	text-align: center;
+	transition: .4s filter;
 }
 
 h1 {
@@ -41,5 +42,6 @@ button {
 
 main {
 	height: calc(100% - 94px);
+	transition: .4s filter;
 	// min-height: 226px;
 }

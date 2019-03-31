@@ -63,10 +63,6 @@ form input:hover + label,
   border-right: solid #707070 2px;
 }
 
-.modal {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
 .modal-content {
   border: 1px solid #000;
 }
