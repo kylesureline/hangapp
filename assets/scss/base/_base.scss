@@ -13,6 +13,8 @@ body {
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 	height: 100vh;
+	color: var(--color-black);
+	background-color: var(--color-white);
 	@media screen and (min-width: 568px) and (orientation: landscape) {
 		@media (max-height: 375px) {
 			@include flexy($disp: flex, $dir: column, $just: flex-start);

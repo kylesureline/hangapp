@@ -23,3 +23,9 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+.letters .chosen:hover,
+.letters .chosen:active,
+.letters .chosen {
+  cursor: default;
+}

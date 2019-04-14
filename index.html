@@ -6,7 +6,6 @@
 
 	<!--Stylesheets-->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/day.css" class="theme">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
@@ -79,7 +78,7 @@
 				<li>Wins: <span>0</span></li>
 				<li>Losses: <span>0</span></li>
 				<li>Cache: <span>0%</span></li>
-				<li>Version: <span>1.48</span></li>
+				<li>Version: <span>1.49</span></li>
 			</ul>
 			<p><a class="social-link" href="https://github.com/kylesureline/hangapp/"><i class="fab fa-github-square"></i></a>
 				<a class="social-link" href="mailto:kyle@kylesureline.com"><i class="fas fa-envelope-square"></i></a>
@@ -178,13 +177,13 @@
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', function() {
 		navigator.serviceWorker.register('sw.js').then(function(registration) {
-		// Registration was successful
-		console.log('ServiceWorker registration successful with scope: ', registration.scope);
-	}, function(err) {
-		// registration failed :(
-		console.log('ServiceWorker registration failed: ', err);
+			// Registration was successful
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		}, function(err) {
+			// registration failed :(
+			console.log('ServiceWorker registration failed: ', err);
+		});
 	});
-});
 }
 </script>
 

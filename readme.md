@@ -13,6 +13,11 @@ A simple Hangman game, built as a Progressive Web App. Playable [here](https://k
 
 ### Changelog
 
+**Version 1.49**
+
+- Use css variables instead of a separate css file to change theme
+- Remove day/night css file
+
 **Version 1.48**
 
 - Clicking outside the modal will now begin a new game

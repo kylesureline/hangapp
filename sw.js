@@ -1,10 +1,8 @@
-const CACHE_NAME = 'v1.48';
+const CACHE_NAME = 'v1.49';
 
 var urlsToCache = [
 	'index.html',
 	'assets/css/style.css',
-	'assets/css/day.css',
-	'assets/css/night.css',
 	'assets/js/game.js',
 	'assets/js/wordBank.min.js',
 	'assets/js/wordList.min.js'
