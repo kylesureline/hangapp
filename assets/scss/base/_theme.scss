@@ -1,0 +1,126 @@
+// ======================================
+//  Theme
+// ======================================
+
+// CSS Variables
+:root {
+	--color-white: #{$white};
+	--color-black: #{$black};
+	--color-1: #{map-get($theme, 1)};
+	--color-2: #{map-get($theme, 2)};
+	--color-3: #{map-get($theme, 3)};
+	--color-4: #{map-get($theme, 4)};
+	--color-4-transparent: #{rgba(map-get($theme, 4), 0.85)};
+}
+
+[data-theme="night"] {
+	--color-white: #{$black};
+	--color-black: #{$white};
+	--color-1: #{invert(map-get($theme, 1))};
+	--color-2: #{invert(map-get($theme, 2))};
+	--color-3: #{invert(map-get($theme, 3))};
+	--color-4: #{invert(map-get($theme, 4))};
+	--color-4-transparent: #{rgba(invert(map-get($theme, 4)), 0.85)};
+}
+
+body,
+.instructions,
+.openbtn,
+.letters button,
+.modal-content button,
+.modal-content a {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.sidebar {
+  background-color: var(--color-4-transparent);
+}
+
+.sidebar a,
+.nav-btn,
+.sidebar {
+  color: var(--color-2);
+}
+
+form input + label,
+.nav-btn,
+.nav-info ul,
+.home-link {
+  background-color: var(--color-4);
+}
+
+.closebtn:hover,
+form input:hover + label,
+form input + label:hover,
+.nav-btn:hover,
+.social-link:hover,
+input[type="radio"]:checked + label,
+.home-link:hover {
+  color: var(--color-1);
+}
+
+header,
+.letters,
+.game-screen,
+.letters button,
+.openbtn,
+.modal-content,
+.modal-content button {
+  background-color: var(--color-white);
+}
+
+.letters button {
+  border-color: var(--color-black);
+}
+
+.openbtn:hover,
+.instructions,
+input[type="radio"]:checked + label,
+.nav-btn:hover,
+form input:hover + label,
+.modal-content button:hover,
+.home-link:hover {
+  background-color: var(--color-3);
+}
+
+.instructions .left p {
+  border-right: solid var(--color-2) 2px;
+}
+
+.modal-content {
+  border: 1px solid var(--color-black);
+}
+
+.modal-content button {
+  border: 2px solid;
+}
+
+// SVG Rules
+svg {
+  stroke-width: 2;
+  stroke: var(--color-black);
+}
+svg line {
+  stroke: var(--color-black);
+}
+
+svg path {
+  stroke: var(--color-black);
+}
+
+svg rect {
+  fill: var(--color-white);
+}
+
+.letters button:hover {
+  background-color: var(--color-4);
+}
+.letters button:active {
+  background-color: var(--color-3);
+}
+.letters .chosen:hover,
+.letters .chosen:active,
+.letters .chosen {
+  background-color: var(--color-2);
+}

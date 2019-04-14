@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	const sidebar = document.querySelector('.sidebar');
 	const sidebarNav = sidebar.querySelector('ul');
 	const sidebarForm = sidebar.querySelector('form');
-	const themeLink = document.querySelector('.theme');
 	const inputDiv = document.querySelector('.input');
 	const wordH2 = inputDiv.querySelector('h2');
 	const hint = inputDiv.querySelector('.hint');
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	function setStyle(s) {
-		themeLink.href = 'assets/css/' + s + '.css';
+		document.documentElement.setAttribute('data-theme', s);
 		Data.style = s;
 	}
 
@@ -654,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	sidebarForm.addEventListener('change', (e) => {
 		const value = e.target.value;
 		if(value === 'day' || value === 'night') {
-			themeLink.href = 'assets/css/' + value + '.css';
+			document.documentElement.setAttribute('data-theme', value);
 			Data.style = value;
 		} else if('Easy Medium Hard'.includes(value) ) {
 			Difficulty.choose(value);
