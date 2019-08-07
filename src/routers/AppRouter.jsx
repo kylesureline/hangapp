@@ -4,7 +4,9 @@ import createHistory from 'history/createBrowserHistory';
 import HomePage from '../components/HomePage.jsx';
 import LoginPage from '../components/LoginPage.jsx';
 import SignupPage from '../components/SignupPage.jsx';
+import GamePage from '../components/GamePage.jsx';
 import DashboardPage from '../components/DashboardPage.jsx';
+import AboutPage from '../components/AboutPage.jsx';
 import NotFoundPage from '../components/NotFoundPage.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import PublicRoute from './PublicRoute.jsx';
@@ -18,7 +20,9 @@ const AppRouter = () => (
         <PublicRoute path="/" component={HomePage} exact={true} />
         <PublicRoute path="/login" component={LoginPage} />
         <PublicRoute path="/signup" component={SignupPage} />
+        <PrivateRoute path="/play" component={GamePage} />
         <PrivateRoute path="/dashboard" component={DashboardPage} />
+        <Route path="/about" component={AboutPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

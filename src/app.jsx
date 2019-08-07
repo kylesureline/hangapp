@@ -32,7 +32,7 @@ firebase.auth().onAuthStateChanged((user) => {
     store.dispatch(login(user.uid));
     renderApp();
     if(history.location.pathname === '/') {
-      history.push('/dashboard');
+      history.push('/play');
     }
   } else {
     store.dispatch(logout());

@@ -10,10 +10,10 @@ exports[`should render HomePage correctly 1`] = `
     <h1
       className="box-layout__title"
     >
-      Boilerplate
+      Hangapp
     </h1>
     <p>
-      Tagline
+      Test your knowledge!
     </p>
     <div
       className="input-group input-group--centered-column"

@@ -12,10 +12,10 @@ exports[`should render Header correctly 1`] = `
     >
       <Link
         className="header__title"
-        to="/dashboard"
+        to="/play"
       >
         <h1>
-          Boilerplate
+          Hangapp
         </h1>
       </Link>
       <button
