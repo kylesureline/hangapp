@@ -1,8 +1,10 @@
 import React from 'react';
+import SettingsForm from './SettingsForm.jsx';
 
 const DashboardPage = () => (
   <div>
-    Dashboard page
+    DashboardPage
+    <SettingsForm />
   </div>
 );
 
