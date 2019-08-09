@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setTheme, setDifficulty } from '../actions/settings';
+import { setTheme, setDifficulty } from '../../actions/settings';
 
 export class SettingsForm extends React.Component {
   constructor(props) {
