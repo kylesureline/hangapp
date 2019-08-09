@@ -12,18 +12,20 @@ export class SettingsForm extends React.Component {
       error: ''
     };
   }
-  onSettingChange = (e) => {
-    if(e.target.name === 'theme') {
-      this.setState({ 'theme': e.target.value });
-      this.props.setTheme(this.state.theme);
-    } else {
-      this.setState({ 'difficulty': e.target.value });
-      this.props.setDifficulty(this.state.difficulty);
-    }
+  onThemeChange = (e) => {
+    const newTheme = e.target.value;
+    this.setState({ 'theme': newTheme });
+    this.props.setTheme(newTheme);
+  };
+  onDifficultyChange = (e) => {
+    const newDifficulty = e.target.value;
+    this.setState({ 'difficulty': newDifficulty });
+    this.props.setDifficulty(newDifficulty);
   };
   render() {
     return (
       <form className="form" onSubmit={this.onSubmit}>
+        <h3>Settings</h3>
         {this.state.error && <p className="form__error">{this.state.error}</p>}
         <div>
           <label htmlFor="theme">Theme:</label><br />
@@ -33,7 +35,7 @@ export class SettingsForm extends React.Component {
             name="theme"
             value="light"
             checked={this.state.theme === 'light'}
-            onChange={this.onSettingChange} />
+            onChange={this.onThemeChange} />
           <label htmlFor="light">Light</label>
   				<input
             id="dark"
@@ -41,7 +43,7 @@ export class SettingsForm extends React.Component {
             name="theme"
             value="dark"
             checked={this.state.theme === 'dark'}
-            onChange={this.onSettingChange} />
+            onChange={this.onThemeChange} />
           <label htmlFor="dark">Dark</label>
         </div>
         <br /><br />
@@ -53,7 +55,7 @@ export class SettingsForm extends React.Component {
             name="difficulty"
             value="easy"
             checked={this.state.difficulty === 'easy'}
-            onChange={this.onSettingChange} />
+            onChange={this.onDifficultyChange} />
           <label htmlFor="easy">Easy</label>
           <input
             id="medium"
@@ -61,7 +63,7 @@ export class SettingsForm extends React.Component {
             name="difficulty"
             value="medium"
             checked={this.state.difficulty === 'medium'}
-            onChange={this.onSettingChange} />
+            onChange={this.onDifficultyChange} />
           <label htmlFor="medium">Medium</label>
           <input
             id="hard"
@@ -69,7 +71,7 @@ export class SettingsForm extends React.Component {
             name="difficulty"
             value="hard"
             checked={this.state.difficulty === 'hard'}
-            onChange={this.onSettingChange} />
+            onChange={this.onDifficultyChange} />
           <label htmlFor="hard">Hard</label>
         </div>
       </form>

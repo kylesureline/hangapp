@@ -1,9 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const GamePage = () => (
+
+const GamePage = (props) => (
   <div>
     Game page
   </div>
 );
 
-export default GamePage;
+const mapStateToProps = (state) => ({
+  settings: state.settings
+})
+
+export default connect(mapStateToProps)(GamePage);
