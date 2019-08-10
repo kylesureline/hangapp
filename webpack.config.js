@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -12,23 +12,27 @@ if(process.env.NODE_ENV === 'test') {
 
 module.exports = (env) => {
   const isProduction = env === 'production';
-  const CSSExtract = new ExtractTextPlugin('styles.css');
+  const CSSExtract = new MiniCssExtractPlugin('styles.css');
 
   return {
-    entry: ['babel-polyfill', './src/app.jsx'],
+    entry: ['@babel/polyfill', './src/app.jsx'],
     output: {
       path: path.join(__dirname, 'public', 'dist'),
       filename: 'bundle.js'
     },
     module: {
-      rules: [{
-        loader: 'babel-loader',
-        test: /\.jsx?$/,
-        exclude: /node_modules/
-      }, {
-        test: /\.s?css$/,
-        use: CSSExtract.extract({
+      rules: [
+        {
+          loader: 'babel-loader',
+          test: /\.jsx?$/,
+          exclude: /node_modules/
+        },
+        {
+          test: /\.s?css$/,
           use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
             {
               loader: 'css-loader',
               options: {
@@ -42,8 +46,8 @@ module.exports = (env) => {
               }
             }
           ]
-        })
-      }]
+        }
+      ]
     },
     plugins: [
       CSSExtract,

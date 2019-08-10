@@ -6,7 +6,7 @@ import CachePieChart from './DashboardModules/CachePieChart.jsx';
 import PastWords from './DashboardModules/PastWords.jsx';
 import Status from './DashboardModules/Status.jsx';
 
-const DashboardPage = () => (
+export const DashboardPage = () => (
   <div>
     <h2>Dashboard</h2>
     <DashboardModule component={Status} className={'status'} />

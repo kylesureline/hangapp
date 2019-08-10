@@ -20,6 +20,12 @@ exports[`should render HomePage correctly 1`] = `
     >
       <Link
         className="button input-group__item input-group__item--column"
+        to="/about"
+      >
+        About
+      </Link>
+      <Link
+        className="button input-group__item input-group__item--column"
         to="/login"
       >
         Login

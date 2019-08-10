@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import GamePage from '../../components/GamePage.jsx';
+import { DashboardPage } from '../../components/DashboardPage.jsx';
 
-test('should render GamePage correctly', () => {
-  const wrapper = shallow(<GamePage />);
+test('should render DashboardPage correctly', () => {
+  const wrapper = shallow(<DashboardPage />);
   expect(wrapper).toMatchSnapshot();
 });

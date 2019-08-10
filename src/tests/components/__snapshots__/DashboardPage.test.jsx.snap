@@ -1,7 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render GamePage correctly 1`] = `
+exports[`should render DashboardPage correctly 1`] = `
 <div>
-  Game page
+  <h2>
+    Dashboard
+  </h2>
+  <DashboardModule
+    className="status"
+    component={[Function]}
+  />
+  <DashboardModule
+    className="settings"
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(SettingsForm)",
+        "type": [Function],
+      }
+    }
+  />
+  <DashboardModule
+    className="history"
+    component={[Function]}
+  />
+  <DashboardModule
+    className="device-storage"
+    component={[Function]}
+  />
 </div>
 `;
