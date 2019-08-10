@@ -3,35 +3,26 @@ import { connect } from 'react-redux';
 import HangmanSVG from './HangmanSVG.jsx';
 import LetterGrid from './LetterGrid.jsx';
 import Answer from './Answer.jsx';
+import { initializeGame } from '../actions/game';
 
-export class GamePage extends React.Component {
-  constructor(props) {
-    super(props);
+export const GamePage = (props) => {
+  const dummyWord = {
+    word: 'hangapp',
+    wordType: 'noun',
+    def: 'A Hangman game built by Kyle Scheuerlein'
+  };
+  props.initializeGame(dummyWord, 10);
+  return (
+    <div>
+      <HangmanSVG />
+      <Answer/>
+      <LetterGrid />
+    </div>
+  );
+};
 
-    this.state = {
-      answer: {
-        word: 'hangapp',
-        type: 'noun',
-        def: 'A Hangman game built as a React web app by Kyle Scheuerlein'
-      },
-      guessedLetters: [],
-      guessedWord: [],
-      guessed: 10
-    }
-  }
-  render() {
-    return (
-      <div>
-        <HangmanSVG />
-        <Answer answer={this.state.answer.word}/>
-        <LetterGrid />
-      </div>
-    );
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  initializeGame: (word, guessesRemaining) => dispatch(initializeGame(word, guessesRemaining))
+});
 
-const mapStateToProps = (state) => ({
-  settings: state.settings
-})
-
-export default connect(mapStateToProps)(GamePage);
+export default connect(undefined, mapDispatchToProps)(GamePage);
