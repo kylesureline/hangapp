@@ -6,8 +6,8 @@ export class Answer extends React.Component {
     super(props);
   }
   render() {
-    const wordArray = this.props.player.answer.word.split('');
-    const guessedWord = this.props.player.guessedWord;
+    const wordArray = this.props.answer.word.split('');
+    const guessedWord = this.props.guessedWord;
     return (
       <div>
         <h2>{wordArray.map((letter, index) => {
@@ -23,7 +23,8 @@ export class Answer extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-  player: state.player
+  answer: state.player.answer,
+  guessedWord: state.player.guessedWord
 });
 
 export default connect(mapStateToProps)(Answer);

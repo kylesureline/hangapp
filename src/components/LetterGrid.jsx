@@ -13,15 +13,15 @@ export class LetterGrid extends React.Component {
     }
   };
   isGuessedLetter = (letter) => {
-    const guessedLetters = this.props.player.guessedLetters;
+    const guessedLetters = this.props.guessedLetters;
     if(guessedLetters.indexOf(letter) === -1) {
       return false;
     }
     return true;
   };
   checkWord = (letter) => {
-    const answer = this.props.player.answer.word;
-    const guessedWord = this.props.player.guessedWord;
+    const answer = this.props.answer.word;
+    const guessedWord = this.props.guessedWord;
     let wrong = 0;
     for(let i = 0; i < answer.length; i++) {
       if(letter === answer[i]) {
@@ -34,9 +34,9 @@ export class LetterGrid extends React.Component {
     if(wrong === answer.length) {
       this.props.wrongGuess();
     }
-    if(answer === guessedWord.join('') && this.props.player.guessesRemaining > 0) {
+    if(answer === guessedWord.join('') && this.props.guessesRemaining > 0) {
       this.props.startAddWin();
-      this.props.startAddWord(this.props.player.answer);
+      this.props.startAddWord(this.props.answer);
     }
   };
   render() {
@@ -53,7 +53,10 @@ export class LetterGrid extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-  player: state.player
+  answer: state.player.answer,
+  guessedLetters: state.player.guessedLetters,
+  guessesRemaining: state.player.guessesRemaining,
+  guessedWord: state.player.guessedWord
 });
 
 const mapDispatchToProps = (dispatch) => ({
