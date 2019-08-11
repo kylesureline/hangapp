@@ -27,3 +27,10 @@ export const fetchData = (url) => {
 
 export const hasWordsInLocalStorage = () => (!!localStorage.getItem('cachedWords'));
 export const hasPastGamesInLocalStorage = () => (!!localStorage.getItem('pastGames'));
+
+export const getWordFromLocalStorage = () => {
+  const data = JSON.parse(localStorage.getItem('cachedWords'));
+  const word = data.pop();
+  localStorage.setItem('cachedWords', JSON.stringify(data));
+  return word;
+};

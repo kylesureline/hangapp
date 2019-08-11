@@ -6,7 +6,7 @@ const CACHE_MAX = 100;
 export const cacheWords = () => {
   if(hasLocalStorageSupport()) {
 
-    const addWord = (word) => {
+    const addWordToLocalStorage = (word) => {
       const data = localStorage.getItem('cachedWords');
       if(!!data) {
         const newData = JSON.parse(data);
@@ -60,7 +60,7 @@ export const cacheWords = () => {
   						type: type,
   						def: def
   					};
-  					addWord(wordObj);
+  					addWordToLocalStorage(wordObj);
   				} catch (err) {
   					console.log(`No definition retrieved. Skipping ${word}.`);
   				}

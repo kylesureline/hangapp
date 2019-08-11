@@ -11,14 +11,6 @@ const defaultGameState = {
 
 export default (state = defaultGameState, action) => {
   switch(action.type) {
-    case 'INIT_GAME':
-      return {
-        ...state,
-        answer: action.answer,
-        guessedLetters: [],
-        guessedWord: action.answer.word.split('').map((letter) => ' '),
-        guessesRemaining: action.guessesRemaining
-      };
     case 'GUESS_LETTER':
       return {
         ...state,
@@ -37,11 +29,52 @@ export default (state = defaultGameState, action) => {
       return {
         ...state,
         stats: action.stats
-      }
+      };
     case 'SET_PAST_GAMES':
       return {
         ...state,
         pastGames: action.pastGames
+      };
+    case 'SET_GUESSES_REMAINING':
+      return {
+        ...state,
+        guessesRemaining: action.guessesRemaining
+      }
+    case 'CHOOSE_DEFAULT_WORD':
+      return {
+        ...state,
+        answer: {
+          word: 'hangapp',
+          wordType: 'noun',
+          def: 'A hangman game built as a React PWA by Kyle Scheuerlein'
+        }
+      };
+    case 'CHOOSE_RANDOM_WORD':
+      return {
+        ...state,
+        answer: action.answer
+      }
+    case 'ADD_WORD':
+      return {
+        ...state,
+        pastGames: [
+          ...state.pastGames,
+          action.answer
+        ]
+      }
+    case 'ADD_WIN':
+      return {
+        ...state,
+        stats: {
+          wins: state.stats.wins + 1
+        }
+      }
+    case 'ADD_LOSS':
+      return {
+        ...state,
+        stats: {
+          losses: state.stats.losses + 1
+        }
       }
     default:
       return state;

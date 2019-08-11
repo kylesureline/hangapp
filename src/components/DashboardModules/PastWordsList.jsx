@@ -5,11 +5,13 @@ import PastWordsListItem from './PastWordsListItem.jsx';
 export const PastWordsList = (props) => (
   <div>
     {
-      props.pastWords.length === 0 ? (
+      props.pastGames.length === 0 ? (
         <div>No past games available</div>
       ) : (
-        props.pastWords.map((word) => {
-          return <PastWordsListItem key={word} {...word} />
+        props.pastGames.map((game, index) => {
+          if(index < 10) {
+            return <PastWordsListItem key={game.word} {...game} />
+          }
         })
       )
     }
@@ -17,7 +19,7 @@ export const PastWordsList = (props) => (
 );
 
 const mapStateToProps = (state) => ({
-  pastWords: state.pastWords || []
+  pastGames: state.player.pastGames || []
 });
 
 export default connect(mapStateToProps)(PastWordsList);
