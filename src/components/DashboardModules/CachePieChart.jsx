@@ -1,13 +1,13 @@
 import React from 'react';
-import { hasCachedWords, hasPastGames } from '../../utils/utils';
+import { hasWordsInLocalStorage, hasPastGamesInLocalStorage } from '../../utils/utils';
 
 export class CachePieChart extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      cachedWords: hasCachedWords() ? JSON.parse(localStorage.getItem('cachedWords')).length : 0,
-      pastGames: hasPastGames() ? JSON.parse(localStorage.getItem('pastGames')).length : 0
+      cachedWords: hasWordsInLocalStorage() ? JSON.parse(localStorage.getItem('cachedWords')).length : 0,
+      pastGames: hasPastGamesInLocalStorage() ? JSON.parse(localStorage.getItem('pastGames')).length : 0
     };
   }
   componentDidMount() {
@@ -18,8 +18,8 @@ export class CachePieChart extends React.Component {
   }
   tick = () => {
     this.setState({
-      cachedWords: hasCachedWords() ? JSON.parse(localStorage.getItem('cachedWords')).length : 0,
-      pastGames: hasPastGames() ? JSON.parse(localStorage.getItem('pastGames')).length : 0
+      cachedWords: hasWordsInLocalStorage() ? JSON.parse(localStorage.getItem('cachedWords')).length : 0,
+      pastGames: hasPastGamesInLocalStorage() ? JSON.parse(localStorage.getItem('pastGames')).length : 0
     });
   };
   render() {

@@ -25,5 +25,5 @@ export const fetchData = (url) => {
             .catch(error => console.log('Looks like there was a problem', error));
 };
 
-export const hasCachedWords = () => (!!localStorage.getItem('cachedWords'));
-export const hasPastGames = () => (!!localStorage.getItem('pastGames'));
+export const hasWordsInLocalStorage = () => (!!localStorage.getItem('cachedWords'));
+export const hasPastGamesInLocalStorage = () => (!!localStorage.getItem('pastGames'));
