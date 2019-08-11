@@ -8,6 +8,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage.jsx';
+import { cacheWords } from './wordBank/fetcher';
 
 const store = configureStore();
 
@@ -39,3 +40,5 @@ firebase.auth().onAuthStateChanged((user) => {
     history.push('/');
   }
 });
+
+cacheWords();

@@ -1,4 +1,5 @@
 import React from 'react';
+import { hasLocalStorageSupport } from '../../utils/utils';
 
 export class Status extends React.Component {
   constructor(props) {
@@ -19,16 +20,9 @@ export class Status extends React.Component {
       online: navigator.onLine
     });
   };
-  hasLocalStorageSupport = () => {
-    try {
-      return 'localStorage' in window && window['localStorage'] !== null;
-    } catch(e) {
-      return false;
-    }
-  };
   render() {
     const online = this.state.online;
-    const localStorageSupport = this.hasLocalStorageSupport();
+    const localStorageSupport = hasLocalStorageSupport();
     const hasCache = !!localStorage.getItem('cachedWords');
 
     return (
