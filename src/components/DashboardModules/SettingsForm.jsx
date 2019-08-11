@@ -58,14 +58,6 @@ export class SettingsForm extends React.Component {
             onChange={this.onDifficultyChange} />
           <label htmlFor="easy">Easy</label>
           <input
-            id="medium"
-            type="radio"
-            name="difficulty"
-            value="medium"
-            checked={this.state.difficulty === 'medium'}
-            onChange={this.onDifficultyChange} />
-          <label htmlFor="medium">Medium</label>
-          <input
             id="hard"
             type="radio"
             name="difficulty"

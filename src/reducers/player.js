@@ -32,6 +32,16 @@ export default (state = defaultGameState, action) => {
       return {
         ...state,
         guessesRemaining: state.guessesRemaining -= 1
+      };
+    case 'SET_PLAYER_STATS':
+      return {
+        ...state,
+        stats: action.stats
+      }
+    case 'SET_PAST_GAMES':
+      return {
+        ...state,
+        pastGames: action.pastGames
       }
     default:
       return state;

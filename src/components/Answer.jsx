@@ -6,24 +6,24 @@ export class Answer extends React.Component {
     super(props);
   }
   render() {
-    const wordArray = this.props.game.answer.word.split('');
-    const guessedWord = this.props.game.guessedWord;
+    // const wordArray = this.props.game.answer.word.split('');
+    // const guessedWord = this.props.game.guessedWord;
     return (
       <div>
-        <h2>{wordArray.map((letter, index) => {
+        {/* <h2>{wordArray.map((letter, index) => {
           return wordArray[index] === guessedWord[index] ? (
             <span key={index}>{wordArray[index]}</span>
           ) : (
             <span key={index}>_</span>
           )
-        })}</h2>
+        })}</h2> */}
       </div>
     );
   }
 };
 
 const mapStateToProps = (state) => ({
-  game: state.game
+  player: state.player
 });
 
 export default connect(mapStateToProps)(Answer);

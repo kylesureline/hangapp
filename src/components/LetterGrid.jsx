@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { guessLetter, updateGuessedWord, wrongGuess } from '../actions/game';
+import { guessLetter, updateGuessedWord, wrongGuess } from '../actions/player';
 import LetterGridItem from './LetterGridItem.jsx';
 
 export class LetterGrid extends React.Component {
