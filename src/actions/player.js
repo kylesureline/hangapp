@@ -77,7 +77,7 @@ export const chooseRandomWord = () => {
   } else {
     answer = {
       word: Word_List.getRandomWord(),
-      wordType: '',
+      type: '',
       def: ''
     }
   }
@@ -98,10 +98,10 @@ export const startAddWord = (answerData = {}) => {
     const uid = getState().auth.uid;
     const {
       word = '',
-      wordType = '',
+      type = '',
       def = ''
     } = answerData;
-    const answer = { word, wordType, def };
+    const answer = { word, type, def };
 
     return database.ref(`players/${uid}/pastGames`).push(answer).then((ref) => {
       dispatch(addWord({

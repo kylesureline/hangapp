@@ -3,8 +3,12 @@ import { connect } from 'react-redux';
 import { guessLetter, updateGuessedWord, wrongGuess } from '../actions/player';
 import LetterGridItem from './LetterGridItem.jsx';
 import { startAddWord, startAddWin, startAddLoss } from '../actions/player';
+import { drawFrame, svgAnimator } from '../utils/utils';
 
 export class LetterGrid extends React.Component {
+  componentDidMount() {
+    drawFrame(this.props.guessesRemaining);
+  }
   handleGuess = (e) => {
     const letter = e.target.textContent;
     if(!this.isGuessedLetter(letter)) {
@@ -33,9 +37,14 @@ export class LetterGrid extends React.Component {
     }
     if(wrong === answer.length) {
       this.props.wrongGuess();
+      svgAnimator(this.props.guessesRemaining - 1);
     }
     if(answer === guessedWord.join('') && this.props.guessesRemaining > 0) {
       this.props.startAddWin();
+      this.props.startAddWord(this.props.answer);
+    }
+    if(this.props.guessesRemaining <= 0) {
+      this.props.startAddLoss();
       this.props.startAddWord(this.props.answer);
     }
   };

@@ -12,6 +12,7 @@ export const Answer = ({ player }) => {
           <span key={index}>_</span>
         )
       })}</h2>
+      <p>{!!player.answer.type ? player.answer.type : 'No word type available'}</p>
     </div>
   );
 };

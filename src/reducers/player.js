@@ -1,7 +1,7 @@
 const defaultGameState = {
   answer: {
     word: '',
-    wordType: '',
+    type: '',
     def: ''
   },
   guessedLetters: [],
@@ -45,7 +45,7 @@ export default (state = defaultGameState, action) => {
         ...state,
         answer: {
           word: 'hangapp',
-          wordType: 'noun',
+          type: 'noun',
           def: 'A hangman game built as a React PWA by Kyle Scheuerlein'
         }
       };
