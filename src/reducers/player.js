@@ -6,7 +6,11 @@ const defaultGameState = {
   },
   guessedLetters: [],
   guessedWord: [],
-  guessesRemaining: 0
+  guessesRemaining: 0,
+  stats: {
+    wins: 0,
+    losses: 0
+  }
 };
 
 export default (state = defaultGameState, action) => {
@@ -66,6 +70,7 @@ export default (state = defaultGameState, action) => {
       return {
         ...state,
         stats: {
+          ...state.stats,
           wins: state.stats.wins + 1
         }
       }
@@ -73,6 +78,7 @@ export default (state = defaultGameState, action) => {
       return {
         ...state,
         stats: {
+          ...state.stats,
           losses: state.stats.losses + 1
         }
       }

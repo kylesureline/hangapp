@@ -124,9 +124,9 @@ export const addWin = () => ({
 export const startAddWin = () => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    const wins = getState().player.stats.wins;
+    const stats = getState().player.stats;
 
-    return database.ref(`players/${uid}/stats/wins`).set(wins + 1).then((ref) => {
+    return database.ref(`players/${uid}/stats`).update({...stats, wins: stats.wins + 1}).then((ref) => {
       dispatch(addWin());
     });
   };
@@ -139,9 +139,9 @@ export const addLoss = () => ({
 export const startAddLoss = () => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
-    const losses = getState().player.stats.losses;
+    const stats = getState().player.stats;
 
-    return database.ref(`players/${uid}/stats/losses`).set(losses + 1).then((ref) => {
+    return database.ref(`players/${uid}/stats`).update({...stats, losses: stats.losses + 1}).then((ref) => {
       dispatch(addLoss());
     });
   };
