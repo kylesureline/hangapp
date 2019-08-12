@@ -52,7 +52,7 @@ export class LetterGrid extends React.Component {
     return (
       <div>
         {
-          'abcdefghijklmnopqrstuvwxy'.split('').map((letter) => {
+          'abcdefghijklmnopqrstuvwxyz'.split('').map((letter) => {
             return <LetterGridItem key={letter} letter={letter} handleGuess={this.handleGuess} />;
           })
         }
