@@ -7,19 +7,21 @@ export class SettingsForm extends React.Component {
     super(props);
 
     this.state = {
-      theme: 'light',
-      difficulty: 'easy',
       error: ''
     };
   }
   onThemeChange = (e) => {
     const newTheme = e.target.value;
-    this.setState({ 'theme': newTheme });
     this.props.setTheme(newTheme);
   };
   onDifficultyChange = (e) => {
+    if((this.props.settings.difficulty === 'easy' && this.props.guessesRemaining < 10) ||
+    (this.props.settings.difficulty === 'hard' && this.props.guessesRemaining < 7)) {
+      this.setState({
+        error: 'Changing difficulty will only affect subsequent games.'
+      });
+    }
     const newDifficulty = e.target.value;
-    this.setState({ 'difficulty': newDifficulty });
     this.props.setDifficulty(newDifficulty);
   };
   render() {
@@ -34,7 +36,7 @@ export class SettingsForm extends React.Component {
             type="radio"
             name="theme"
             value="light"
-            checked={this.state.theme === 'light'}
+            checked={this.props.settings.theme === 'light'}
             onChange={this.onThemeChange} />
           <label htmlFor="light">Light</label>
   				<input
@@ -42,7 +44,7 @@ export class SettingsForm extends React.Component {
             type="radio"
             name="theme"
             value="dark"
-            checked={this.state.theme === 'dark'}
+            checked={this.props.settings.theme === 'dark'}
             onChange={this.onThemeChange} />
           <label htmlFor="dark">Dark</label>
         </div>
@@ -54,7 +56,7 @@ export class SettingsForm extends React.Component {
             type="radio"
             name="difficulty"
             value="easy"
-            checked={this.state.difficulty === 'easy'}
+            checked={this.props.settings.difficulty === 'easy'}
             onChange={this.onDifficultyChange} />
           <label htmlFor="easy">Easy</label>
           <input
@@ -62,7 +64,7 @@ export class SettingsForm extends React.Component {
             type="radio"
             name="difficulty"
             value="hard"
-            checked={this.state.difficulty === 'hard'}
+            checked={this.props.settings.difficulty === 'hard'}
             onChange={this.onDifficultyChange} />
           <label htmlFor="hard">Hard</label>
         </div>
@@ -71,9 +73,14 @@ export class SettingsForm extends React.Component {
   }
 };
 
+const mapStateToProps = (state) => ({
+  settings: state.settings,
+  guessesRemaining: state.player.guessesRemaining
+});
+
 const mapDispatchToProps = (dispatch) => ({
   setTheme: (theme) => dispatch(setTheme(theme)),
   setDifficulty: (difficulty) => dispatch(setDifficulty(difficulty))
 });
 
-export default connect(undefined, mapDispatchToProps)(SettingsForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsForm);
