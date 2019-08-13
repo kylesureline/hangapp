@@ -40,7 +40,7 @@ export const cacheWords = () => {
   	// stop sending new requests when you reach max (or are offline)
   	if(cacheLength() < CACHE_MAX && isOnline()) {
 
-  		// skip words shorter than 5 letters
+  		// skip words shorter than 5 letters or with symbols
   		let word = Word_List.getRandomWord();
   		while(word.length < 5 || word.match(/[^a-z]/g)) {
   			word = Word_List.getRandomWord();
