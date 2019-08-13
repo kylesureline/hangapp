@@ -99,9 +99,10 @@ export const startAddWord = (answerData = {}) => {
     const {
       word = '',
       type = '',
-      def = ''
+      def = '',
+      won = true
     } = answerData;
-    const answer = { word, type, def };
+    const answer = { word, type, def, won };
 
     return database.ref(`players/${uid}/pastGames`).push(answer).then((ref) => {
       dispatch(addWord({

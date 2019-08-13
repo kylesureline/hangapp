@@ -41,14 +41,12 @@ export class LetterGrid extends React.Component {
     }
     if(answer === guessedWord.join('') && this.props.guessesRemaining > 0) {
       this.props.startAddWin();
-      this.props.startAddWord(this.props.answer);
+      this.props.startAddWord({...this.props.answer, won: true});
     }
     if((this.props.guessesRemaining - 1) <= 0) {
-      console.log('game over');
       this.props.startAddLoss();
-      this.props.startAddWord(this.props.answer);
+      this.props.startAddWord({...this.props.answer, won: false});
     }
-    console.log(this.props.guessesRemaining - 1);
   };
   render() {
     return (
