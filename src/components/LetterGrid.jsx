@@ -46,7 +46,7 @@ export class LetterGrid extends React.Component {
       this.props.startAddWin();
       this.props.startAddWord({...this.props.answer, won: true});
     }
-    if((this.props.guessesRemaining - 1) <= 0) {
+    if(this.props.guessesRemaining <= 0) {
       this.props.startAddLoss();
       this.props.startAddWord({...this.props.answer, won: false});
     }

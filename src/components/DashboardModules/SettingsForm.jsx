@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setTheme, setDifficulty } from '../../actions/settings';
+import { setGuessesRemaining } from '../../actions/player';
 
 export class SettingsForm extends React.Component {
   constructor(props) {
@@ -15,13 +16,14 @@ export class SettingsForm extends React.Component {
     this.props.setTheme(newTheme);
   };
   onDifficultyChange = (e) => {
-    if((this.props.settings.difficulty === 'easy' && this.props.guessesRemaining < 10) ||
-    (this.props.settings.difficulty === 'hard' && this.props.guessesRemaining < 7)) {
+    const newDifficulty = e.target.value;
+    if(this.props.guessedLetters.length > 0) {
       this.setState({
         error: 'Changing difficulty will only affect subsequent games.'
       });
+    } else {
+      this.props.setGuessesRemaining(newDifficulty);
     }
-    const newDifficulty = e.target.value;
     this.props.setDifficulty(newDifficulty);
   };
   render() {
@@ -75,12 +77,14 @@ export class SettingsForm extends React.Component {
 
 const mapStateToProps = (state) => ({
   settings: state.settings,
-  guessesRemaining: state.player.guessesRemaining
+  guessesRemaining: state.player.guessesRemaining,
+  guessedLetters: state.player.guessedLetters
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setTheme: (theme) => dispatch(setTheme(theme)),
-  setDifficulty: (difficulty) => dispatch(setDifficulty(difficulty))
+  setDifficulty: (difficulty) => dispatch(setDifficulty(difficulty)),
+  setGuessesRemaining: (difficulty) => dispatch(setGuessesRemaining(difficulty))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsForm);
