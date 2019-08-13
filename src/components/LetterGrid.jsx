@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import KeyboardEventHandler from 'react-keyboard-event-handler';
 import { guessLetter, updateGuessedWord, wrongGuess } from '../actions/player';
 import LetterGridItem from './LetterGridItem.jsx';
 import { startAddWord, startAddWin, startAddLoss } from '../actions/player';
@@ -8,6 +9,12 @@ import { startAddWord, startAddWin, startAddLoss } from '../actions/player';
 export class LetterGrid extends React.Component {
   handleGuess = (e) => {
     const letter = e.target.textContent;
+    if(!this.isGuessedLetter(letter)) {
+      this.props.guessLetter(letter);
+      this.checkWord(letter);
+    }
+  };
+  handleKeyPress = (letter) => {
     if(!this.isGuessedLetter(letter)) {
       this.props.guessLetter(letter);
       this.checkWord(letter);
@@ -49,9 +56,18 @@ export class LetterGrid extends React.Component {
       <div>
         {
           'abcdefghijklmnopqrstuvwxyz'.split('').map((letter) => {
-            return <LetterGridItem key={letter} letter={letter} handleGuess={this.handleGuess} />;
+            return <LetterGridItem
+                      key={letter}
+                      letter={letter}
+                      handleGuess={this.handleGuess}
+                      handleKeyPress={this.handleKeyPress}
+                    />;
           })
         }
+        <KeyboardEventHandler
+          handleKeys={'abcdefghijklmnopqrstuvwxyz'.split('')}
+          onKeyEvent={this.handleKeyPress}
+        />
       </div>
     );
   }
