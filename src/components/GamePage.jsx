@@ -2,6 +2,7 @@ import React from 'react';
 import HangmanSVG from './HangmanSVG.jsx';
 import LetterGrid from './LetterGrid.jsx';
 import Answer from './Answer.jsx';
+import EndGameModal from './EndGameModal.jsx';
 
 export const GamePage = () => {
   return (
@@ -9,6 +10,7 @@ export const GamePage = () => {
       <HangmanSVG />
       <Answer/>
       <LetterGrid />
+      <EndGameModal />
     </div>
   );
 };

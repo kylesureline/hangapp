@@ -68,7 +68,14 @@ export const startSetPlayer = () => {
 };
 
 export const chooseDefaultWord = () => ({
-  type: 'CHOOSE_DEFAULT_WORD'
+  type: 'CHOOSE_DEFAULT_WORD',
+  answer: {
+    word: 'hangapp',
+    type: 'noun',
+    def: 'A hangman game built as a React App by Kyle Scheuerlein'
+  },
+  guessedLetters: [],
+  guessedWord: []
 });
 
 export const chooseRandomWord = () => {
@@ -85,7 +92,9 @@ export const chooseRandomWord = () => {
 
   return {
     type: 'CHOOSE_RANDOM_WORD',
-    answer
+    answer,
+    guessedLetters: [],
+    guessedWord: []
   };
 };
 

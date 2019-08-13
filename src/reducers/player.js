@@ -47,16 +47,16 @@ export default (state = defaultGameState, action) => {
     case 'CHOOSE_DEFAULT_WORD':
       return {
         ...state,
-        answer: {
-          word: 'hangapp',
-          type: 'noun',
-          def: 'A hangman game built as a React App by Kyle Scheuerlein'
-        }
+        answer: action.answer,
+        guessedLetters: action.guessedLetters,
+        guessedWord: action.guessedWord
       };
     case 'CHOOSE_RANDOM_WORD':
       return {
         ...state,
-        answer: action.answer
+        answer: action.answer,
+        guessedLetters: action.guessedLetters,
+        guessedWord: action.guessedWord
       }
     case 'ADD_WORD':
       return {
