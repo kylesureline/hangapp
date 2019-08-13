@@ -42,7 +42,7 @@ export const cacheWords = () => {
 
   		// skip words shorter than 5 letters
   		let word = Word_List.getRandomWord();
-  		while(word.length < 5) {
+  		while(word.length < 5 || word.match(/[^a-z]/g)) {
   			word = Word_List.getRandomWord();
   		}
 
