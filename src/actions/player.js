@@ -1,6 +1,7 @@
 import database from '../firebase/firebase';
 import { hasLocalStorageSupport, hasWordsInLocalStorage, getWordFromLocalStorage } from '../utils/utils';
 import Word_List from '../wordBank/wordList.min.js';
+import moment from 'moment';
 
 export const guessLetter = (letter) => ({
   type: 'GUESS_LETTER',
@@ -102,7 +103,8 @@ export const startAddWord = (answerData = {}) => {
       def = '',
       won = true
     } = answerData;
-    const answer = { word, type, def, won };
+    const playedAt = moment().valueOf();
+    const answer = { word, type, def, won, playedAt };
 
     return database.ref(`players/${uid}/pastGames`).push(answer).then((ref) => {
       dispatch(addWord({

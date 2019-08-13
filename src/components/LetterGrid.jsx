@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import { guessLetter, updateGuessedWord, wrongGuess } from '../actions/player';
 import LetterGridItem from './LetterGridItem.jsx';
 import { startAddWord, startAddWin, startAddLoss } from '../actions/player';

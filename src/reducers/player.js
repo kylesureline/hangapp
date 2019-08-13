@@ -50,7 +50,7 @@ export default (state = defaultGameState, action) => {
         answer: {
           word: 'hangapp',
           type: 'noun',
-          def: 'A hangman game built as a React PWA by Kyle Scheuerlein'
+          def: 'A hangman game built as a React App by Kyle Scheuerlein'
         }
       };
     case 'CHOOSE_RANDOM_WORD':
