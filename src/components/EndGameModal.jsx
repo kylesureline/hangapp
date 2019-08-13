@@ -7,6 +7,7 @@ const EndGameModal = (props) => {
   const guessesRemaining = props.player.guessesRemaining;
   const answer = props.player.answer;
   const guessedWord = props.player.guessedWord.join('');
+  Modal.setAppElement('#app');
   return (
     <Modal
       isOpen={guessesRemaining <= 0 || answer.word === guessedWord}
