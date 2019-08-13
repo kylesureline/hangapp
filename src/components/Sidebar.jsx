@@ -2,10 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { startLogout } from '../actions/auth';
+import { closeSidebar } from '../actions/settings';
 
-export const Sidebar = ({ isOpen, startLogout }) => (
+export const Sidebar = ({ isOpen, startLogout, closeSidebar }) => (
   <div className={isOpen ? 'sidebar sidebar--open' : 'sidebar sidebar--closed'}>
-    <div className="trigger-container trigger-container--close show-for-mobile">
+    <div
+      className="trigger-container trigger-container--close show-for-mobile"
+      onClick={closeSidebar}>
       <div className="meat" />
       <div className="meat" />
     </div>
@@ -25,7 +28,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  startLogout: () => dispatch(startLogout())
+  startLogout: () => dispatch(startLogout()),
+  closeSidebar: () => dispatch(closeSidebar())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
