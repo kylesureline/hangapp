@@ -18,6 +18,20 @@ exports[`should render Header correctly 1`] = `
           Hangapp
         </h1>
       </Link>
+      <div
+        className="trigger-container trigger-container--open show-for-mobile"
+        onClick={[MockFunction]}
+      >
+        <div
+          className="meat"
+        />
+        <div
+          className="meat"
+        />
+        <div
+          className="meat"
+        />
+      </div>
     </div>
   </div>
 </header>

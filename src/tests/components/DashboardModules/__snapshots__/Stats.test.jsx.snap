@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Stats correctly 1`] = `
+<div>
+  <h3
+    className="module__title"
+  >
+    Stats
+  </h3>
+  <p>
+    Wins: 
+    5
+  </p>
+  <p>
+    Losses: 
+    2
+  </p>
+</div>
+`;

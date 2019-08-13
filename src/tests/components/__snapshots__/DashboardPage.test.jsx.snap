@@ -1,14 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render DashboardPage correctly 1`] = `
-<div>
+<div
+  className="dashboard-page"
+>
   <h2>
     Dashboard
   </h2>
-  <DashboardModule
-    className="status"
-    component={[Function]}
-  />
   <DashboardModule
     className="settings"
     component={
@@ -22,11 +20,19 @@ exports[`should render DashboardPage correctly 1`] = `
     }
   />
   <DashboardModule
-    className="history"
-    component={[Function]}
+    className="stats"
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(Stats)",
+        "type": [Function],
+      }
+    }
   />
   <DashboardModule
-    className="device-storage"
+    className="history"
     component={[Function]}
   />
 </div>

@@ -3,15 +3,12 @@ import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { startSetPlayer } from '../actions/player';
 
-const EndGameModal = (props) => {
-  const guessesRemaining = props.player.guessesRemaining;
-  const answer = props.player.answer;
-  const guessedWord = props.player.guessedWord.join('');
+export const EndGameModal = ({ guessedWord, startSetPlayer, answer, guessesRemaining }) => {
   Modal.setAppElement('#app');
   return (
     <Modal
       isOpen={guessesRemaining <= 0 || answer.word === guessedWord}
-      onRequestClose={props.startSetPlayer}
+      onRequestClose={startSetPlayer}
       contentLabel="Game over!"
       className="modal"
     >
@@ -20,13 +17,15 @@ const EndGameModal = (props) => {
         answer.word === guessedWord ? 'won' : 'lost'
       }!</p>
       <p className="modal__body">{answer.word}, {answer.type}, {answer.def}</p>
-      <button className="button" onClick={props.startSetPlayer}>Play again?</button>
+      <button className="button" onClick={startSetPlayer}>Play again?</button>
     </Modal>
   );
 };
 
 const mapStateToProps = (state) => ({
-  player: state.player
+  guessedWord: state.player.guessedWord.join(''),
+  guessesRemaining: state.player.guessesRemaining,
+  answer: state.player.answer
 });
 
 const mapDispatchToProps = (dispatch) => ({

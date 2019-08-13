@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render GamePage correctly 1`] = `
+<div
+  className="game-page"
+>
+  <Connect(HangmanSVG) />
+  <Connect(Answer) />
+  <Connect(LetterGrid) />
+  <Connect(EndGameModal) />
+</div>
+`;

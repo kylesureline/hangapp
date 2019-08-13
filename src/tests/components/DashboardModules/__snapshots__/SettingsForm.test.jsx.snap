@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SettingsForm correctly 1`] = `
+<form
+  className="form"
+>
+  <h3
+    className="module__title"
+  >
+    Settings
+  </h3>
+  <div>
+    <label
+      htmlFor="theme"
+    >
+      Theme:
+    </label>
+    <br />
+    <input
+      checked={true}
+      id="light"
+      name="theme"
+      onChange={[Function]}
+      type="radio"
+      value="light"
+    />
+    <label
+      htmlFor="light"
+    >
+      Light
+    </label>
+    <input
+      checked={false}
+      id="dark"
+      name="theme"
+      onChange={[Function]}
+      type="radio"
+      value="dark"
+    />
+    <label
+      htmlFor="dark"
+    >
+      Dark
+    </label>
+  </div>
+</form>
+`;

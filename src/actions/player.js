@@ -17,11 +17,6 @@ export const wrongGuess = () => ({
   type: 'WRONG_GUESS'
 });
 
-export const setPlayer = (player) => ({
-  type: 'SET_PLAYER',
-  player
-});
-
 export const setPlayerStats = (stats) => ({
   type: 'SET_PLAYER_STATS',
   stats

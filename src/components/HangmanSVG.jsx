@@ -1,14 +1,60 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { drawFrame, svgAnimator } from '../utils/utils';
 
 export class HangmanSVG extends React.Component {
   componentDidMount() {
-    drawFrame(this.props.guessesRemaining);
+    this.drawFrame(this.props.guessesRemaining);
   }
   componentDidUpdate() {
-    svgAnimator(this.props.guessesRemaining);
+    this.svgAnimator(this.props.guessesRemaining);
   }
+  drawFrame = (guessesRemaining) => {
+    let frame = 10;
+    this.svgAnimator(frame);
+    while(frame >= guessesRemaining) {
+      this.svgAnimator(frame);
+      frame -= 1;
+    }
+  };
+  svgAnimator = (guessesRemaining) => {
+    if(guessesRemaining === 10) {
+  		for(let i = 0; i < 10; i += 1) {
+  			let path = document.querySelector('#svg_' + i);
+  			let length = path.getTotalLength();
+  			// Clear any previous transition
+  			path.style.transition = path.style.WebkitTransition =
+  			  'none';
+  			// Set up the starting positions
+  			path.style.strokeDasharray = length + ' ' + length;
+  			path.style.strokeDashoffset = '0';
+  			// Trigger a layout so styles are calculated & the browser
+  			// picks up the starting position before animating
+  			path.getBoundingClientRect();
+  			// Define our transition
+  			path.style.transition = path.style.WebkitTransition =
+  			  'stroke-dashoffset 2s ease-in-out';
+  			// Go!
+  			path.style.strokeDashoffset = length;
+  		}
+  	} else {
+  		let path = document.querySelector('#svg_' + guessesRemaining);
+  		let length = path.getTotalLength();
+  		// Clear any previous transition
+  		path.style.transition = path.style.WebkitTransition =
+  		  'none';
+  		// Set up the starting positions
+  		path.style.strokeDasharray = length + ' ' + length;
+  		path.style.strokeDashoffset = length;
+  		// Trigger a layout so styles are calculated & the browser
+  		// picks up the starting position before animating
+  		path.getBoundingClientRect();
+  		// Define our transition
+  		path.style.transition = path.style.WebkitTransition =
+  		  'stroke-dashoffset 2s ease-in-out';
+  		// Go!
+  		path.style.strokeDashoffset = '0';
+  	}
+  };
   render() {
     return (
       <div className="hangman-SVG">

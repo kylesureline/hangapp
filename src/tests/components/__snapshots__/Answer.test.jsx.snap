@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Answer correctly 1`] = `
+<div
+  className="answer"
+>
+  <h2>
+    <span
+      key="0"
+    >
+      j
+    </span>
+    <span
+      key="1"
+    >
+      _
+    </span>
+    <span
+      key="2"
+    >
+      _
+    </span>
+    <span
+      key="3"
+    >
+      _
+    </span>
+  </h2>
+  <p>
+    noun
+  </p>
+</div>
+`;

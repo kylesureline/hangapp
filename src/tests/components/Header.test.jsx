@@ -2,14 +2,22 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Header } from '../../components/Header.jsx';
 
+let openSidebar, wrapper;
+
+beforeEach(() => {
+  openSidebar = jest.fn();
+  wrapper = shallow(
+    <Header
+      openSidebar={openSidebar}
+    />
+  );
+});
+
 test('should render Header correctly', () => {
-  const wrapper = shallow(<Header startLogout={() => { }} />);
   expect(wrapper).toMatchSnapshot();
 });
 
-// test('should call startLogout on button click', () => {
-//   const startLogout = jest.fn();
-//   const wrapper = shallow(<Header startLogout={startLogout} />);
-//   wrapper.find('button').simulate('click');
-//   expect(startLogout).toHaveBeenCalled();
-// });
+test('should call open sidebar', () => {
+  wrapper.find('.trigger-container').prop('onClick')();
+  expect(openSidebar).toHaveBeenCalled();
+});

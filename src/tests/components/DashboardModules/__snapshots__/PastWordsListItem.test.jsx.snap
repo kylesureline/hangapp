@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PastWordsListItem correctly 1`] = `
+<div
+  className="past-games__list-item"
+>
+  begonias
+  , 
+  noun
+  , 
+  any of a large genus (Begonia of the family Begoniaceae, the begonia family) of tropical or subtropical herbs and shrubs that have asymmetrical leaves and are widely cultivated as ornamentals
+  , 
+  lost
+   on 
+  August 13th, 2019
+</div>
+`;

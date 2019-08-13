@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PastWordsList with no past games correctly 1`] = `
+<div
+  className="past-games"
+>
+  <div>
+    No past games available
+  </div>
+</div>
+`;
+
+exports[`should render PastWordsList with past games correctly 1`] = `
+<div
+  className="past-games"
+>
+  <PastWordsListItem
+    def="A hangman game built as a React App by Kyle Scheuerlein"
+    id="0"
+    key="hangapp"
+    playedAt={1565715735916}
+    type="noun"
+    won={true}
+    word="hangapp"
+  />
+  <PastWordsListItem
+    def="to cause to flow in a stream"
+    id="1"
+    key="pourer"
+    playedAt={1565715779177}
+    type="verb"
+    won={false}
+    word="pourer"
+  />
+  <PastWordsListItem
+    def="any of a large genus (Begonia of the family Begoniaceae, the begonia family) of tropical or subtropical herbs and shrubs that have asymmetrical leaves and are widely cultivated as ornamentals"
+    id="2"
+    key="begonias"
+    playedAt={1565715827911}
+    type="noun"
+    won={false}
+    word="begonias"
+  />
+  <PastWordsListItem
+    def="to constitute outward evidence of"
+    id="3"
+    key="evince"
+    playedAt={1565715867901}
+    type="verb"
+    won={false}
+    word="evince"
+  />
+  <PastWordsListItem
+    def="receiver: such as"
+    id="4"
+    key="receptors"
+    playedAt={1565716193368}
+    type="noun"
+    won={false}
+    word="receptors"
+  />
+  <PastWordsListItem
+    def="a blustering, browbeating person; especially : one who is habitually cruel, insulting, or threatening to others who are weaker, smaller, or in some way vulnerable"
+    id="5"
+    key="bully"
+    playedAt={1565716658811}
+    type="noun"
+    won={false}
+    word="bully"
+  />
+  <PastWordsListItem
+    def="inlaid decoration of tortoiseshell, yellow metal, and white metal in cabinetwork"
+    id="6"
+    key="buhls"
+    playedAt={1565716667188}
+    type="noun"
+    won={false}
+    word="buhls"
+  />
+  <PastWordsListItem
+    def="an ability to keep from getting upset or offended by the things other people say and do"
+    id="7"
+    key="thickskin"
+    playedAt={1565716696718}
+    type="noun"
+    won={false}
+    word="thickskin"
+  />
+  <PastWordsListItem
+    def="the value set in Anglo-Saxon and Germanic law upon human life in accordance with rank and paid as compensation to the kindred or lord of a slain person"
+    id="8"
+    key="wergild"
+    playedAt={1565716708944}
+    type="noun"
+    won={false}
+    word="wergild"
+  />
+  <PastWordsListItem
+    def="to mix again"
+    id="9"
+    key="remixes"
+    playedAt={1565716729632}
+    type="verb"
+    won={false}
+    word="remixes"
+  />
+</div>
+`;

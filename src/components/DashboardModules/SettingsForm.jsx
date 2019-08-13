@@ -19,7 +19,6 @@ export class SettingsForm extends React.Component {
     return (
       <form className="form" onSubmit={this.onSubmit}>
         <h3 className="module__title">Settings</h3>
-        {this.state.error && <p className="form__error">{this.state.error}</p>}
         <div>
           <label htmlFor="theme">Theme:</label><br />
   				<input
@@ -45,9 +44,7 @@ export class SettingsForm extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-  settings: state.settings,
-  guessesRemaining: state.player.guessesRemaining,
-  guessedLetters: state.player.guessedLetters
+  settings: state.settings
 });
 
 const mapDispatchToProps = (dispatch) => ({
