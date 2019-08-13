@@ -3,7 +3,7 @@ import PastWordsList from './PastWordsList.jsx';
 
 export const PastWords = () => (
   <div>
-    <h3>Last 10 Words</h3>
+    <h3 className="module__title">Last 10 Words</h3>
     <PastWordsList />
   </div>
 );

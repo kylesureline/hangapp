@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PastWordsListItem from './PastWordsListItem.jsx';
 
 export const PastWordsList = (props) => (
-  <div>
+  <div className="past-games">
     {
       props.pastGames.length === 0 ? (
         <div>No past games available</div>

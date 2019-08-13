@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 export const Stats = (props) => (
   <div>
-    <h3>Stats</h3>
+    <h3 className="module__title">Stats</h3>
     <p>Wins: {props.stats.wins}</p>
     <p>Losses: {props.stats.losses}</p>
   </div>

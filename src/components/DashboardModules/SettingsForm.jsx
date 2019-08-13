@@ -18,7 +18,7 @@ export class SettingsForm extends React.Component {
   render() {
     return (
       <form className="form" onSubmit={this.onSubmit}>
-        <h3>Settings</h3>
+        <h3 className="module__title">Settings</h3>
         {this.state.error && <p className="form__error">{this.state.error}</p>}
         <div>
           <label htmlFor="theme">Theme:</label><br />

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 export const LetterGridItem = (props) => (
   <button
+    className="button button--letter"
     onClick={props.handleGuess}
     disabled={props.guessedLetters.indexOf(props.letter) !== -1}
   >

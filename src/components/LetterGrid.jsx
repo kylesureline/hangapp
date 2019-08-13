@@ -53,7 +53,7 @@ export class LetterGrid extends React.Component {
   };
   render() {
     return (
-      <div>
+      <div className="letter-grid">
         {
           'abcdefghijklmnopqrstuvwxyz'.split('').map((letter) => {
             return <LetterGridItem

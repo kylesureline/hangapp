@@ -15,12 +15,12 @@ const EndGameModal = (props) => {
       contentLabel="Game over!"
       className="modal"
     >
-      <h3>Game over!</h3>
-      <p>You {
+      <h3 className="modal__title">Game over!</h3>
+      <p className="modal__body">You {
         answer.word === guessedWord ? 'won' : 'lost'
       }!</p>
-      <p>{answer.word}, {answer.type}, {answer.def}</p>
-      <button onClick={props.startSetPlayer}>Play again?</button>
+      <p className="modal__body">{answer.word}, {answer.type}, {answer.def}</p>
+      <button className="button" onClick={props.startSetPlayer}>Play again?</button>
     </Modal>
   );
 };

@@ -3,8 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Sidebar = () => (
-  <div>
-    My sidebar
+  <div className="sidebar">
     <Link to="/play">Play</Link>
     <Link to="/dashboard">Dashboard</Link>
     <Link to="/about">About</Link>

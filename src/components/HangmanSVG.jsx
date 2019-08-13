@@ -11,7 +11,7 @@ export class HangmanSVG extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="hangman-SVG">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
           <g>
             <rect fill="#fff" id="canvas_background" height="200" width="200" y="0" x="0"/>
