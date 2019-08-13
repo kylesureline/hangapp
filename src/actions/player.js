@@ -126,7 +126,7 @@ export const startAddWord = (answerData = {}) => {
 
 export const setGuessesRemaining = (difficulty) => ({
   type: 'SET_GUESSES_REMAINING',
-  guessesRemaining: difficulty === 'easy' ? 10 : 7
+  guessesRemaining: 10
 });
 
 export const addWin = () => ({

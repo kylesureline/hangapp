@@ -1,6 +1,5 @@
 const defaultSettingsState = {
-  theme: 'light',
-  difficulty: 'easy'
+  theme: 'light'
 }
 
 export default (state = defaultSettingsState, action) => {
@@ -9,11 +8,6 @@ export default (state = defaultSettingsState, action) => {
       return {
         ...state,
         theme: action.theme
-      };
-    case 'SET_DIFFICULTY':
-      return {
-        ...state,
-        difficulty: action.difficulty
       };
     default:
       return state;
