@@ -8,9 +8,9 @@ export const guessLetter = (letter) => ({
   letter
 });
 
-export const updateGuessedWord = (wordArray) => ({
+export const updateGuessedWord = (guessedWord) => ({
   type: 'UPDATE_GUESSED_WORD',
-  wordArray
+  guessedWord
 });
 
 export const wrongGuess = () => ({
@@ -54,7 +54,6 @@ export const startSetPlayer = () => {
           dispatch(chooseDefaultWord());
         }
 
-        dispatch(setGuessesRemaining(difficulty));
         dispatch(setPlayerStats(stats));
         dispatch(setPastGames(pastGames));
       });
@@ -70,7 +69,8 @@ export const chooseDefaultWord = () => ({
     def: 'A hangman game built as a React App by Kyle Scheuerlein'
   },
   guessedLetters: [],
-  guessedWord: []
+  guessedWord: [],
+  guessesRemaining: 10
 });
 
 export const chooseRandomWord = () => {
@@ -89,7 +89,8 @@ export const chooseRandomWord = () => {
     type: 'CHOOSE_RANDOM_WORD',
     answer,
     guessedLetters: [],
-    guessedWord: []
+    guessedWord: [],
+    guessesRemaining: 10
   };
 };
 
@@ -118,11 +119,6 @@ export const startAddWord = (answerData = {}) => {
     });
   };
 };
-
-export const setGuessesRemaining = (difficulty) => ({
-  type: 'SET_GUESSES_REMAINING',
-  guessesRemaining: 10
-});
 
 export const addWin = () => ({
   type: 'ADD_WIN'

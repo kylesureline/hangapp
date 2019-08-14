@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setTheme } from '../../actions/settings';
-import { setGuessesRemaining } from '../../actions/player';
 
 export class SettingsForm extends React.Component {
   constructor(props) {

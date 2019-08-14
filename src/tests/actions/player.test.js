@@ -11,7 +11,6 @@ import {
   chooseRandomWord,
   addWord,
   startAddWord,
-  setGuessesRemaining,
   addWin,
   // startAddWin,
   addLoss,
@@ -45,11 +44,11 @@ test('should setup guessLetter action object', () => {
 });
 
 test('should setup updateGuessedWord action object', () => {
-  const wordArray = ['h'];
-  const action = updateGuessedWord(wordArray);
+  const guessedWord = ['h'];
+  const action = updateGuessedWord(guessedWord);
   expect(action).toEqual({
     type: 'UPDATE_GUESSED_WORD',
-    wordArray
+    guessedWord
   });
 });
 
@@ -92,7 +91,8 @@ test('should setup chooseDefaultWord action object', () => {
       def: 'A hangman game built as a React App by Kyle Scheuerlein'
     },
     guessedLetters: [],
-    guessedWord: []
+    guessedWord: [],
+    guessesRemaining: 10
   });
 });
 
@@ -104,6 +104,7 @@ test('should setup chooseRandomWord action object', () => {
   expect(action.answer.def).toBe('');
   expect(action.guessedLetters).toEqual([]);
   expect(action.guessedWord).toEqual([]);
+  expect(action.guessesRemaining).toBe(10);
 });
 
 test('should setup addWord action object', () => {
@@ -139,14 +140,6 @@ test('should add game to database and store', (done) => {
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(answer);
     done();
-  });
-});
-
-test('should setGuessesRemaining to 10', () => {
-  const action = setGuessesRemaining();
-  expect(action).toEqual({
-    type: 'SET_GUESSES_REMAINING',
-    guessesRemaining: 10
   });
 });
 

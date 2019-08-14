@@ -1,6 +1,7 @@
 const defaultSettingsState = {
-  theme: 'light'
-}
+  theme: 'light',
+  isOpen: false
+};
 
 export default (state = defaultSettingsState, action) => {
   switch(action.type) {

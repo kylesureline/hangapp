@@ -22,7 +22,8 @@ export default (state = defaultGameState, action) => {
       };
     case 'UPDATE_GUESSED_WORD':
       return {
-        ...state
+        ...state,
+        guessedWord: action.guessedWord
       };
     case 'WRONG_GUESS':
       return {
@@ -39,24 +40,21 @@ export default (state = defaultGameState, action) => {
         ...state,
         pastGames: action.pastGames
       };
-    case 'SET_GUESSES_REMAINING':
-      return {
-        ...state,
-        guessesRemaining: action.guessesRemaining
-      }
     case 'CHOOSE_DEFAULT_WORD':
       return {
         ...state,
         answer: action.answer,
         guessedLetters: action.guessedLetters,
-        guessedWord: action.guessedWord
+        guessedWord: action.guessedWord,
+        guessesRemaining: action.guessesRemaining
       };
     case 'CHOOSE_RANDOM_WORD':
       return {
         ...state,
         answer: action.answer,
         guessedLetters: action.guessedLetters,
-        guessedWord: action.guessedWord
+        guessedWord: action.guessedWord,
+        guessesRemaining: action.guessesRemaining
       }
     case 'ADD_WORD':
       return {
