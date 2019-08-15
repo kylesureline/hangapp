@@ -29,3 +29,12 @@ button:disabled {
 .is-active {
   font-weight: bold;
 }
+
+.link {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
