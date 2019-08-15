@@ -1,0 +1,13 @@
+// ======================================
+//  Images
+// ======================================
+
+svg {
+	flex: 0 1 40%;
+  @media (min-height: 725px) {
+    flex: 0 1 25%;
+	}
+  @media screen and (min-width: 568px) and (orientation: landscape) {
+    flex: 0 1 30%;
+  }
+}

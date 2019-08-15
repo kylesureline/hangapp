@@ -1,0 +1,49 @@
+// ======================================
+//  Base
+// ======================================
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	height: 100vh;
+	color: var(--color-black);
+	background-color: var(--color-white);
+	@media screen and (min-width: 568px) and (orientation: landscape) {
+		@media (max-height: 375px) {
+			@include flexy($disp: flex, $dir: column, $just: flex-start);
+		}
+	}
+}
+
+header {
+	text-align: center;
+	transition: .4s filter;
+}
+
+h1 {
+	padding: .5em 0;
+	margin: 0;
+	font-size: 1.5em;
+	@media screen and (min-width: 568px) and (orientation: landscape) {
+		@media (max-height: 375px) {
+			display: none;
+		}
+	}
+}
+
+button {
+	outline: none;
+}
+
+main {
+	height: calc(100% - 94px);
+	transition: .4s filter;
+	// min-height: 226px;
+}

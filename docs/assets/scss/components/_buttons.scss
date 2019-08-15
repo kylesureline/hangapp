@@ -1,0 +1,31 @@
+// ======================================
+//  Buttons
+// ======================================
+
+.letters button {
+  border-radius: 6px;
+  cursor: pointer;
+	flex: 0 1 15%;
+	font-size: 1.5em;
+	padding: 0;
+	margin: 2px;
+  @media screen and (min-width: 568px) and (orientation: landscape) {
+  	@media (max-height: 375px) {
+      flex: 0 1 12%;
+    }
+  }
+  @media (min-width: 768px) {
+    font-size: 2em;
+  }
+}
+
+.modal-content button {
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.letters .chosen:hover,
+.letters .chosen:active,
+.letters .chosen {
+  cursor: default;
+}
