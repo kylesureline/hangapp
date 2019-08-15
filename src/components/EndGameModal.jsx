@@ -18,9 +18,7 @@ export const EndGameModal = ({ guessedWord, startSetPlayer, answer, guessesRemai
       }! The word was...</p>
       <p className="modal__body">
         {answer.word === 'hangapp' ? (
-          <a className="link" href={`https://react-hangapp.herokuapp.com/`}>
-            {answer.word}
-          </a>
+          <a className="link" href={'#'}>{answer.word}</a>
         ) : (
           <a className="link" href={`https://www.merriam-webster.com/dictionary/${answer.word}/`} target="_blank">
             {answer.word}

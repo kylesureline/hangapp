@@ -17,7 +17,6 @@ exports[`should render PastWordsListItem correctly 1`] = `
       >
         begonias
       </a>
-       
       <span
         className="list-item__subtitle list-item__subtitle--word-type"
       >

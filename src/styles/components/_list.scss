@@ -62,7 +62,9 @@
 }
 
 .list-item__subtitle--word-type {
+  display: inline-block;
   font-style: italic;
+  margin-left: 4px;
 }
 
 .list-item__data {
