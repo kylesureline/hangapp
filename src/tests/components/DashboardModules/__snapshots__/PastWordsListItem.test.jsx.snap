@@ -11,6 +11,7 @@ exports[`should render PastWordsListItem correctly 1`] = `
       className="list-item__title"
     >
       <a
+        className="link"
         href="https://www.merriam-webster.com/dictionary/begonias/"
         target="_blank"
       >

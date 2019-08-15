@@ -16,7 +16,18 @@ export const EndGameModal = ({ guessedWord, startSetPlayer, answer, guessesRemai
       <p className="modal__body">You {
         answer.word === guessedWord ? 'won' : 'lost'
       }! The word was...</p>
-      <p className="modal__body"><a className="link" href={`https://www.merriam-webster.com/dictionary/${answer.word}/`} target="_blank">{answer.word}</a> <span className="modal__body modal__body--word-type">({answer.type})</span></p>
+      <p className="modal__body">
+        {answer.word === 'hangapp' ? (
+          <a className="link" href={`https://react-hangapp.herokuapp.com/`}>
+            {answer.word}
+          </a>
+        ) : (
+          <a className="link" href={`https://www.merriam-webster.com/dictionary/${answer.word}/`} target="_blank">
+            {answer.word}
+          </a>
+        )}
+        <span className="modal__body modal__body--word-type">({answer.type})</span>
+      </p>
       <p className="modal__body modal__body--def">{answer.def}</p>
       <button className="button" onClick={startSetPlayer}>Play again?</button>
     </Modal>
