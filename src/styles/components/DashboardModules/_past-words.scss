@@ -1,0 +1,16 @@
+.module--history {
+  grid-area: past-words;
+}
+
+.module--history .module__title {
+  padding-left: $s-size;
+}
+
+.module--history a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+.module--history a:hover {
+  text-decoration: underline;
+}

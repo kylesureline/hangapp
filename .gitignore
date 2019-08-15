@@ -1,2 +1,6 @@
+node_modules/
+public/dist/
+yarn-error.log
+.env.test
+.env.development
 .DS_Store
-.sass-cache/

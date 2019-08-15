@@ -1,0 +1,51 @@
+// Colors
+$grey: #333633; //#109648;
+$dark-grey: darken($grey, 30%);//#484349;
+$dark-blue: #023A47; //#18A999;
+$blue: lighten($dark-blue, 30%);//#8AF3FF;
+$off-white: #E8EDEE; //#F7F0F0;
+
+$white: #fff;
+$black: #000;
+// Font Size
+$font-size-xlarge: 4rem;
+$font-size-large: 1.8rem;
+$font-size-medium: 1.6rem;
+$font-size-small: 1.4rem;
+$font-size-xsmall: 1.2rem;
+// Spacing
+$xs-size: .8rem;
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+// Breakpoints
+$desktop-breakpoint: 45rem;
+
+
+// CSS Variables
+:root {
+  --color-dark-grey: #{$dark-grey};
+  --color-grey: #{$grey};
+  --color-blue: #{$blue};
+  --color-blue-darker: #{darken($blue, 20%)};
+  --color-dark-blue: #{$dark-blue};
+  --color-dark-blue-transparent: #{rgba($dark-blue, .8)};
+  --color-off-white: #{$off-white};
+  --color-off-white-darker: #{darken($off-white, 7%)};
+  --color-white: #{$white};
+  --color-black: #{$black};
+}
+
+[data-theme="dark"] {
+  --color-dark-grey: #{darken($dark-grey, 25%)};
+  --color-grey: #{darken($grey, 25%)};
+  --color-blue: #{darken($blue, 25%)};
+  --color-blue-darker: #{darken($blue, 45%)};
+  --color-dark-blue: #{darken($dark-blue, 25%)};
+  --color-dark-blue-transparent: #{rgba(darken($dark-blue, 25%), .8)};
+  --color-off-white: #{darken($off-white, 25%)};
+  --color-off-white-darker: #{darken($off-white, 32%)};
+  --color-white: #{darken($white, 25%)};
+  --color-black: #{darken($black, 25%)};
+}

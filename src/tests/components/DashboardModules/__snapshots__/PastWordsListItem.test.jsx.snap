@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PastWordsListItem correctly 1`] = `
+<div
+  className="list-item"
+>
+  <div
+    className="list-item__word-group"
+  >
+    <h3
+      className="list-item__title"
+    >
+      <a
+        href="https://www.merriam-webster.com/dictionary/begonias/"
+        target="_blank"
+      >
+        begonias
+      </a>
+       
+      <span
+        className="list-item__subtitle list-item__subtitle--word-type"
+      >
+        (
+        noun
+        )
+      </span>
+    </h3>
+    <p
+      className="list-item__subtitle"
+    >
+      any of a large genus (Begonia of the family Begoniaceae, the begonia family) of tropical or subtropical herbs and shrubs that have asymmetrical leaves and are widely cultivated as ornamentals
+    </p>
+  </div>
+  <h3
+    className="list-item__data"
+  >
+    Lost
+     on 
+    August 13th, 2019
+  </h3>
+</div>
+`;

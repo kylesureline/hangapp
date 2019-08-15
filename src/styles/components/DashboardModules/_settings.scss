@@ -1,0 +1,29 @@
+.module--settings {
+  grid-area: settings;
+  padding: $s-size;
+}
+
+.module--settings input[type="radio"] {
+  display: none;
+}
+
+.module--settings input[type="radio"] + label {
+  @extend .button;
+  cursor: pointer;
+  background: var(--color-off-white);
+  padding: $s-size $l-size;
+  margin: 0 $s-size;
+  @media (min-width: $desktop-breakpoint) {
+    padding: $s-size $m-size;
+  }
+}
+
+.module--settings input[type="radio"]:checked + label {
+  background: var(--color-blue);
+}
+
+.option-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

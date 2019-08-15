@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AboutPage correctly 1`] = `
+<div
+  className="page page--about"
+>
+  <h2
+    className="page__title"
+  >
+    About
+  </h2>
+</div>
+`;

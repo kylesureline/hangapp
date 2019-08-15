@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render DashboardPage correctly 1`] = `
+<div
+  className="page page--dashboard"
+>
+  <h2
+    className="page__title"
+  >
+    Dashboard
+  </h2>
+  <DashboardModule
+    className="settings"
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(SettingsForm)",
+        "type": [Function],
+      }
+    }
+  />
+  <DashboardModule
+    className="stats"
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(Stats)",
+        "type": [Function],
+      }
+    }
+  />
+  <DashboardModule
+    className="history"
+    component={[Function]}
+  />
+</div>
+`;

@@ -1,0 +1,20 @@
+.module--stats {
+  grid-area: stats;
+  padding: $s-size;
+}
+
+.stats__group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 42px;
+  & p {
+    margin: auto 0;
+  }
+}
+
+.stats-chart {
+  width: 95%;
+  max-width: 400px;
+  margin: 0 auto;
+}

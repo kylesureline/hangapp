@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EndGameModal correctly 1`] = `
+<div
+  id="app"
+>
+  <EndGameModal
+    answer={
+      Object {
+        "def": "to cause to move with quick little jerks or oscillating motions",
+        "type": "verb",
+        "word": "jiggle",
+      }
+    }
+    guessedWord={
+      Array [
+        "j",
+        "i",
+        "g",
+        "g",
+        "l",
+        "e",
+      ]
+    }
+    guessesRemaining={5}
+    startSetPlayer={[MockFunction]}
+  />
+</div>
+`;

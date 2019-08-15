@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Answer correctly 1`] = `
+<div
+  className="answer"
+>
+  <h2
+    className="answer__word"
+  >
+    <span
+      key="0"
+    >
+      j
+    </span>
+    <span
+      key="1"
+    >
+      _
+    </span>
+    <span
+      key="2"
+    >
+      _
+    </span>
+    <span
+      key="3"
+    >
+      _
+    </span>
+  </h2>
+  <p
+    className="answer__word-type"
+  >
+    noun
+  </p>
+</div>
+`;
