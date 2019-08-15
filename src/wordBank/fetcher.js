@@ -1,4 +1,4 @@
-import Word_List from './wordList.min.js';
+// import Word_List from './wordList.min.js';
 import { hasLocalStorageSupport, isOnline, checkStatus, fetchData } from '../utils/utils';
 
 const CACHE_MAX = 100;
