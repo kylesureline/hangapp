@@ -18,7 +18,7 @@ export const PastWordsList = (props) => (
           return b.playedAt - a.playedAt;
         }).map((game, index) => {
           if(index < 10) {
-            return <PastWordsListItem key={game.word} {...game} />
+            return <PastWordsListItem key={game.playedAt} {...game} />
           }
         })
       )

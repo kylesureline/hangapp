@@ -55,6 +55,7 @@ export const startSetPlayer = () => {
             dispatch(chooseRandomWord());
           }
         } else {
+          dispatch(setDefaultPlayerDatabase());
           dispatch(chooseDefaultWord());
         }
 
@@ -63,6 +64,25 @@ export const startSetPlayer = () => {
         dispatch(setPastGames(pastGames));
       });
 
+  };
+};
+
+export const setDefaultPlayerDatabase = () => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+
+    const defaultPlayer = {
+      stats: {
+        wins: 0,
+        losses: 0
+      },
+      pastGames: [],
+      settings: {
+        theme: 'light'
+      }
+    };
+
+    return database.ref(`players/${uid}`).set(defaultPlayer);
   };
 };
 
@@ -111,7 +131,7 @@ export const startAddWord = (answerData = {}) => {
       word = '',
       type = '',
       def = '',
-      won
+      won = true
     } = answerData;
     const playedAt = moment().valueOf();
     const answer = { word, type, def, won, playedAt };
@@ -121,8 +141,6 @@ export const startAddWord = (answerData = {}) => {
         id: ref.key,
         ...answer
       }));
-    }).catch((err) => {
-      console.log(err);
     });
   };
 };
