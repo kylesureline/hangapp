@@ -12,6 +12,9 @@ Hangapp is a simple hangman game, built by Kyle Scheuerlein using React and Webp
 - [x] Animated SVG that draws as you play!
 - [x] Light and dark theme
 - [x] App dashboard with stats and settings
+- [ ] Email confirmation for signup
+- [ ] Password reset link
+- [ ] Password change form
 - [ ] Playable offline (for now)
 - [ ] PWA (splash screens, icons, service worker)
 
