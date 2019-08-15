@@ -18,25 +18,28 @@ export class SettingsForm extends React.Component {
     return (
       <form className="form" onSubmit={this.onSubmit}>
         <h3 className="module__title">Settings</h3>
-        <div>
-          <label htmlFor="theme">Theme:</label>
-  				<input
-            id="light"
-            type="radio"
-            name="theme"
-            value="light"
-            checked={this.props.settings.theme === 'light'}
-            onChange={this.onThemeChange} />
-          <label htmlFor="light">Light</label>
-  				<input
-            id="dark"
-            type="radio"
-            name="theme"
-            value="dark"
-            checked={this.props.settings.theme === 'dark'}
-            onChange={this.onThemeChange} />
-          <label htmlFor="dark">Dark</label>
-        </div>
+        <fieldset className="form__section">
+          <legend>Theme</legend>
+          <div className="option-group">
+            <input
+              id="light"
+              type="radio"
+              name="theme"
+              value="light"
+              checked={this.props.settings.theme === 'light'}
+              onChange={this.onThemeChange} />
+            <label htmlFor="light">Light</label>
+            <input
+              id="dark"
+              type="radio"
+              name="theme"
+              value="dark"
+              checked={this.props.settings.theme === 'dark'}
+              onChange={this.onThemeChange} />
+            <label htmlFor="dark">Dark</label>
+          </div>
+
+        </fieldset>
       </form>
     );
   }

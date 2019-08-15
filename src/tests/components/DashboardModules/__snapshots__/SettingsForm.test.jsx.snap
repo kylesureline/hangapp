@@ -9,38 +9,42 @@ exports[`should render SettingsForm correctly 1`] = `
   >
     Settings
   </h3>
-  <div>
-    <label
-      htmlFor="theme"
+  <fieldset
+    className="form__section"
+  >
+    <legend>
+      Theme
+    </legend>
+    <div
+      className="option-group"
     >
-      Theme:
-    </label>
-    <input
-      checked={true}
-      id="light"
-      name="theme"
-      onChange={[Function]}
-      type="radio"
-      value="light"
-    />
-    <label
-      htmlFor="light"
-    >
-      Light
-    </label>
-    <input
-      checked={false}
-      id="dark"
-      name="theme"
-      onChange={[Function]}
-      type="radio"
-      value="dark"
-    />
-    <label
-      htmlFor="dark"
-    >
-      Dark
-    </label>
-  </div>
+      <input
+        checked={true}
+        id="light"
+        name="theme"
+        onChange={[Function]}
+        type="radio"
+        value="light"
+      />
+      <label
+        htmlFor="light"
+      >
+        Light
+      </label>
+      <input
+        checked={false}
+        id="dark"
+        name="theme"
+        onChange={[Function]}
+        type="radio"
+        value="dark"
+      />
+      <label
+        htmlFor="dark"
+      >
+        Dark
+      </label>
+    </div>
+  </fieldset>
 </form>
 `;

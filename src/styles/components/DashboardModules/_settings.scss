@@ -13,14 +13,17 @@
   background: var(--color-off-white);
   padding: $s-size $l-size;
   margin: 0 $s-size;
+  @media (min-width: $desktop-breakpoint) {
+    padding: $s-size $m-size;
+  }
 }
 
 .module--settings input[type="radio"]:checked + label {
   background: var(--color-blue);
 }
 
-.form > div {
+.option-group {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
 }

@@ -38,7 +38,7 @@
     "stats"
     "past-words";
   @media (min-width: $desktop-breakpoint) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto 1fr;
     grid-template-areas:
       "page-title page-title"
