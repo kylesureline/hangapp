@@ -121,6 +121,8 @@ export const startAddWord = (answerData = {}) => {
         id: ref.key,
         ...answer
       }));
+    }).catch((err) => {
+      console.log(err);
     });
   };
 };
