@@ -18,7 +18,15 @@ exports[`should render AboutPage correctly 1`] = `
     >
       Kyle Scheuerlein
     </a>
-     using React and Webpack. It's tracked on GitHub and includes a comprehensive testing suite written using Jest. The backend is a firebase database and it's deployed on Heroku.
+     using React and Webpack. It's tracked 
+    <a
+      className="link"
+      href="https://github.com/kylesureline/hangapp/"
+      target="_blank"
+    >
+      here on GitHub
+    </a>
+     and includes a comprehensive testing suite written using Jest. The backend is a firebase database and it's deployed on Heroku.
   </p>
   <h3>
     Features
@@ -42,7 +50,7 @@ exports[`should render AboutPage correctly 1`] = `
       Definitions retrieved from Merriam Webster
     </li>
     <li>
-      Animated SVG that draws as you play!
+      Animated SVG that draws as you play
     </li>
     <li>
       Light and dark theme
@@ -61,12 +69,12 @@ exports[`should render AboutPage correctly 1`] = `
     Feedback
   </h3>
   <p>
-    I'd love to hear what you think! Email me 
+    I'd love to hear what you think! 
     <a
       className="link"
       href="mailto:kyle@kylesureline.com"
     >
-      here
+      Email me here
     </a>
     !
   </p>

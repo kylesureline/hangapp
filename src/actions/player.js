@@ -111,7 +111,7 @@ export const startAddWord = (answerData = {}) => {
       word = '',
       type = '',
       def = '',
-      won = true
+      won
     } = answerData;
     const playedAt = moment().valueOf();
     const answer = { word, type, def, won, playedAt };
