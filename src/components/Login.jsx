@@ -29,7 +29,7 @@ export class Login extends React.Component {
   };
   render() {
     return (
-      <form className="form" onSubmit={this.onSubmit}>
+      <form className="form form--login" onSubmit={this.onSubmit}>
         {!!this.state.error.message && <p className="form__error">{
           this.state.error.message.includes('email') ? (
             'Please enter a valid email.'

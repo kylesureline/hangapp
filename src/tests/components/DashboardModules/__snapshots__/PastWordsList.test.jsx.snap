@@ -4,8 +4,24 @@ exports[`should render PastWordsList with no past games correctly 1`] = `
 <div
   className="past-games"
 >
-  <div>
-    No past games available
+  <div
+    className="list-header"
+  >
+    <div>
+      Word
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Date
+    </div>
+  </div>
+  <div
+    className="list-item list-item--message"
+  >
+    <span>
+      No past games available
+    </span>
   </div>
 </div>
 `;
@@ -14,77 +30,80 @@ exports[`should render PastWordsList with past games correctly 1`] = `
 <div
   className="past-games"
 >
+  <div
+    className="list-header"
+  >
+    <div>
+      Word
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Date
+    </div>
+  </div>
   <PastWordsListItem
-    def="A hangman game built as a React App by Kyle Scheuerlein"
-    id="0"
-    key="hangapp"
-    playedAt={1565715735916}
-    type="noun"
-    won={true}
-    word="hangapp"
+    def="in this"
+    id="15"
+    key="herein"
+    playedAt={1565717060602}
+    type="adverb"
+    won={false}
+    word="herein"
   />
   <PastWordsListItem
-    def="to cause to flow in a stream"
-    id="1"
-    key="pourer"
-    playedAt={1565715779177}
+    def="instruction especially of an individual"
+    id="14"
+    key="tutelage"
+    playedAt={1565717033093}
+    type="noun"
+    won={false}
+    word="tutelage"
+  />
+  <PastWordsListItem
+    def="to make invalid; especially : to weaken or destroy the cogency of"
+    id="13"
+    key="invalidate"
+    playedAt={1565717015798}
     type="verb"
     won={false}
-    word="pourer"
+    word="invalidate"
   />
   <PastWordsListItem
-    def="any of a large genus (Begonia of the family Begoniaceae, the begonia family) of tropical or subtropical herbs and shrubs that have asymmetrical leaves and are widely cultivated as ornamentals"
-    id="2"
-    key="begonias"
-    playedAt={1565715827911}
+    def="elderberry"
+    id="12"
+    key="elders"
+    playedAt={1565716947670}
     type="noun"
     won={false}
-    word="begonias"
+    word="elders"
   />
   <PastWordsListItem
-    def="to constitute outward evidence of"
-    id="3"
-    key="evince"
-    playedAt={1565715867901}
+    def="the smallest of three dimensions"
+    id="11"
+    key="thickness"
+    playedAt={1565716854400}
+    type="noun"
+    won={false}
+    word="thickness"
+  />
+  <PastWordsListItem
+    def="grandfather"
+    id="10"
+    key="grandad"
+    playedAt={1565716749582}
+    type="noun"
+    won={false}
+    word="grandad"
+  />
+  <PastWordsListItem
+    def="to mix again"
+    id="9"
+    key="remixes"
+    playedAt={1565716729632}
     type="verb"
     won={false}
-    word="evince"
-  />
-  <PastWordsListItem
-    def="receiver: such as"
-    id="4"
-    key="receptors"
-    playedAt={1565716193368}
-    type="noun"
-    won={false}
-    word="receptors"
-  />
-  <PastWordsListItem
-    def="a blustering, browbeating person; especially : one who is habitually cruel, insulting, or threatening to others who are weaker, smaller, or in some way vulnerable"
-    id="5"
-    key="bully"
-    playedAt={1565716658811}
-    type="noun"
-    won={false}
-    word="bully"
-  />
-  <PastWordsListItem
-    def="inlaid decoration of tortoiseshell, yellow metal, and white metal in cabinetwork"
-    id="6"
-    key="buhls"
-    playedAt={1565716667188}
-    type="noun"
-    won={false}
-    word="buhls"
-  />
-  <PastWordsListItem
-    def="an ability to keep from getting upset or offended by the things other people say and do"
-    id="7"
-    key="thickskin"
-    playedAt={1565716696718}
-    type="noun"
-    won={false}
-    word="thickskin"
+    word="remixes"
   />
   <PastWordsListItem
     def="the value set in Anglo-Saxon and Germanic law upon human life in accordance with rank and paid as compensation to the kindred or lord of a slain person"
@@ -96,13 +115,22 @@ exports[`should render PastWordsList with past games correctly 1`] = `
     word="wergild"
   />
   <PastWordsListItem
-    def="to mix again"
-    id="9"
-    key="remixes"
-    playedAt={1565716729632}
-    type="verb"
+    def="an ability to keep from getting upset or offended by the things other people say and do"
+    id="7"
+    key="thickskin"
+    playedAt={1565716696718}
+    type="noun"
     won={false}
-    word="remixes"
+    word="thickskin"
+  />
+  <PastWordsListItem
+    def="inlaid decoration of tortoiseshell, yellow metal, and white metal in cabinetwork"
+    id="6"
+    key="buhls"
+    playedAt={1565716667188}
+    type="noun"
+    won={false}
+    word="buhls"
   />
 </div>
 `;

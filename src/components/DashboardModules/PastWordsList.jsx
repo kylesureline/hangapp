@@ -4,11 +4,19 @@ import PastWordsListItem from './PastWordsListItem.jsx';
 
 export const PastWordsList = (props) => (
   <div className="past-games">
+    <div className="list-header">
+      <div>Word</div>
+      <div className="show-for-desktop">Date</div>
+    </div>
     {
       props.pastGames.length === 0 ? (
-        <div>No past games available</div>
+        <div className="list-item list-item--message">
+          <span>No past games available</span>
+        </div>
       ) : (
-        props.pastGames.map((game, index) => {
+        props.pastGames.sort((a, b) => {
+          return b.playedAt - a.playedAt;
+        }).map((game, index) => {
           if(index < 10) {
             return <PastWordsListItem key={game.word} {...game} />
           }

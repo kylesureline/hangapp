@@ -1,0 +1,55 @@
+.page {
+  height: calc(100vh - 75px);
+  margin-top: 75px;
+  background: var(--color-white);
+  @media (min-width: $desktop-breakpoint) {
+    margin-left: 250px;
+  }
+}
+
+.page--game {
+  display: grid;
+  grid-template-rows: minmax(20vh, 30vh) auto 1fr;
+  grid-template-areas:
+    "hangman"
+    "answer"
+    "letters";
+  grid-gap: $s-size;
+  padding: $s-size;
+  height: calc(100vh - 75px);
+  @media (min-width: $desktop-breakpoint) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "hangman answer"
+      "letters letters";
+    grid-gap: $m-size;
+    padding: $m-size;
+  }
+}
+
+.page--dashboard {
+  display: grid;
+  grid-gap: 1px;
+  background: var(--color-dark-grey);
+  grid-template-areas:
+    "page-title"
+    "settings"
+    "stats"
+    "past-words";
+  @media (min-width: $desktop-breakpoint) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "page-title page-title"
+      "settings stats"
+      "past-words past-words";
+  }
+}
+
+.page__title {
+  background: var(--color-white);
+  padding-left: $s-size;
+  margin: 0;
+  grid-column: 1/-1;
+}

@@ -2,7 +2,7 @@
 
 exports[`should render Login component correctly 1`] = `
 <form
-  className="form"
+  className="form form--login"
   onSubmit={[Function]}
 >
   <input

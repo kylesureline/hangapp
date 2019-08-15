@@ -2,7 +2,7 @@
 
 exports[`should render GamePage correctly 1`] = `
 <div
-  className="game-page"
+  className="page page--game"
 >
   <Connect(HangmanSVG) />
   <Connect(Answer) />

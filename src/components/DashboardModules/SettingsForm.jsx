@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setTheme } from '../../actions/settings';
+import { startSetTheme } from '../../actions/settings';
 
 export class SettingsForm extends React.Component {
   constructor(props) {
@@ -12,14 +12,14 @@ export class SettingsForm extends React.Component {
   }
   onThemeChange = (e) => {
     const newTheme = e.target.value;
-    this.props.setTheme(newTheme);
+    this.props.startSetTheme(newTheme);
   };
   render() {
     return (
       <form className="form" onSubmit={this.onSubmit}>
         <h3 className="module__title">Settings</h3>
         <div>
-          <label htmlFor="theme">Theme:</label><br />
+          <label htmlFor="theme">Theme:</label>
   				<input
             id="light"
             type="radio"
@@ -47,7 +47,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setTheme: (theme) => dispatch(setTheme(theme))
+  startSetTheme: (theme) => dispatch(startSetTheme(theme))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsForm);

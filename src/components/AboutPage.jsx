@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const AboutPage = () => (
-  <div>
-    <h2>About</h2>
+  <div className="page page--about">
+    <h2 className="page__title">About</h2>
   </div>
 );
 

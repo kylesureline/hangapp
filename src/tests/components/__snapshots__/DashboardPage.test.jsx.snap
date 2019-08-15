@@ -2,9 +2,11 @@
 
 exports[`should render DashboardPage correctly 1`] = `
 <div
-  className="dashboard-page"
+  className="page page--dashboard"
 >
-  <h2>
+  <h2
+    className="page__title"
+  >
     Dashboard
   </h2>
   <DashboardModule

@@ -1,25 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { startLogout } from '../actions/auth';
 import { closeSidebar } from '../actions/settings';
 
 export const Sidebar = ({ isOpen, startLogout, closeSidebar }) => (
   <div className={isOpen ? 'sidebar sidebar--open' : 'sidebar sidebar--closed'}>
-    <div
-      className="trigger-container trigger-container--close show-for-mobile"
-      onClick={closeSidebar}>
-      <div className="meat" />
-      <div className="meat" />
-    </div>
-    <Link to="/play">Play</Link>
-    <Link to="/dashboard">Dashboard</Link>
-    <Link to="/about">About</Link>
-    <button
-      className="button button--link"
-      onClick={startLogout}>
-      Logout
-    </button>
+    <nav className="nav">
+      <NavLink to="/play" activeClassName="is-active" className="nav__item" onClick={closeSidebar}>Play</NavLink>
+      <NavLink to="/dashboard" activeClassName="is-active" className="nav__item" onClick={closeSidebar}>Dashboard</NavLink>
+      <NavLink to="/about" activeClassName="is-active" className="nav__item" onClick={closeSidebar}>About</NavLink>
+      <button
+        className="nav__item"
+        onClick={startLogout}>
+        Logout
+      </button>
+    </nav>
   </div>
 );
 

@@ -2,6 +2,7 @@ import database from '../firebase/firebase';
 import { hasLocalStorageSupport, hasWordsInLocalStorage, getWordFromLocalStorage } from '../utils/utils';
 import Word_List from '../wordBank/wordList.min.js';
 import moment from 'moment';
+import { startGetTheme } from './settings';
 
 export const guessLetter = (letter) => ({
   type: 'GUESS_LETTER',
@@ -41,19 +42,21 @@ export const startSetPlayer = () => {
           losses: 0
         };
 
-        if(!!snapshot.val()) {
+        if(!!snapshot.val().stats) {
+          stats.wins = snapshot.val().stats.wins;
+          stats.losses = snapshot.val().stats.losses;
+        }
+
+        if(!!snapshot.val().pastGames) {
           for(let game in snapshot.val().pastGames) {
             pastGames.push(snapshot.val().pastGames[game]);
           }
-
-          stats.wins = snapshot.val().stats.wins;
-          stats.losses = snapshot.val().stats.losses;
-
           dispatch(chooseRandomWord());
         } else {
           dispatch(chooseDefaultWord());
         }
 
+        dispatch(startGetTheme());
         dispatch(setPlayerStats(stats));
         dispatch(setPastGames(pastGames));
       });

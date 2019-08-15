@@ -6,7 +6,7 @@ import EndGameModal from './EndGameModal.jsx';
 
 export const GamePage = () => {
   return (
-    <div className="game-page">
+    <div className="page page--game">
       <HangmanSVG />
       <Answer/>
       <LetterGrid />

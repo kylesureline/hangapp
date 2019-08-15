@@ -19,7 +19,7 @@ exports[`should render Header correctly 1`] = `
         </h1>
       </Link>
       <div
-        className="trigger-container trigger-container--open show-for-mobile"
+        className="trigger-container show-for-mobile trigger-container--closed"
         onClick={[MockFunction]}
       >
         <div

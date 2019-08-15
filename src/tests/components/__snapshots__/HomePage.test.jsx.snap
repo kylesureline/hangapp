@@ -12,18 +12,19 @@ exports[`should render HomePage correctly 1`] = `
     >
       Hangapp
     </h1>
-    <p>
-      Test your knowledge!
+    <p
+      className="box-layout__subtitle"
+    >
+      Test your vocabulary!
+    </p>
+    <p
+      className="box-layout__body"
+    >
+      Hangapp is a hangman game. You can login and it will keep track of your games!
     </p>
     <div
       className="input-group input-group--centered-column"
     >
-      <Link
-        className="button input-group__item input-group__item--column"
-        to="/about"
-      >
-        About
-      </Link>
       <Link
         className="button input-group__item input-group__item--column"
         to="/login"

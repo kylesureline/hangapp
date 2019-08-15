@@ -20,6 +20,11 @@ export default (state = defaultSettingsState, action) => {
         ...state,
         isOpen: action.isOpen
       };
+    case 'TOGGLE_SIDEBAR':
+      return {
+        ...state,
+        isOpen: !state.isOpen
+      }
     default:
       return state;
   }

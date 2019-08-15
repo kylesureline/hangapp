@@ -1,18 +1,24 @@
-// .header {
-//   background: $dark-blue;
-// }
-//
-// .header__content {
-//   align-items: center;
-//   display: flex;
-//   justify-content: space-between;
-//   padding: $s-size 0;
-// }
-//
-// .header__title {
-//   color: white;
-//   text-decoration: none;
-//   h1 {
-//     margin: 0;
-//   }
-// }
+.header {
+  background: var(--color-dark-blue);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size 0;
+  @media (min-width: $desktop-breakpoint) {
+    justify-content: center;
+  }
+}
+
+.header__title {
+  color: var(--color-white);
+  text-decoration: none;
+  h1 {
+    margin: 0;
+  }
+}

@@ -2,14 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { SettingsForm } from '../../../components/DashboardModules/SettingsForm.jsx';
 
-let setTheme, wrapper;
+let startSetTheme, wrapper;
 
 beforeEach(() => {
-  setTheme = jest.fn();
+  startSetTheme = jest.fn();
   wrapper = shallow(
     <SettingsForm
       settings={{ theme: 'light' }}
-      setTheme={setTheme}
+      startSetTheme={startSetTheme}
     />
   );
 });
@@ -21,5 +21,5 @@ test('should render SettingsForm correctly', () => {
 test('should handle theme change correctly', () => {
   const e = { target: { value: 'dark' } };
   wrapper.find('#dark').prop('onChange')(e);
-  expect(setTheme).toHaveBeenCalledWith(e.target.value);
+  expect(startSetTheme).toHaveBeenCalledWith(e.target.value);
 });

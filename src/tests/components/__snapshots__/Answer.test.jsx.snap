@@ -4,7 +4,9 @@ exports[`should render Answer correctly 1`] = `
 <div
   className="answer"
 >
-  <h2>
+  <h2
+    className="answer__word"
+  >
     <span
       key="0"
     >
@@ -26,7 +28,9 @@ exports[`should render Answer correctly 1`] = `
       _
     </span>
   </h2>
-  <p>
+  <p
+    className="answer__word-type"
+  >
     noun
   </p>
 </div>

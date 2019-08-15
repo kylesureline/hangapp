@@ -7,13 +7,17 @@ exports[`should render Stats correctly 1`] = `
   >
     Stats
   </h3>
-  <p>
-    Wins: 
-    5
-  </p>
-  <p>
-    Losses: 
-    2
-  </p>
+  <div
+    className="stats__group"
+  >
+    <p>
+      Wins: 
+      5
+    </p>
+    <p>
+      Losses: 
+      2
+    </p>
+  </div>
 </div>
 `;

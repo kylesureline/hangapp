@@ -1,0 +1,19 @@
+.nav {
+  margin-top: 79px;
+  padding: 0 .4rem;
+  @media (min-width: $desktop-breakpoint) {
+    margin-top: 0;
+  }
+}
+
+.nav__item {
+  @extend .button;
+  display: block;
+  margin: .4rem auto;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  &:hover {
+    opacity: .8;
+  }
+}

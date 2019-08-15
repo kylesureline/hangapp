@@ -15,7 +15,6 @@ exports[`should render SettingsForm correctly 1`] = `
     >
       Theme:
     </label>
-    <br />
     <input
       checked={true}
       id="light"

@@ -6,8 +6,8 @@ import PastWords from './DashboardModules/PastWords.jsx';
 import Stats from './DashboardModules/Stats.jsx';
 
 export const DashboardPage = () => (
-  <div className="dashboard-page">
-    <h2>Dashboard</h2>
+  <div className="page page--dashboard">
+    <h2 className="page__title">Dashboard</h2>
     <DashboardModule component={SettingsForm} className={'settings'} />
     <DashboardModule component={Stats} className={'stats'} />
     <DashboardModule component={PastWords} className={'history'} />

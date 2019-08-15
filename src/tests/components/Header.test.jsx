@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Header } from '../../components/Header.jsx';
 
-let openSidebar, wrapper;
+let toggleSidebar, wrapper;
 
 beforeEach(() => {
-  openSidebar = jest.fn();
+  toggleSidebar = jest.fn();
   wrapper = shallow(
     <Header
-      openSidebar={openSidebar}
+      toggleSidebar={toggleSidebar}
     />
   );
 });
@@ -19,5 +19,5 @@ test('should render Header correctly', () => {
 
 test('should call open sidebar', () => {
   wrapper.find('.trigger-container').prop('onClick')();
-  expect(openSidebar).toHaveBeenCalled();
+  expect(toggleSidebar).toHaveBeenCalled();
 });

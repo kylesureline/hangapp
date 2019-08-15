@@ -15,8 +15,9 @@ export const EndGameModal = ({ guessedWord, startSetPlayer, answer, guessesRemai
       <h3 className="modal__title">Game over!</h3>
       <p className="modal__body">You {
         answer.word === guessedWord ? 'won' : 'lost'
-      }!</p>
-      <p className="modal__body">{answer.word}, {answer.type}, {answer.def}</p>
+      }! The word was...</p>
+      <p className="modal__body"><a href={`https://www.merriam-webster.com/dictionary/${answer.word}/`} target="_blank">{answer.word}</a> <span className="modal__body modal__body--word-type">({answer.type})</span></p>
+      <p className="modal__body modal__body--def">{answer.def}</p>
       <button className="button" onClick={startSetPlayer}>Play again?</button>
     </Modal>
   );

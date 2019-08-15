@@ -1,0 +1,17 @@
+.letter-grid {
+  grid-area: letters;
+  display: grid;
+  grid-gap: $xs-size;
+  grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
+  @media (min-width: $desktop-breakpoint) {
+    grid-gap: $s-size;
+  }
+}
+
+.button--letter {
+  text-transform: uppercase;
+  font-size: 4vw;
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 3vw;
+  }
+}

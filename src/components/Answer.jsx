@@ -6,14 +6,14 @@ export const Answer = ({ word, type, player }) => {
   const wordArray = word.split('');
   return (
     <div className="answer">
-      <h2>{wordArray.map((letter, index) => {
+      <h2 className="answer__word">{wordArray.map((letter, index) => {
         return wordArray[index] === guessedWord[index] ? (
           <span key={index}>{wordArray[index]}</span>
         ) : (
           <span key={index}>_</span>
         )
       })}</h2>
-      <p>{!!type ? type : 'No word type available'}</p>
+      <p className="answer__word-type">{!!type ? type : 'No word type available'}</p>
     </div>
   );
 };
