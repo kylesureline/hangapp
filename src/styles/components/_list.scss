@@ -68,9 +68,8 @@
 .list-item__data {
   font-size: $font-size-small;
   margin: 0;
-  // margin: $s-size 0 0 0;
+  color: var(--color-grey);
   @media (min-width: $desktop-breakpoint) {
-    // margin: 0;
     padding-left: $s-size;
   }
 }
