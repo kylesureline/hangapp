@@ -49,8 +49,7 @@
     "uuid": "3.3.2",
     "validator": "11.1.0",
     "webpack": "4.39.1",
-    "webpack-cli": "^3.3.6",
-    "wordlist-english": "^1.2.1"
+    "webpack-cli": "^3.3.6"
   },
   "devDependencies": {
     "cross-env": "5.2.0",
