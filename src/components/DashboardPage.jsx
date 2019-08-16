@@ -10,7 +10,7 @@ export const DashboardPage = () => (
     <h2 className="page__title">Dashboard</h2>
     <DashboardModule component={SettingsForm} className={'settings'} />
     <DashboardModule component={Stats} className={'stats'} />
-    <DashboardModule component={PastWords} className={'history'} />
+    <DashboardModule component={PastWords} className={'past-games'} />
   </div>
 );
 

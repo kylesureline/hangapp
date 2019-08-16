@@ -1,16 +1,16 @@
-.module--history {
+.module--past-games {
   grid-area: past-words;
 }
 
-.module--history .module__title {
+.module--past-games .module__title {
   padding-left: $s-size;
 }
 
-.module--history a {
+.module--past-games a {
   color: var(--color-blue);
   text-decoration: none;
 }
 
-.module--history a:hover {
+.module--past-games a:hover {
   text-decoration: underline;
 }

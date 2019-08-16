@@ -34,7 +34,7 @@ exports[`should render DashboardPage correctly 1`] = `
     }
   />
   <DashboardModule
-    className="history"
+    className="past-games"
     component={[Function]}
   />
 </div>

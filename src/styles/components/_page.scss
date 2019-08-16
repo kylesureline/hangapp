@@ -28,15 +28,22 @@
   }
 }
 
+.page--about {
+  height: auto;
+  padding: $s-size $s-size $l-size;
+}
+
 .page--dashboard {
+  background: var(--color-off-white-darker);
   display: grid;
   grid-gap: 1px;
-  background: var(--color-off-white-darker);
   grid-template-areas:
     "page-title"
     "settings"
     "stats"
     "past-words";
+  height: auto;
+  margin-bottom: $l-size;
   @media (min-width: $desktop-breakpoint) {
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto 1fr;
@@ -55,8 +62,4 @@
   background: var(--color-white);
   margin: 0;
   grid-column: 1/-1;
-}
-
-.page--about {
-  padding: $s-size;
 }
