@@ -1,0 +1,13 @@
+// ======================================
+//  Variables
+// ======================================
+
+$white: #fff;
+$black: #000;
+
+$theme: (
+  1: lighten($black, 22%),
+  2: lighten($black, 44%),
+  3: lighten($black, 66%),
+  4: lighten($black, 88%),
+);

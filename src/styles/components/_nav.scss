@@ -1,0 +1,137 @@
+// ======================================
+//  Navigation
+// ======================================
+
+.sidebar {
+  padding-top: 60px;
+	height: 100%;
+  width: 0;
+	width: 275px;
+ 	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: -275px;
+	overflow-x: hidden;
+	transition: 1s left, .4s filter;
+	transition-property: left;
+	text-align: center;
+  @media screen and (max-height: 540px) {
+    font-size: .8em;
+    padding-top: 40px;
+  }
+}
+
+ul {
+	list-style: none;
+  padding: 0;
+  @media screen and (max-height: 540px) {
+    margin: .5em 0;
+  }
+}
+
+.closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+	padding: 8px;
+	cursor: pointer;
+}
+
+.nav-btn {
+  padding: .5em 0;
+  margin: .5em .5em;
+  font-size: 1.5em;
+}
+
+.install {
+  display: none;
+}
+
+// Settings
+.setting {
+  font-size: 1.2em;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  @media screen and (max-height: 540px) {
+    margin: .5em 0;
+  }
+}
+
+form {
+  padding-bottom: 1em;
+  @media screen and (max-height: 540px) {
+    @include flexy($disp: flex, $dir: row, $just: space-around);
+    padding: 0;
+  }
+}
+
+form .form-left,
+form .form-right {
+  @media screen and (max-height: 540px) {
+    @include flexy($disp: flex, $dir: column, $just: space-around);
+  }
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label,
+.nav-info ul,
+.home-link {
+  padding: .2em .5em;
+  @media screen and (max-height: 540px) {
+    padding: .4em .75em;
+  }
+}
+
+input[type="radio"]:checked + label:hover {
+  cursor: default;
+}
+
+.social-link {
+  font-size: 2.5em;
+  margin: 0 .2em;
+}
+
+.home-link {
+  font-size: 1.2em;
+}
+
+.nav-btn,
+.closebtn,
+input[type="radio"] + label {
+	cursor: pointer;
+}
+
+.nav-btn,
+input[type="radio"] + label,
+.nav-info ul,
+.home-link {
+  border: 2px solid;
+  border-radius: 6px;
+}
+
+.nav-info ul {
+  display: inline-block;
+  @media screen and (max-height: 450px) {
+    display: none;
+  }
+}
+
+.sidebar p  {
+  @media screen and (max-height: 540px) {
+    margin: 0.7em 0;
+  }
+}
+
+.openbtn {
+	width: 100%;
+	font-size: 20px;
+	padding: .5em;
+	border: none;
+	border-radius: 0;
+}
