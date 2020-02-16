@@ -1,5 +1,5 @@
 .main-nav {
-  background: var(--color-white);
+  background: var(--color-dark-grey);
   margin: 0 auto;
 }
 
@@ -13,7 +13,4 @@
 .nav-list__item {
   cursor: pointer;
   padding: 1rem;
-  &:hover {
-    opacity: .6;
-  }
 }

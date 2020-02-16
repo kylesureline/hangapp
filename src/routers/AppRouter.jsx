@@ -3,7 +3,8 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Navigation } from '../components/Navigation';
 // pages
-import { Game } from '../components/Pages/Game/Game';
+import { Play } from '../components/Pages/Play/Play';
+import { NotFound } from '../components/Pages/NotFound';
 
 export const history = createBrowserHistory();
 
@@ -11,8 +12,13 @@ export const AppRouter = () => (
   <Router history={history}>
     <Navigation />
     <Switch>
+      {/* PLAY */}
       <Route path="/" exact={true}>
-        <Game />
+        <Play />
+      </Route>
+
+      <Route>
+        <NotFound />
       </Route>
     </Switch>
     {/* <div>Modal</div> */}

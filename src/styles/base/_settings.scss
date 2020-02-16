@@ -1,14 +1,27 @@
-$black: #000;
 $white: #fff;
+$black: #000;
+
+$light-grey: lighten($black, 22%);
+$grey: lighten($black, 44%);
+$med-grey: lighten($black, 66%);
+$dark-grey: lighten($black, 88%);
 
 :root {
   --color-black: #{$black};
   --color-white: #{$white};
+  --color-light-grey: #{$light-grey};
+  --color-grey: #{$grey};
+  --color-med-grey: #{$med-grey};
+  --color-dark-grey: #{$dark-grey};
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color-black: #{invert($black)};
     --color-white: #{invert($white)};
+    --color-light-grey: #{invert($light-grey)};
+    --color-grey: #{invert($grey)};
+    --color-med-grey: #{invert($med-grey)};
+    --color-dark-grey: #{invert($dark-grey)};
   }
 }
