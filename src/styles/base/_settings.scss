@@ -6,6 +6,9 @@ $grey: lighten($black, 44%);
 $med-grey: lighten($black, 66%);
 $dark-grey: lighten($black, 88%);
 
+$nav-height: 50px;
+$nav-width: 120px;
+
 :root {
   --color-black: #{$black};
   --color-white: #{$white};

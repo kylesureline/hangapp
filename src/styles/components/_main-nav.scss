@@ -1,13 +1,23 @@
 .main-nav {
   background: var(--color-dark-grey);
   margin: 0 auto;
+  height: $nav-height;
+  width: 100%;
+  @media (min-width: 768px) {
+    width: $nav-width;
+    height: 100%;
+  }
 }
 
 .nav-list {
-  margin: 0;
+  max-width: 375px;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   justify-content: space-around;
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .nav-list__item {
