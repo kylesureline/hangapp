@@ -1,6 +1,6 @@
 .main-nav {
-  padding: 1rem 0;
   background: var(--color-white);
+  margin: 0 auto;
 }
 
 .nav-list {
@@ -11,5 +11,9 @@
 }
 
 .nav-list__item {
-
+  cursor: pointer;
+  padding: 1rem;
+  &:hover {
+    opacity: .6;
+  }
 }

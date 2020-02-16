@@ -14,13 +14,13 @@ export const Navigation = () => (
       <li className="nav-list__item">
         <StatsSVG title="Stats" className="icon icon--nav" />
       </li>
-      <li>
+      <li className="nav-list__item">
         <DatabaseSVG title="Database" className="icon icon--nav" />
       </li>
       <li className="nav-list__item">
         <SettingsSVG title="Settings" className="icon icon--nav" />
       </li>
-      <li>
+      <li className="nav-list__item">
         <AboutSVG title="About" className="icon icon--nav" />
       </li>
     </ul>
