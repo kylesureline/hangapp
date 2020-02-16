@@ -12,13 +12,13 @@ export const Navigation = () => (
         <PlaySVG title="Play" className="icon icon--nav" />
       </li>
       <li className="nav-list__item">
-        <SettingsSVG title="Settings" className="icon icon--nav" />
-      </li>
-      <li className="nav-list__item">
         <StatsSVG title="Stats" className="icon icon--nav" />
       </li>
       <li>
         <DatabaseSVG title="Database" className="icon icon--nav" />
+      </li>
+      <li className="nav-list__item">
+        <SettingsSVG title="Settings" className="icon icon--nav" />
       </li>
       <li>
         <AboutSVG title="About" className="icon icon--nav" />
