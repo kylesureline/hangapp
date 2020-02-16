@@ -1,10 +1,10 @@
 .main-nav {
-  background: var(--color-dark-grey);
+  background: var(--color-light-grey);
   margin: 0 auto;
   height: $nav-height;
   width: 100%;
   @media (min-width: 768px) {
-    width: $nav-width;
+    width: $nav-height;
     height: 100%;
   }
 }
@@ -22,5 +22,80 @@
 
 .nav-list__item {
   cursor: pointer;
-  padding: 1rem;
+  text-align: center;
+  width: 75px;
+  &:hover {
+    background: var(--color-dark-grey);
+    .icon--nav {
+      & path {
+        fill: var(--color-light-grey);
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+.nav-link {
+  padding: 1rem 0;
+  width: 100%;
+  display: inline-block;
+}
+
+.nav-tooltip {
+  position: relative;
+  .nav-tooltip__content {
+    font-size: 1rem;
+    position: absolute;
+    left: .75rem;
+    top: $nav-height;
+    width: calc(100% - 1.5rem);
+    border-radius: .6rem;
+    color: var(--color-light-grey);
+    background: var(--color-dark-grey);
+    padding: 0 .5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s opacity;
+    white-space: nowrap;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .75rem;
+    &:before {
+      content: "";
+      position: absolute;
+      left: calc(50% - .5rem);
+      top: -1rem;
+      border-top: .5rem solid transparent;
+      border-right: .5rem solid transparent;
+      border-bottom: .5rem solid var(--color-black);
+      border-left: .5rem solid transparent;
+    }
+  }
+  &:hover {
+    .nav-tooltip__content {
+      opacity: 1;
+    }
+  }
+  @media (min-width: 768px) {
+    .nav-tooltip__content {
+      margin: 0;
+      margin-left: .75rem;
+      left: unset;
+      left: $nav-height;
+      top: calc(50% - 1rem);
+      width: unset;
+      &:before {
+        left: -1rem;
+        top: calc(50% - .5rem);
+        border-top: .5rem solid transparent;
+        border-right: .5rem solid var(--color-black);
+        border-bottom: .5rem solid transparent;
+        border-left: .5rem solid transparent;
+      }
+    }
+  }
 }

@@ -1,13 +1,12 @@
 $white: #fff;
 $black: #000;
 
-$light-grey: lighten($black, 22%);
-$grey: lighten($black, 44%);
-$med-grey: lighten($black, 66%);
-$dark-grey: lighten($black, 88%);
+$light-grey: lighten($black, 88%);
+$grey: lighten($black, 66%);
+$med-grey: lighten($black, 44%);
+$dark-grey: lighten($black, 22%);
 
 $nav-height: 50px;
-$nav-width: 120px;
 
 :root {
   --color-black: #{$black};
