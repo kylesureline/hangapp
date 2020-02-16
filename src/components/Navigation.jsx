@@ -1,9 +1,9 @@
 import React from 'react';
 import { ReactComponent as PlaySVG } from '../images/play_arrow.svg';
 import { ReactComponent as SettingsSVG } from '../images/settings1.svg';
-import { ReactComponent as StatsSVG } from '../images/stars.svg';
+import { ReactComponent as StatsSVG } from '../images/pie_chart.svg';
 import { ReactComponent as DatabaseSVG } from '../images/storage.svg';
-import { ReactComponent as AboutSVG } from '../images/person.svg';
+import { ReactComponent as AboutSVG } from '../images/live_help.svg';
 import { NavLink } from 'react-router-dom';
 
 export const Navigation = () => (
