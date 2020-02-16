@@ -3,7 +3,7 @@ import { Hangman } from './Hangman';
 import { Letters } from './Letters';
 
 export const Play = () => (
-  <main className="page">
+  <main className="page page--play">
     <Hangman />
     <Letters />
   </main>

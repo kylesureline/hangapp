@@ -1,2 +1,19 @@
 .hangman-SVG {
+  margin: 0 auto;
+  display: flex;
+}
+
+.hangman-SVG > svg {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+#canvas_background {
+  fill: var(--color-white);
+}
+
+.hangman-draw,
+#canvas_border {
+  stroke: var(--color-light-grey);
 }
