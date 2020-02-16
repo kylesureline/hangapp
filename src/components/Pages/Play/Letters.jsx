@@ -1,5 +1,5 @@
 import React from 'react';
-import { Letter } from './Letter';
+import { Letter } from '../../reusable/Letter';
 
 export const Letters = () => {
   const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
