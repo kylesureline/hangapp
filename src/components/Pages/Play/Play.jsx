@@ -1,7 +1,10 @@
 import React from 'react';
-import { ReactComponent as HangmanSVG } from '../../../images/hangman.svg';
+import { Hangman } from './Hangman';
+import { Letters } from './Letters';
 
 export const Play = () => (
   <main className="page">
+    <Hangman />
+    <Letters />
   </main>
 );
