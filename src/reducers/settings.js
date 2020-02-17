@@ -1,12 +1,18 @@
 export const initialState = {
   mode: 'word', // word | phrase | category
-  category: 'places',
-  minWordLength: 4,
   lives: 10,
   skipWordsWithoutDefinition: true,
-  showDefinition: false,
-  showWordType: true,
-  showCategory: true,
+  word: {
+    showWordType: true,
+    showDefinition: false,
+    minLength: 4,
+  },
+  phrase: {
+
+  },
+  category: {
+
+  }
 };
 
 export const reducer = (state = initialState, action) => {

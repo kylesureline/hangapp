@@ -1,3 +1,22 @@
 .answer {
   grid-area: answer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.answer__value {
+  text-align: center;
+  span {
+    font-size: 4rem;
+    margin: 0 .1rem;
+  }
+}
+
+.answer__hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

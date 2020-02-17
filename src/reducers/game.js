@@ -3,10 +3,11 @@ export const initialState = {
   answer: {
     value: ['hangapp'],
     definition: 'A hangman game developed by Kyle Scheuerlein',
-    wordType: 'Noun'
+    wordType: 'noun'
   },
   progress: ['_______'],
   guessedLetters: [],
+  isOver: false,
 };
 
 export const reducer = (state = initialState, action) => {
