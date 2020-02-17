@@ -4,6 +4,7 @@ import { createBrowserHistory } from 'history';
 import { Navigation } from '../components/Navigation';
 // pages
 import { Play } from '../components/Pages/Play/Play';
+import { Database } from '../components/Pages/Database/Database';
 import { NotFound } from '../components/Pages/NotFound';
 
 export const history = createBrowserHistory();
@@ -15,6 +16,11 @@ export const AppRouter = () => (
       {/* PLAY */}
       <Route path="/" exact={true}>
         <Play />
+      </Route>
+
+      {/* PLAY */}
+      <Route path="/database">
+        <Database />
       </Route>
 
       <Route>
