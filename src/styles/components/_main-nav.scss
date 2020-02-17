@@ -51,7 +51,7 @@
     left: .75rem;
     top: $nav-height;
     width: calc(100% - 1.5rem);
-    border-radius: .6rem;
+    border-radius: $radius-default;
     color: var(--color-light-grey);
     background: var(--color-dark-grey);
     padding: 0 .5rem;
