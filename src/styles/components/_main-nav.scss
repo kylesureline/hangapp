@@ -23,7 +23,7 @@
 .nav-list__item {
   cursor: pointer;
   text-align: center;
-  width: 75px;
+  flex: 1 0 50px;
   &:hover .nav-link:not(.nav-link--active) {
     background: var(--color-dark-grey);
     .icon--nav {
@@ -31,9 +31,6 @@
         fill: var(--color-light-grey);
       }
     }
-  }
-  @media (max-width: 320px) {
-    width: 50px;
   }
   @media (min-width: 768px) {
     width: 100%;
