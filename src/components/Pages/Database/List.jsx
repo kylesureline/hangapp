@@ -12,7 +12,12 @@ export const List = ({ search }) => {
   return (
     <ul className="database-list">
       {db[`${mode}s`].filter(filter).slice(0, slice).map((item, index) => (
-        <li key={index} className="database-list__item">{item}</li>
+        <li key={index} className="database-list__item">
+          <a
+            href={`https://www.merriam-webster.com/dictionary/${item}/`}
+            alt={`${item}'s Definition on m-w.com`}
+            >{item}</a>
+        </li>
       ))}
       <li className="database-list__item database-list__item--first50">(Showing up to the first {slice} results)</li>
     </ul>
