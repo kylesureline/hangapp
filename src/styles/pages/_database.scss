@@ -1,0 +1,5 @@
+.page--database {
+  position: relative;
+  max-height: calc(100vh - #{$nav-height});
+  overflow-y: scroll;
+}
