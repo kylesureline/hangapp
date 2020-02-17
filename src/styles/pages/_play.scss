@@ -1,3 +1,8 @@
 .page--play {
   display: grid;
+  grid-template-rows: 40vh auto 40vh;
+  grid-template-areas:
+   "hangman"
+   "answer"
+   "letters";
 }

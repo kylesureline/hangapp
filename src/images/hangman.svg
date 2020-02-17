@@ -4,7 +4,7 @@
     <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
       <rect fill="url(#gridpattern)" strokeWidth="0" y="0" x="0" height="100%" width="100%"/>
     </g>
-    <rect id="canvas_border" width="200" height="200" fill="rgba(0, 0, 0, 0)" strokeWidth="2" stroke="#000" />
+    <!-- <rect id="canvas_border" width="200" height="200" fill="rgba(0, 0, 0, 0)" strokeWidth="2" stroke="#000" /> -->
   </g>
   <g>
     <path class="hangman-draw" id="svg_9" d="m21.16667,179.33333l159.00905,0" strokeWidth="3" stroke="#000" fill="none"/>

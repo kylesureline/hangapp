@@ -9,7 +9,7 @@ export const Letters = () => {
   };
 
   return (
-    <div className="input">
+    <div className="letters">
       {abc.map(letter => <Letter key={letter} letter={letter} onClick={clickHandler} />)}
     </div>
   )

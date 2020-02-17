@@ -1,11 +1,11 @@
-.hangman-SVG {
-  margin: 0 auto;
+.hangman {
   display: flex;
+  grid-area: hangman;
 }
 
-.hangman-SVG > svg {
-  width: 100%;
+.hangman > svg {
   height: 100%;
+  max-height: 40vh;
   margin: auto;
 }
 
