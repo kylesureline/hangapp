@@ -48,6 +48,7 @@
   .nav-tooltip__content {
     font-size: 1rem;
     position: absolute;
+    z-index: 10;
     left: .75rem;
     top: $nav-height;
     width: calc(100% - 1.5rem);
