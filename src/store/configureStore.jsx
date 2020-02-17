@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import { reducer as pastGames } from '../reducers/pastGames';
 import { reducer as settings } from '../reducers/settings';
 import { reducer as game } from '../reducers/game';
+import { reducer as db } from '../reducers/db';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -13,7 +14,8 @@ export const configureStore = () => {
     combineReducers({
       pastGames,
       settings,
-      game
+      game,
+      db,
     }),
     composeEnhancers(applyMiddleware(thunk))
   );
