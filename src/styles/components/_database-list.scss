@@ -17,3 +17,7 @@
 .database-list__item:nth-child(even) {
   background: var(--color-light-grey);
 }
+
+.database-list__item--first50 {
+  font-style: italic;
+}
