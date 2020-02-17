@@ -24,13 +24,16 @@
   cursor: pointer;
   text-align: center;
   width: 75px;
-  &:hover {
+  &:hover .nav-link:not(.nav-link--active) {
     background: var(--color-dark-grey);
     .icon--nav {
       & path {
         fill: var(--color-light-grey);
       }
     }
+  }
+  @media (max-width: 320px) {
+    width: 50px;
   }
   @media (min-width: 768px) {
     width: 100%;
@@ -41,6 +44,10 @@
   padding: 1rem 0;
   width: 100%;
   display: inline-block;
+}
+
+.nav-link--active {
+  background: var(--color-blue);
 }
 
 .nav-tooltip {

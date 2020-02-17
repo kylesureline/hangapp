@@ -12,7 +12,7 @@ export const Navigation = () => (
     <ul className="nav-list">
       <li className="nav-list__item">
         <NavToolTip tooltip="Play">
-          <NavLink activeClassName="nav-link--active" className="nav-link" to="/">
+          <NavLink activeClassName="nav-link--active" className="nav-link" to="/" exact={true}>
             <PlaySVG title="Play" className="icon icon--nav" />
           </NavLink>
         </NavToolTip>

@@ -1,6 +1,8 @@
 $white: #fff;
 $black: #000;
 
+$blue: #034078;
+
 $light-grey: lighten($black, 88%);
 $grey: lighten($black, 66%);
 $med-grey: lighten($black, 44%);
@@ -16,6 +18,7 @@ $radius-default: .6rem;
   --color-grey: #{$grey};
   --color-med-grey: #{$med-grey};
   --color-dark-grey: #{$dark-grey};
+  --color-blue: #{lighten($blue, 50%)};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,5 +29,6 @@ $radius-default: .6rem;
     --color-grey: #{invert($grey)};
     --color-med-grey: #{invert($med-grey)};
     --color-dark-grey: #{invert($dark-grey)};
+    --color-blue: #{$blue};
   }
 }
