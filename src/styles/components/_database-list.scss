@@ -20,9 +20,9 @@
     padding: 1rem 2rem;
   }
   &:hover {
-    background: var(--color-med-grey);
+    background: var(--color-blue);
     a {
-      color: var(--color-light-grey);
+      color: $white;
     }
   }
 }
