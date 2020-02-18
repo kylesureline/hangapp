@@ -1,5 +1,6 @@
 export const initialState = {
   guessesRemaining: 10,
+  // guessesRemaining: 0,
   answer: {
     word: ['hangapp'],
     def: 'A hangman game developed by Kyle Scheuerlein',
@@ -7,6 +8,7 @@ export const initialState = {
   },
   progress: ['_______'],
   guessedLetters: [],
+  // guessedLetters: ['z', 'x', 'y', 'w', 't', 'b', 'r', 'o', 'i', 'v'],
   isOver: false,
 };
 

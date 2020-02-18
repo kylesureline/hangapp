@@ -50,7 +50,7 @@ export const Navigation = () => {
     <nav className="main-nav">
       <ul className="nav-list">
         <li className="nav-list__item">
-          {isOver ? (
+          {!isOver ? (
             <NavToolTip tooltip="Play">
               <NavLink activeClassName="nav-link--active" className="nav-link" to="/" exact={true}>
                 <PlaySVG title="Play" className="icon icon--nav" />
