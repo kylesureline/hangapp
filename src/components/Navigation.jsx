@@ -7,13 +7,43 @@ import { ReactComponent as DatabaseSVG } from '../images/storage.svg';
 import { ReactComponent as AboutSVG } from '../images/live_help.svg';
 import { NavLink } from 'react-router-dom';
 import { NavToolTip } from './reusable/NavToolTip';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { NEW_GAME } from '../reducers/actions';
+import { getWordFromCache } from '../utils/';
 
 export const Navigation = () => {
   const { isOver } = useSelector(state => state.game);
+  const { mode, word: settings } = useSelector(state => state.settings);
+  const { words } = useSelector(state => state.db);
+  const dispatch = useDispatch();
+
+  const matchesSettings = ({ word, def }) => {
+    const { skipWithoutDefinition, minLength } = settings;
+    if(skipWithoutDefinition && !def) {
+      return false;
+    } else if(word[0].length < minLength) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   const handleNewGame = () => {
-    console.log('should start new game');
+    if(mode === 'word') {
+      let word = getWordFromCache() || {
+        word: [words[Math.floor(Math.random() * words.length)]],
+        def: '',
+        wordType: '',
+      };
+      while(!matchesSettings(word)) {
+        word = getWordFromCache() || {
+          word: [words[Math.floor(Math.random() * words.length)]],
+          def: '',
+          wordType: '',
+        };
+      }
+      dispatch(NEW_GAME(word));
+    }
   };
 
   return (

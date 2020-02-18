@@ -1,10 +1,10 @@
 export const initialState = {
   mode: 'word', // word | phrase | category
   lives: 10,
-  skipWordsWithoutDefinition: true,
   word: {
     showWordType: true,
     showDefinition: false,
+    skipWithoutDefinition: true,
     minLength: 4,
   },
   phrase: {
