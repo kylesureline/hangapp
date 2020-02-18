@@ -1,22 +1,22 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { ReactComponent as HangmanSVG } from '../../../images/hangman.svg';
 import { useSelector } from 'react-redux';
 
 export const Hangman = () => {
-  const game = useSelector(state => state.game);
+  const { guessesRemaining } = useSelector(state => state.game);
 
-  useEffect(() => {
-    drawFrame(game.guessesRemaining);
-  }, [game]);
-
-  const drawFrame = guessesRemaining => {
+  const drawFrame = useCallback(guessesRemaining => {
     let frame = 10;
     svgAnimator(frame);
     while(frame >= guessesRemaining) {
       svgAnimator(frame);
       frame -= 1;
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    drawFrame(guessesRemaining);
+  }, [guessesRemaining, drawFrame]);
 
   const svgAnimator = (guessesRemaining) => {
     if(guessesRemaining === 10) {

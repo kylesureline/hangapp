@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import wordBank from '../db/wordBank';
 import { ADD_WORDS, DONE_COMPILING } from '../reducers/actions';
 
 export const Database = ({ children }) => {
   const { mode } = useSelector(state => state.settings);
-  const db = useSelector(state => state.db);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +18,7 @@ export const Database = ({ children }) => {
         }, 100 * index);
       });
     }
-  }, [mode]);
+  }, [mode, dispatch]);
 
   return children;
 }
