@@ -21,3 +21,5 @@ export const addToCache = word => {
   const cache = getCache();
   localStorage.setItem('db', JSON.stringify([...cache, word]));
 };
+
+export const getWordFromCache = () => getCache()[0];

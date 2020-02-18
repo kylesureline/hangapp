@@ -46,7 +46,7 @@ export const Database = ({ children }) => {
 
                   // console.log(word, wordType, def);
                   if(getCache().length < CACHE_MAX) {
-                    addToCache({word, wordType, def});
+                    addToCache({word: [word], wordType, def});
                   }
                 }
               }
