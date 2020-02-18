@@ -59,7 +59,7 @@ export const Database = ({ children }) => {
       isUnmounted = true;
       clearInterval(interval);
     }
-  }, [doneCompiling]);
+  }, [doneCompiling, words]);
 
   return children;
 }
