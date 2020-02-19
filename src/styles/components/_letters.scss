@@ -13,8 +13,8 @@
   border: 1px solid var(--color-dark-grey);
   border-radius: $radius-default;
   outline: 0;
+  cursor: pointer;
   &:hover {
-    background: var(--color-dark-grey);
-    color: var(--color-light-grey);
+    background: var(--color-blue);
   }
 }
