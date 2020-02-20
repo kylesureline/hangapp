@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import wordBank from '../db/wordBank';
-import { ADD_WORDS, DONE_COMPILING } from '../reducers/actions';
-import { fetchData, isOnline, getCache, addToCache } from '../utils';
+import { ADD_WORD_WITH_DEF, ADD_WORDS_WITHOUT_DEF, DONE_COMPILING } from '../reducers/actions';
+import { fetchData, isOnline, formatWordObj } from '../utils';
 
 export const Database = ({ children }) => {
   const { mode } = useSelector(state => state.settings);
@@ -16,7 +16,7 @@ export const Database = ({ children }) => {
     if(mode === 'words') {
       wordBank.forEach((chunk, index)=> {
         setTimeout(() => {
-          dispatch(ADD_WORDS(chunk));
+          dispatch(ADD_WORDS_WITHOUT_DEF(chunk));
           if(index === wordBank.length - 1) {
             dispatch(DONE_COMPILING());
           }
@@ -33,8 +33,8 @@ export const Database = ({ children }) => {
     if(doneCompiling) {
       interval = setInterval(() => {
         // don't try to fetch if offline
-        if(isOnline() && getCache().length < CACHE_MAX) {
-          const word = words[Math.floor(Math.random() * words.length)];
+        if(isOnline() && words.withDef.length < CACHE_MAX) {
+          const word = words.withoutDef[Math.floor(Math.random() * words.withoutDef.length)];
           fetchData(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=cb690753-1eb8-4661-a7f4-9adf25057760`)
             .then(data => {
               if(!isUnmounted) {
@@ -45,8 +45,9 @@ export const Database = ({ children }) => {
                   const def = defs[Math.floor(Math.random() * defs.length)];
 
                   // console.log(word, wordType, def);
-                  if(getCache().length < CACHE_MAX) {
-                    addToCache({word: [word], wordType, def});
+                  if(words.withDef.length < CACHE_MAX) {
+                    // addToCache({word: [word], wordType, def});
+                    dispatch(ADD_WORD_WITH_DEF(formatWordObj(word, wordType, def)));
                   }
                 }
               }
@@ -59,7 +60,7 @@ export const Database = ({ children }) => {
       isUnmounted = true;
       clearInterval(interval);
     }
-  }, [doneCompiling, words]);
+  }, [doneCompiling, words, dispatch]);
 
   return children;
 }

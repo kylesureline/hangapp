@@ -29,3 +29,9 @@ export const getWordFromCache = () => {
 
   return word;
 };
+
+export const formatWordObj = (word, wordType = '', def = '') => ({
+  word: [word],
+  wordType,
+  def
+});

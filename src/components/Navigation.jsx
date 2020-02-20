@@ -9,16 +9,16 @@ import { NavLink } from 'react-router-dom';
 import { NavToolTip } from './reusable/NavToolTip';
 import { useSelector, useDispatch } from 'react-redux';
 import { NEW_GAME } from '../reducers/actions';
-import { getWordFromCache } from '../utils/';
+import { getCache, getWordFromCache, formatWordObj } from '../utils/';
 
 export const Navigation = () => {
   const { isOver } = useSelector(state => state.game);
-  const { mode, word: settings } = useSelector(state => state.settings);
-  const { words } = useSelector(state => state.db);
+  const { mode, words } = useSelector(state => state.settings);
+  const { words: wordsDB } = useSelector(state => state.db);
   const dispatch = useDispatch();
 
   const matchesSettings = ({ word, def }) => {
-    const { skipWithoutDefinition, minLength } = settings;
+    const { skipWithoutDefinition, minLength } = words.settings;
     if(skipWithoutDefinition && !def) {
       return false;
     } else if(word[0].length < minLength) {
@@ -30,17 +30,17 @@ export const Navigation = () => {
 
   const handleNewGame = () => {
     if(mode === 'words') {
-      let word = getWordFromCache() || {
-        word: [words[Math.floor(Math.random() * words.length)]],
-        def: '',
-        wordType: '',
-      };
+      let word = words.settings.skipWithoutDefinition && !!getCache().length ? (
+        getWordFromCache()
+      ) : (
+        formatWordObj(wordsDB.withoutDef[Math.floor(Math.random() * wordsDB.withoutDef.length)])
+      );
       while(!matchesSettings(word)) {
-        word = getWordFromCache() || {
-          word: [words[Math.floor(Math.random() * words.length)]],
-          def: '',
-          wordType: '',
-        };
+        word = words.settings.skipWithoutDefinition && !!getCache().length ? (
+          getWordFromCache()
+        ) : (
+          formatWordObj(wordsDB.withoutDef[Math.floor(Math.random() * wordsDB.withoutDef.length)])
+        );
       }
       dispatch(NEW_GAME(word));
     }
