@@ -4,7 +4,7 @@ export const initialState = {
   words: {
     showWordType: true,
     showDefinition: false,
-    skipWithoutDefinition: true,
+    skipWithoutDefinition: false,
     minLength: 4,
   },
   phrases: {

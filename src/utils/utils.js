@@ -35,3 +35,5 @@ export const formatWordObj = (word, wordType = '', def = '') => ({
   wordType,
   def
 });
+
+export const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
