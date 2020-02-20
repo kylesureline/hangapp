@@ -1,16 +1,16 @@
 export const initialState = {
-  mode: 'word', // word | phrase | category
+  mode: 'words', // words | phrases | categories
   lives: 10,
-  word: {
+  words: {
     showWordType: true,
     showDefinition: false,
     skipWithoutDefinition: true,
     minLength: 4,
   },
-  phrase: {
+  phrases: {
 
   },
-  category: {
+  categories: {
 
   }
 };

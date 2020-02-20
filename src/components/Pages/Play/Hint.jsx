@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const Hint = ({ mode, word, answer }) => {
-  if(mode === 'word') {
+export const Hint = ({ mode, words, answer }) => {
+  if(mode === 'words') {
     return (
       <h2 className="answer__hint">
-        {word.showDefinition && <span>{answer.def}</span>}
-        {word.showWordType && <span>{answer.wordType}</span>}
+        {words.showDefinition && <span>{answer.def}</span>}
+        {words.showWordType && <span>{answer.wordType}</span>}
       </h2>
     )
   } else {

@@ -11,7 +11,7 @@ export const List = ({ search }) => {
 
   return (
     <ul className="database-list">
-      {db[`${mode}s`].filter(filter).slice(0, slice).map((item, index) => (
+      {db[mode].filter(filter).slice(0, slice).map((item, index) => (
         <li key={index} className="database-list__item">
           <a
             href={`https://www.merriam-webster.com/dictionary/${item}/`}

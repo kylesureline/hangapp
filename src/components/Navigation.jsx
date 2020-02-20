@@ -29,7 +29,7 @@ export const Navigation = () => {
   }
 
   const handleNewGame = () => {
-    if(mode === 'word') {
+    if(mode === 'words') {
       let word = getWordFromCache() || {
         word: [words[Math.floor(Math.random() * words.length)]],
         def: '',
