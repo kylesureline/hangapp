@@ -13,7 +13,7 @@ export const Database = ({ children }) => {
 
   // turns separate chunks into one big array
   useEffect(() => {
-    if(mode === 'word') {
+    if(mode === 'words') {
       wordBank.forEach((chunk, index)=> {
         setTimeout(() => {
           dispatch(ADD_WORDS(chunk));
