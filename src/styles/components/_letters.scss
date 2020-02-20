@@ -17,4 +17,7 @@
   &:hover {
     background: var(--color-blue);
   }
+  @media (min-width: 768px) {
+    font-size: 3vw;
+  }
 }
