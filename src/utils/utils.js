@@ -17,10 +17,12 @@ export const isOnline = () => navigator.onLine;
 
 export const getCache = () => JSON.parse(localStorage.getItem('db')) || [];
 
-export const addToCache = word => {
-  const cache = getCache();
-  localStorage.setItem('db', JSON.stringify([...cache, word]));
-};
+export const saveToCache = words => localStorage.setItem('db', JSON.stringify(words));
+
+// export const addToCache = word => {
+//   const cache = getCache();
+//   localStorage.setItem('db', JSON.stringify([...cache, word]));
+// };
 
 export const getWordFromCache = () => {
   const cache = [...getCache()];

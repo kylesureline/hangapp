@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import wordBank from '../db/wordBank';
 import { ADD_WORD_WITH_DEF, ADD_WORDS_WITHOUT_DEF, DONE_COMPILING } from '../reducers/actions';
-import { fetchData, isOnline, formatWordObj } from '../utils';
+import { fetchData, isOnline, formatWordObj, saveToCache } from '../utils';
 
 export const Database = ({ children }) => {
   const { mode } = useSelector(state => state.settings);
@@ -61,6 +61,10 @@ export const Database = ({ children }) => {
       clearInterval(interval);
     }
   }, [doneCompiling, words, dispatch]);
+
+  useEffect(() => {
+    saveToCache(words.withDef);
+  }, [words.withDef]);
 
   return children;
 }

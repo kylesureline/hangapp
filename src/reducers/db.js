@@ -1,8 +1,10 @@
+import { getCache } from '../utils';
+
 export const initialState = {
   doneCompiling: false,
   words: {
     withoutDef: [],
-    withDef: [],
+    withDef: getCache() || [],
   },
 };
 
