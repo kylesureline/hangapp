@@ -62,6 +62,7 @@ export const Database = ({ children }) => {
     }
   }, [doneCompiling, words, dispatch]);
 
+  // if words with definitions changes,
   useEffect(() => {
     saveToCache(words.withDef);
   }, [words.withDef]);
