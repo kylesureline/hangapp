@@ -1,11 +1,8 @@
 import React from 'react';
-import { configureStore } from './configureStore';
 import { Provider } from 'react-redux';
 import { Database } from './Database';
 
-const store = configureStore();
-
-export const StoreProvider = ({ children }) => (
+export const StoreProvider = ({ store, children }) => (
   <Provider store={store}>
     <Database>
       {children}
