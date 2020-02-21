@@ -5,7 +5,7 @@ import { ADD_WORD_WITH_DEF, ADD_WORDS_WITHOUT_DEF, DONE_COMPILING } from '../red
 import { fetchData, isOnline, formatWordObj, saveToCache } from '../utils';
 
 export const Database = ({ children }) => {
-  const { mode } = useSelector(state => state.settings);
+  const { mode, words: wordsSettings } = useSelector(state => state.settings);
   const { doneCompiling, words } = useSelector(state => state.db);
   const CACHE_MAX = 500;
 
@@ -62,10 +62,13 @@ export const Database = ({ children }) => {
     }
   }, [doneCompiling, words, dispatch]);
 
-  // if words with definitions changes,
+  // sync to localStorage
   useEffect(() => {
-    saveToCache(words.withDef);
+    saveToCache('db', words.withDef);
   }, [words.withDef]);
+  useEffect(() => {
+    saveToCache('settings-words', wordsSettings);
+  }, [wordsSettings])
 
   return children;
 }

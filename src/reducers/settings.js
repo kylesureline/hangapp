@@ -1,12 +1,16 @@
+import { getCache } from '../utils';
+
+const defaultWordsSettings = {
+  showWordType: true,
+  showDefinition: false,
+  skipWithoutDefinition: true,
+  minLength: 4,
+};
+
 export const initialState = {
   mode: 'words', // words | phrases | categories
   lives: 10,
-  words: {
-    showWordType: true,
-    showDefinition: false,
-    skipWithoutDefinition: true,
-    minLength: 4,
-  },
+  words: getCache('settings-words', defaultWordsSettings),
   phrases: {
 
   },

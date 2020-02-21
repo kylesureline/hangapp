@@ -15,9 +15,9 @@ export const fetchData = (url) => {
 
 export const isOnline = () => navigator.onLine;
 
-export const getCache = () => JSON.parse(localStorage.getItem('db')) || [];
+export const getCache = (key, emptyValue) => JSON.parse(localStorage.getItem(key)) || emptyValue;
 
-export const saveToCache = words => localStorage.setItem('db', JSON.stringify(words));
+export const saveToCache = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 
 // export const addToCache = word => {
 //   const cache = getCache();
