@@ -38,5 +38,20 @@ export const Words = ({ onChange, settings }) => (
         )}
       />
     </label>
+    <label>
+      <span>minimum word length:</span>
+      <span>{settings.minLength}</span>
+      <input
+        type="range"
+        min={1}
+        max={12}
+        value={settings.minLength}
+        onChange={e => onChange(
+          {
+            minLength: e.target.value
+          }
+        )}
+      />
+    </label>
   </>
-)
+);

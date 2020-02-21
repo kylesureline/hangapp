@@ -25,20 +25,7 @@ export const Settings = () => {
           selectedOption={mode}
           onChange={handleModeChange}
         />
-        <Words onChange={handleWordsSettings} settings={words} />
-
-        {/* <label>
-          words
-          <input type="radio" name="mode" />
-        </label>
-        <label>
-          phrases
-          <input type="radio" name="mode" />
-        </label>
-        <label>
-          categories
-          <input type="radio" name="mode" />
-        </label> */}
+        {mode === 'words' && <Words onChange={handleWordsSettings} settings={words} />}
       </form>
     </main>
   );
