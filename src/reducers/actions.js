@@ -16,3 +16,15 @@ export const ADD_WORD_WITH_DEF = word => ({
   type: 'ADD_WORD_WITH_DEF',
   word
 });
+
+export const CHANGE_MODE = mode => ({
+  type: 'CHANGE_MODE',
+  mode
+});
+
+export const CHANGE_WORDS_SETTINGS = settings => ({
+  type: 'CHANGE_WORDS_SETTINGS',
+  settings: {
+    ...settings
+  },
+});
