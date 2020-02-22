@@ -1,18 +1,23 @@
 import React from 'react';
-import { withoutDefCount } from '../db/wordBank';
 import { MAX_TO_CACHE } from '../db/globals';
 import { useSelector } from 'react-redux';
 
 export const LoadingIndicator = () => {
-  const max = withoutDefCount + MAX_TO_CACHE;
+  const max = MAX_TO_CACHE;
   const { words } = useSelector(state => state.db);
-  const { withDef, withoutDef } = words;
+  const { withDef } = words;
 
-  const value = withDef.length + withoutDef.length;
+  const value = withDef.length;
 
   return (
-    <div className={`loading-indicator${value === max ? ' loading-indicator--complete' : ''}`}>
-      <progress value={value} max={max} title={value === max ? 'Database loaded' : 'Loading...'} />
+    <div className={`loading${value === max ? ' loading--complete' : ''}`}>
+      <span className="loading__info">{value === max ? 'database complete!' : 'building database...'}</span>
+      <progress
+        className="loading__progress"
+        value={value}
+        max={max}
+        title={value === max ? 'Database loaded' : 'Loading...'}
+      />
     </div>
   );
 };

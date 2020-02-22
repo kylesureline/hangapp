@@ -1,1 +1,1 @@
-export const MAX_TO_CACHE = 500;
+export const MAX_TO_CACHE = 200;

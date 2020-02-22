@@ -1,24 +1,15 @@
 import { getCache } from '../utils';
+import wordBank from '../db/wordBank';
 
 export const initialState = {
-  doneCompiling: false,
   words: {
-    withoutDef: [],
+    withoutDef: wordBank,
     withDef: getCache('db-words-withDef') || [],
   },
 };
 
 export const reducer = (state = initialState, action) => {
   switch(action.type) {
-    case 'ADD_WORDS_WITHOUT_DEF':
-      return {
-        ...state,
-        doneCompiling: false,
-        words: {
-          ...state.words,
-          withoutDef: [...state.words.withoutDef, ...action.chunk]
-        },
-      };
     case 'ADD_WORD_WITH_DEF':
       return {
         ...state,
@@ -34,11 +25,6 @@ export const reducer = (state = initialState, action) => {
           ...state.words,
           withDef: action.withDef
         }
-      };
-    case 'DONE_COMPILING':
-      return {
-        ...state,
-        doneCompiling: true
       };
     default:
       return state;

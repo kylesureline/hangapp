@@ -129064,64 +129064,30 @@ const chunk26 = [
 ];
 
 export default [
-  chunk1,
-  chunk2,
-  chunk3,
-  chunk4,
-  chunk5,
-  chunk6,
-  chunk7,
-  chunk8,
-  chunk9,
-  chunk10,
-  chunk11,
-  chunk12,
-  chunk13,
-  chunk14,
-  chunk15,
-  chunk16,
-  chunk17,
-  chunk18,
-  chunk19,
-  chunk20,
-  chunk21,
-  chunk22,
-  chunk23,
-  chunk24,
-  chunk25,
-  chunk26,
+  ...chunk1,
+  ...chunk2,
+  ...chunk3,
+  ...chunk4,
+  ...chunk5,
+  ...chunk6,
+  ...chunk7,
+  ...chunk8,
+  ...chunk9,
+  ...chunk10,
+  ...chunk11,
+  ...chunk12,
+  ...chunk13,
+  ...chunk14,
+  ...chunk15,
+  ...chunk16,
+  ...chunk17,
+  ...chunk18,
+  ...chunk19,
+  ...chunk20,
+  ...chunk21,
+  ...chunk22,
+  ...chunk23,
+  ...chunk24,
+  ...chunk25,
+  ...chunk26,
 ];
-
-// export const withoutDefCount = (
-//   chunk1.length +
-//   chunk2.length +
-//   chunk3.length +
-//   chunk4.length +
-//   chunk5.length +
-//   chunk6.length +
-//   chunk7.length +
-//   chunk8.length +
-//   chunk9.length +
-//   chunk10.length +
-//   chunk11.length +
-//   chunk12.length +
-//   chunk13.length +
-//   chunk14.length +
-//   chunk15.length +
-//   chunk16.length +
-//   chunk17.length +
-//   chunk18.length +
-//   chunk19.length +
-//   chunk20.length +
-//   chunk21.length +
-//   chunk22.length +
-//   chunk23.length +
-//   chunk24.length +
-//   chunk25.length +
-//   chunk26.length
-// );
-//
-// console.log(withoutDefCount);
-
-// hard coded for performance reasons:
-export const withoutDefCount = 128985;
