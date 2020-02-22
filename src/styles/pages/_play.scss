@@ -5,4 +5,12 @@
    "hangman"
    "answer"
    "letters";
+   @media (min-width: 768px) {
+     align-content: center;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 5fr 3fr;
+     grid-template-areas:
+      "hangman answer"
+      "letters letters";
+   }
 }

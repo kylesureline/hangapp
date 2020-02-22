@@ -4,6 +4,9 @@
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
   padding: 1rem;
+  @media (min-width: 768px) {
+    grid-column: 1 / -1;
+  }
 }
 
 .letters__item {

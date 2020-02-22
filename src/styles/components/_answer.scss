@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  line-height: 1.5;
 }
 
 .answer__value {
@@ -14,9 +15,19 @@
   }
 }
 
+.answer__value,
+.answer__hint {
+  margin: 0;
+}
+
 .answer__hint {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-weight: 400;
+}
+
+.answer__hint__word-type {
+  font-style: italic;
 }
