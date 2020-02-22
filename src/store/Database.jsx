@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import wordBank from '../db/wordBank';
 import { ADD_WORD_WITH_DEF, ADD_WORDS_WITHOUT_DEF, DONE_COMPILING } from '../reducers/actions';
 import { fetchData, isOnline, formatWordObj, saveToCache } from '../utils';
+import { MAX_TO_CACHE } from '../db/globals';
 
 export const Database = ({ children }) => {
   const { mode, words: wordsSettings } = useSelector(state => state.settings);
   const { doneCompiling, words } = useSelector(state => state.db);
   const { withDef, withoutDef } = words;
-  const CACHE_MAX = 500;
 
   const dispatch = useDispatch();
 
@@ -34,7 +34,7 @@ export const Database = ({ children }) => {
     if(doneCompiling) {
       interval = setInterval(() => {
         // don't try to fetch if offline
-        if(isOnline() && withDef.length < CACHE_MAX) {
+        if(isOnline() && withDef.length < MAX_TO_CACHE) {
           const word = withoutDef[Math.floor(Math.random() * withoutDef.length)];
           fetchData(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=cb690753-1eb8-4661-a7f4-9adf25057760`)
             .then(data => {
@@ -46,7 +46,7 @@ export const Database = ({ children }) => {
                   const def = defs[Math.floor(Math.random() * defs.length)];
 
                   // console.log(word, wordType, def);
-                  if(withDef.length < CACHE_MAX) {
+                  if(withDef.length < MAX_TO_CACHE) {
                     // addToCache({word: [word], wordType, def});
                     dispatch(ADD_WORD_WITH_DEF(formatWordObj(word, wordType, def)));
                   }

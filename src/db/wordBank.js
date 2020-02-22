@@ -129091,3 +129091,37 @@ export default [
   chunk25,
   chunk26,
 ];
+
+// export const withoutDefCount = (
+//   chunk1.length +
+//   chunk2.length +
+//   chunk3.length +
+//   chunk4.length +
+//   chunk5.length +
+//   chunk6.length +
+//   chunk7.length +
+//   chunk8.length +
+//   chunk9.length +
+//   chunk10.length +
+//   chunk11.length +
+//   chunk12.length +
+//   chunk13.length +
+//   chunk14.length +
+//   chunk15.length +
+//   chunk16.length +
+//   chunk17.length +
+//   chunk18.length +
+//   chunk19.length +
+//   chunk20.length +
+//   chunk21.length +
+//   chunk22.length +
+//   chunk23.length +
+//   chunk24.length +
+//   chunk25.length +
+//   chunk26.length
+// );
+//
+// console.log(withoutDefCount);
+
+// hard coded for performance reasons:
+export const withoutDefCount = 128985;
