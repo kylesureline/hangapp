@@ -7,7 +7,6 @@ import { CHANGE_MODE, CHANGE_WORDS_SETTINGS } from '../../../reducers/actions';
 export const Settings = () => {
   const { mode, words } = useSelector(state => state.settings);
   const dispatch = useDispatch();
-
   const handleModeChange = e => {
     const { value } = e.target;
     dispatch(CHANGE_MODE(value));
@@ -15,17 +14,22 @@ export const Settings = () => {
 
   const handleWordsSettings = obj => {
     dispatch(CHANGE_WORDS_SETTINGS(obj));
-  }
+  };
 
   return (
-    <main className="page page--play">
+    <main className="page page--settings">
       <form>
         <Mode
           options={['words', 'categories']}
           selectedOption={mode}
           onChange={handleModeChange}
         />
-        {mode === 'words' && <Words onChange={handleWordsSettings} settings={words} />}
+        {mode === 'words' && (
+          <Words
+            onChange={handleWordsSettings}
+            settings={words}
+          />
+        )}
       </form>
     </main>
   );

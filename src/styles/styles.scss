@@ -11,7 +11,10 @@
 @import './components/search';
 @import './components/database-list';
 @import './components/loading';
+@import './components/mode';
+@import './components/words-settings';
 
 // pages
 @import './pages/play';
 @import './pages/database';
+@import './pages/settings';
