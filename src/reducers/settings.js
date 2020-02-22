@@ -8,15 +8,10 @@ const defaultWordsSettings = {
 };
 
 export const initialState = {
-  mode: 'words', // words | phrases | categories
+  mode: 'words', // words || categories
   lives: 10,
   words: getCache('settings-words', defaultWordsSettings),
-  phrases: {
-
-  },
-  categories: {
-
-  }
+  categories: {}
 };
 
 export const reducer = (state = initialState, action) => {

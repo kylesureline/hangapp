@@ -21,7 +21,7 @@ export const Settings = () => {
     <main className="page page--play">
       <form>
         <Mode
-          options={['words', 'phrases', 'categories']}
+          options={['words', 'categories']}
           selectedOption={mode}
           onChange={handleModeChange}
         />
