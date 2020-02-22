@@ -61,7 +61,7 @@ export const Hangman = () => {
   return (
     <div className="hangman">
       {/* <div className="hangman__wrapper"> */}
-        <HangmanSVG />
+        <HangmanSVG title={`Guesses remaining: ${guessesRemaining}`} />
       {/* </div> */}
     </div>
   )
