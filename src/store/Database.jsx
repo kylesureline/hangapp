@@ -7,6 +7,7 @@ import { fetchData, isOnline, formatWordObj, saveToCache } from '../utils';
 export const Database = ({ children }) => {
   const { mode, words: wordsSettings } = useSelector(state => state.settings);
   const { doneCompiling, words } = useSelector(state => state.db);
+  const { withDef, withoutDef } = words;
   const CACHE_MAX = 500;
 
   const dispatch = useDispatch();
@@ -33,8 +34,8 @@ export const Database = ({ children }) => {
     if(doneCompiling) {
       interval = setInterval(() => {
         // don't try to fetch if offline
-        if(isOnline() && words.withDef.length < CACHE_MAX) {
-          const word = words.withoutDef[Math.floor(Math.random() * words.withoutDef.length)];
+        if(isOnline() && withDef.length < CACHE_MAX) {
+          const word = withoutDef[Math.floor(Math.random() * withoutDef.length)];
           fetchData(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=cb690753-1eb8-4661-a7f4-9adf25057760`)
             .then(data => {
               if(!isUnmounted) {
@@ -45,7 +46,7 @@ export const Database = ({ children }) => {
                   const def = defs[Math.floor(Math.random() * defs.length)];
 
                   // console.log(word, wordType, def);
-                  if(words.withDef.length < CACHE_MAX) {
+                  if(withDef.length < CACHE_MAX) {
                     // addToCache({word: [word], wordType, def});
                     dispatch(ADD_WORD_WITH_DEF(formatWordObj(word, wordType, def)));
                   }
@@ -60,12 +61,12 @@ export const Database = ({ children }) => {
       isUnmounted = true;
       clearInterval(interval);
     }
-  }, [doneCompiling, words, dispatch]);
+  }, [doneCompiling, withDef, withoutDef, dispatch]);
 
   // sync to localStorage
   useEffect(() => {
-    saveToCache('db-words-withDef', words.withDef);
-  }, [words.withDef]);
+    saveToCache('db-words-withDef', withDef);
+  }, [withDef]);
   useEffect(() => {
     saveToCache('settings-words', wordsSettings);
   }, [wordsSettings])
