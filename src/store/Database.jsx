@@ -64,7 +64,7 @@ export const Database = ({ children }) => {
 
   // sync to localStorage
   useEffect(() => {
-    saveToCache('db', words.withDef);
+    saveToCache('db-words-withDef', words.withDef);
   }, [words.withDef]);
   useEffect(() => {
     saveToCache('settings-words', wordsSettings);

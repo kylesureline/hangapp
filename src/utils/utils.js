@@ -24,13 +24,13 @@ export const saveToCache = (key, value) => localStorage.setItem(key, JSON.string
 //   localStorage.setItem('db', JSON.stringify([...cache, word]));
 // };
 
-export const getWordFromCache = () => {
-  const cache = [...getCache()];
-  const word = cache.shift();
-  localStorage.setItem('db', JSON.stringify([...cache]));
-
-  return word;
-};
+// export const getWordFromCache = () => {
+//   const cache = [...getCache()];
+//   const word = cache.shift();
+//   localStorage.setItem('db', JSON.stringify([...cache]));
+//
+//   return word;
+// };
 
 export const formatWordObj = (word, wordType = '', def = '') => ({
   word: [word],

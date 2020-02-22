@@ -4,7 +4,7 @@ export const initialState = {
   doneCompiling: false,
   words: {
     withoutDef: [],
-    withDef: getCache('db') || [],
+    withDef: getCache('db-words-withDef') || [],
   },
 };
 
