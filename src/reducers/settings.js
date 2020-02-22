@@ -10,7 +10,7 @@ const defaultWordsSettings = {
 export const initialState = {
   mode: 'words', // words || categories
   lives: 10,
-  words: getCache('settings-words', defaultWordsSettings),
+  words: getCache('settings-words') || defaultWordsSettings,
   categories: {}
 };
 

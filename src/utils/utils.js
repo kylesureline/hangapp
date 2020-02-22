@@ -15,7 +15,7 @@ export const fetchData = (url) => {
 
 export const isOnline = () => navigator.onLine;
 
-export const getCache = (key, emptyValue) => JSON.parse(localStorage.getItem(key)) || emptyValue;
+export const getCache = (key) => JSON.parse(localStorage.getItem(key));
 
 export const saveToCache = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 

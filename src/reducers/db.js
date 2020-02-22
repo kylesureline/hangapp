@@ -4,7 +4,7 @@ export const initialState = {
   doneCompiling: false,
   words: {
     withoutDef: [],
-    withDef: getCache('db', []),
+    withDef: getCache('db') || [],
   },
 };
 
@@ -25,6 +25,14 @@ export const reducer = (state = initialState, action) => {
         words: {
           ...state.words,
           withDef: [...state.words.withDef, action.word]
+        }
+      };
+    case 'UPDATE_WORDS_WITH_DEF':
+      return {
+        ...state,
+        words: {
+          ...state.words,
+          withDef: action.withDef
         }
       };
     case 'DONE_COMPILING':

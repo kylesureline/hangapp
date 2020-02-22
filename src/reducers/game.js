@@ -1,6 +1,5 @@
 export const initialState = {
   guessesRemaining: 10,
-  // guessesRemaining: 0,
   answer: {
     word: ['hangapp'],
     def: 'A hangman game developed by Kyle Scheuerlein',
@@ -8,9 +7,21 @@ export const initialState = {
   },
   progress: ['_______'],
   guessedLetters: [],
-  // guessedLetters: ['z', 'x', 'y', 'w', 't', 'b', 'r', 'o', 'i', 'v'],
   isOver: false,
 };
+
+// game over
+// export const initialState = {
+//   guessesRemaining: 0,
+//   answer: {
+//     word: ['hangapp'],
+//     def: 'A hangman game developed by Kyle Scheuerlein',
+//     wordType: 'noun'
+//   },
+//   progress: ['_______'],
+//   guessedLetters: ['z', 'x', 'y', 'w', 't', 'b', 'r', 'o', 'i', 'v'],
+//   isOver: true,
+// }
 
 export const reducer = (state = initialState, { type, answer }) => {
   switch(type) {

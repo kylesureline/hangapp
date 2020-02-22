@@ -17,6 +17,11 @@ export const ADD_WORD_WITH_DEF = word => ({
   word
 });
 
+export const UPDATE_WORDS_WITH_DEF = withDef => ({
+  type: 'UPDATE_WORDS_WITH_DEF',
+  withDef
+});
+
 export const CHANGE_MODE = mode => ({
   type: 'CHANGE_MODE',
   mode
