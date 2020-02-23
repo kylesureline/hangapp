@@ -1,18 +1,30 @@
 .mode {
   // display: flex;
-  border-radius: $radius-default;
-  overflow: hidden;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   max-width: 440px;
-  margin: 3rem auto;
+  padding: 2rem;
+  margin: 0 auto;
   grid-column: 1 / -1;
-  font-size: 2.8rem;
+  font-size: 1.6rem;
+  @media (min-width: 768px) {
+    font-size: 2.8rem;
+    padding: 3rem;
+  }
+}
+
+.mode .option:first-child {
+  border-radius: $radius-default 0 0 $radius-default;
+}
+
+.mode .option:last-child {
+  border-radius: 0 $radius-default $radius-default 0;
 }
 
 .mode .option {
   background: var(--color-light-grey);
   cursor: pointer;
-  flex: 1 0 50%;
+  // flex: 1 0 50%;
   text-align: center;
 }
 
