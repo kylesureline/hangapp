@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { Navigation } from '../components/Navigation';
 import { LoadingIndicator } from '../components/LoadingIndicator';
@@ -12,7 +12,7 @@ import { NotFound } from '../components/Pages/NotFound';
 export const history = createBrowserHistory();
 
 export const AppRouter = () => (
-  <Router history={history}>
+  <HashRouter history={history}>
     <Navigation />
     <Switch>
       {/* PLAY */}
@@ -36,5 +36,5 @@ export const AppRouter = () => (
     </Switch>
     {/* <div>Modal</div> */}
     <LoadingIndicator />
-  </Router>
+  </HashRouter>
 );
