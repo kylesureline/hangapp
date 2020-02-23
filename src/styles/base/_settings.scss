@@ -18,7 +18,7 @@ $radius-default: .6rem;
   --color-grey: #{$grey};
   --color-med-grey: #{$med-grey};
   --color-dark-grey: #{$dark-grey};
-  --color-blue: #{lighten($blue, 50%)};
+  --color-blue: #{$blue};
   --color-transparent: #{rgba($white, .4)};
 }
 
@@ -30,7 +30,7 @@ $radius-default: .6rem;
     --color-grey: #{invert($grey)};
     --color-med-grey: #{invert($med-grey)};
     --color-dark-grey: #{invert($dark-grey)};
-    --color-blue: #{$blue};
+    --color-blue: #{lighten($blue, 50%)};
     --color-transparent: #{rgba($black, .4)};
   }
 }

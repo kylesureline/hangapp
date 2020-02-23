@@ -45,6 +45,9 @@
 
 .nav-link--active {
   background: var(--color-blue);
+  .icon--nav path {
+    fill: var(--color-light-grey);
+  }
 }
 
 // .nav-tooltip {
