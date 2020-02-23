@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useCallback } from 'react';
 import { ReactComponent as HangmanSVG } from '../../../images/hangman.svg';
 import { useSelector } from 'react-redux';
