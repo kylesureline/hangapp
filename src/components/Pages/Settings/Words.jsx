@@ -9,7 +9,7 @@ export const Words = ({ onChange, settings }) => {
   return (
     <div className="words-settings">
       <label className="label">
-        <span>show word type:</span>
+        <span className="label__text">show word type:</span>
         <ToggleSwitch
           checked={settings.showWordType}
           onChange={() => onChange(
@@ -20,7 +20,7 @@ export const Words = ({ onChange, settings }) => {
         />
       </label>
       <label className="label">
-        <span>show definition:</span>
+        <span className="label__text">show definition:</span>
         <ToggleSwitch
           checked={settings.showDefinition}
           onChange={() => onChange(
@@ -31,7 +31,7 @@ export const Words = ({ onChange, settings }) => {
         />
       </label>
       <label className="label">
-        <span>skip words without a definition:</span>
+        <span className="label__text">skip words without a definition:</span>
         <ToggleSwitch
           checked={settings.skipWithoutDefinition}
           onChange={() => onChange(
