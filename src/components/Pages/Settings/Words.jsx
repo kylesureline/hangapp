@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelectedWords } from '../../../hooks/useSelectedWords';
 import { numberWithCommas } from '../../../utils/';
+import { ToggleSwitch } from '../../reusable/ToggleSwitch';
 
 export const Words = ({ onChange, settings }) => {
   const { selectedWords } = useSelectedWords('');
@@ -9,8 +10,7 @@ export const Words = ({ onChange, settings }) => {
     <div className="words-settings">
       <label className="label">
         <span>show word type:</span>
-        <input
-          type="checkbox"
+        <ToggleSwitch
           checked={settings.showWordType}
           onChange={() => onChange(
             {
@@ -21,8 +21,7 @@ export const Words = ({ onChange, settings }) => {
       </label>
       <label className="label">
         <span>show definition:</span>
-        <input
-          type="checkbox"
+        <ToggleSwitch
           checked={settings.showDefinition}
           onChange={() => onChange(
             {
@@ -33,8 +32,7 @@ export const Words = ({ onChange, settings }) => {
       </label>
       <label className="label">
         <span>skip words without a definition:</span>
-        <input
-          type="checkbox"
+        <ToggleSwitch
           checked={settings.skipWithoutDefinition}
           onChange={() => onChange(
             {
