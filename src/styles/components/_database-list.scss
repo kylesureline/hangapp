@@ -9,6 +9,11 @@
   margin-top: 67px;
 }
 
+.database-list--warning {
+  text-align: center;
+  padding: 3rem;
+}
+
 .database-list__item {
   border-bottom: 1px solid var(--color-light-grey);
   color: var(--color-dark-grey);

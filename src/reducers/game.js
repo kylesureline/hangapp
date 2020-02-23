@@ -46,13 +46,19 @@ export const reducer = (state = initialState, { type, answer, letter }) => {
         isOver: false,
       };
     case 'GUESS_LETTER':
-      const newProgress = updateProgress(state.answer.word, state.progress, letter);
-      const newGuessesRemaining = state.answer.word.join(' ').includes(letter) ? state.guessesRemaining : state.guessesRemaining >= 1 ? state.guessesRemaining - 1 : 0;
+      const progress = updateProgress(state.answer.word, state.progress, letter);
+      const guessesRemaining = state.answer.word.join(' ').includes(letter) ? state.guessesRemaining : state.guessesRemaining >= 1 ? state.guessesRemaining - 1 : 0;
+      const isOver = progress.join(' ') === state.answer.word.join(' ') || guessesRemaining === 0;
       return {
         ...state,
-        guessesRemaining: newGuessesRemaining,
-        progress: newProgress,
-        isOver: newProgress.join(' ') === state.answer.word.join(' ') || newGuessesRemaining === 0,
+        guessesRemaining,
+        progress,
+        isOver,
+      };
+    case 'END_GAME':
+      return {
+        ...state,
+        isOver: true,
       };
     default:
       return state;

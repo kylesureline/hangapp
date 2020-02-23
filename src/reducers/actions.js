@@ -29,3 +29,7 @@ export const GUESS_LETTER = letter => ({
   type: 'GUESS_LETTER',
   letter
 });
+
+export const END_GAME = () => ({
+  type: 'END_GAME',
+});
