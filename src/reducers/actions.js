@@ -24,3 +24,8 @@ export const CHANGE_WORDS_SETTINGS = settings => ({
     ...settings
   },
 });
+
+export const GUESS_LETTER = letter => ({
+  type: 'GUESS_LETTER',
+  letter
+});

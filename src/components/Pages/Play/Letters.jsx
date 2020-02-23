@@ -1,11 +1,14 @@
 import React from 'react';
 import { Letter } from '../../reusable/Letter';
+import { useDispatch } from 'react-redux';
+import { GUESS_LETTER } from '../../../reducers/actions';
 
 export const Letters = () => {
+  const dispatch = useDispatch();
   const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   const clickHandler = letter => {
-    console.log(letter);
+    dispatch(GUESS_LETTER(letter.toLowerCase()));
   };
 
   return (

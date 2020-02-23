@@ -16,7 +16,11 @@ export const Hangman = () => {
 
   useEffect(() => {
     drawFrame(guessesRemaining);
-  }, [guessesRemaining, drawFrame]);
+  }, []);
+
+  useEffect(() => {
+    svgAnimator(guessesRemaining);
+  }, [guessesRemaining]);
 
   const svgAnimator = (guessesRemaining) => {
     if(guessesRemaining === 10) {
@@ -38,7 +42,7 @@ export const Hangman = () => {
   			// Go!
   			path.style.strokeDashoffset = length;
   		}
-  	} else {
+  	} else if(guessesRemaining >= 0) {
   		let path = document.querySelector('#svg_' + guessesRemaining);
   		let length = path.getTotalLength();
   		// Clear any previous transition
@@ -60,9 +64,7 @@ export const Hangman = () => {
 
   return (
     <div className="hangman">
-      {/* <div className="hangman__wrapper"> */}
-        <HangmanSVG title={`Guesses remaining: ${guessesRemaining}`} />
-      {/* </div> */}
+      <HangmanSVG title={`Guesses remaining: ${guessesRemaining}`} />
     </div>
   )
 };
