@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import { Navigation } from '../components/Navigation';
 import { LoadingIndicator } from '../components/LoadingIndicator';
 // pages
@@ -9,10 +8,8 @@ import { Database } from '../components/Pages/Database/Database';
 import { Settings } from '../components/Pages/Settings/Settings';
 import { NotFound } from '../components/Pages/NotFound';
 
-export const history = createBrowserHistory();
-
 export const AppRouter = () => (
-  <HashRouter history={history}>
+  <HashRouter>
     <Navigation />
     <Switch>
       {/* PLAY */}
