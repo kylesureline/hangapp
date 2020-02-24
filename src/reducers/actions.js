@@ -33,3 +33,10 @@ export const GUESS_LETTER = letter => ({
 export const END_GAME = () => ({
   type: 'END_GAME',
 });
+
+export const SAVE_GAME = (won, mode, categories) => ({
+  type: 'SAVE_GAME',
+  won,
+  mode,
+  categories
+});

@@ -16,9 +16,9 @@ export const useRandom = () => {
   const getRandomWord = () => {
     const getWordWithDef = () => {
       if(!!withDef.length) {
-        let foundWord = withDef.find(({ word }) => word[0].length >= minLength);
+        let foundWord = withDef.find(({ words }) => words[0].length >= minLength);
         if(!!foundWord) {
-          dispatch(UPDATE_WORDS_WITH_DEF(withDef.filter(({ word }) => word[0] !== foundWord.word[0])));
+          dispatch(UPDATE_WORDS_WITH_DEF(withDef.filter(({ words }) => words[0] !== foundWord.words[0])));
           return foundWord;
         }
       }
@@ -32,7 +32,6 @@ export const useRandom = () => {
       }
       return formatWordObj(word);
     };
-
 
     let word;
     if(skipWithoutDefinition) {

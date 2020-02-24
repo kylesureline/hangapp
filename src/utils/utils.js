@@ -33,9 +33,18 @@ export const saveToLS = (key, value) => localStorage.setItem(key, JSON.stringify
 // };
 
 export const formatWordObj = (word, wordType = '', def = '') => ({
-  word: [word],
+  words: [word],
   wordType,
   def
 });
 
 export const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+export const savePastGame = game => {
+  const pastGames = [game, ...getFromLS('past-games') || []].slice(0, 1000);
+  saveToLS('past-games', pastGames);
+};
+
+export const saveCurrentGame = state => saveToLS('current-game', state);
+
+export const getCurrentGame = () => getFromLS('current-game');
