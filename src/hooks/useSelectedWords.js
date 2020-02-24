@@ -3,19 +3,23 @@ import { useSelector } from 'react-redux';
 import { formatWordObj } from '../utils';
 
 export const useSelectedWords = (search = '') => {
-  const { mode, words } = useSelector(state => state.settings);
+  const { mode, words: wordsSettings } = useSelector(state => state.settings);
   const db = useSelector(state => state.db);
-  const filter = useCallback(({ word }) => (
-    word.join(' ').toLowerCase().includes(search.toLowerCase()) && word.join(' ').length >= words.minLength
-  ), [search, words.minLength]);
+  const filter = useCallback(({ words }) => (
+    words.join(' ').toLowerCase().includes(search.toLowerCase()) && words.join(' ').length >= wordsSettings.minLength
+  ), [search, wordsSettings.minLength]);
 
   const selectedWords = useCallback(() => {
     if(mode === 'words') {
-      return db.words[words.skipWithoutDefinition ? 'withDef' : 'withoutDef'].map(word => words.skipWithoutDefinition ? (word) : (formatWordObj(word)));
+      if(wordsSettings.skipWithoutDefinition) {
+        return db.words.withDef;
+      } else {
+        return db.words.withoutDef.map(item => formatWordObj(item));
+      }
     } else {
       return []; // TODO: add support for phrases
     }
-  }, [mode, words, db]);
+  }, [mode, wordsSettings, db]);
 
   return {
      selectedWords: selectedWords().filter(filter)
