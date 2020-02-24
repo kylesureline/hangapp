@@ -1,7 +1,7 @@
 export const initialState = {
   guessesRemaining: 10,
   answer: {
-    word: ['hangapp'],
+    words: ['hangapp'],
     def: 'A hangman game developed by Kyle Scheuerlein',
     wordType: 'noun'
   },
@@ -14,7 +14,7 @@ export const initialState = {
 // export const initialState = {
 //   guessesRemaining: 0,
 //   answer: {
-//     word: ['hangapp'],
+//     words: ['hangapp'],
 //     def: 'A hangman game developed by Kyle Scheuerlein',
 //     wordType: 'noun'
 //   },
@@ -39,16 +39,16 @@ export const reducer = (state = initialState, { type, answer, letter }) => {
         ...state,
         guessesRemaining: 10,
         answer,
-        progress: [...Array(answer.word.length)].map((word, index) => (
-          [...Array(answer.word[index].length)].map((_, i) => '_').join('')
+        progress: [...Array(answer.words.length)].map((word, index) => (
+          [...Array(answer.words[index].length)].map((_, i) => '_').join('')
         )),
         guessedLetters: [],
         isOver: false,
       };
     case 'GUESS_LETTER':
-      const progress = updateProgress(state.answer.word, state.progress, letter);
-      const guessesRemaining = state.answer.word.join(' ').includes(letter) ? state.guessesRemaining : state.guessesRemaining >= 1 ? state.guessesRemaining - 1 : 0;
-      const isOver = progress.join(' ') === state.answer.word.join(' ') || guessesRemaining === 0;
+      const progress = updateProgress(state.answer.words, state.progress, letter);
+      const guessesRemaining = state.answer.words.join(' ').includes(letter) ? state.guessesRemaining : state.guessesRemaining >= 1 ? state.guessesRemaining - 1 : 0;
+      const isOver = progress.join(' ') === state.answer.words.join(' ') || guessesRemaining === 0;
       return {
         ...state,
         guessesRemaining,
