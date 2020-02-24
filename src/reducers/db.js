@@ -1,10 +1,10 @@
-import { getCache } from '../utils';
+import { getFromLS } from '../utils';
 import wordBank from '../db/wordBank';
 
 export const initialState = {
   words: {
     withoutDef: wordBank,
-    withDef: getCache('db-words-withDef') || [],
+    withDef: getFromLS('db-words-withDef') || [],
   },
 };
 

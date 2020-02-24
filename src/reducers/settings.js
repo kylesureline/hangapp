@@ -1,4 +1,4 @@
-import { getCache } from '../utils';
+import { getFromLS } from '../utils';
 
 const defaultWordsSettings = {
   showWordType: true,
@@ -10,7 +10,7 @@ const defaultWordsSettings = {
 export const initialState = {
   mode: 'words', // words || categories
   lives: 10,
-  words: getCache('settings-words') || defaultWordsSettings,
+  words: getFromLS('settings-words') || defaultWordsSettings,
   categories: {}
 };
 

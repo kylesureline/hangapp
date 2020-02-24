@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ADD_WORD_WITH_DEF } from '../reducers/actions';
-import { fetchData, isOnline, formatWordObj, saveToCache } from '../utils';
+import { fetchData, isOnline, formatWordObj, saveToLS } from '../utils';
 import { MAX_TO_CACHE } from '../db/globals';
 
 export const Database = ({ children }) => {
@@ -48,10 +48,10 @@ export const Database = ({ children }) => {
 
   // sync to localStorage
   useEffect(() => {
-    saveToCache('db-words-withDef', withDef);
+    saveToLS('db-words-withDef', withDef);
   }, [withDef]);
   useEffect(() => {
-    saveToCache('settings-words', wordsSettings);
+    saveToLS('settings-words', wordsSettings);
   }, [wordsSettings])
 
   return children;

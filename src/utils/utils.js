@@ -15,17 +15,17 @@ export const fetchData = (url) => {
 
 export const isOnline = () => navigator.onLine;
 
-export const getCache = (key) => JSON.parse(localStorage.getItem(key));
+export const getFromLS = (key) => JSON.parse(localStorage.getItem(key));
 
-export const saveToCache = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+export const saveToLS = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 
 // export const addToCache = word => {
-//   const cache = getCache();
+//   const cache = getFromLS();
 //   localStorage.setItem('db', JSON.stringify([...cache, word]));
 // };
 
 // export const getWordFromCache = () => {
-//   const cache = [...getCache()];
+//   const cache = [...getFromLS()];
 //   const word = cache.shift();
 //   localStorage.setItem('db', JSON.stringify([...cache]));
 //
