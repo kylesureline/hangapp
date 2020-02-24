@@ -17,7 +17,6 @@ export const List = ({ search, isOver }) => {
   return isOver ? (
     <ul className="database-list">
       {selectedWords.slice(0, slice).map(({ words }, index) => {
-        let joined = words.join(' ');
         return (
           <li key={index} className="database-list__item">
             <a
