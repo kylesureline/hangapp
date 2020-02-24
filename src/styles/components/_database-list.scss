@@ -1,12 +1,9 @@
-.search {
-  position: fixed;
-}
-
 .database-list {
   padding: 0;
   margin: 0;
   font-size: 1.8rem;
-  margin-top: 67px;
+  max-height: calc(100vh - #{$nav-height + 67px});
+  overflow-y: scroll;
 }
 
 .database-list--warning {

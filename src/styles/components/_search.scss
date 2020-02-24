@@ -4,8 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // position: relative;
   background: var(--color-white);
+  position: sticky;
+  top: 0;
   @media (min-width: 768px) {
     width: calc(100% - #{$nav-height})
   }
@@ -22,9 +23,6 @@
 }
 
 .search__count {
-  // position: absolute;
-  // right: 2rem;
-  // top: calc(50% - .9rem);
   flex: 1 0 150px;
   font-size: 1.8rem;
   color: var(--color-med-grey);
