@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   opacity: 1;
-  transition: opacity 2s;
+  transition: opacity 4s;
   &--complete {
     opacity: 0;
   }
@@ -31,4 +31,5 @@
   z-index: 2;
   right: 0;
   bottom: 0;
+  padding: 0 .5rem;
 }
