@@ -1,5 +1,4 @@
 .search {
-  width: 100%;
   box-shadow: 0 3px 6px 0 var(--color-light-grey);
   display: flex;
   align-items: center;
@@ -7,9 +6,6 @@
   background: var(--color-white);
   position: sticky;
   top: 0;
-  @media (min-width: 768px) {
-    width: calc(100% - #{$nav-height})
-  }
 }
 
 .search__input {
