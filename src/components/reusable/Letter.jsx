@@ -1,5 +1,9 @@
 import React from 'react';
 
-export const Letter = ({ letter, onClick }) => (
-  <button className="letters__item" onClick={() => onClick(letter)}>{letter}</button>
+export const Letter = ({ letter, onClick, guessedLetters }) => (
+  <button
+    className="letters__item"
+    onClick={() => onClick(letter)}
+    disabled={guessedLetters.includes(letter.toLowerCase())}
+  >{letter}</button>
 );

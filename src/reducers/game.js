@@ -54,6 +54,7 @@ export const reducer = (state = initialState, { type, answer, letter }) => {
         guessesRemaining,
         progress,
         isOver,
+        guessedLetters: [...state.guessedLetters, letter],
       };
     case 'END_GAME':
       return {

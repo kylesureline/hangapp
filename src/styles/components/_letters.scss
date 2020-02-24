@@ -23,6 +23,12 @@
   cursor: pointer;
   &:hover {
     background: var(--color-blue);
+    color: var(--color-light-grey);
+  }
+  &:disabled {
+    background: var(--color-dark-grey);
+    color: var(--color-light-grey);
+    cursor: default;
   }
   @media (min-width: 768px) {
     font-size: 3vw;
