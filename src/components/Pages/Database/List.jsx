@@ -1,11 +1,10 @@
 import React from 'react';
 import { useSelectedWords } from '../../../hooks/useSelectedWords';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { END_GAME } from '../../../reducers/actions';
 
-export const List = ({ search }) => {
+export const List = ({ search, isOver }) => {
   const { selectedWords } = useSelectedWords(search);
-  const { isOver } = useSelector(state => state.game);
   const dispatch = useDispatch();
 
   const slice = 25;
