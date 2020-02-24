@@ -3,14 +3,14 @@ import { MAX_TO_CACHE } from '../db/globals';
 import { useSelector } from 'react-redux';
 
 export const LoadingIndicator = () => {
-  const max = MAX_TO_CACHE;
+  const max = MAX_TO_CACHE * 1; // 1 database
   const { words } = useSelector(state => state.db);
   const { withDef } = words;
 
   const value = withDef.length;
 
   return (
-    <div className={`loading${value === max ? ' loading--complete' : ''}`}>
+    <div className={`loading${value >= max ? ' loading--complete' : ''}`}>
       <span className="loading__info">{value === max ? 'database complete!' : 'building database...'}</span>
       <progress
         className="loading__progress"
