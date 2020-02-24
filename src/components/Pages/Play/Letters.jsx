@@ -6,14 +6,14 @@ import { GUESS_LETTER } from '../../../reducers/actions';
 export const Letters = () => {
   const dispatch = useDispatch();
   const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-  const { guessedLetters } = useSelector(state => state.game);
+  const { guessedLetters, isOver } = useSelector(state => state.game);
 
   const clickHandler = letter => {
     dispatch(GUESS_LETTER(letter.toLowerCase()));
   };
 
   return (
-    <div className="letters">
+    <div className={`letters${isOver ? ' letters--disabled' : ''}`}>
       {abc.map(letter => <Letter key={letter} letter={letter} onClick={clickHandler} guessedLetters={guessedLetters} />)}
     </div>
   )
