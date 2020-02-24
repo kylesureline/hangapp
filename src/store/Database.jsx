@@ -38,7 +38,7 @@ export const Database = ({ children }) => {
             }
           })
       }
-    }, 100);
+    }, 1000);
 
     return () => {
       isUnmounted = true;
