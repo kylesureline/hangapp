@@ -11,8 +11,13 @@
 .answer__value {
   text-align: center;
   span {
-    font-size: 4rem;
-    margin: 0 .1rem;
+    font-size: 2.6rem;
+    @media (max-width: 375px) {
+      font-size: 2rem;
+    }
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -31,6 +36,13 @@
   align-items: center;
   justify-content: center;
   font-weight: 400;
+  font-size: 2rem;
+  @media (max-width: 375px) {
+    font-size: 1.6rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 2.4rem;
+  }
 }
 
 .answer__hint__word-type {
