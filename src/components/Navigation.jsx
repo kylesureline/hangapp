@@ -23,8 +23,11 @@ export const Navigation = () => {
   const { getRandomWord } = useRandom();
 
   const handleNewGame = () => {
-    if(mode === 'words') {
-      dispatch(NEW_GAME(getRandomWord()));
+    // only dispatch a new game when you click this button from the homepage
+    if(window.location.hash === '/#') {
+      if(mode === 'words') {
+        dispatch(NEW_GAME(getRandomWord()));
+      }
     }
   };
 
