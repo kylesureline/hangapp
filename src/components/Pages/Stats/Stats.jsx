@@ -3,7 +3,7 @@ import { PastGames } from './PastGames';
 import { getFromLS } from '../../../utils';
 
 export const Stats = () => {
-  const data = getFromLS('past-games');
+  const data = getFromLS('past-games') || [];
 
   return (
     <main className="page page--stats">

@@ -6,9 +6,13 @@ export const PastGames = ({ data }) => {
     <>
       <h2 className="header">past games</h2>
       <ul className="past-games">
-        {data.map(game => {
-          return <PastGamesItem key={game.timestamp} game={game} />;
-        })}
+        {!!data.length ? (
+          data.map(game => {
+            return <PastGamesItem key={game.timestamp} game={game} />;
+          })
+        ) : (
+          <li className="past-games__item">No past games to display...</li>
+        )}
       </ul>
     </>
   );
