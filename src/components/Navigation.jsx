@@ -24,11 +24,11 @@ export const Navigation = () => {
 
   const handleNewGame = () => {
     // only dispatch a new game when you click this button from the homepage
-    if(window.location.hash === '/#') {
+    // if(window.location.hash === '/#') {
       if(mode === 'words') {
         dispatch(NEW_GAME(getRandomWord()));
       }
-    }
+    // }
   };
 
   const handleShare = () => {
