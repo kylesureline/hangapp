@@ -41,7 +41,7 @@ const updateProgress = (answer, progress, guessedLetter) => progress.map((word, 
 export const reducer = (state = initialState, { type, answer, letter, mode, categories, won }) => {
   switch(type) {
     case 'NEW_GAME':
-      return {
+      const newGameState = {
         ...state,
         guessesRemaining: 10,
         answer,
@@ -51,6 +51,10 @@ export const reducer = (state = initialState, { type, answer, letter, mode, cate
         guessedLetters: [],
         isOver: false,
       };
+
+      saveCurrentGame(newGameState);
+
+      return newGameState;
     case 'GUESS_LETTER':
       const progress = updateProgress(state.answer.words, state.progress, letter);
       const guessesRemaining = state.answer.words.join(' ').includes(letter) ? state.guessesRemaining : state.guessesRemaining >= 1 ? state.guessesRemaining - 1 : 0;
