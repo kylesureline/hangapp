@@ -10,7 +10,11 @@ export const Answer = () => {
   return (
     <div className="answer">
       <h1 className="answer__value">
-        {progress.map((word, index) => <Word key={index} word={word} />)}
+        {isOver ? (
+          answer.words.map((word, index) => <Word key={index} word={word} />)
+        ) : (
+          progress.map((word, index) => <Word key={index} word={word} />)
+        )}
       </h1>
       <Hint mode={mode} wordsSettings={wordsSettings} answer={answer} isOver={isOver} />
     </div>
