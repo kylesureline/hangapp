@@ -4,8 +4,19 @@
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
   padding: 1rem;
+  position: relative;
   &--disabled {
     pointer-events: none;
+    &:after {
+      content: "";
+      background: var(--color-transparent);
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
   @media (min-width: 768px) {
     grid-column: 1 / -1;
