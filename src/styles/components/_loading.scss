@@ -8,6 +8,10 @@
   &--complete {
     opacity: 0;
   }
+  @media (min-width: 768px) {
+    left: $nav-height;
+    width: calc(100% - #{$nav-height});
+  }
 }
 
 .loading__progress {
