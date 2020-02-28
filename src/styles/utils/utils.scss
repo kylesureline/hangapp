@@ -1,0 +1,5 @@
+.list-item-hover {
+  &:hover {
+    box-shadow: 0 3px 6px 0 var(--color-light-grey);
+  }
+}

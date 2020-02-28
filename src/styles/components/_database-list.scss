@@ -19,14 +19,15 @@
     color: var(--color-dark-grey);
     display: inline-block;
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 2rem;
   }
-  &:hover {
-    background: var(--color-blue);
-    a {
-      color: $white;
-    }
-  }
+  @extend .list-item-hover;
+  // &:hover {
+  //   background: var(--color-blue);
+  //   a {
+  //     color: $white;
+  //   }
+  // }
 }
 
 .database-list__item--first50 {

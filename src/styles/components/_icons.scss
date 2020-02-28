@@ -3,6 +3,14 @@
     SIZES
 
 ***********************/
+.icon--won,
+.icon--lost {
+  height: 20px;
+  width: 20px;
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
 .icon--nav {
   width: 27px;
   height: 27px;
@@ -16,6 +24,18 @@
 
 
 .icon--nav {
+  & path {
+    fill: var(--color-dark-grey);
+  }
+}
+
+.icon--won {
+  & path {
+    fill: var(--color-blue);
+  }
+}
+
+.icon--lost {
   & path {
     fill: var(--color-dark-grey);
   }

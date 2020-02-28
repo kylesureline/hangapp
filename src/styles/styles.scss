@@ -1,6 +1,9 @@
 @import './base/settings';
 @import './base/base';
 
+@import './utils/utils';
+
+
 // components
 @import './components/typography';
 @import './components/root';
@@ -22,3 +25,4 @@
 @import './pages/database';
 @import './pages/settings';
 @import './pages/about';
+@import './pages/stats';
