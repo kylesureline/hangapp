@@ -79,6 +79,7 @@ export const reducer = (state = initialState, { type, answer, letter, mode, cate
         mode,
         categories
       });
+      saveCurrentGame({...state, isOver: true});
       // should fall through to end it as well vvvvvv
     case 'END_GAME':
       return {
