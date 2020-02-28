@@ -1,7 +1,14 @@
 .page--stats {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
   .header {
     line-height: $nav-height;
     margin: 0;
     padding: 0 2rem;
+  }
+  .no-games {
+    font-size: 1.8rem;
+    padding: 2rem;
   }
 }

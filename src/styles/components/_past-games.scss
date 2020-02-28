@@ -1,6 +1,7 @@
 .past-games {
   padding: 0;
   margin: 0;
+  overflow-y: scroll;
   .icon {
     min-width: 20px;
   }
@@ -16,6 +17,10 @@
   transition: box-shadow .2s;
   cursor: pointer;
   @extend .list-item-hover;
+}
+
+.past-games__item--no-games {
+  cursor: default;
 }
 
 .past-games__item__text {
