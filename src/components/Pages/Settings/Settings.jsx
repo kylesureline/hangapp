@@ -3,6 +3,7 @@ import { Mode } from './Mode';
 import { Dictionary } from './Dictionary';
 import { useSelector, useDispatch } from 'react-redux';
 import { CHANGE_MODE, CHANGE_DICTIONARY_SETTINGS } from '../../../reducers/actions';
+import DocumentTitle from 'react-document-title';
 
 export const Settings = () => {
   const { mode, dictionary } = useSelector(state => state.settings);
@@ -17,20 +18,22 @@ export const Settings = () => {
   };
 
   return (
-    <main className="page page--settings">
-      <form>
-        <Mode
-          options={['dictionary', 'categories']}
-          selectedOption={mode}
-          onChange={handleModeChange}
-        />
-        {mode === 'dictionary' && (
-          <Dictionary
-            onChange={handleWordsSettings}
-            dictionary={dictionary}
+    <DocumentTitle title={`${process.env.REACT_APP_NAME} | Settings`}>
+      <main className="page page--settings">
+        <form>
+          <Mode
+            options={['dictionary', 'categories']}
+            selectedOption={mode}
+            onChange={handleModeChange}
           />
-        )}
-      </form>
-    </main>
+          {mode === 'dictionary' && (
+            <Dictionary
+              onChange={handleWordsSettings}
+              dictionary={dictionary}
+            />
+          )}
+        </form>
+      </main>
+    </DocumentTitle>
   );
 };

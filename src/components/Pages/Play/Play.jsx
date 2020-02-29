@@ -4,6 +4,7 @@ import { Hangman } from './Hangman';
 import { Answer } from './Answer';
 import { Letters } from './Letters';
 import { SAVE_GAME } from '../../../reducers/actions';
+import DocumentTitle from 'react-document-title';
 
 export const Play = () => {
   const game = useSelector(state => state.game);
@@ -20,15 +21,17 @@ export const Play = () => {
       } else if(game.guessesRemaining > 0 && answer === guess) {
         // win
         dispatch(SAVE_GAME(true, mode, categories))
-      }      
+      }
     }
   }, [game, categories, dispatch, mode]);
 
   return (
-    <main className="page page--play">
-      <Hangman />
-      <Answer />
-      <Letters />
-    </main>
+    <DocumentTitle title={`${process.env.REACT_APP_NAME} | Play`}>
+      <main className="page page--play">
+        <Hangman />
+        <Answer />
+        <Letters />
+      </main>
+    </DocumentTitle>
   );
 };
