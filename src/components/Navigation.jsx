@@ -5,7 +5,7 @@ import { ReactComponent as SettingsSVG } from '../images/settings1.svg';
 import { ReactComponent as StatsSVG } from '../images/pie_chart.svg';
 import { ReactComponent as DatabaseSVG } from '../images/storage.svg';
 import { ReactComponent as ShareSVG } from '../images/share.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { NEW_GAME } from '../reducers/actions';
 import { useRandom } from '../hooks/useRandom';
@@ -41,16 +41,17 @@ export const Navigation = () => {
   return (
     <nav className="main-nav">
       <ul className="nav-list">
-        <li className="nav-list__item">
-          {!isOver ? (
-            <NavLink activeClassName="nav-link--active" className="nav-link" to="/" exact={true}>
-              <PlaySVG title="Play" className="icon icon--nav" />
-            </NavLink>
-          ) : (
-            <NavLink activeClassName="nav-link--active" className="nav-link" to="/" exact={true} onClick={handleNewGame}>
+        {isOver && (
+          <li className="nav-list__item">
+            <Link className="nav-link" to="/" exact={true} onClick={handleNewGame}>
               <NewGameSVG title="New Game" className="icon icon--nav" />
-            </NavLink>
-          )}
+            </Link>
+          </li>
+        )}
+        <li className="nav-list__item">
+          <NavLink activeClassName="nav-link--active" className="nav-link" to="/" exact={true}>
+            <PlaySVG title="Play" className="icon icon--nav" />
+          </NavLink>
         </li>
         <li className="nav-list__item">
           <NavLink activeClassName="nav-link--active" className="nav-link" to="/stats">
