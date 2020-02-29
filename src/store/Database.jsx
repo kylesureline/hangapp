@@ -6,8 +6,8 @@ import { MAX_TO_CACHE } from '../db/globals';
 
 export const Database = ({ children }) => {
   const { dictionary } = useSelector(state => state.settings);
-  const { words } = useSelector(state => state.db);
-  const { withDef, withoutDef } = words;
+  const { dictionary: dictionaryDB } = useSelector(state => state.db);
+  const { withDef, withoutDef } = dictionaryDB;
 
   const dispatch = useDispatch();
 
@@ -48,10 +48,10 @@ export const Database = ({ children }) => {
 
   // sync to localStorage
   useEffect(() => {
-    saveToLS('db-words-withDef', withDef);
+    saveToLS('db-dictionary-withDef', withDef);
   }, [withDef]);
   useEffect(() => {
-    saveToLS('settings-words', dictionary);
+    saveToLS('settings-dictionary', dictionary);
   }, [dictionary])
 
   return children;

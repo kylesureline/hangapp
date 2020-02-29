@@ -2,9 +2,9 @@ import { getFromLS } from '../utils';
 import wordBank from '../db/wordBank';
 
 export const initialState = {
-  words: {
+  dictionary: {
     withoutDef: wordBank,
-    withDef: getFromLS('db-words-withDef') || [],
+    withDef: getFromLS('db-dictionary-withDef') || [],
   },
 };
 
@@ -13,16 +13,16 @@ export const reducer = (state = initialState, action) => {
     case 'ADD_WORD_WITH_DEF':
       return {
         ...state,
-        words: {
-          ...state.words,
-          withDef: [...state.words.withDef, action.word]
+        dictionary: {
+          ...state.dictionary,
+          withDef: [...state.dictionary.withDef, action.word]
         }
       };
     case 'UPDATE_WORDS_WITH_DEF':
       return {
         ...state,
-        words: {
-          ...state.words,
+        dictionary: {
+          ...state.dictionary,
           withDef: action.withDef
         }
       };

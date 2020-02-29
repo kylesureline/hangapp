@@ -12,9 +12,9 @@ export const useSelectedWords = (search = '') => {
   const selectedWords = useCallback(() => {
     if(mode === 'dictionary') {
       if(dictionary.skipWithoutDefinition) {
-        return db.words.withDef;
+        return db.dictionary.withDef;
       } else {
-        return db.words.withoutDef.map(item => formatWordObj(item));
+        return db.dictionary.withoutDef.map(item => formatWordObj(item));
       }
     } else {
       return []; // TODO: add support for phrases

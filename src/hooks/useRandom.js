@@ -3,11 +3,11 @@ import { UPDATE_WORDS_WITH_DEF } from '../reducers/actions';
 import { formatWordObj } from '../utils';
 
 export const useRandom = () => {
-  const { words } = useSelector(state => state.db);
+  const { dictionary: dictionaryDB } = useSelector(state => state.db);
   const { dictionary } = useSelector(state => state.settings);
   const dispatch = useDispatch();
   // word banks:
-  const { withDef, withoutDef } = words;
+  const { withDef, withoutDef } = dictionaryDB;
 
   // settings:
   const { skipWithoutDefinition, minLength } = dictionary;

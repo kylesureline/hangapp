@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 
 export const LoadingIndicator = () => {
   const max = MAX_TO_CACHE * 1; // 1 database
-  const { words } = useSelector(state => state.db);
-  const { withDef } = words;
+  const { dictionary } = useSelector(state => state.db);
+  const { withDef } = dictionary;
 
   const value = withDef.length;
 
