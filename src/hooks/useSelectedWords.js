@@ -10,7 +10,7 @@ export const useSelectedWords = (search = '') => {
   ), [search, wordsSettings.minLength]);
 
   const selectedWords = useCallback(() => {
-    if(mode === 'words') {
+    if(mode === 'dictionary') {
       if(wordsSettings.skipWithoutDefinition) {
         return db.words.withDef;
       } else {

@@ -20,7 +20,7 @@ export const List = ({ search, isOver }) => {
       {selectedWords.slice(0, slice).map(({ words }, index) => {
         return (
           <li key={index} className="database-list__item">
-            {mode === 'words' ? (
+            {mode === 'dictionary' ? (
               <a
                 href={`https://www.merriam-webster.com/dictionary/${words}/`}
                 alt={`${words}'s Definition on m-w.com`}

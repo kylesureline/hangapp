@@ -1,11 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useSelectedWords } from '../../../hooks/useSelectedWords';
 import { numberWithCommas } from '../../../utils/';
 
 export const Search = ({ value, setValue, isOver }) => {
   const { selectedWords } = useSelectedWords(value);
-  const { mode } = useSelector(state => state.settings);
 
   const handleChange = e => {
     const { value } = e.target;
@@ -29,7 +27,7 @@ export const Search = ({ value, setValue, isOver }) => {
         autoFocus={isOver}
         placeholder="Search..."
       />
-      <span className="search__count">{numberWithCommas(selectedWords.length)} {mode}</span>
+      <span className="search__count">{numberWithCommas(selectedWords.length)}</span>
     </div>
   );
 };

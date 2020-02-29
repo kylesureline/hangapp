@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Hint = ({ mode, wordsSettings, answer, isOver }) => {
   const { showDefinition, showWordType } = wordsSettings;
-  if(mode === 'words') {
+  if(mode === 'dictionary') {
     const { def, wordType } = answer;
     return (
       <h2 className="answer__hint">

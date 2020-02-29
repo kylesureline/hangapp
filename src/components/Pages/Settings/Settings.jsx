@@ -20,11 +20,11 @@ export const Settings = () => {
     <main className="page page--settings">
       <form>
         <Mode
-          options={['words', 'categories']}
+          options={['dictionary', 'categories']}
           selectedOption={mode}
           onChange={handleModeChange}
         />
-        {mode === 'words' && (
+        {mode === 'dictionary' && (
           <Words
             onChange={handleWordsSettings}
             settings={words}

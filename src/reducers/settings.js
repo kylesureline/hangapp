@@ -8,7 +8,7 @@ const defaultWordsSettings = {
 };
 
 export const initialState = {
-  mode: 'words', // words || categories
+  mode: 'dictionary', // dictionary || categories
   lives: 10,
   words: getFromLS('settings-words') || defaultWordsSettings,
   categories: []
