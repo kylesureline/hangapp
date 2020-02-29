@@ -33,7 +33,7 @@ export const List = ({ search, isOver }) => {
           </li>
         );
       })}
-      <li className="database-list__item database-list__item--first50">(Showing up to the first {slice} results)</li>
+      <li className="database-list__item database-list__item--message">(Showing up to the first {slice} results)</li>
     </ul>
   ) : (
     <div className="database-list database-list--warning">
