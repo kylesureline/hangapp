@@ -1,6 +1,6 @@
 import { getFromLS } from '../utils';
 
-const defaultWordsSettings = {
+const defaultDictionarySettings = {
   showWordType: true,
   showDefinition: false,
   skipWithoutDefinition: true,
@@ -10,7 +10,7 @@ const defaultWordsSettings = {
 export const initialState = {
   mode: 'dictionary', // dictionary || categories
   lives: 10,
-  words: getFromLS('settings-words') || defaultWordsSettings,
+  dictionary: getFromLS('settings-dictionary') || defaultDictionarySettings,
   categories: []
 };
 
@@ -21,11 +21,11 @@ export const reducer = (state = initialState, action) => {
         ...state,
         mode: action.mode
       };
-    case 'CHANGE_WORDS_SETTINGS':
+    case 'CHANGE_DICTIONARY_SETTINGS':
       return {
         ...state,
-        words: {
-          ...state.words,
+        dictionary: {
+          ...state.dictionary,
           ...action.settings
         }
       };

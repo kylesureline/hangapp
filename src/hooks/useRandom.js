@@ -4,13 +4,13 @@ import { formatWordObj } from '../utils';
 
 export const useRandom = () => {
   const { words } = useSelector(state => state.db);
-  const { words: wordsSettings } = useSelector(state => state.settings);
+  const { dictionary } = useSelector(state => state.settings);
   const dispatch = useDispatch();
   // word banks:
   const { withDef, withoutDef } = words;
 
   // settings:
-  const { skipWithoutDefinition, minLength } = wordsSettings;
+  const { skipWithoutDefinition, minLength } = dictionary;
 
   // for random words
   const getRandomWord = () => {

@@ -5,7 +5,7 @@ import { fetchData, isOnline, formatWordObj, saveToLS } from '../utils';
 import { MAX_TO_CACHE } from '../db/globals';
 
 export const Database = ({ children }) => {
-  const { words: wordsSettings } = useSelector(state => state.settings);
+  const { dictionary } = useSelector(state => state.settings);
   const { words } = useSelector(state => state.db);
   const { withDef, withoutDef } = words;
 
@@ -51,8 +51,8 @@ export const Database = ({ children }) => {
     saveToLS('db-words-withDef', withDef);
   }, [withDef]);
   useEffect(() => {
-    saveToLS('settings-words', wordsSettings);
-  }, [wordsSettings])
+    saveToLS('settings-words', dictionary);
+  }, [dictionary])
 
   return children;
 }

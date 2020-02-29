@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Hint = ({ mode, wordsSettings, answer, isOver }) => {
-  const { showDefinition, showWordType } = wordsSettings;
+export const Hint = ({ mode, dictionary, answer, isOver }) => {
+  const { showDefinition, showWordType } = dictionary;
   if(mode === 'dictionary') {
     const { def, wordType } = answer;
     return (

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Mode } from './Mode';
-import { Words } from './Words';
+import { Dictionary } from './Dictionary';
 import { useSelector, useDispatch } from 'react-redux';
-import { CHANGE_MODE, CHANGE_WORDS_SETTINGS } from '../../../reducers/actions';
+import { CHANGE_MODE, CHANGE_DICTIONARY_SETTINGS } from '../../../reducers/actions';
 
 export const Settings = () => {
-  const { mode, words } = useSelector(state => state.settings);
+  const { mode, dictionary } = useSelector(state => state.settings);
   const dispatch = useDispatch();
   const handleModeChange = e => {
     const { value } = e.target;
@@ -13,7 +13,7 @@ export const Settings = () => {
   };
 
   const handleWordsSettings = obj => {
-    dispatch(CHANGE_WORDS_SETTINGS(obj));
+    dispatch(CHANGE_DICTIONARY_SETTINGS(obj));
   };
 
   return (
@@ -25,9 +25,9 @@ export const Settings = () => {
           onChange={handleModeChange}
         />
         {mode === 'dictionary' && (
-          <Words
+          <Dictionary
             onChange={handleWordsSettings}
-            settings={words}
+            dictionary={dictionary}
           />
         )}
       </form>

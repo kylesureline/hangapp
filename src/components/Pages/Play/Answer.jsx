@@ -5,7 +5,7 @@ import { Hint } from './Hint';
 
 export const Answer = () => {
   const { progress, answer, isOver } = useSelector(state => state.game);
-  const { mode, words: wordsSettings } = useSelector(state => state.settings);
+  const { mode, dictionary } = useSelector(state => state.settings);
 
   return (
     <div className="answer">
@@ -16,7 +16,7 @@ export const Answer = () => {
           progress.map((word, index) => <Word key={index} word={word} />)
         )}
       </h1>
-      <Hint mode={mode} wordsSettings={wordsSettings} answer={answer} isOver={isOver} />
+      <Hint mode={mode} dictionary={dictionary} answer={answer} isOver={isOver} />
     </div>
   );
 };

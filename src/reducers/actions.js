@@ -18,8 +18,8 @@ export const CHANGE_MODE = mode => ({
   mode
 });
 
-export const CHANGE_WORDS_SETTINGS = settings => ({
-  type: 'CHANGE_WORDS_SETTINGS',
+export const CHANGE_DICTIONARY_SETTINGS = settings => ({
+  type: 'CHANGE_DICTIONARY_SETTINGS',
   settings: {
     ...settings
   },
