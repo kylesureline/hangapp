@@ -43,7 +43,7 @@ export const Navigation = () => {
       <ul className="nav-list">
         {isOver && (
           <li className="nav-list__item">
-            <Link className="nav-link" to="/" exact={true} onClick={handleNewGame}>
+            <Link className="nav-link" to="/" onClick={handleNewGame}>
               <NewGameSVG title="New Game" className="icon icon--nav" />
             </Link>
           </li>
