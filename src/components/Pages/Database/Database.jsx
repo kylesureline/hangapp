@@ -10,7 +10,7 @@ export const Database = () => {
 
   return (
     <DocumentTitle title={`${process.env.REACT_APP_NAME} | Database`}>
-      <main className="page page--database">
+      <main className={`page page--database${isOver ? '' : ' page--game-is-not-over'}`}>
         <Search value={search} setValue={setSearch} isOver={isOver} />
         <List search={search} isOver={isOver} />
       </main>

@@ -16,7 +16,7 @@ export const List = ({ search, isOver }) => {
     global.confirm('Are you sure you want to start a new game?') && dispatch(END_GAME());
   };
 
-  return isOver ? (
+  return isOver && (
     <ul className="database-list">
       {selected.slice(0, slice).map((item, index) => {
         return (
@@ -25,10 +25,5 @@ export const List = ({ search, isOver }) => {
       })}
       <li className="database-list__item database-list__item--message">(Showing up to the first {slice} results)</li>
     </ul>
-  ) : (
-    <div className="database-list database-list--warning">
-      <p>Finish your current game to see the database.</p>
-      <p>(You may also <span className="link link--inline" onClick={handleClick}>click here to end your current game</span>)</p>
-    </div>
   );
 };
