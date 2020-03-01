@@ -25,8 +25,8 @@ export const Hangman = () => {
 
   return (
     <div className="hangman">
-      {/* <HangmanSVG title={`Guesses remaining: ${guessesRemaining}`} /> */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <title>{`Guesses remaining: ${guessesRemaining}`}</title>
         <g>
           <rect fill="#fff" id="canvas_background" height="200" width="200" y="0" x="0"/>
           <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
