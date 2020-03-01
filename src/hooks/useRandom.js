@@ -1,5 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { UPDATE_WORDS_WITH_DEF, UPDATE_RECIPES } from '../reducers/actions';
+import {
+  UPDATE_WORDS_WITH_DEF,
+  UPDATE_RECIPES,
+  UPDATE_DOGS
+} from '../reducers/actions';
 import { formatWordObj } from '../utils';
 
 export const useRandom = () => {
@@ -53,11 +57,15 @@ export const useRandom = () => {
 
   const getRandomCategory = () => {
     const cat = categories[Math.floor(Math.random() * categories.length)];
+
     let foundItem;
 
     if(cat === 'recipes' && !!categoriesDB.recipes.length) {
       foundItem = categoriesDB.recipes[Math.floor(Math.random() * categoriesDB.recipes.length)];
       dispatch(UPDATE_RECIPES(categoriesDB.recipes.filter(recipe => recipe.words.join(' ') !== foundItem.words.join(' '))));
+    } else if(cat === 'dogs' && !!categoriesDB.dogs.length) {
+      foundItem = categoriesDB.dogs[Math.floor(Math.random() * categoriesDB.dogs.length)];
+      dispatch(UPDATE_DOGS(categoriesDB.dogs.filter(dog => dog.words.join(' ') !== foundItem.words.join(' '))));
     }
 
     return foundItem || getRandomWord();

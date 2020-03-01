@@ -8,6 +8,7 @@ export const initialState = {
   },
   categories: {
     recipes: getFromLS('db-categories-recipes') || [],
+    dogs: getFromLS('db-categories-dogs') || [],
   },
 };
 
@@ -43,6 +44,22 @@ export const reducer = (state = initialState, action) => {
         categories: {
           ...state.categories,
           recipes: action.recipes
+        }
+      };
+    case 'ADD_DOG':
+      return {
+        ...state,
+        categories: {
+          ...state.categories,
+          dogs: [...state.categories.dogs, action.dog]
+        }
+      };
+    case 'UPDATE_DOGS':
+      return {
+        ...state,
+        categories: {
+          ...state.categories,
+          dogs: action.dogs
         }
       };
     default:

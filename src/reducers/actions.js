@@ -55,3 +55,13 @@ export const UPDATE_RECIPES = recipes => ({
   type: 'UPDATE_RECIPES',
   recipes
 });
+
+export const ADD_DOG = dog => ({
+  type: 'ADD_DOG',
+  dog
+});
+
+export const UPDATE_DOGS = dogs => ({
+  type: 'UPDATE_DOGS',
+  dogs
+});

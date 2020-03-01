@@ -18,6 +18,13 @@ export const Hint = ({ mode, dictionary, answer, isOver }) => {
           <span className="answer__hint__word-type">{answer.category}</span>
         </h2>
       )
+    } else if(answer.category === 'dog') {
+      return (
+        <h2 className="answer__hint">
+          <span className="answer__hint__definition">{answer.bredFor}</span>
+          <span className="answer__hint__word-type">{answer.category}</span>
+        </h2>
+      )
     } else {
       return '';
     }

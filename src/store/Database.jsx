@@ -1,18 +1,31 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_WORD_WITH_DEF, ADD_RECIPE } from '../reducers/actions';
-import { fetchData, isOnline, formatWordObj, saveToLS } from '../utils';
+import {
+  ADD_WORD_WITH_DEF,
+  ADD_RECIPE,
+  ADD_DOG
+} from '../reducers/actions';
+import {
+  fetchData,
+  isOnline,
+  formatWordObj,
+  saveToLS
+} from '../utils';
 import { MAX_TO_CACHE } from '../db/globals';
 
 export const Database = ({ children }) => {
   const settings = useSelector(state => state.settings);
   const { dictionary: dictionaryDB, categories: categoriesDB } = useSelector(state => state.db);
   const { withDef, withoutDef } = dictionaryDB;
-  const { recipes } = categoriesDB;
+  const { recipes, dogs } = categoriesDB;
 
   const dispatch = useDispatch();
 
-  // fetches definitions and stores them in localStorage
+  /***********************************************
+
+    M-W.com
+
+  ***********************************************/
   useEffect(() => {
     let length = (Math.floor(Math.random() * 1000) + 200);
     let isUnmounted = false;
@@ -46,6 +59,11 @@ export const Database = ({ children }) => {
     }
   }, [withDef, withoutDef, dispatch]);
 
+  /***********************************************
+
+    themealdb.com
+
+  ***********************************************/
   useEffect(() => {
     let length = (Math.floor(Math.random() * 1000) + 200);
     let isUnmounted = false;
@@ -97,6 +115,52 @@ export const Database = ({ children }) => {
     }
   }, [recipes, dispatch]);
 
+  /***********************************************
+
+    thedogapi.com
+
+  ***********************************************/
+  useEffect(() => {
+    let length = (Math.floor(Math.random() * 1000) + 200);
+    let isUnmounted = false;
+    let interval = setInterval(() => {
+      // don't try to fetch if offline
+      if(isOnline() && dogs.length < MAX_TO_CACHE) {
+        fetchData(`https://api.thedogapi.com/v1/breeds`)
+          .then(data => {
+            if(!isUnmounted) {
+              // format data
+              let formatted = data.map(({
+                name,
+                bred_for,
+                breed_group,
+                temperament
+              }) => ({
+                words: name.toLowerCase().split(' '),
+                category: 'dog',
+                bredFor: bred_for || breed_group || temperament || '',
+              }));
+
+              // console.log(formatted[0]);
+
+              const needed = MAX_TO_CACHE - dogs.length;
+
+              for(let i = 0; i < needed; i++) {
+                let found = formatted[Math.floor(Math.random() * formatted.length)];
+                formatted = formatted.filter(dog => dog.words.join(' ') !== found.words.join(' '));
+                dispatch(ADD_DOG(found));
+              }
+            }
+          })
+      }
+    }, length);
+
+    return () => {
+      isUnmounted = true;
+      clearInterval(interval);
+    }
+  }, [dogs, dispatch]);
+
   // sync to localStorage
   useEffect(() => {
     saveToLS('db-dictionary-withDef', withDef);
@@ -104,6 +168,9 @@ export const Database = ({ children }) => {
   useEffect(() => {
     saveToLS('db-categories-recipes', recipes);
   }, [recipes]);
+  useEffect(() => {
+    saveToLS('db-categories-dogs', dogs);
+  }, [dogs]);
   useEffect(() => {
     saveToLS('settings', settings);
   }, [settings])

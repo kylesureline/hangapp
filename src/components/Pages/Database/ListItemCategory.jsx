@@ -10,6 +10,11 @@ export const ListItemCategory = ({ item }) => {
         rel="noopener noreferrer"
         >{item.words.join(' ')}</a>
     );
+  } else if(item.category === 'dog') {
+    return (
+      <span
+        >{item.words.join(' ')}</span>
+    );
   } else {
     return item.words.join(' '); // TODO: add support for other categories
   }

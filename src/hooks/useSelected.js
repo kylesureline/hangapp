@@ -17,7 +17,7 @@ export const useSelected = (search = '') => {
         return db.dictionary.withoutDef.map(item => formatWordObj(item));
       }
     } else {
-      return categories.map(category => db.categories[category]).reduce((acc, array) => [...acc, ...array], []);
+      return categories.map(category => db.categories[category]).flat();
     }
   }, [mode, dictionary, db, categories]);
 
