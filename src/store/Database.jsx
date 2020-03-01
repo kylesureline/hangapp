@@ -101,7 +101,8 @@ export const Database = ({ children }) => {
                 category: 'recipe',
               };
 
-              if(recipes.length < MAX_TO_CACHE) {
+              // skip recipes with non letters
+              if(recipes.length < MAX_TO_CACHE && /^[a-z]+$/.test(game.words.join(' '))) {
                 dispatch(ADD_RECIPE(game));
               }
             }
