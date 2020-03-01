@@ -101,8 +101,12 @@ export const Database = ({ children }) => {
                 category: 'recipe',
               };
 
-              // skip recipes with non letters
-              if(recipes.length < MAX_TO_CACHE && /^[a-z]+$/.test(game.words.join(' '))) {
+              // skip recipes with non letters or duplicates
+              if(
+                recipes.length < MAX_TO_CACHE &&
+                /^[a-z]+$/.test(game.words.join(' ')) &&
+                (!recipes.length || !!recipes.find(recipe => recipe.words.join(' ') !== game.words.join(' ')))
+              ) {
                 dispatch(ADD_RECIPE(game));
               }
             }
