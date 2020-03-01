@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Word = ({ word }) => (
-  word.split('').map((letter, index) => <span key={index}>{letter}</span>)
+  <span className="word">{word.split('').map((letter, index) => <span key={index} className="word__letter">{letter}</span>)}</span>
 );

@@ -40,3 +40,18 @@ export const SAVE_GAME = (won, mode, categories) => ({
   mode,
   categories
 });
+
+export const ADD_RECIPE = recipe => ({
+  type: 'ADD_RECIPE',
+  recipe
+});
+
+export const CHANGE_CATEGORIES = category => ({
+  type: 'CHANGE_CATEGORIES',
+  category
+});
+
+export const UPDATE_RECIPES = recipes => ({
+  type: 'UPDATE_RECIPES',
+  recipes
+});

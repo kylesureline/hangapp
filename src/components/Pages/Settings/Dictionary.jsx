@@ -1,13 +1,13 @@
 import React from 'react';
-import { useSelectedWords } from '../../../hooks/useSelectedWords';
+import { useSelected } from '../../../hooks/useSelected';
 import { numberWithCommas } from '../../../utils/';
 import { ToggleSwitch } from '../../reusable/ToggleSwitch';
 
 export const Dictionary = ({ onChange, dictionary }) => {
-  const { selectedWords } = useSelectedWords('');
+  const { selected } = useSelected('');
 
   return (
-    <div className="dictionary-settings">
+    <div className="settings-labels">
       <label className="label">
         <span className="label__text">show word type:</span>
         <ToggleSwitch
@@ -59,7 +59,7 @@ export const Dictionary = ({ onChange, dictionary }) => {
             )}
           />
         </span>
-        <span className="label__results">({numberWithCommas(selectedWords.length)} results)</span>
+        <span className="label__results">({numberWithCommas(selected.length)} results)</span>
       </label>
     </div>
   );

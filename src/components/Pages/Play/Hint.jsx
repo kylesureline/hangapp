@@ -11,6 +11,15 @@ export const Hint = ({ mode, dictionary, answer, isOver }) => {
       </h2>
     )
   } else {
-    return '';
+    if(answer.category === 'recipe') {
+      return (
+        <h2 className="answer__hint">
+          <span className="answer__hint__definition">{answer.tags.join(' ')}</span>
+          <span className="answer__hint__word-type">{answer.category}</span>
+        </h2>
+      )
+    } else {
+      return '';
+    }
   }
 };

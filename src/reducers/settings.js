@@ -1,18 +1,17 @@
 import { getFromLS } from '../utils';
 
-const defaultDictionarySettings = {
-  showWordType: true,
-  showDefinition: false,
-  skipWithoutDefinition: true,
-  minLength: 4,
+const defaultSettings = {
+  mode: 'dictionary', // 'dictionary' || 'categories'
+  dictionary: {
+    showWordType: true,
+    showDefinition: false,
+    skipWithoutDefinition: true,
+    minLength: 4,
+  },
+  categories: ['recipes']
 };
 
-export const initialState = {
-  mode: 'dictionary', // dictionary || categories
-  lives: 10,
-  dictionary: getFromLS('settings-dictionary') || defaultDictionarySettings,
-  categories: []
-};
+export const initialState = getFromLS('settings') || defaultSettings;
 
 export const reducer = (state = initialState, action) => {
   switch(action.type) {
@@ -29,6 +28,24 @@ export const reducer = (state = initialState, action) => {
           ...action.settings
         }
       };
+    case 'CHANGE_CATEGORIES':
+      // remove if it exists
+      if(state.categories.includes(action.category)) {
+        // require at least one category active at a time
+        if(state.categories.length > 1) {
+          return {
+            ...state,
+            categories: [...state.categories].filter(category => category !== action.category)
+          }
+        } else {
+          return state;
+        }
+      } else {
+        return {
+          ...state,
+          categories: [...state.categories, action.category]
+        };
+      }
     default:
       return state
   }

@@ -6,6 +6,9 @@ export const initialState = {
     withoutDef: wordBank,
     withDef: getFromLS('db-dictionary-withDef') || [],
   },
+  categories: {
+    recipes: getFromLS('db-categories-recipes') || [],
+  },
 };
 
 export const reducer = (state = initialState, action) => {
@@ -24,6 +27,22 @@ export const reducer = (state = initialState, action) => {
         dictionary: {
           ...state.dictionary,
           withDef: action.withDef
+        }
+      };
+    case 'ADD_RECIPE':
+      return {
+        ...state,
+        categories: {
+          ...state.categories,
+          recipes: [...state.categories.recipes, action.recipe]
+        }
+      };
+    case 'UPDATE_RECIPES':
+      return {
+        ...state,
+        categories: {
+          ...state.categories,
+          recipes: action.recipes
         }
       };
     default:

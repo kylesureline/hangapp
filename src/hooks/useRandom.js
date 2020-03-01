@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { UPDATE_WORDS_WITH_DEF } from '../reducers/actions';
+import { UPDATE_WORDS_WITH_DEF, UPDATE_RECIPES } from '../reducers/actions';
 import { formatWordObj } from '../utils';
 
 export const useRandom = () => {
-  const { dictionary: dictionaryDB } = useSelector(state => state.db);
-  const { dictionary } = useSelector(state => state.settings);
+  const { dictionary: dictionaryDB, categories: categoriesDB } = useSelector(state => state.db);
+  const { dictionary, categories } = useSelector(state => state.settings);
   const dispatch = useDispatch();
   // word banks:
   const { withDef, withoutDef } = dictionaryDB;
@@ -44,13 +44,20 @@ export const useRandom = () => {
     return word;
   };
 
-  // TODO: implement random category item
-  // const getRandomCategory = () => {
-  //
-  // }
+  const getRandomCategory = () => {
+    const cat = categories[Math.floor(Math.random() * categories.length)];
+    let foundItem;
+
+    if(cat === 'recipes') {
+      foundItem = categoriesDB.recipes.shift();
+      if(!!foundItem) dispatch(UPDATE_RECIPES(categoriesDB.recipes));
+    }
+
+    return foundItem || getRandomWord();
+  }
 
   return {
     getRandomWord,
-    // getRandomCategory
+    getRandomCategory
   };
 };

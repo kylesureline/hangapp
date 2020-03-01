@@ -20,15 +20,15 @@ export const Navigation = () => {
   const { isOver } = useSelector(state => state.game);
   const { mode } = useSelector(state => state.settings);
   const dispatch = useDispatch();
-  const { getRandomWord } = useRandom();
+  const { getRandomWord, getRandomCategory } = useRandom();
 
   const handleNewGame = () => {
-    // only dispatch a new game when you click this button from the homepage
-    // if(window.location.hash === '/#') {
-      if(mode === 'dictionary') {
-        dispatch(NEW_GAME(getRandomWord()));
-      }
-    // }
+    if(mode === 'dictionary') {
+      dispatch(NEW_GAME(getRandomWord()));
+    } else {
+      dispatch(NEW_GAME(getRandomCategory()));
+    }
+
   };
 
   const handleShare = () => {
