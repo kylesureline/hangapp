@@ -19,7 +19,7 @@ export const useSelected = (search = '') => {
     } else {
       return categories.map(category => db.categories[category]).reduce((acc, array) => [...acc, ...array], []);
     }
-  }, [mode, dictionary, db]);
+  }, [mode, dictionary, db, categories]);
 
   return {
      selected: selected().filter(filter)
