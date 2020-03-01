@@ -3,7 +3,7 @@ import { MAX_TO_CACHE } from '../db/globals';
 import { useSelector } from 'react-redux';
 
 export const LoadingIndicator = () => {
-  const max = MAX_TO_CACHE * 2; // 2 databases
+  const max = MAX_TO_CACHE * 3; // 2 databases
   const { dictionary, categories } = useSelector(state => state.db);
   const { withDef } = dictionary;
 
