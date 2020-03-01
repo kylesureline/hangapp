@@ -16,10 +16,8 @@ export const useSelected = (search = '') => {
       } else {
         return db.dictionary.withoutDef.map(item => formatWordObj(item));
       }
-    } else if(mode === 'categories'){
-      return categories.map(category => db.categories[category]).reduce((acc, array) => [...acc, ...array], []);
     } else {
-      return [];
+      return categories.map(category => db.categories[category]).reduce((acc, array) => [...acc, ...array], []);
     }
   }, [mode, dictionary, db]);
 
