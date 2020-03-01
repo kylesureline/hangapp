@@ -16,8 +16,13 @@ export const useRandom = () => {
   const getRandomWord = () => {
     const getWordWithDef = () => {
       if(!!withDef.length) {
-        let foundWord = withDef.find(({ words }) => words[0].length >= minLength);
-        if(!!foundWord) {
+        let foundWord = withDef[Math.floor(Math.random() * withDef.length)];
+        let count = 1;
+        while(foundWord.words[0].length < minLength && count < 200) { // only try 200 times, not infinitely
+          foundWord = withDef[Math.floor(Math.random() * withDef.length)];
+          count++;
+        }
+        if(!!foundWord && foundWord.words[0].length >= minLength) {
           dispatch(UPDATE_WORDS_WITH_DEF(withDef.filter(({ words }) => words[0] !== foundWord.words[0])));
           return foundWord;
         }
@@ -49,8 +54,8 @@ export const useRandom = () => {
     let foundItem;
 
     if(cat === 'recipes') {
-      foundItem = categoriesDB.recipes.shift();
-      if(!!foundItem) dispatch(UPDATE_RECIPES(categoriesDB.recipes));
+      foundItem = categoriesDB.recipes[Math.floor(Math.random() * categoriesDB.recipes.length)];
+      if(!!foundItem) dispatch(UPDATE_RECIPES(categoriesDB.recipes.filter(recipe => recipe.words.join(' ') !== foundItem.words.join(' '))));
     }
 
     return foundItem || getRandomWord();
