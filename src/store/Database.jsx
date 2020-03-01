@@ -14,7 +14,7 @@ export const Database = ({ children }) => {
 
   // fetches definitions and stores them in localStorage
   useEffect(() => {
-    let length = (Math.floor(Math.random() * 1000) + 1000);
+    let length = (Math.floor(Math.random() * 1000) + 200);
     let isUnmounted = false;
     let interval = setInterval(() => {
       // don't try to fetch if offline
@@ -47,7 +47,7 @@ export const Database = ({ children }) => {
   }, [withDef, withoutDef, dispatch]);
 
   useEffect(() => {
-    let length = (Math.floor(Math.random() * 1000) + 1000);
+    let length = (Math.floor(Math.random() * 1000) + 200);
     let isUnmounted = false;
     let interval = setInterval(() => {
       // don't try to fetch if offline
