@@ -1,0 +1,113 @@
+.main-nav {
+  background: var(--color-light-grey);
+  margin: 0 auto;
+  height: $nav-height;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  @media (min-width: 768px) {
+    position: static;
+    top: unset;
+    width: $nav-height;
+    height: 100%;
+  }
+}
+
+.nav-list {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.nav-list__item {
+  cursor: pointer;
+  text-align: center;
+  flex: 1 0 50px;
+  &:hover .nav-link:not(.nav-link--active) {
+    background: var(--color-dark-grey);
+    .icon--nav {
+      & path {
+        fill: var(--color-light-grey);
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+.nav-link {
+  padding: 1rem 0;
+  width: 100%;
+  display: inline-block;
+}
+
+.nav-link--active {
+  background: var(--color-blue);
+  .icon--nav path {
+    fill: var(--color-light-grey);
+  }
+}
+
+// .nav-tooltip {
+//   position: relative;
+//   .nav-tooltip__content {
+//     font-size: 1rem;
+//     position: absolute;
+//     z-index: 10;
+//     left: .75rem;
+//     top: $nav-height;
+//     width: calc(100% - 1.5rem);
+//     border-radius: $radius-default;
+//     color: var(--color-light-grey);
+//     background: var(--color-dark-grey);
+//     padding: 0 .5rem;
+//     opacity: 0;
+//     pointer-events: none;
+//     transition: .4s opacity;
+//     white-space: nowrap;
+//     height: 2rem;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin-top: .75rem;
+//     &:before {
+//       content: "";
+//       position: absolute;
+//       left: calc(50% - .5rem);
+//       top: -1rem;
+//       border-top: .5rem solid transparent;
+//       border-right: .5rem solid transparent;
+//       border-bottom: .5rem solid var(--color-dark-grey);
+//       border-left: .5rem solid transparent;
+//     }
+//   }
+//   &:hover {
+//     .nav-tooltip__content {
+//       opacity: 1;
+//     }
+//   }
+//   @media (min-width: 768px) {
+//     .nav-tooltip__content {
+//       margin: 0;
+//       margin-left: .75rem;
+//       left: unset;
+//       left: $nav-height;
+//       top: calc(50% - 1rem);
+//       width: unset;
+//       &:before {
+//         left: -1rem;
+//         top: calc(50% - .5rem);
+//         border-top: .5rem solid transparent;
+//         border-right: .5rem solid var(--color-dark-grey);
+//         border-bottom: .5rem solid transparent;
+//         border-left: .5rem solid transparent;
+//       }
+//     }
+//   }
+// }

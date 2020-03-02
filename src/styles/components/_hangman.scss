@@ -1,0 +1,24 @@
+.hangman {
+  display: flex;
+  grid-area: hangman;
+  margin: 0 auto;
+}
+
+.hangman > svg {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  @media (min-width: 768px) {
+    min-width: calc(50vw - #{$nav-height});
+    max-height: 50vh;
+  }
+}
+
+#canvas_background {
+  fill: var(--color-white);
+}
+
+.hangman-draw,
+#canvas_border {
+  stroke: var(--color-dark-grey);
+}

@@ -1,0 +1,40 @@
+.database-list {
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem;
+  max-height: calc(100vh - #{$nav-height + 67px});
+  overflow-y: scroll;
+}
+
+.database-list--warning {
+  text-align: center;
+  padding: 3rem;
+}
+
+.database-list__item {
+  border-bottom: 1px solid var(--color-light-grey);
+  color: var(--color-dark-grey);
+  a,
+  span {
+    text-decoration: none;
+    color: var(--color-dark-grey);
+    display: inline-block;
+    width: 100%;
+    padding: 2rem;
+  }
+  @extend .list-item-hover;
+  // &:hover {
+  //   background: var(--color-blue);
+  //   a {
+  //     color: $white;
+  //   }
+  // }
+}
+
+.database-list__item--message {
+  font-style: italic;
+  padding: 2rem;
+  &:hover {
+    background: var(--color-white);
+  }
+}

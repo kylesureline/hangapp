@@ -1,0 +1,44 @@
+.mode {
+  // display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 440px;
+  padding: 2rem;
+  margin: 0 auto;
+  grid-column: 1 / -1;
+  font-size: 1.6rem;
+  @media (min-width: 768px) {
+    font-size: 2.8rem;
+    padding: 3rem;
+  }
+}
+
+.mode .option:first-child {
+  border-radius: $radius-default 0 0 $radius-default;
+}
+
+.mode .option:last-child {
+  border-radius: 0 $radius-default $radius-default 0;
+}
+
+.mode .option {
+  background: var(--color-light-grey);
+  cursor: pointer;
+  // flex: 1 0 50%;
+  text-align: center;
+}
+
+.mode .option--selected {
+  background: var(--color-blue);
+  // box-shadow: 4px -2px 4px 2px var(--color-transparent) inset;
+  color: $white;
+}
+
+.mode .option__text {
+  display: inline-block;
+  padding: 2rem 3rem;
+}
+
+.mode .option__input {
+  display: none;
+}

@@ -1,0 +1,40 @@
+.loading {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 4s;
+  &--complete {
+    opacity: 0;
+  }
+  @media (min-width: 768px) {
+    left: $nav-height;
+    width: calc(100% - #{$nav-height});
+  }
+}
+
+.loading__progress {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  appearance: none;
+  height: .8rem;
+  &::-webkit-progress-bar {
+    background: transparent;
+  }
+  &::-webkit-progress-value {
+    background: var(--color-blue);
+  }
+}
+
+.loading__info {
+  position: absolute;
+  background: var(--color-transparent);
+  font-size: 1.4rem;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  padding: 0 .5rem;
+}

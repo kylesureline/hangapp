@@ -1,0 +1,24 @@
+.wins-losses {
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  max-width: 640px;
+  .wins,
+  .losses {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 1.8rem;
+    min-width: 10%;
+    max-width: 90%;
+  }
+  .wins {
+    background: var(--color-blue);
+    color: var(--color-white);
+    border-radius: $radius-default 0 0 $radius-default;
+  }
+  .losses {
+    background: var(--color-grey);
+    color: var(--color-white);
+    border-radius: 0 $radius-default $radius-default 0;
+  }
+}

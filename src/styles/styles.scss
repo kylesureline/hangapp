@@ -1,24 +1,30 @@
 @import './base/settings';
 @import './base/base';
-@import './components/box-layout';
-@import './components/button';
-@import './components/header';
-@import './components/content-container';
-@import './components/input-group';
-@import './components/inputs';
-@import './components/form';
-@import './components/visibility';
-@import './components/list';
-@import './components/loader';
-@import './components/trigger-container';
-@import './components/sidebar';
-@import './components/page';
-@import './components/nav';
-@import './components/hangmanSVG';
+
+@import './utils/utils';
+
+
+// components
+@import './components/typography';
+@import './components/root';
+@import './components/main-nav';
+@import './components/icons';
+@import './components/hangman';
 @import './components/answer';
-@import './components/letter-grid';
-@import './components/dashboard-module';
-@import './components/DashboardModules/past-words';
-@import './components/DashboardModules/settings';
-@import './components/DashboardModules/stats';
-@import './components/modal';
+@import './components/letters';
+@import './components/search';
+@import './components/database-list';
+@import './components/loading';
+@import './components/mode';
+@import './components/settings-labels';
+@import './components/toggle-switch';
+@import './components/past-games';
+@import './components/wins-losses';
+
+// pages
+@import './pages/play';
+@import './pages/database';
+@import './pages/settings';
+@import './pages/about';
+@import './pages/stats';
+@import './pages/game-is-not-over';

@@ -1,0 +1,9 @@
+.link {
+  color: var(--color-blue);
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    opacity: .8;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,50 @@
+.letters {
+  grid-area: letters;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
+  padding: 1rem;
+  position: relative;
+  &--disabled {
+    pointer-events: none;
+    &:after {
+      content: "";
+      background: var(--color-transparent);
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @media (min-width: 768px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.letters__item {
+  font-size: 5vw;
+  background: var(--color-light-grey);
+  color: var(--color-dark-grey);
+  border: 1px solid var(--color-dark-grey);
+  border-radius: $radius-default;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+  &:hover {
+    background: var(--color-blue);
+    color: var(--color-light-grey);
+  }
+  &:disabled {
+    background: var(--color-dark-grey);
+    color: var(--color-light-grey);
+    cursor: default;
+  }
+  @media (min-width: 768px) {
+    font-size: 3vw;
+  }
+}

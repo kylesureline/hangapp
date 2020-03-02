@@ -1,32 +1,43 @@
 import React from 'react';
-import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
-import HomePage from '../components/HomePage.jsx';
-import LoginPage from '../components/LoginPage.jsx';
-import SignupPage from '../components/SignupPage.jsx';
-import GamePage from '../components/GamePage.jsx';
-import DashboardPage from '../components/DashboardPage.jsx';
-import AboutPage from '../components/AboutPage.jsx';
-import NotFoundPage from '../components/NotFoundPage.jsx';
-import PrivateRoute from './PrivateRoute.jsx';
-import PublicRoute from './PublicRoute.jsx';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import { Navigation } from '../components/Navigation';
+import { LoadingIndicator } from '../components/LoadingIndicator';
+// pages
+import { Play } from '../components/Pages/Play/Play';
+import { Database } from '../components/Pages/Database/Database';
+import { Settings } from '../components/Pages/Settings/Settings';
+import { Stats } from '../components/Pages/Stats/Stats';
+import { NotFound } from '../components/Pages/NotFound';
 
-export const history = createBrowserHistory();
+export const AppRouter = () => (
+  <HashRouter>
+    <Navigation />
+    <Switch>
+      {/* PLAY */}
+      <Route path="/" exact={true}>
+        <Play />
+      </Route>
 
-const AppRouter = () => (
-  <Router history={history}>
-    <div>
-      <Switch>
-        <PublicRoute path="/" component={HomePage} exact={true} />
-        <PublicRoute path="/login" component={LoginPage} />
-        <PublicRoute path="/signup" component={SignupPage} />
-        <PrivateRoute path="/play" component={GamePage} />
-        <PrivateRoute path="/dashboard" component={DashboardPage} />
-        <PrivateRoute path="/about" component={AboutPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </div>
-  </Router>
+      {/* DATABASE */}
+      <Route path="/database">
+        <Database />
+      </Route>
+
+      {/* SETTINGS */}
+      <Route path="/settings">
+        <Settings />
+      </Route>
+
+      {/* SETTINGS */}
+      <Route path="/stats">
+        <Stats />
+      </Route>
+
+      <Route>
+        <NotFound />
+      </Route>
+    </Switch>
+    {/* <div>Modal</div> */}
+    <LoadingIndicator />
+  </HashRouter>
 );
-
-export default AppRouter;

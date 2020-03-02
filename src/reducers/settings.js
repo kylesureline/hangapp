@@ -1,31 +1,52 @@
-const defaultSettingsState = {
-  theme: 'light',
-  isOpen: false
+import { getFromLS } from '../utils';
+
+const defaultSettings = {
+  mode: 'dictionary', // 'dictionary' || 'categories'
+  dictionary: {
+    showWordType: true,
+    showDefinition: false,
+    skipWithoutDefinition: true,
+    minLength: 4,
+  },
+  categories: ['recipes']
 };
 
-export default (state = defaultSettingsState, action) => {
+export const initialState = getFromLS('settings') || defaultSettings;
+
+export const reducer = (state = initialState, action) => {
   switch(action.type) {
-    case 'SET_THEME':
+    case 'CHANGE_MODE':
       return {
         ...state,
-        theme: action.theme
+        mode: action.mode
       };
-    case 'OPEN_SIDEBAR':
+    case 'CHANGE_DICTIONARY_SETTINGS':
       return {
         ...state,
-        isOpen: action.isOpen
+        dictionary: {
+          ...state.dictionary,
+          ...action.settings
+        }
       };
-    case 'CLOSE_SIDEBAR':
-      return {
-        ...state,
-        isOpen: action.isOpen
-      };
-    case 'TOGGLE_SIDEBAR':
-      return {
-        ...state,
-        isOpen: !state.isOpen
+    case 'CHANGE_CATEGORIES':
+      // remove if it exists
+      if(state.categories.includes(action.category)) {
+        // require at least one category active at a time
+        if(state.categories.length > 1) {
+          return {
+            ...state,
+            categories: [...state.categories].filter(category => category !== action.category)
+          }
+        } else {
+          return state;
+        }
+      } else {
+        return {
+          ...state,
+          categories: [...state.categories, action.category]
+        };
       }
     default:
-      return state;
+      return state
   }
 };

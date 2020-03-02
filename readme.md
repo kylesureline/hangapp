@@ -1,23 +1,55 @@
-# Hangapp
+<h1 align="center">Hangapp</h1>
 
-## About
+<p align="center">A Front End JavaScript app | React</p>
 
-Hangapp is a simple hangman game, built by Kyle Scheuerlein using React and Webpack. It's tracked on GitHub and includes a comprehensive testing suite written using Jest. The backend is a firebase database and it's deployed on Heroku.
+## Description
 
-## Features
+This app app uses React to create a client for playing hangman games. It fetches data from multiple APIs to build a database of dictionary words and categories. The player can configure their gameplay, activate/deactivate categories, and view their past games. This app is front end only, and relies on localStorage to persist data between sessions.
 
-- [x] Signup/Login
-- [x] Extensive word bank (thanks [TimTCrouch](https://github.com/TimTCrouch/WordList-JS)!)
-- [x] Definitions retrieved from Merriam Webster
-- [x] Animated SVG that draws as you play!
-- [x] Light and dark theme
-- [x] App dashboard with stats and settings
-- [ ] Email confirmation for signup
-- [ ] Password reset link
-- [ ] Password change form
-- [ ] Playable offline (for now)
-- [ ] PWA (splash screens, icons, service worker)
+## Required Technologies
 
-## Feedback
+* [React](https://reactjs.org)
+* [JSX](https://reactjs.org/docs/introducing-jsx.html)
+* [React Router](https://www.npmjs.com/package/react-router)
+* [Redux](https://www.npmjs.com/package/react-redux)
+* [Create React App](http://create-react-app.dev)
+* [React Document Title](https://www.npmjs.com/package/react-document-title)
+* [FetchAPI](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+* [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+* [English Open Word List](http://dreamsteep.com/projects/the-english-open-word-list.html) via [TimTCrouch](https://github.com/TimTCrouch/WordList-JS) (Thanks!)
 
-I'd love to hear what you think! [Email me here](mailto:kyle@kylesureline.com)!
+## Other Technologies
+
+* [Git](https://git-scm.com)
+* [Atom.io](https://atom.io)
+
+## APIs
+
+* [Merriam-Webster](https://www.dictionaryapi.com)
+* [TheMealDB](https://themealdb.com/api.php)
+* [thedogapi.com](https://thedogapi.com)
+* [thecatapi.com](https://thecatapi.com)
+
+## How to Use
+
+Visit https://kylesureline.com/hangapp/ to play!
+
+...or to clone and run locally:
+
+```
+# Clone this repository
+    git clone https://github.com/kylesureline/hangapp/
+
+# Go to project directory
+    cd hangapp
+
+# Install
+    yarn install
+    yarn start
+```
+
+## View in your browser
+
+```
+http://localhost:3000
+```

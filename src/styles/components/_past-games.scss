@@ -1,0 +1,29 @@
+.past-games {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  .icon {
+    min-width: 20px;
+  }
+}
+
+.past-games__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  border-bottom: 1px solid var(--color-light-grey);
+  font-size: 1.8rem;
+  transition: box-shadow .2s;
+  cursor: pointer;
+  @extend .list-item-hover;
+}
+
+.past-games__item--no-games {
+  cursor: default;
+}
+
+.past-games__item__text {
+  margin-left: 0;
+  margin-right: auto;
+}
