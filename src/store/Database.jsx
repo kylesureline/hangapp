@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -13,6 +14,8 @@ import {
   saveToLS
 } from '../utils';
 import { MAX_TO_CACHE } from '../db/globals';
+import { ServiceWorker } from './ServiceWorker';
+
 
 export const Database = ({ children }) => {
   const settings = useSelector(state => state.settings);
@@ -183,23 +186,25 @@ export const Database = ({ children }) => {
       if(isOnline() && cats.length < MAX_TO_CACHE) {
         fetchData('https://api.thecatapi.com/v1/breeds', headers)
           .then(data => {
-            let formatted = data.map(({
-              name,
-              temperament,
-              description
-            }) => ({
-              words: name.toLowerCase().split(' '),
-              temperament,
-              description,
-              category: 'cat'
-            }));
+            if(!isUnmounted) {
+              let formatted = data.map(({
+                name,
+                temperament,
+                description
+              }) => ({
+                words: name.toLowerCase().split(' '),
+                temperament,
+                description,
+                category: 'cat'
+              }));
 
-            const needed = MAX_TO_CACHE - cats.length;
+              const needed = MAX_TO_CACHE - cats.length;
 
-            for(let i = 0; i < needed; i++) {
-              let found = formatted[Math.floor(Math.random() * formatted.length)];
-              formatted = formatted.filter(cat => cat.words.join(' ') !== found.words.join(' '));
-              dispatch(ADD_CAT(found));
+              for(let i = 0; i < needed; i++) {
+                let found = formatted[Math.floor(Math.random() * formatted.length)];
+                formatted = formatted.filter(cat => cat.words.join(' ') !== found.words.join(' '));
+                dispatch(ADD_CAT(found));
+              }              
             }
           })
       }
@@ -225,5 +230,9 @@ export const Database = ({ children }) => {
     saveToLS('settings', settings);
   }, [settings])
 
-  return children;
+  return (
+    <ServiceWorker>
+      {children}
+    </ServiceWorker>
+  );
 }
