@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Hangapp</h1>
 
-## Available Scripts
+<p align="center">A Front End JavaScript app | React</p>
 
-In the project directory, you can run:
+## Description
 
-### `yarn start`
+This app app uses React to create a client for playing hangman games. It fetches data from multiple APIs to build a database of dictionary words and categories. The player can configure their gameplay, activate/deactivate categories, and view their past games. This app is front end only, and relies on localStorage to persist data between sessions.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Required Technologies
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* [React](https://reactjs.org)
+* [JSX](https://reactjs.org/docs/introducing-jsx.html)
+* [React Router](https://www.npmjs.com/package/react-router)
+* [Redux](https://www.npmjs.com/package/react-redux)
+* [Create React App](http://create-react-app.dev)
+* [React Document Title](https://www.npmjs.com/package/react-document-title)
+* [FetchAPI](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+* [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+* [English Open Word List](http://dreamsteep.com/projects/the-english-open-word-list.html) via [TimTCrouch](https://github.com/TimTCrouch/WordList-JS) (Thanks!)
 
-### `yarn test`
+## Other Technologies
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [Git](https://git-scm.com)
+* [Atom.io](https://atom.io)
 
-### `yarn build`
+## APIs
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [Merriam-Webster](https://www.dictionaryapi.com)
+* [TheMealDB](https://themealdb.com/api.php)
+* [thedogapi.com](https://thedogapi.com)
+* [thecatapi.com](https://thecatapi.com)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## How to Use
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Visit https://kylesureline.com/hangapp/ to play!
 
-### `yarn eject`
+...or to clone and run locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+# Clone this repository
+    git clone https://github.com/kylesureline/hangapp/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Go to project directory
+    cd hangapp
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Install
+    yarn install
+    yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## View in your browser
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+http://localhost:3000
+```
