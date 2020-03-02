@@ -23,6 +23,13 @@ export const Categories = ({ onChange, categories }) => {
           onChange={() => onChange('dogs')}
         />
       </label>
+      <label className="label">
+        <span className="label__text">cats:</span>
+        <ToggleSwitch
+          checked={categories.includes('cats')}
+          onChange={() => onChange('cats')}
+        />
+      </label>
     </div>
   );
 };

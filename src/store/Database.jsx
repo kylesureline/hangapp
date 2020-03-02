@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   ADD_WORD_WITH_DEF,
   ADD_RECIPE,
-  ADD_DOG
+  ADD_DOG,
+  ADD_CAT,
 } from '../reducers/actions';
 import {
   fetchData,
@@ -17,7 +18,7 @@ export const Database = ({ children }) => {
   const settings = useSelector(state => state.settings);
   const { dictionary: dictionaryDB, categories: categoriesDB } = useSelector(state => state.db);
   const { withDef, withoutDef } = dictionaryDB;
-  const { recipes, dogs } = categoriesDB;
+  const { recipes, dogs, cats } = categoriesDB;
 
   const dispatch = useDispatch();
 
@@ -165,6 +166,50 @@ export const Database = ({ children }) => {
       clearInterval(interval);
     }
   }, [dogs, dispatch]);
+
+  /***********************************************
+
+    thecatapi.com
+
+  ***********************************************/
+  useEffect(() => {
+    let length = (Math.floor(Math.random() * 1000) + 200);
+    let isUnmounted = false;
+    let headers = new Headers();
+    headers.append('x-api-key', '55577270-6cfe-43a3-b38c-b095bc8c7f24');
+
+    let interval = setInterval(() => {
+      // don't try to fetch if offline
+      if(isOnline() && cats.length < MAX_TO_CACHE) {
+        fetchData('https://api.thecatapi.com/v1/breeds', headers)
+          .then(data => {
+            let formatted = data.map(({
+              name,
+              temperament,
+              description
+            }) => ({
+              words: name.toLowerCase().split(' '),
+              temperament,
+              description,
+              category: 'cat'
+            }));
+
+            const needed = MAX_TO_CACHE - cats.length;
+
+            for(let i = 0; i < needed; i++) {
+              let found = formatted[Math.floor(Math.random() * formatted.length)];
+              formatted = formatted.filter(cat => cat.words.join(' ') !== found.words.join(' '));
+              dispatch(ADD_CAT(found));
+            }
+          })
+      }
+    }, length);
+
+    return () => {
+      isUnmounted = true;
+      clearInterval(interval);
+    }
+  }, [cats, dispatch]);
 
   // sync to localStorage
   useEffect(() => {

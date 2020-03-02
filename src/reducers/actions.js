@@ -65,3 +65,13 @@ export const UPDATE_DOGS = dogs => ({
   type: 'UPDATE_DOGS',
   dogs
 });
+
+export const ADD_CAT = cat => ({
+  type: 'ADD_CAT',
+  cat
+});
+
+export const UPDATE_CATS = cats => ({
+  type: 'UPDATE_CATS',
+  cats
+});

@@ -1,4 +1,4 @@
-export const fetchData = (url) => {
+export const fetchData = (url, opt) => {
   const checkStatus = (response) => {
     if(response.ok) {
       return Promise.resolve(response);
@@ -7,7 +7,7 @@ export const fetchData = (url) => {
     }
   }
 
-  return fetch(url)
+  return fetch(url, opt)
             .then(checkStatus)
             .then(res => res.json())
             .catch(error => console.log('Looks like there was a problem', error));

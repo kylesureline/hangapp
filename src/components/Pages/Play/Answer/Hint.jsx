@@ -24,6 +24,13 @@ export const Hint = ({ dictionary, answer, isOver }) => {
         <span className="answer__hint__word-type">{answer.category}</span>
       </h2>
     )
+  } else if(answer.category === 'cat') {
+    return (
+      <h2 className="answer__hint">
+        <span className="answer__hint__definition">{answer.temperament}</span>
+        <span className="answer__hint__word-type">{answer.category}</span>
+      </h2>
+    )
   } else {
     return '';
   }
