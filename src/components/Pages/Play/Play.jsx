@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Hangman } from './Hangman';
-import { Answer } from './Answer';
-import { Letters } from './Letters';
+import { Answer } from './Answer/Answer';
+import { Letters } from './Letters/Letters';
 import { SAVE_GAME } from '../../../reducers/actions';
 import DocumentTitle from 'react-document-title';
 

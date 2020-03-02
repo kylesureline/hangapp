@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Letter } from '../../reusable/Letter';
+import { Letter } from './Letter';
 import { useSelector, useDispatch } from 'react-redux';
-import { GUESS_LETTER } from '../../../reducers/actions';
+import { GUESS_LETTER } from '../../../../reducers/actions';
 
 export const Letters = () => {
   const dispatch = useDispatch();

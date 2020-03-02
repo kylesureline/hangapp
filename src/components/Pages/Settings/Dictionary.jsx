@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelected } from '../../../hooks/useSelected';
 import { numberWithCommas } from '../../../utils/';
-import { ToggleSwitch } from '../../reusable/ToggleSwitch';
+import { ToggleSwitch } from './ToggleSwitch';
 
 export const Dictionary = ({ onChange, dictionary }) => {
   const { selected } = useSelected('');

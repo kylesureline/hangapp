@@ -1,5 +1,5 @@
 import React from 'react';
-import { Word } from '../../reusable/Word';
+import { Word } from './Word';
 import { useSelector } from 'react-redux';
 import { Hint } from './Hint';
 
