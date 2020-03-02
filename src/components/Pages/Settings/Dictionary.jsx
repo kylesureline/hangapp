@@ -8,6 +8,7 @@ export const Dictionary = ({ onChange, dictionary }) => {
 
   return (
     <div className="settings-labels">
+      <legend>{numberWithCommas(selected.length)} items selected</legend>
       <label className="label">
         <span className="label__text">show word type:</span>
         <ToggleSwitch
@@ -59,7 +60,6 @@ export const Dictionary = ({ onChange, dictionary }) => {
             )}
           />
         </span>
-        <span className="label__results">({numberWithCommas(selected.length)} results)</span>
       </label>
     </div>
   );
