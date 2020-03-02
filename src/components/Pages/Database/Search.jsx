@@ -1,9 +1,9 @@
 import React from 'react';
-import { useSelectedWords } from '../../../hooks/useSelectedWords';
+import { useSelected } from '../../../hooks/useSelected';
 import { numberWithCommas } from '../../../utils/';
 
 export const Search = ({ value, setValue, isOver }) => {
-  const { selectedWords } = useSelectedWords(value);
+  const { selected } = useSelected(value);
 
   const handleChange = e => {
     const { value } = e.target;
@@ -27,7 +27,7 @@ export const Search = ({ value, setValue, isOver }) => {
         autoFocus={isOver}
         placeholder="Search..."
       />
-      <span className="search__count">{numberWithCommas(selectedWords.length)}</span>
+      <span className="search__count">{numberWithCommas(selected.length)} items</span>
     </div>
   );
 };

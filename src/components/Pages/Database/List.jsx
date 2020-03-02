@@ -1,44 +1,21 @@
 import React from 'react';
-import { useSelectedWords } from '../../../hooks/useSelectedWords';
-import { useDispatch, useSelector } from 'react-redux';
-import { END_GAME } from '../../../reducers/actions';
+import { useSelected } from '../../../hooks/useSelected';
+import { useSelector } from 'react-redux';
+import { ListItem } from './ListItem';
 
 export const List = ({ search, isOver }) => {
-  const { selectedWords } = useSelectedWords(search);
+  const { selected } = useSelected(search);
   const { mode } = useSelector(state => state.settings);
-  const dispatch = useDispatch();
-
   const slice = 25;
 
-  const handleClick = e => {
-    // TODO: implement confirmation modal
-    global.confirm('Are you sure you want to start a new game?') && dispatch(END_GAME());
-  };
-
-  return isOver ? (
+  return isOver && (
     <ul className="database-list">
-      {selectedWords.slice(0, slice).map(({ words }, index) => {
+      {selected.slice(0, slice).map((item, index) => {
         return (
-          <li key={index} className="database-list__item">
-            {mode === 'dictionary' ? (
-              <a
-                href={`https://www.merriam-webster.com/dictionary/${words}/`}
-                alt={`${words}'s Definition on m-w.com`}
-                target="_blank"
-                rel="noopener noreferrer"
-                >{words}</a>
-            ) : (
-              words
-            )}
-          </li>
+          <ListItem key={index} mode={mode} item={item} />
         );
       })}
       <li className="database-list__item database-list__item--message">(Showing up to the first {slice} results)</li>
     </ul>
-  ) : (
-    <div className="database-list database-list--warning">
-      <p>Finish your current game to see the database.</p>
-      <p>(You may also <span className="link link--inline" onClick={handleClick}>click here to end your current game</span>)</p>
-    </div>
   );
 };

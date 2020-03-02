@@ -20,7 +20,7 @@ const isLocalhost = Boolean(
     )
 );
 
-export function register(config) {
+export function register(config, handleNewVersion) {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
@@ -36,7 +36,7 @@ export function register(config) {
 
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
-        checkValidServiceWorker(swUrl, config);
+        checkValidServiceWorker(swUrl, config, handleNewVersion);
 
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
@@ -48,13 +48,13 @@ export function register(config) {
         });
       } else {
         // Is not localhost. Just register service worker
-        registerValidSW(swUrl, config);
+        registerValidSW(swUrl, config, handleNewVersion);
       }
     });
   }
 }
 
-function registerValidSW(swUrl, config) {
+function registerValidSW(swUrl, config, handleNewVersion) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
@@ -73,6 +73,10 @@ function registerValidSW(swUrl, config) {
                 'New content is available and will be used when all ' +
                   'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
               );
+
+              if(!!handleNewVersion) {
+                handleNewVersion();
+              }
 
               // Execute callback
               if (config && config.onUpdate) {
@@ -98,7 +102,7 @@ function registerValidSW(swUrl, config) {
     });
 }
 
-function checkValidServiceWorker(swUrl, config) {
+function checkValidServiceWorker(swUrl, config, handleNewVersion) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
     headers: { 'Service-Worker': 'script' }
@@ -118,7 +122,7 @@ function checkValidServiceWorker(swUrl, config) {
         });
       } else {
         // Service worker found. Proceed as normal.
-        registerValidSW(swUrl, config);
+        registerValidSW(swUrl, config, handleNewVersion);
       }
     })
     .catch(() => {

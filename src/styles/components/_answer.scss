@@ -10,13 +10,20 @@
 
 .answer__value {
   text-align: center;
-  span {
+  .word {
     font-size: 2.6rem;
+    margin: 0 .65rem;
     @media (max-width: 375px) {
       font-size: 2rem;
     }
     @media (min-width: 768px) {
       font-size: 3rem;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
     }
   }
 }

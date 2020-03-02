@@ -1,6 +1,13 @@
-.dictionary-settings {
+.settings-labels {
   display: grid;
   grid-template-columns: 1fr;
+  legend {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-med-grey);
+    font-style: italic;
+  }
   .label {
     font-size: 1.6rem;
     padding: 2rem;
@@ -43,13 +50,6 @@
             width: 100%;
           }
         }
-      }
-      .label__results {
-        display: block;
-        text-align: right;
-        font-style: italic;
-        color: var(--color-med-grey);
-        font-size: 1.4rem;
       }
     }
     @media (min-width: 768px) {

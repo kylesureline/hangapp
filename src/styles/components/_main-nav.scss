@@ -3,7 +3,11 @@
   margin: 0 auto;
   height: $nav-height;
   width: 100%;
+  position: sticky;
+  top: 0;
   @media (min-width: 768px) {
+    position: static;
+    top: unset;
     width: $nav-height;
     height: 100%;
   }

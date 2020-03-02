@@ -3,11 +3,13 @@ import { MAX_TO_CACHE } from '../db/globals';
 import { useSelector } from 'react-redux';
 
 export const LoadingIndicator = () => {
-  const max = MAX_TO_CACHE * 1; // 1 database
-  const { dictionary } = useSelector(state => state.db);
+  const max = MAX_TO_CACHE * 4; // dictionary, recipes, dogs, cats
+  const { dictionary, categories } = useSelector(state => state.db);
   const { withDef } = dictionary;
 
-  const value = withDef.length;
+  const value = withDef.length + Object.keys(categories).map(cat => {
+    return categories[cat];
+  }).reduce((acc, category) => [...acc, ...category], []).length;
 
   return (
     <div className={`loading${value >= max ? ' loading--complete' : ''}`}>

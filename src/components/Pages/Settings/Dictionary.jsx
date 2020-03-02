@@ -1,13 +1,14 @@
 import React from 'react';
-import { useSelectedWords } from '../../../hooks/useSelectedWords';
+import { useSelected } from '../../../hooks/useSelected';
 import { numberWithCommas } from '../../../utils/';
-import { ToggleSwitch } from '../../reusable/ToggleSwitch';
+import { ToggleSwitch } from './ToggleSwitch';
 
 export const Dictionary = ({ onChange, dictionary }) => {
-  const { selectedWords } = useSelectedWords('');
+  const { selected } = useSelected('');
 
   return (
-    <div className="dictionary-settings">
+    <div className="settings-labels">
+      <legend>{numberWithCommas(selected.length)} items selected</legend>
       <label className="label">
         <span className="label__text">show word type:</span>
         <ToggleSwitch
@@ -59,7 +60,6 @@ export const Dictionary = ({ onChange, dictionary }) => {
             )}
           />
         </span>
-        <span className="label__results">({numberWithCommas(selectedWords.length)} results)</span>
       </label>
     </div>
   );

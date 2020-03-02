@@ -1,8 +1,7 @@
-import React from 'react';
-import KeyboardEventHandler from 'react-keyboard-event-handler';
-import { Letter } from '../../reusable/Letter';
+import React, { useEffect } from 'react';
+import { Letter } from './Letter';
 import { useSelector, useDispatch } from 'react-redux';
-import { GUESS_LETTER } from '../../../reducers/actions';
+import { GUESS_LETTER } from '../../../../reducers/actions';
 
 export const Letters = () => {
   const dispatch = useDispatch();
@@ -15,13 +14,23 @@ export const Letters = () => {
     }
   };
 
+  const handleKeyDown = e => {
+    const { key } = e;
+    if(abc.includes(key)) {
+      clickHandler(key);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className={`letters${isOver ? ' letters--disabled' : ''}`}>
       {abc.map(letter => <Letter key={letter} letter={letter} onClick={clickHandler} guessedLetters={guessedLetters} />)}
-      <KeyboardEventHandler
-        handleKeys={abc}
-        onKeyEvent={clickHandler}
-      />
     </div>
   )
 };

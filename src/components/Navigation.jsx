@@ -4,39 +4,39 @@ import { ReactComponent as NewGameSVG } from '../images/fiber_new.svg';
 import { ReactComponent as SettingsSVG } from '../images/settings1.svg';
 import { ReactComponent as StatsSVG } from '../images/pie_chart.svg';
 import { ReactComponent as DatabaseSVG } from '../images/storage.svg';
-import { ReactComponent as ShareSVG } from '../images/share.svg';
+// import { ReactComponent as ShareSVG } from '../images/share.svg';
 import { NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { NEW_GAME } from '../reducers/actions';
 import { useRandom } from '../hooks/useRandom';
 
-const shareObj = {
-  title: 'Hangapp',
-  text: 'A hangman web app',
-  url: 'https://kylesureline.com/hangapp'
-};
+// const shareObj = {
+//   title: 'Hangapp',
+//   text: 'A hangman web app',
+//   url: 'https://kylesureline.com/hangapp'
+// };
 
 export const Navigation = () => {
   const { isOver } = useSelector(state => state.game);
   const { mode } = useSelector(state => state.settings);
   const dispatch = useDispatch();
-  const { getRandomWord } = useRandom();
+  const { getRandomWord, getRandomCategory } = useRandom();
 
   const handleNewGame = () => {
-    // only dispatch a new game when you click this button from the homepage
-    // if(window.location.hash === '/#') {
-      if(mode === 'dictionary') {
-        dispatch(NEW_GAME(getRandomWord()));
-      }
-    // }
+    if(mode === 'dictionary') {
+      dispatch(NEW_GAME(getRandomWord()));
+    } else {
+      dispatch(NEW_GAME(getRandomCategory()));
+    }
+
   };
 
-  const handleShare = () => {
-    navigator.share(shareObj).then(() => {
-      console.log('Thanks for sharing!');
-    })
-    .catch(console.error);
-  };
+  // const handleShare = () => {
+  //   navigator.share(shareObj).then(() => {
+  //     console.log('Thanks for sharing!');
+  //   })
+  //   .catch(console.error);
+  // };
 
   return (
     <nav className="main-nav">
@@ -68,13 +68,13 @@ export const Navigation = () => {
             <SettingsSVG title="Settings" className="icon icon--nav" />
           </NavLink>
         </li>
-        {navigator.canShare && navigator.canShare(shareObj) && (
+        {/* {navigator.canShare() && (
           <li className="nav-list__item">
             <span className="nav-link" onClick={handleShare}>
               <ShareSVG title="Share" className="icon icon--nav" />
             </span>
           </li>
-        )}
+        )} */}
       </ul>
     </nav>
   );

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Word } from '../../reusable/Word';
+import { Word } from './Word';
 import { useSelector } from 'react-redux';
 import { Hint } from './Hint';
 
 export const Answer = () => {
   const { progress, answer, isOver } = useSelector(state => state.game);
-  const { mode, dictionary } = useSelector(state => state.settings);
+  const { dictionary } = useSelector(state => state.settings);
 
   return (
     <div className="answer">
@@ -16,7 +16,7 @@ export const Answer = () => {
           progress.map((word, index) => <Word key={index} word={word} />)
         )}
       </h1>
-      <Hint mode={mode} dictionary={dictionary} answer={answer} isOver={isOver} />
+      <Hint dictionary={dictionary} answer={answer} isOver={isOver} />
     </div>
   );
 };
