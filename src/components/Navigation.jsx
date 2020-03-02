@@ -4,17 +4,17 @@ import { ReactComponent as NewGameSVG } from '../images/fiber_new.svg';
 import { ReactComponent as SettingsSVG } from '../images/settings1.svg';
 import { ReactComponent as StatsSVG } from '../images/pie_chart.svg';
 import { ReactComponent as DatabaseSVG } from '../images/storage.svg';
-import { ReactComponent as ShareSVG } from '../images/share.svg';
+// import { ReactComponent as ShareSVG } from '../images/share.svg';
 import { NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { NEW_GAME } from '../reducers/actions';
 import { useRandom } from '../hooks/useRandom';
 
-const shareObj = {
-  title: 'Hangapp',
-  text: 'A hangman web app',
-  url: 'https://kylesureline.com/hangapp'
-};
+// const shareObj = {
+//   title: 'Hangapp',
+//   text: 'A hangman web app',
+//   url: 'https://kylesureline.com/hangapp'
+// };
 
 export const Navigation = () => {
   const { isOver } = useSelector(state => state.game);
@@ -31,12 +31,12 @@ export const Navigation = () => {
 
   };
 
-  const handleShare = () => {
-    navigator.share(shareObj).then(() => {
-      console.log('Thanks for sharing!');
-    })
-    .catch(console.error);
-  };
+  // const handleShare = () => {
+  //   navigator.share(shareObj).then(() => {
+  //     console.log('Thanks for sharing!');
+  //   })
+  //   .catch(console.error);
+  // };
 
   return (
     <nav className="main-nav">
@@ -68,13 +68,13 @@ export const Navigation = () => {
             <SettingsSVG title="Settings" className="icon icon--nav" />
           </NavLink>
         </li>
-        {navigator.canShare() && (
+        {/* {navigator.canShare() && (
           <li className="nav-list__item">
             <span className="nav-link" onClick={handleShare}>
               <ShareSVG title="Share" className="icon icon--nav" />
             </span>
           </li>
-        )}
+        )} */}
       </ul>
     </nav>
   );
