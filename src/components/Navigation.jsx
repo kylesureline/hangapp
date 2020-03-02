@@ -68,7 +68,7 @@ export const Navigation = () => {
             <SettingsSVG title="Settings" className="icon icon--nav" />
           </NavLink>
         </li>
-        {navigator.canShare && navigator.canShare(shareObj) && (
+        {navigator.canShare() && (
           <li className="nav-list__item">
             <span className="nav-link" onClick={handleShare}>
               <ShareSVG title="Share" className="icon icon--nav" />
