@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hangapp/static/css/main.b70d8300.chunk.css",
+    "main.css": "/hangapp/static/css/main.db93b08e.chunk.css",
     "main.js": "/hangapp/static/js/main.4a64e267.chunk.js",
     "main.js.map": "/hangapp/static/js/main.4a64e267.chunk.js.map",
     "runtime-main.js": "/hangapp/static/js/runtime-main.773d902c.js",
@@ -9,10 +9,10 @@
     "static/js/2.61efb10b.chunk.js": "/hangapp/static/js/2.61efb10b.chunk.js",
     "static/js/2.61efb10b.chunk.js.map": "/hangapp/static/js/2.61efb10b.chunk.js.map",
     "index.html": "/hangapp/index.html",
-    "precache-manifest.57d0d01d76b27b514ce92a64e4aa5739.js": "/hangapp/precache-manifest.57d0d01d76b27b514ce92a64e4aa5739.js",
+    "precache-manifest.de198096926f0313c2ccfec94eee9d7d.js": "/hangapp/precache-manifest.de198096926f0313c2ccfec94eee9d7d.js",
     "service-worker.js": "/hangapp/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/hangapp/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.b70d8300.chunk.css.map": "/hangapp/static/css/main.b70d8300.chunk.css.map",
+    "static/css/main.db93b08e.chunk.css.map": "/hangapp/static/css/main.db93b08e.chunk.css.map",
     "static/js/2.61efb10b.chunk.js.LICENSE.txt": "/hangapp/static/js/2.61efb10b.chunk.js.LICENSE.txt",
     "static/media/cancel.946357ce.svg": "/hangapp/static/media/cancel.946357ce.svg",
     "static/media/check_circle.f95933e7.svg": "/hangapp/static/media/check_circle.f95933e7.svg",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.773d902c.js",
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.61efb10b.chunk.js",
-    "static/css/main.b70d8300.chunk.css",
+    "static/css/main.db93b08e.chunk.css",
     "static/js/main.4a64e267.chunk.js"
   ]
 }
