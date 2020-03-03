@@ -1,27 +1,24 @@
 .page--game-is-not-over {
   position: relative;
-  // &:before,
-  // &:after {
-  //   position: absolute;
-  // }
-  // &:before {
-  //   z-index: 6;
-  //   content: 'Finish your current game first';
-  //   font-size: 2rem;
-  //   color: var(--color-white);
-  //   background: var(--color-blue);
-  //   border-radius: $radius-default;
-  //   text-align: center;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   padding: 2rem;
-  //   height: 80px;
-  //   width: 200px;
-  //   top: calc(50% - 60px);
-  //   left: calc(50% - 120px);
-  //   box-shadow: 0 3px 6px 0 var(--color-light-grey);
-  // }
+  &:before {
+    position: fixed;
+    z-index: 6;
+    content: 'Finish your current game first';
+    font-size: 2rem;
+    color: var(--color-white);
+    background: var(--color-blue);
+    border-radius: $radius-default;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    height: 80px;
+    width: 200px;
+    top: calc(50vh - 60px);
+    left: calc(50vw - 120px);
+    box-shadow: 0 3px 6px 0 var(--color-light-grey);
+  }
   &:after {
     position: absolute;
     width: 100%;
