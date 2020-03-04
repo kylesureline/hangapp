@@ -23,10 +23,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "npm test -- --coverage",
-    "coverage-all": "npm test -- --coverage --watchAll",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "coverage": "yarn test -- --coverage",
+    "coverage-all": "yarn test -- --coverage --watchAll",
+    "deploy": "yarn build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
