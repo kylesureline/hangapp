@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^10.0.0",
-    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
     "react": "^16.13.0",
@@ -43,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
