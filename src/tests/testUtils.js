@@ -1,7 +1,7 @@
 import React from 'react';
 import { render as testingLibraryRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import configureStore from '../store/configureStore';
+import { configureStore } from '../store/configureStore';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
