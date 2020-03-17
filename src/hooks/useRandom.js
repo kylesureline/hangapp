@@ -1,9 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import {
   UPDATE_WORDS_WITH_DEF,
-  UPDATE_RECIPES,
-  UPDATE_DOGS,
-  UPDATE_CATS,
+  UPDATE_CATEGORY,
 } from '../reducers/actions';
 import { formatWordObj } from '../utils';
 
@@ -63,13 +61,13 @@ export const useRandom = () => {
 
     if(cat === 'recipes' && !!categoriesDB.recipes.length) {
       foundItem = categoriesDB.recipes[Math.floor(Math.random() * categoriesDB.recipes.length)];
-      dispatch(UPDATE_RECIPES(categoriesDB.recipes.filter(recipe => recipe.words.join(' ') !== foundItem.words.join(' '))));
+      dispatch(UPDATE_CATEGORY(cat, categoriesDB.recipes.filter(recipe => recipe.words.join(' ') !== foundItem.words.join(' '))));
     } else if(cat === 'dogs' && !!categoriesDB.dogs.length) {
       foundItem = categoriesDB.dogs[Math.floor(Math.random() * categoriesDB.dogs.length)];
-      dispatch(UPDATE_DOGS(categoriesDB.dogs.filter(dog => dog.words.join(' ') !== foundItem.words.join(' '))));
+      dispatch(UPDATE_CATEGORY(cat, categoriesDB.dogs.filter(dog => dog.words.join(' ') !== foundItem.words.join(' '))));
     } else if(cat === 'cats' && !!categoriesDB.cats.length) {
       foundItem = categoriesDB.cats[Math.floor(Math.random() * categoriesDB.cats.length)];
-      dispatch(UPDATE_CATS(categoriesDB.cats.filter(cat => cat.words.join(' ') !== foundItem.words.join(' '))));
+      dispatch(UPDATE_CATEGORY(cat, categoriesDB.cats.filter(cat => cat.words.join(' ') !== foundItem.words.join(' '))));
     }
 
     return foundItem || getRandomWord();
