@@ -47,6 +47,9 @@ Visit https://kylesureline.com/hangapp/ to play!
 # Install
     yarn install
     yarn start
+
+# Generate Code Coverage Report (when it's done press q to launch it in a browser)
+    yarn coverage-all
 ```
 
 ## View in your browser
