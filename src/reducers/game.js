@@ -1,6 +1,6 @@
 import { savePastGame, saveCurrentGame, getCurrentGame } from '../utils';
 
-const firstGame = {
+export const firstGame = {
   guessesRemaining: 10,
   answer: {
     words: ['hangapp'],
