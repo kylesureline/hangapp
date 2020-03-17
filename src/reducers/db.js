@@ -31,54 +31,22 @@ export const reducer = (state = initialState, action) => {
           withDef: action.withDef
         }
       };
-    case 'ADD_RECIPE':
+    case 'ADD_CATEGORY':
       return {
         ...state,
         categories: {
           ...state.categories,
-          recipes: [...state.categories.recipes, action.recipe]
+          [action.category]: [...state.categories[action.category], action.answer]
         }
       };
-    case 'UPDATE_RECIPES':
+    case 'UPDATE_CATEGORY':
       return {
         ...state,
         categories: {
           ...state.categories,
-          recipes: action.recipes
+          [action.category]: action.answers
         }
-      };
-    case 'ADD_DOG':
-      return {
-        ...state,
-        categories: {
-          ...state.categories,
-          dogs: [...state.categories.dogs, action.dog]
-        }
-      };
-    case 'UPDATE_DOGS':
-      return {
-        ...state,
-        categories: {
-          ...state.categories,
-          dogs: action.dogs
-        }
-      };
-    case 'ADD_CAT':
-      return {
-        ...state,
-        categories: {
-          ...state.categories,
-          cats: [...state.categories.cats, action.cat]
-        }
-      };
-    case 'UPDATE_CATS':
-      return {
-        ...state,
-        categories: {
-          ...state.categories,
-          cats: action.cats
-        }
-      };
+      }
     default:
       return state;
   }

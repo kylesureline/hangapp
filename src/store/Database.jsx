@@ -3,9 +3,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   ADD_WORD_WITH_DEF,
-  ADD_RECIPE,
-  ADD_DOG,
-  ADD_CAT,
+  ADD_CATEGORY,
 } from '../reducers/actions';
 import {
   fetchData,
@@ -111,7 +109,7 @@ export const Database = ({ children }) => {
                 /^[a-z]+$/.test(game.words.join(' ')) &&
                 (!recipes.length || !!recipes.find(recipe => recipe.words.join(' ') !== game.words.join(' ')))
               ) {
-                dispatch(ADD_RECIPE(game));
+                dispatch(ADD_CATEGORY('recipes', game));
               }
             }
           })
@@ -157,7 +155,7 @@ export const Database = ({ children }) => {
               for(let i = 0; i < needed; i++) {
                 let found = formatted[Math.floor(Math.random() * formatted.length)];
                 formatted = formatted.filter(dog => dog.words.join(' ') !== found.words.join(' '));
-                dispatch(ADD_DOG(found));
+                dispatch(ADD_CATEGORY('dogs', found));
               }
             }
           })
@@ -203,8 +201,8 @@ export const Database = ({ children }) => {
               for(let i = 0; i < needed; i++) {
                 let found = formatted[Math.floor(Math.random() * formatted.length)];
                 formatted = formatted.filter(cat => cat.words.join(' ') !== found.words.join(' '));
-                dispatch(ADD_CAT(found));
-              }              
+                dispatch(ADD_CATEGORY('cats', found));
+              }
             }
           })
       }
