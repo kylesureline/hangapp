@@ -1,77 +1,77 @@
 export const NEW_GAME = answer => ({
-  type: 'NEW_GAME',
+  type: "NEW_GAME",
   answer
 });
 
 export const ADD_WORD_WITH_DEF = word => ({
-  type: 'ADD_WORD_WITH_DEF',
+  type: "ADD_WORD_WITH_DEF",
   word
 });
 
 export const UPDATE_WORDS_WITH_DEF = withDef => ({
-  type: 'UPDATE_WORDS_WITH_DEF',
+  type: "UPDATE_WORDS_WITH_DEF",
   withDef
 });
 
 export const CHANGE_MODE = mode => ({
-  type: 'CHANGE_MODE',
+  type: "CHANGE_MODE",
   mode
 });
 
 export const CHANGE_DICTIONARY_SETTINGS = settings => ({
-  type: 'CHANGE_DICTIONARY_SETTINGS',
+  type: "CHANGE_DICTIONARY_SETTINGS",
   settings: {
     ...settings
-  },
+  }
 });
 
 export const GUESS_LETTER = letter => ({
-  type: 'GUESS_LETTER',
+  type: "GUESS_LETTER",
   letter
 });
 
 export const END_GAME = () => ({
-  type: 'END_GAME',
+  type: "END_GAME"
 });
 
 export const SAVE_GAME = (won, mode, categories) => ({
-  type: 'SAVE_GAME',
+  type: "SAVE_GAME",
   won,
   mode,
   categories
 });
 
 export const ADD_RECIPE = recipe => ({
-  type: 'ADD_RECIPE',
+  type: "ADD_RECIPE",
   recipe
 });
 
 export const CHANGE_CATEGORIES = category => ({
-  type: 'CHANGE_CATEGORIES',
+  type: "CHANGE_CATEGORIES",
   category
 });
 
 export const UPDATE_RECIPES = recipes => ({
-  type: 'UPDATE_RECIPES',
+  type: "UPDATE_RECIPES",
   recipes
 });
 
 export const ADD_DOG = dog => ({
-  type: 'ADD_DOG',
+  type: "ADD_DOG",
   dog
 });
 
 export const UPDATE_DOGS = dogs => ({
-  type: 'UPDATE_DOGS',
+  type: "UPDATE_DOGS",
   dogs
 });
 
 export const ADD_CAT = cat => ({
-  type: 'ADD_CAT',
+  type: "ADD_CAT",
   cat
 });
 
 export const UPDATE_CATS = cats => ({
-  type: 'UPDATE_CATS',
+  type: "UPDATE_CATS",
   cats
 });

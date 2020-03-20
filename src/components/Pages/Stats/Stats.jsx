@@ -1,11 +1,11 @@
-import React from 'react';
-import { PastGames } from './PastGames';
-import { WinsLosses } from './WinsLosses';
-import { getFromLS } from '../../../utils';
-import DocumentTitle from 'react-document-title';
+import React from "react";
+import { PastGames } from "./PastGames";
+import { WinsLosses } from "./WinsLosses";
+import { getFromLS } from "../../../utils";
+import DocumentTitle from "react-document-title";
 
 export const Stats = () => {
-  const data = getFromLS('past-games') || [];
+  const data = getFromLS("past-games") || [];
 
   return (
     <DocumentTitle title={`${process.env.REACT_APP_NAME} | Stats`}>
