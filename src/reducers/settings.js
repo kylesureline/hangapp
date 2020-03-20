@@ -46,7 +46,8 @@ export const reducer = (state = initialState, action) => {
           categories: [...state.categories, action.category]
         };
       }
+    /* istanbul ignore next line */
     default:
-      return state
+      return state;
   }
 };

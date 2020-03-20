@@ -41,37 +41,19 @@ export const SAVE_GAME = (won, mode, categories) => ({
   categories
 });
 
-export const ADD_RECIPE = recipe => ({
-  type: 'ADD_RECIPE',
-  recipe
-});
-
 export const CHANGE_CATEGORIES = category => ({
   type: 'CHANGE_CATEGORIES',
   category
 });
 
-export const UPDATE_RECIPES = recipes => ({
-  type: 'UPDATE_RECIPES',
-  recipes
+export const ADD_CATEGORY = (category, answer) => ({
+  type: 'ADD_CATEGORY',
+  category,
+  answer
 });
 
-export const ADD_DOG = dog => ({
-  type: 'ADD_DOG',
-  dog
-});
-
-export const UPDATE_DOGS = dogs => ({
-  type: 'UPDATE_DOGS',
-  dogs
-});
-
-export const ADD_CAT = cat => ({
-  type: 'ADD_CAT',
-  cat
-});
-
-export const UPDATE_CATS = cats => ({
-  type: 'UPDATE_CATS',
-  cats
+export const UPDATE_CATEGORY = (category, answers) => ({
+  type: 'UPDATE_CATEGORY',
+  category,
+  answers
 });
