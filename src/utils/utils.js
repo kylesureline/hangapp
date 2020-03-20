@@ -1,24 +1,23 @@
 export const fetchData = (url, opt) => {
-  const checkStatus = response => {
-    if (response.ok) {
+  const checkStatus = (response) => {
+    if(response.ok) {
       return Promise.resolve(response);
     } else {
       return Promise.reject(new Error(response.statusText));
     }
-  };
+  }
 
   return fetch(url, opt)
-    .then(checkStatus)
-    .then(res => res.json())
-    .catch(error => console.log("Looks like there was a problem", error));
+            .then(checkStatus)
+            .then(res => res.json())
+            .catch(error => console.log('Looks like there was a problem', error));
 };
 
 export const isOnline = () => navigator.onLine;
 
-export const getFromLS = key => JSON.parse(localStorage.getItem(key));
+export const getFromLS = (key) => JSON.parse(localStorage.getItem(key));
 
-export const saveToLS = (key, value) =>
-  localStorage.setItem(key, JSON.stringify(value));
+export const saveToLS = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 
 // export const addToCache = word => {
 //   const cache = getFromLS();
@@ -33,23 +32,22 @@ export const saveToLS = (key, value) =>
 //   return word;
 // };
 
-export const formatWordObj = (word, wordType = "", def = "") => ({
+export const formatWordObj = (word, wordType = '', def = '') => ({
   words: [word],
   wordType,
   def
 });
 
-export const numberWithCommas = x =>
-  x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+export const numberWithCommas = x => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 export const savePastGame = game => {
-  const pastGames = [game, ...(getFromLS("past-games") || [])].slice(0, 1000);
-  saveToLS("past-games", pastGames);
+  const pastGames = [game, ...getFromLS('past-games') || []].slice(0, 1000);
+  saveToLS('past-games', pastGames);
 };
 
-export const saveCurrentGame = state => saveToLS("current-game", state);
+export const saveCurrentGame = state => saveToLS('current-game', state);
 
-export const getCurrentGame = () => getFromLS("current-game");
+export const getCurrentGame = () => getFromLS('current-game');
 
 export const toHoursMinutesSeconds = valueOf => {
   const remainderOf = inMilliseconds => {
@@ -59,9 +57,10 @@ export const toHoursMinutesSeconds = valueOf => {
   };
 
   const toString = (h, m, s) => {
-    if (h) {
+    if(h) {
       return `${h}h ${m}m ago`;
-    } else if (m) {
+    }
+    else if(m) {
       return `${m}m ${s}s ago`;
     } else {
       return `${s}s ago`;
@@ -70,7 +69,7 @@ export const toHoursMinutesSeconds = valueOf => {
   const mil = {
     hours: 60 * 60 * 1000,
     minutes: 60 * 1000,
-    seconds: 1000
+    seconds: 1000,
   };
   const hours = remainderOf(mil.hours);
   const minutes = remainderOf(mil.minutes);
@@ -83,12 +82,8 @@ export const toRelevantTimeString = timestamp => {
   const now = Date.now();
   const old = 24 * 60 * 60 * 1000; // one day
 
-  if (now - timestamp >= old) {
-    return new Date(timestamp).toLocaleString("default", {
-      day: "numeric",
-      month: "numeric",
-      year: "numeric"
-    });
+  if(now - timestamp >= old) {
+    return new Date(timestamp).toLocaleString('default', { day: 'numeric', month: 'numeric', year: 'numeric' });
   } else {
     return toHoursMinutesSeconds(now - timestamp);
   }

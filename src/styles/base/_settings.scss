@@ -9,7 +9,7 @@ $med-grey: lighten($black, 44%);
 $dark-grey: lighten($black, 22%);
 
 $nav-height: 50px;
-$radius-default: 0.6rem;
+$radius-default: .6rem;
 
 :root {
   --color-black: #{$black};
@@ -19,7 +19,7 @@ $radius-default: 0.6rem;
   --color-med-grey: #{$med-grey};
   --color-dark-grey: #{$dark-grey};
   --color-blue: #{$blue};
-  --color-transparent: #{rgba($white, 0.6)};
+  --color-transparent: #{rgba($white, .6)};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,6 +31,6 @@ $radius-default: 0.6rem;
     --color-med-grey: #{invert($med-grey)};
     --color-dark-grey: #{invert($dark-grey)};
     --color-blue: #{lighten($blue, 50%)};
-    --color-transparent: #{rgba($black, 0.6)};
+    --color-transparent: #{rgba($black, .6)};
   }
 }

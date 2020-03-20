@@ -1,29 +1,30 @@
-@import "./base/settings";
-@import "./base/base";
+@import './base/settings';
+@import './base/base';
 
-@import "./utils/utils";
+@import './utils/utils';
+
 
 // components
-@import "./components/typography";
-@import "./components/root";
-@import "./components/main-nav";
-@import "./components/icons";
-@import "./components/hangman";
-@import "./components/answer";
-@import "./components/letters";
-@import "./components/search";
-@import "./components/database-list";
-@import "./components/loading";
-@import "./components/mode";
-@import "./components/settings-labels";
-@import "./components/toggle-switch";
-@import "./components/past-games";
-@import "./components/wins-losses";
+@import './components/typography';
+@import './components/root';
+@import './components/main-nav';
+@import './components/icons';
+@import './components/hangman';
+@import './components/answer';
+@import './components/letters';
+@import './components/search';
+@import './components/database-list';
+@import './components/loading';
+@import './components/mode';
+@import './components/settings-labels';
+@import './components/toggle-switch';
+@import './components/past-games';
+@import './components/wins-losses';
 
 // pages
-@import "./pages/play";
-@import "./pages/database";
-@import "./pages/settings";
-@import "./pages/about";
-@import "./pages/stats";
-@import "./pages/game-is-not-over";
+@import './pages/play';
+@import './pages/database';
+@import './pages/settings';
+@import './pages/about';
+@import './pages/stats';
+@import './pages/game-is-not-over';

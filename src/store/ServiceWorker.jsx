@@ -1,11 +1,9 @@
-import { useEffect } from "react";
-import * as serviceWorker from "../serviceWorker";
+import { useEffect } from 'react';
+import * as serviceWorker from '../serviceWorker';
 
 export const ServiceWorker = ({ children }) => {
   const handleNewVersion = () => {
-    global.alert(
-      `You've downloaded a new version of this app. Please restart to update.`
-    );
+    global.alert(`You've downloaded a new version of this app. Please restart to update.`);
   };
 
   useEffect(() => {
@@ -13,4 +11,4 @@ export const ServiceWorker = ({ children }) => {
   }, []);
 
   return children;
-};
+}

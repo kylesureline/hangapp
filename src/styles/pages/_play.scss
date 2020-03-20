@@ -5,16 +5,16 @@
   // grid-template-rows: 3fr 2fr 3fr;
   grid-template-rows: minmax(100px, 30vh) minmax(100px, 200px) auto;
   grid-template-areas:
-    "hangman"
-    "answer"
-    "letters";
-  @media (min-width: 768px) {
-    height: 100vh;
-    align-content: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3fr 2fr;
-    grid-template-areas:
+   "hangman"
+   "answer"
+   "letters";
+   @media (min-width: 768px) {
+     height: 100vh;
+     align-content: center;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 3fr 2fr;
+     grid-template-areas:
       "hangman answer"
       "letters letters";
-  }
+   }
 }

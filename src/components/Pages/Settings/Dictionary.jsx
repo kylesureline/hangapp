@@ -1,10 +1,10 @@
-import React from "react";
-import { useSelected } from "../../../hooks/useSelected";
-import { numberWithCommas } from "../../../utils/";
-import { ToggleSwitch } from "./ToggleSwitch";
+import React from 'react';
+import { useSelected } from '../../../hooks/useSelected';
+import { numberWithCommas } from '../../../utils/';
+import { ToggleSwitch } from './ToggleSwitch';
 
 export const Dictionary = ({ onChange, dictionary }) => {
-  const { selected } = useSelected("");
+  const { selected } = useSelected('');
 
   return (
     <div className="settings-labels">
@@ -13,33 +13,33 @@ export const Dictionary = ({ onChange, dictionary }) => {
         <span className="label__text">show word type:</span>
         <ToggleSwitch
           checked={dictionary.showWordType}
-          onChange={() =>
-            onChange({
+          onChange={() => onChange(
+            {
               showWordType: !dictionary.showWordType
-            })
-          }
+            }
+          )}
         />
       </label>
       <label className="label">
         <span className="label__text">show definition:</span>
         <ToggleSwitch
           checked={dictionary.showDefinition}
-          onChange={() =>
-            onChange({
+          onChange={() => onChange(
+            {
               showDefinition: !dictionary.showDefinition
-            })
-          }
+            }
+          )}
         />
       </label>
       <label className="label">
         <span className="label__text">skip words without a definition:</span>
         <ToggleSwitch
           checked={dictionary.skipWithoutDefinition}
-          onChange={() =>
-            onChange({
+          onChange={() => onChange(
+            {
               skipWithoutDefinition: !dictionary.skipWithoutDefinition
-            })
-          }
+            }
+          )}
         />
       </label>
       <label className="label label--min-length">
@@ -53,11 +53,11 @@ export const Dictionary = ({ onChange, dictionary }) => {
             min={1}
             max={8}
             value={dictionary.minLength}
-            onChange={e =>
-              onChange({
+            onChange={e => onChange(
+              {
                 minLength: e.target.value
-              })
-            }
+              }
+            )}
           />
         </span>
       </label>

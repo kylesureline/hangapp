@@ -1,7 +1,7 @@
-import React from "react";
-import { AppRouter } from "./routers/AppRouter";
-import { StoreProvider } from "./store/StoreProvider";
-import { configureStore } from "./store/configureStore";
+import React from 'react';
+import { AppRouter } from './routers/AppRouter';
+import { StoreProvider } from './store/StoreProvider';
+import { configureStore } from './store/configureStore';
 
 const store = configureStore();
 

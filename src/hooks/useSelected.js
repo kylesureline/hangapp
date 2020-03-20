@@ -1,23 +1,17 @@
-import { useCallback } from "react";
-import { useSelector } from "react-redux";
-import { formatWordObj } from "../utils";
+import { useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { formatWordObj } from '../utils';
 
-export const useSelected = (search = "") => {
+export const useSelected = (search = '') => {
   const { mode, dictionary, categories } = useSelector(state => state.settings);
   const db = useSelector(state => state.db);
-  const filter = useCallback(
-    ({ words }) =>
-      words
-        .join(" ")
-        .toLowerCase()
-        .includes(search.toLowerCase()) &&
-      words.join(" ").length >= dictionary.minLength,
-    [search, dictionary.minLength]
-  );
+  const filter = useCallback(({ words }) => (
+    words.join(' ').toLowerCase().includes(search.toLowerCase()) && words.join(' ').length >= dictionary.minLength
+  ), [search, dictionary.minLength]);
 
   const selected = useCallback(() => {
-    if (mode === "dictionary") {
-      if (dictionary.skipWithoutDefinition) {
+    if(mode === 'dictionary') {
+      if(dictionary.skipWithoutDefinition) {
         return db.dictionary.withDef;
       } else {
         return db.dictionary.withoutDef.map(item => formatWordObj(item));
@@ -28,6 +22,6 @@ export const useSelected = (search = "") => {
   }, [mode, dictionary, db, categories]);
 
   return {
-    selected: selected().filter(filter)
+     selected: selected().filter(filter)
   };
 };

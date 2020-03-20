@@ -20,7 +20,7 @@
   position: absolute;
   bottom: 0;
   appearance: none;
-  height: 0.8rem;
+  height: .8rem;
   &::-webkit-progress-bar {
     background: transparent;
   }
@@ -36,5 +36,5 @@
   z-index: 2;
   right: 0;
   bottom: 0;
-  padding: 0 0.5rem;
+  padding: 0 .5rem;
 }

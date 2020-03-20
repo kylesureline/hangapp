@@ -1,14 +1,14 @@
-import React from "react";
-import { Mode } from "./Mode";
-import { Dictionary } from "./Dictionary";
-import { Categories } from "./Categories";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import { Mode } from './Mode';
+import { Dictionary } from './Dictionary';
+import { Categories } from './Categories';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   CHANGE_MODE,
   CHANGE_DICTIONARY_SETTINGS,
   CHANGE_CATEGORIES
-} from "../../../reducers/actions";
-import DocumentTitle from "react-document-title";
+} from '../../../reducers/actions';
+import DocumentTitle from 'react-document-title';
 
 export const Settings = () => {
   const { mode, dictionary, categories } = useSelector(state => state.settings);
@@ -25,28 +25,24 @@ export const Settings = () => {
 
   const handleCategoriesSettings = category => {
     dispatch(CHANGE_CATEGORIES(category));
-  };
+  }
 
   return (
     <DocumentTitle title={`${process.env.REACT_APP_NAME} | Settings`}>
-      <main
-        className={`page page--settings${
-          isOver ? "" : " page--game-is-not-over"
-        }`}
-      >
+      <main className={`page page--settings${isOver ? '' : ' page--game-is-not-over'}`}>
         <form>
           <Mode
-            options={["dictionary", "categories"]}
+            options={['dictionary', 'categories']}
             selectedOption={mode}
             onChange={handleModeChange}
           />
-          {mode === "dictionary" && (
+          {mode === 'dictionary' && (
             <Dictionary
               onChange={handleWordsSettings}
               dictionary={dictionary}
             />
           )}
-          {mode === "categories" && (
+          {mode === 'categories' && (
             <Categories
               onChange={handleCategoriesSettings}
               categories={categories}
