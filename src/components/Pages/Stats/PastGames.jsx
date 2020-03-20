@@ -1,5 +1,5 @@
-import React from 'react';
-import { PastGamesItem } from './PastGamesItem';
+import React from "react";
+import { PastGamesItem } from "./PastGamesItem";
 
 export const PastGames = ({ data }) => {
   return (

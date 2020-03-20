@@ -1,9 +1,9 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
 // reducers
-import { reducer as settings } from '../reducers/settings';
-import { reducer as game } from '../reducers/game';
-import { reducer as db } from '../reducers/db';
+import { reducer as settings } from "../reducers/settings";
+import { reducer as game } from "../reducers/game";
+import { reducer as db } from "../reducers/db";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -12,7 +12,7 @@ export const configureStore = () => {
     combineReducers({
       settings,
       game,
-      db,
+      db
     }),
     composeEnhancers(applyMiddleware(thunk))
   );

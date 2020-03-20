@@ -3,7 +3,7 @@
   &:before {
     position: fixed;
     z-index: 6;
-    content: 'Finish your current game first';
+    content: "Finish your current game first";
     font-size: 2rem;
     color: var(--color-white);
     background: var(--color-blue);
@@ -26,7 +26,7 @@
     top: 0;
     left: 0;
     z-index: 5;
-    content: '';
+    content: "";
     background: var(--color-transparent);
   }
 }

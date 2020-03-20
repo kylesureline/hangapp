@@ -1,13 +1,13 @@
-import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-import { Navigation } from '../components/Navigation';
-import { LoadingIndicator } from '../components/LoadingIndicator';
+import React from "react";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import { Navigation } from "../components/Navigation";
+import { LoadingIndicator } from "../components/LoadingIndicator";
 // pages
-import { Play } from '../components/Pages/Play/Play';
-import { Database } from '../components/Pages/Database/Database';
-import { Settings } from '../components/Pages/Settings/Settings';
-import { Stats } from '../components/Pages/Stats/Stats';
-import { NotFound } from '../components/Pages/NotFound';
+import { Play } from "../components/Pages/Play/Play";
+import { Database } from "../components/Pages/Database/Database";
+import { Settings } from "../components/Pages/Settings/Settings";
+import { Stats } from "../components/Pages/Stats/Stats";
+import { NotFound } from "../components/Pages/NotFound";
 
 export const AppRouter = () => (
   <HashRouter>
