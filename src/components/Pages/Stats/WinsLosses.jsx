@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const WinsLosses = ({ data }) => {
   const winCount = data.filter(game => game.won).length;
@@ -11,17 +11,19 @@ export const WinsLosses = ({ data }) => {
         className="wins"
         style={{
           // flex: `0 1 ${winPerc}%`
-          width: `${winPerc}%`,
+          width: `${winPerc}%`
         }}
-        >{winCount} ({winPerc.toFixed(0)}%)
+      >
+        {winCount} ({winPerc.toFixed(0)}%)
       </div>
       <div
         className="losses"
         style={{
           // flex: `0 1 ${lostPerc}%`
-          width: `${lostPerc}%`,
+          width: `${lostPerc}%`
         }}
-        >{lostCount} ({lostPerc.toFixed(0)}%)
+      >
+        {lostCount} ({lostPerc.toFixed(0)}%)
       </div>
     </div>
   );

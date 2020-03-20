@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSelected } from '../../../hooks/useSelected';
-import { numberWithCommas } from '../../../utils/';
+import React from "react";
+import { useSelected } from "../../../hooks/useSelected";
+import { numberWithCommas } from "../../../utils/";
 
 export const Search = ({ value, setValue, isOver }) => {
   const { selected } = useSelected(value);
@@ -11,10 +11,10 @@ export const Search = ({ value, setValue, isOver }) => {
   };
 
   const handleKeyUp = e => {
-    if(e.keyCode === 27) {
-      setValue('');
+    if (e.keyCode === 27) {
+      setValue("");
     }
-  }
+  };
 
   return (
     <div className="search">
@@ -27,7 +27,9 @@ export const Search = ({ value, setValue, isOver }) => {
         autoFocus={isOver}
         placeholder="Search..."
       />
-      <span className="search__count">{numberWithCommas(selected.length)} items</span>
+      <span className="search__count">
+        {numberWithCommas(selected.length)} items
+      </span>
     </div>
   );
 };

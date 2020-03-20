@@ -14,7 +14,7 @@
   padding: 2rem;
   border-bottom: 1px solid var(--color-light-grey);
   font-size: 1.8rem;
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
   cursor: pointer;
   @extend .list-item-hover;
 }

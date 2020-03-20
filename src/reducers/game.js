@@ -1,16 +1,16 @@
-import { savePastGame, saveCurrentGame, getCurrentGame } from '../utils';
+import { savePastGame, saveCurrentGame, getCurrentGame } from "../utils";
 
 export const firstGame = {
   guessesRemaining: 10,
   answer: {
-    words: ['hangapp'],
-    def: 'A hangman game developed by Kyle Scheuerlein',
-    wordType: 'noun'
+    words: ["hangapp"],
+    def: "A hangman game developed by Kyle Scheuerlein",
+    wordType: "noun"
   },
-  progress: ['_______'],
+  progress: ["_______"],
   guessedLetters: [],
   isOver: false,
-  category: '',
+  category: ""
 };
 
 export const initialState = getCurrentGame() || firstGame;
@@ -29,48 +29,63 @@ export const initialState = getCurrentGame() || firstGame;
 //   category: '',
 // }
 
-const updateProgress = (answer, progress, guessedLetter) => progress.map((word, wordIndex) => {
-  return word.split('').map((letter, letterIndex) => {
-    if(guessedLetter === answer[wordIndex].charAt(letterIndex)) {
-      return guessedLetter;
-    }
-    return letter;
-  }).join('');
-});
+const updateProgress = (answer, progress, guessedLetter) =>
+  progress.map((word, wordIndex) => {
+    return word
+      .split("")
+      .map((letter, letterIndex) => {
+        if (guessedLetter === answer[wordIndex].charAt(letterIndex)) {
+          return guessedLetter;
+        }
+        return letter;
+      })
+      .join("");
+  });
 
-export const reducer = (state = initialState, { type, answer, letter, mode, categories, won }) => {
-  switch(type) {
-    case 'NEW_GAME':
+export const reducer = (
+  state = initialState,
+  { type, answer, letter, mode, categories, won }
+) => {
+  switch (type) {
+    case "NEW_GAME":
       const newGameState = {
         ...state,
         guessesRemaining: 10,
         answer,
-        progress: [...Array(answer.words.length)].map((word, index) => (
-          [...Array(answer.words[index].length)].map((_, i) => '_').join('')
-        )),
+        progress: [...Array(answer.words.length)].map((word, index) =>
+          [...Array(answer.words[index].length)].map((_, i) => "_").join("")
+        ),
         guessedLetters: [],
-        isOver: false,
+        isOver: false
       };
 
       saveCurrentGame(newGameState);
 
       return newGameState;
-    case 'GUESS_LETTER':
-      const progress = updateProgress(state.answer.words, state.progress, letter);
-      const guessesRemaining = state.answer.words.join(' ').includes(letter) ? state.guessesRemaining : state.guessesRemaining >= 1 ? state.guessesRemaining - 1 : 0;
+    case "GUESS_LETTER":
+      const progress = updateProgress(
+        state.answer.words,
+        state.progress,
+        letter
+      );
+      const guessesRemaining = state.answer.words.join(" ").includes(letter)
+        ? state.guessesRemaining
+        : state.guessesRemaining >= 1
+        ? state.guessesRemaining - 1
+        : 0;
       // generate the new state
       const stateAfterGuessing = {
         ...state,
         guessesRemaining,
         progress,
-        guessedLetters: [...state.guessedLetters, letter],
+        guessedLetters: [...state.guessedLetters, letter]
       };
 
       saveCurrentGame(stateAfterGuessing);
 
       return stateAfterGuessing;
-    case 'SAVE_GAME':
-      const withoutIsOverProp = {...state}
+    case "SAVE_GAME":
+      const withoutIsOverProp = { ...state };
       delete withoutIsOverProp.isOver;
       savePastGame({
         ...withoutIsOverProp,
@@ -79,12 +94,12 @@ export const reducer = (state = initialState, { type, answer, letter, mode, cate
         mode,
         categories
       });
-      saveCurrentGame({...state, isOver: true});
-      // should fall through to end it as well vvvvvv
-    case 'END_GAME':
+      saveCurrentGame({ ...state, isOver: true });
+    // should fall through to end it as well vvvvvv
+    case "END_GAME":
       return {
         ...state,
-        isOver: true,
+        isOver: true
       };
     default:
       return state;
