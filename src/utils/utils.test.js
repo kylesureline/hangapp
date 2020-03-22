@@ -1,14 +1,13 @@
 import {
   // fetchData,
-  // isOnline,
   // getFromLS,
   // saveToLS,
   formatWordObj,
-  numberWithCommas
+  numberWithCommas,
   // savePastGame,
   // saveCurrentGame,
   // getCurrentGame,
-  // toHoursMinutesSeconds,
+  toHoursMinutesSeconds
   // toRelevantTimeString
 } from "./utils";
 
@@ -50,6 +49,23 @@ describe("custom utility functions", () => {
       expect(numberWithCommas(1234)).toEqual("1,234");
       expect(numberWithCommas(12345)).toEqual("12,345");
       expect(numberWithCommas(123456)).toEqual("123,456");
+    });
+  });
+  describe("toHoursMinutesSeconds()", () => {
+    it("returns seconds ago", () => {
+      const ms = 50 * 1000;
+
+      expect(toHoursMinutesSeconds(ms)).toEqual("50s ago");
+    });
+    it("returns minutes and seconds ago", () => {
+      const ms = 50 * 1000 + 2 * 60 * 1000;
+
+      expect(toHoursMinutesSeconds(ms)).toEqual("2m 50s ago");
+    });
+    it("returns hours and minutes ago", () => {
+      const ms = 50 * 1000 + 2 * 60 * 1000 + 3 * 60 * 60 * 1000;
+
+      expect(toHoursMinutesSeconds(ms)).toEqual("3h 2m ago");
     });
   });
 });
