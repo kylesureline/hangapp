@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a8bace3ae9f7df2e6673d105ccf87662",
+    "revision": "42648660e66b48990ea748fb13ab20c0",
     "url": "/hangapp/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hangapp/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "2c3d9056f5a50f208252",
+    "revision": "299d01ddc63b4561490b",
     "url": "/hangapp/static/css/main.4fb91a67.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hangapp/static/js/2.bb789492.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2c3d9056f5a50f208252",
-    "url": "/hangapp/static/js/main.04720649.chunk.js"
+    "revision": "299d01ddc63b4561490b",
+    "url": "/hangapp/static/js/main.496cd759.chunk.js"
   },
   {
     "revision": "ed426acd0a9737f1b723",

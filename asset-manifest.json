@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hangapp/static/css/main.4fb91a67.chunk.css",
-    "main.js": "/hangapp/static/js/main.04720649.chunk.js",
-    "main.js.map": "/hangapp/static/js/main.04720649.chunk.js.map",
+    "main.js": "/hangapp/static/js/main.496cd759.chunk.js",
+    "main.js.map": "/hangapp/static/js/main.496cd759.chunk.js.map",
     "runtime-main.js": "/hangapp/static/js/runtime-main.ea73209b.js",
     "runtime-main.js.map": "/hangapp/static/js/runtime-main.ea73209b.js.map",
     "static/css/2.764ccc25.chunk.css": "/hangapp/static/css/2.764ccc25.chunk.css",
     "static/js/2.bb789492.chunk.js": "/hangapp/static/js/2.bb789492.chunk.js",
     "static/js/2.bb789492.chunk.js.map": "/hangapp/static/js/2.bb789492.chunk.js.map",
     "index.html": "/hangapp/index.html",
-    "precache-manifest.eef879fc5ed6f340be92c4ab00f08027.js": "/hangapp/precache-manifest.eef879fc5ed6f340be92c4ab00f08027.js",
+    "precache-manifest.c660616b442d86891b3924b230911c1d.js": "/hangapp/precache-manifest.c660616b442d86891b3924b230911c1d.js",
     "service-worker.js": "/hangapp/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/hangapp/static/css/2.764ccc25.chunk.css.map",
     "static/css/main.4fb91a67.chunk.css.map": "/hangapp/static/css/main.4fb91a67.chunk.css.map",
@@ -27,6 +27,6 @@
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.bb789492.chunk.js",
     "static/css/main.4fb91a67.chunk.css",
-    "static/js/main.04720649.chunk.js"
+    "static/js/main.496cd759.chunk.js"
   ]
 }
