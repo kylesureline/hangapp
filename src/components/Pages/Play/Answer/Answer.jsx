@@ -1,7 +1,7 @@
-import React from 'react';
-import { Word } from './Word';
-import { useSelector } from 'react-redux';
-import { Hint } from './Hint';
+import React from "react";
+import { Word } from "./Word";
+import { useSelector } from "react-redux";
+import { Hint } from "./Hint";
 
 export const Answer = () => {
   const { progress, answer, isOver } = useSelector(state => state.game);
@@ -10,11 +10,9 @@ export const Answer = () => {
   return (
     <div className="answer">
       <h1 className="answer__value">
-        {isOver ? (
-          answer.words.map((word, index) => <Word key={index} word={word} />)
-        ) : (
-          progress.map((word, index) => <Word key={index} word={word} />)
-        )}
+        {isOver
+          ? answer.words.map((word, index) => <Word key={index} word={word} />)
+          : progress.map((word, index) => <Word key={index} word={word} />)}
       </h1>
       <Hint dictionary={dictionary} answer={answer} isOver={isOver} />
     </div>

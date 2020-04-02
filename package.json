@@ -1,21 +1,17 @@
 {
   "name": "Hangapp",
   "homepage": "https://kylesureline.com/hangapp",
-  "version": "0.9",
+  "version": "1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^9.4.1",
-    "@testing-library/user-event": "^10.0.0",
-    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
-    "react": "^16.13.0",
+    "react": "^16.13.1",
     "react-document-title": "^2.0.3",
-    "react-dom": "^16.13.0",
+    "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
+    "react-scripts": "^3.4.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   },
@@ -24,10 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "npm test -- --coverage",
-    "coverage-all": "npm test -- --coverage --watchAll",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "coverage": "yarn test --coverage",
+    "coverage-all": "yarn test --coverage --watchAll --notify --silent && open ./coverage/lcov-report/index.html",
+    "deploy": "yarn build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +37,29 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^10.0.1",
+    "@testing-library/user-event": "^10.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "gh-pages": "^2.2.0",
+    "husky": "^4.2.3",
+    "jest-localstorage-mock": "^2.4.0",
+    "lint-staged": "^10.0.8",
+    "prettier": "1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
     ]
   }
 }

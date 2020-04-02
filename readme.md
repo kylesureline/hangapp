@@ -13,6 +13,7 @@ This app app uses React to create a client for playing hangman games. It fetches
 * [React Router](https://www.npmjs.com/package/react-router)
 * [Redux](https://www.npmjs.com/package/react-redux)
 * [Create React App](http://create-react-app.dev)
+* [Sass](https://www.sass-lang.com)
 * [React Document Title](https://www.npmjs.com/package/react-document-title)
 * [FetchAPI](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 * [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
@@ -46,6 +47,9 @@ Visit https://kylesureline.com/hangapp/ to play!
 # Install
     yarn install
     yarn start
+
+# Generate Code Coverage Report (when it's done press q to launch it in a browser)
+    yarn coverage-all
 ```
 
 ## View in your browser
