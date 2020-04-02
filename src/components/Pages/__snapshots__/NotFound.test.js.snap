@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> matches snapshot 1`] = `
+<NotFound>
+  <SideEffect(DocumentTitle)
+    title="Hangapp | Page Not Found"
+  >
+    <DocumentTitle
+      title="Hangapp | Page Not Found"
+    >
+      <main>
+        404
+      </main>
+    </DocumentTitle>
+  </SideEffect(DocumentTitle)>
+</NotFound>
+`;
