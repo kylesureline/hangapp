@@ -22,7 +22,6 @@ export const Database = ({ children }) => {
 
   ***********************************************/
   useEffect(() => {
-    let length = Math.floor(Math.random() * 1000) + 200;
     let isUnmounted = false;
     let interval = setInterval(() => {
       // don't try to fetch if offline
@@ -49,7 +48,7 @@ export const Database = ({ children }) => {
           }
         });
       }
-    }, length);
+    }, 5000);
 
     return () => {
       isUnmounted = true;
@@ -63,7 +62,6 @@ export const Database = ({ children }) => {
 
   ***********************************************/
   useEffect(() => {
-    let length = Math.floor(Math.random() * 1000) + 200;
     let isUnmounted = false;
     let interval = setInterval(() => {
       // don't try to fetch if offline
@@ -119,7 +117,7 @@ export const Database = ({ children }) => {
           }
         );
       }
-    }, length);
+    }, 5000);
 
     return () => {
       isUnmounted = true;
@@ -133,7 +131,6 @@ export const Database = ({ children }) => {
 
   ***********************************************/
   useEffect(() => {
-    let length = Math.floor(Math.random() * 1000) + 200;
     let isUnmounted = false;
     let interval = setInterval(() => {
       // don't try to fetch if offline
@@ -164,7 +161,7 @@ export const Database = ({ children }) => {
           }
         });
       }
-    }, length);
+    }, 5000);
 
     return () => {
       isUnmounted = true;
@@ -178,7 +175,6 @@ export const Database = ({ children }) => {
 
   ***********************************************/
   useEffect(() => {
-    let length = Math.floor(Math.random() * 1000) + 200;
     let isUnmounted = false;
     let headers = new Headers();
     headers.append("x-api-key", "55577270-6cfe-43a3-b38c-b095bc8c7f24");
@@ -208,7 +204,7 @@ export const Database = ({ children }) => {
           }
         });
       }
-    }, length);
+    }, 5000);
 
     return () => {
       isUnmounted = true;
