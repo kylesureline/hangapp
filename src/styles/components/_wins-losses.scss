@@ -1,24 +1,26 @@
 .wins-losses {
   margin: 0 auto;
   padding: 0 2rem;
-  display: flex;
   max-width: 640px;
-  .wins,
-  .losses {
-    padding: 2rem 0;
-    text-align: center;
-    font-size: 1.8rem;
-    min-width: 10%;
-    max-width: 90%;
+  text-align: center;
+  font-size: 1.8rem;
+  progress {
+    appearance: none;
+    height: 5rem;
+    width: 100%;
+    border-radius: $radius-default;
+    overflow: hidden;
+    &::-webkit-progress-bar {
+      background: var(--color-blue);
+    }
+    &::-webkit-progress-value {
+      background: var(--color-grey);
+    }
   }
-  .wins {
-    background: var(--color-blue);
-    color: var(--color-white);
-    border-radius: $radius-default 0 0 $radius-default;
-  }
-  .losses {
-    background: var(--color-grey);
-    color: var(--color-white);
-    border-radius: 0 $radius-default $radius-default 0;
-  }
+}
+
+.wins-losses__values {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

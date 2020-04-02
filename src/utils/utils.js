@@ -13,6 +13,7 @@ export const fetchData = (url, opt) => {
     .catch(error => console.log("Looks like there was a problem", error));
 };
 
+/* istanbul ignore next line */
 export const isOnline = () => navigator.onLine;
 
 export const getFromLS = key => JSON.parse(localStorage.getItem(key));
