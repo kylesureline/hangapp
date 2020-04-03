@@ -26360,5 +26360,143 @@ export const withDef = [
     words: ["gallophile"],
     wordType: "adjective",
     def: "francophile"
+  },
+  {
+    words: ["augury"],
+    wordType: "noun",
+    def: "omen, portent"
+  },
+  {
+    words: ["cations"],
+    wordType: "noun",
+    def:
+      "the ion in an electrolyzed solution that migrates to the cathode; broadly : a positively charged ion"
+  },
+  {
+    words: ["esteeming"],
+    wordType: "verb",
+    def: "to set a high value on : regard highly and prize accordingly"
+  },
+  {
+    words: ["inglorious"],
+    wordType: "adjective",
+    def: "not glorious : lacking fame or honor"
+  },
+  {
+    words: ["eyecup"],
+    wordType: "noun",
+    def:
+      "the optic vesicle after invaginating to form a 2-layered cup from which the retina and pigmented layer of the eye will develop —called also eyecup"
+  },
+  {
+    words: ["hipsters"],
+    wordType: "noun",
+    def:
+      "a person who is unusually aware of and interested in new and unconventional patterns (as in jazz or fashion)"
+  },
+  {
+    words: ["stablished"],
+    wordType: "verb",
+    def: "establish"
+  },
+  {
+    words: ["rubberized"],
+    wordType: "adjective",
+    def: "coated or saturated with rubber or a rubber solution"
+  },
+  {
+    words: ["plaids"],
+    wordType: "noun",
+    def:
+      "a twill pattern of broken checks; also : a fabric woven in this pattern —called also glen check"
+  },
+  {
+    words: ["thirstiest"],
+    wordType: "adjective",
+    def: "deficient in moisture : parched"
+  },
+  {
+    words: ["tinny"],
+    wordType: "adjective",
+    def: "thin in tone"
+  },
+  {
+    words: ["bubs"],
+    wordType: "noun",
+    def: "fellow, buddy —used in informal address"
+  },
+  {
+    words: ["tuille"],
+    wordType: "noun",
+    def: "one of the hinged plates before the thigh in plate armor"
+  },
+  {
+    words: ["headphones"],
+    wordType: "noun",
+    def:
+      "an earphone held over the ear by a band worn on the head —usually plural; also : a small earphone inserted into the ear : earbud"
+  },
+  {
+    words: ["goos"],
+    wordType: "noun",
+    def: "a viscid or sticky substance"
+  },
+  {
+    words: ["monk"],
+    wordType: "biographical name",
+    def: "Thelonious Sphere 1920—1982 American jazz musician"
+  },
+  {
+    words: ["solemnify"],
+    wordType: "verb",
+    def: "to make solemn"
+  },
+  {
+    words: ["gimped"],
+    wordType: "verb",
+    def: "limp, hobble"
+  },
+  {
+    words: ["tunicle"],
+    wordType: "noun",
+    def:
+      "a short vestment worn by a subdeacon over the alb during mass and by a bishop under the dalmatic at pontifical ceremonies"
+  },
+  {
+    words: ["sextets"],
+    wordType: "noun",
+    def: "a musical composition for six instruments or voices"
+  },
+  {
+    words: ["reveal"],
+    wordType: "noun",
+    def:
+      "the side of an opening (as for a window) between a frame and the outer surface of a wall; also : jamb"
+  },
+  {
+    words: ["encircled"],
+    wordType: "verb",
+    def: "to form a circle around : surround"
+  },
+  {
+    words: ["helplessly"],
+    wordType: "adjective",
+    def: "marked by an inability to act or react"
+  },
+  {
+    words: ["gleg"],
+    wordType: "adjective",
+    def: "marked by quickness of perception or movement"
+  },
+  {
+    words: ["silenus"],
+    wordType: "noun",
+    def:
+      "a minor woodland deity and companion of Dionysus in Greek mythology with a horse's ears and tail"
+  },
+  {
+    words: ["quiver"],
+    wordType: "verb",
+    def: "to shake or move with a slight trembling motion"
   }
 ];
