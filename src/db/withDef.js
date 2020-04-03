@@ -16060,5 +16060,2533 @@ export const withDef = [
     wordType: "noun",
     def:
       "general physical wasting and malnutrition usually associated with chronic disease"
+  },
+
+  {
+    words: ["io"],
+    wordType: "noun",
+    def:
+      "a maiden loved by Zeus and changed by him into a heifer so that she might escape the jealous rage of Hera"
+  },
+  {
+    words: ["clean"],
+    wordType: "verb",
+    def: "to become free of drug or alcohol addiction"
+  },
+  {
+    words: ["bilging"],
+    wordType: "verb",
+    def: "to become damaged in the bilge"
+  },
+  {
+    words: ["prop"],
+    wordType: "noun",
+    def: "something that props or sustains : support"
+  },
+  {
+    words: ["manche"],
+    wordType: "geographical name",
+    def:
+      "strait between southern England and northern France connecting the North Sea with the Atlantic Ocean"
+  },
+  {
+    words: ["statistic"],
+    wordType: "noun",
+    def: "a random variable that takes on the possible values of a statistic"
+  },
+  {
+    words: ["weans"],
+    wordType: "verb",
+    def:
+      "to accustom (a young child or animal) to take food otherwise than by nursing"
+  },
+  {
+    words: ["medicable"],
+    wordType: "adjective",
+    def: "curable, remediable"
+  },
+  {
+    words: ["presume"],
+    wordType: "phrasal verb",
+    def:
+      "to expect too much from (a relationship) in a way that shows that one does not understand one's role in the relationship : to go beyond the proper limits of (a relationship)"
+  },
+  {
+    words: ["ghastliest"],
+    wordType: "adjective",
+    def: "resembling a ghost"
+  },
+  {
+    words: ["deer"],
+    wordType: "noun",
+    def:
+      "any of various mice (genus Peromyscus) of North and Central America; especially : one (P. maniculatus) widely distributed in forests and grasslands of North America"
+  },
+  {
+    words: ["timberings"],
+    wordType: "noun",
+    def: "a set or arrangement of timbers"
+  },
+  {
+    words: ["reroofed"],
+    wordType: "verb",
+    def: "to replace all or part of the roof of (a building)"
+  },
+  {
+    words: ["buddy"],
+    wordType: "phrasal verb",
+    def:
+      "to become friendly especially in order to get help or some advantage —often + with —often + to"
+  },
+  {
+    words: ["afire"],
+    wordType: "idiom",
+    def: "to cause (someone) to move or work more quickly and effectively"
+  },
+  {
+    words: ["manhandled"],
+    wordType: "verb",
+    def: "to move or manage by human force"
+  },
+  {
+    words: ["grumblers"],
+    wordType: "verb",
+    def: "to express with grumbling"
+  },
+  {
+    words: ["trackballs"],
+    wordType: "noun",
+    def:
+      "a ball that is mounted usually in a computer console so as to be only partially exposed and that is rotated to control the movement of a cursor on a display"
+  },
+  {
+    words: ["ennobling"],
+    wordType: "verb",
+    def: "to raise to the rank of nobility"
+  },
+  {
+    words: ["martyry"],
+    wordType: "noun",
+    def: "a shrine erected in honor of a martyr"
+  },
+  {
+    words: ["snorkel"],
+    wordType: "noun",
+    def:
+      "a tube housing air intake and exhaust pipes for a vehicle's engine that can be extended above the water's surface so that the engine can be operated while the vehicle is partially or fully submerged"
+  },
+  {
+    words: ["shocker"],
+    wordType: "noun",
+    def:
+      "one that shocks; especially : something horrifying or offensive (such as a sensational film or work of fiction)"
+  },
+  {
+    words: ["undocked"],
+    wordType: "verb",
+    def: "uncouple"
+  },
+  {
+    words: ["mincemeat"],
+    wordType: "idiom",
+    def:
+      "to destroy, ruin, or defeat (someone or something) in a very thorough and complete way"
+  },
+  {
+    words: ["begot"],
+    wordType: "verb",
+    def: "to procreate as the father : sire"
+  },
+  {
+    words: ["peeler"],
+    wordType: "noun",
+    def: "police officer"
+  },
+  {
+    words: ["playfully"],
+    wordType: "adjective",
+    def: "full of play : frolicsome, sportive"
+  },
+  {
+    words: ["textuary"],
+    wordType: "adjective",
+    def: "textual"
+  },
+  {
+    words: ["equable"],
+    wordType: "adjective",
+    def: "marked by lack of variation or change : uniform"
+  },
+  {
+    words: ["djellabah"],
+    wordType: "noun",
+    def: "a long loose garment with full sleeves and a hood"
+  },
+  {
+    words: ["spall"],
+    wordType: "noun",
+    def: "a small fragment or chip especially of stone"
+  },
+  {
+    words: ["scena"],
+    wordType: "noun",
+    def:
+      "an elaborate solo vocal composition that consists of a recitative usually followed by one or more aria sections"
+  },
+  {
+    words: ["morris"],
+    wordType: "biographical name",
+    def: "Gouverneur 1752—1816 American statesman and diplomat"
+  },
+  {
+    words: ["hunker"],
+    wordType: "phrasal verb",
+    def: "to lower the body to the ground by bending the legs"
+  },
+  {
+    words: ["indulged"],
+    wordType: "verb",
+    def: "to give free rein to"
+  },
+  {
+    words: ["eleventh"],
+    wordType: "noun",
+    def: "the latest possible time before it is too late"
+  },
+  {
+    words: ["mapping"],
+    wordType: "phrasal verb",
+    def:
+      "to find or show the connections between two things or groups of things"
+  },
+  {
+    words: ["toasting"],
+    wordType: "verb",
+    def: "to warm thoroughly"
+  },
+  {
+    words: ["seduces"],
+    wordType: "verb",
+    def: "to lead astray usually by persuasion or false promises"
+  },
+  {
+    words: ["dorees"],
+    wordType: "noun",
+    def: "young people of wealth and fashion"
+  },
+  {
+    words: ["arbalist"],
+    wordType: "noun",
+    def: "a crossbow especially of medieval times"
+  },
+  {
+    words: ["deadliness"],
+    wordType: "adjective",
+    def: "likely to cause or capable of producing death"
+  },
+  {
+    words: ["georgette"],
+    wordType: "noun",
+    def:
+      "a sheer crepe woven from hard-twisted yarns to produce a dull pebbly surface"
+  },
+  {
+    words: ["blighties"],
+    wordType: "noun",
+    def: "one's native land (such as England)"
+  },
+  {
+    words: ["outermost"],
+    wordType: "adjective",
+    def: "farthest out"
+  },
+  {
+    words: ["sloshier"],
+    wordType: "noun",
+    def: "the slap or splash of liquid"
+  },
+  {
+    words: ["bespeaking"],
+    wordType: "verb",
+    def: "to speak to especially with formality : address"
+  },
+  {
+    words: ["magnitudes"],
+    wordType: "noun",
+    def:
+      "the luminosity of a celestial body (such as a star) as observed from the earth"
+  },
+  {
+    words: ["oedema"],
+    wordType: "",
+    def: ""
+  },
+  {
+    words: ["indri"],
+    wordType: "noun",
+    def:
+      "a large diurnal black-and-white lemur (Indri indri) of Madagascar that is about two feet long with a rudimentary tail"
+  },
+  {
+    words: ["paraffinic"],
+    wordType: "noun",
+    def: "alkane"
+  },
+  {
+    words: ["agrimonies"],
+    wordType: "noun",
+    def:
+      "any of a genus (Agrimonia and especially A. eupatoria) of herbs of the rose family having compound leaves, slender spikes of small yellow flowers, and fruits like burs"
+  },
+  {
+    words: ["defeatism"],
+    wordType: "noun",
+    def: "an attitude of accepting, expecting, or being resigned to defeat"
+  },
+  {
+    words: ["wistaria"],
+    wordType: "noun",
+    def:
+      "any of a genus (Wisteria) of mostly woody leguminous vines of China, Japan, and the southeastern U.S. that have pinnately compound leaves and long racemes of showy blue, white, purple, or rose papilionaceous flowers and that include several (such as W. sinensis and W. floribunda) grown as ornamentals"
+  },
+  {
+    words: ["thereat"],
+    wordType: "adverb",
+    def: "at that occurrence"
+  },
+  {
+    words: ["outgoing"],
+    wordType: "verb",
+    def: "to go beyond : outdo"
+  },
+  {
+    words: ["molarities"],
+    wordType: "adjective",
+    def: "of or relating to a mole of a substance"
+  },
+  {
+    words: ["elastase"],
+    wordType: "noun",
+    def: "an enzyme especially of pancreatic juice that digests elastin"
+  },
+  {
+    words: ["aggressors"],
+    wordType: "noun",
+    def: "one that commits or practices aggression"
+  },
+  {
+    words: ["runagates"],
+    wordType: "noun",
+    def: "fugitive, runaway"
+  },
+  {
+    words: ["richter"],
+    wordType: "biographical name",
+    def: "Jean Paul Friedrich 1763—1825 pseudonymJean Paul German writer"
+  },
+  {
+    words: ["attachment"],
+    wordType: "idiom",
+    def: "working for a limited time in a particular place —usually + to"
+  },
+  {
+    words: ["likable"],
+    wordType: "adjective",
+    def:
+      "having qualities that bring about a favorable regard : pleasant, agreeable"
+  },
+  {
+    words: ["telemeter"],
+    wordType: "noun",
+    def:
+      "an instrument for measuring the distance of an object from an observer"
+  },
+  {
+    words: ["ain"],
+    wordType: "verb",
+    def: "to thrust or give a wound with or as if with a pointed weapon"
+  },
+  {
+    words: ["earthier"],
+    wordType: "adjective",
+    def: "rough, coarse, or plain in taste"
+  },
+  {
+    words: ["ignores"],
+    wordType: "verb",
+    def: "to refuse to take notice of"
+  },
+  {
+    words: ["malars"],
+    wordType: "noun",
+    def: "zygomatic bone —called also malar bone"
+  },
+  {
+    words: ["ocotillos"],
+    wordType: "noun",
+    def:
+      "a thorny scarlet-flowered candlewood (Fouquieria splendens of the family Fouquieriaceae) of the southwestern U.S. and Mexico"
+  },
+  {
+    words: ["bonsai"],
+    wordType: "noun",
+    def:
+      "a potted plant (such as a tree) dwarfed (as by pruning) and trained to an artistic shape; also : the art of growing such a plant"
+  },
+  {
+    words: ["uncharted"],
+    wordType: "adjective",
+    def: "not recorded or plotted on a map, chart, or plan; broadly : unknown"
+  },
+  {
+    words: ["thorpe"],
+    wordType: "geographical name",
+    def:
+      "borough on the Lehigh River in eastern Pennsylvania formed in 1954 by the merger of the boroughs of Mauch Chunk and East Mauch Chunk to honor American Indian athlete Jim Thorpe population 4781"
+  },
+  {
+    words: ["downland"],
+    wordType: "noun",
+    def: "down:6"
+  },
+  {
+    words: ["fiances"],
+    wordType: "noun",
+    def: "a man engaged to be married"
+  },
+  {
+    words: ["preplans"],
+    wordType: "verb",
+    def: "to plan in advance"
+  },
+  {
+    words: ["parodies"],
+    wordType: "noun",
+    def: "a feeble or ridiculous imitation"
+  },
+  {
+    words: ["riser"],
+    wordType: "noun",
+    def: "the upright member between two stair treads"
+  },
+  {
+    words: ["retinacula"],
+    wordType: "noun",
+    def:
+      "any of several fibrous bands of fascia that pass over or under tendons (as at or near the ankle or wrist) and help to keep them in place"
+  },
+  {
+    words: ["coverings"],
+    wordType: "noun",
+    def: "something that covers or conceals"
+  },
+  {
+    words: ["inferiors"],
+    wordType: "adjective",
+    def: "of poor quality : mediocre"
+  },
+  {
+    words: ["warped"],
+    wordType: "noun",
+    def:
+      "an anomaly, discontinuity, or suspension held to occur in the progress of time"
+  },
+  {
+    words: ["ameers"],
+    wordType: "noun",
+    def: "a ruler, chief, or commander in Islamic countries"
+  },
+  {
+    words: ["lifter"],
+    wordType: "verb",
+    def: "to raise in rate or amount"
+  },
+  {
+    words: ["glucosides"],
+    wordType: "noun",
+    def: "glycoside; especially : a glycoside that yields glucose on hydrolysis"
+  },
+  {
+    words: ["lamenting"],
+    wordType: "verb",
+    def: "to regret strongly"
+  },
+  {
+    words: ["knavishly"],
+    wordType: "adjective",
+    def: "of, relating to, or characteristic of a knave; especially : dishonest"
+  },
+  {
+    words: ["wizen"],
+    wordType: "adjective",
+    def: "that is wizened"
+  },
+  {
+    words: ["moniliform"],
+    wordType: "adjective",
+    def:
+      "jointed or constricted at regular intervals so as to resemble a string of beads"
+  },
+  {
+    words: ["streamers"],
+    wordType: "noun",
+    def: "a flag that streams in the wind; especially : pennant"
+  },
+  {
+    words: ["tems"],
+    wordType: "abbreviation",
+    def: "transmission electron microscope; transmission electron microscopy"
+  },
+  {
+    words: ["pensive"],
+    wordType: "adjective",
+    def: "musingly or dreamily thoughtful"
+  },
+  {
+    words: ["bricklayer"],
+    wordType: "noun",
+    def: "a person who lays brick"
+  },
+  {
+    words: ["spayed"],
+    wordType: "verb",
+    def: "to remove the ovaries and uterus of (a female animal)"
+  },
+  {
+    words: ["stereotypy"],
+    wordType: "noun",
+    def: "abnormal repetitive behavior"
+  },
+  {
+    words: ["vacuolated"],
+    wordType: "adjective",
+    def: "containing one or more vacuoles"
+  },
+  {
+    words: ["producer"],
+    wordType: "noun",
+    def: "excessive production, synthesis, or creation"
+  },
+  {
+    words: ["pronghorn"],
+    wordType: "noun",
+    def:
+      "a swift horned ruminant mammal (Antilocapra americana) chiefly of grasslands and deserts of western North America that resembles an antelope —called also pronghorn antelope"
+  },
+  {
+    words: ["grayling"],
+    wordType: "noun",
+    def:
+      "any of several freshwater salmonoid fishes (genus Thymallus) valued as food and sport fishes"
+  },
+  {
+    words: ["dudgeons"],
+    wordType: "noun",
+    def:
+      "a fit or state of indignation —often used in the phrase in high dudgeon"
+  },
+  {
+    words: ["nugget"],
+    wordType: "noun",
+    def: "a small usually rounded piece of food"
+  },
+  {
+    words: ["rufous"],
+    wordType: "adjective",
+    def: "reddish"
+  },
+  {
+    words: ["levants"],
+    wordType: "verb",
+    def: "to run away from a debt"
+  },
+  {
+    words: ["wat"],
+    wordType: "biographical name",
+    def: "Wat or Walter died 1381 English leader of Peasants' Revolt (1381)"
+  },
+  {
+    words: ["jounce"],
+    wordType: "noun",
+    def: "jolt"
+  },
+  {
+    words: ["clinicians"],
+    wordType: "noun",
+    def: "a person who conducts a clinic"
+  },
+  {
+    words: ["giftedness"],
+    wordType: "adjective",
+    def: "having great natural ability : talented"
+  },
+  {
+    words: ["gloater"],
+    wordType: "verb",
+    def:
+      "to observe or think about something with triumphant and often malicious satisfaction, gratification, or delight"
+  },
+  {
+    words: ["caraways"],
+    wordType: "noun",
+    def:
+      "the pungent fruit of the caraway used in seasoning and medicine —called also caraway seed"
+  },
+  {
+    words: ["happing"],
+    wordType: "verb",
+    def: "clothe, cover"
+  },
+  {
+    words: ["avenging"],
+    wordType: "verb",
+    def: "to exact satisfaction for (a wrong) by punishing the wrongdoer"
+  },
+  {
+    words: ["bantling"],
+    wordType: "noun",
+    def: "a very young child"
+  },
+  {
+    words: ["jubilated"],
+    wordType: "verb",
+    def: "rejoice"
+  },
+  {
+    words: ["quinoas"],
+    wordType: "noun",
+    def:
+      "an annual herb (Chenopodium quinoa) of the goosefoot family that is native to the Andean highlands and is cultivated for its starchy seeds which are used as food and ground into flour; also : its seeds"
+  },
+  {
+    words: ["perforated"],
+    wordType: "verb",
+    def: "to pass through or into by or as if by making a hole"
+  },
+  {
+    words: ["clapboards"],
+    wordType: "noun",
+    def:
+      "a narrow board usually thicker at one edge than the other used for siding"
+  },
+  {
+    words: ["quintals"],
+    wordType: "noun",
+    def: "hundredweight"
+  },
+  {
+    words: ["dishier"],
+    wordType: "adjective",
+    def: "attractive, good-looking"
+  },
+  {
+    words: ["leched"],
+    wordType: "verb",
+    def: "lust"
+  },
+  {
+    words: ["sulkily"],
+    wordType: "adjective",
+    def: "sulking or given to spells of sulking"
+  },
+  {
+    words: ["delivery"],
+    wordType: "noun",
+    def: "the act or manner of delivering something; also : something delivered"
+  },
+  {
+    words: ["cisco"],
+    wordType: "noun",
+    def:
+      "any of various whitefishes (genus Coregonus) that have a large mouth with a long and often projecting lower jaw; especially : lake herring"
+  },
+  {
+    words: ["girls"],
+    wordType: "noun",
+    def: "a prostitute with whom an appointment may be made by telephone"
+  },
+  {
+    words: ["scared"],
+    wordType: "phrasal verb",
+    def: "to cause (someone) to do (something) because of fear"
+  },
+  {
+    words: ["sitters"],
+    wordType: "noun",
+    def:
+      "a person who occupies a dwelling to provide security and maintenance while the tenant is away"
+  },
+  {
+    words: ["han"],
+    wordType: "biographical name",
+    def: "768—824 Han Wen-kung Chinese poet, essayist, and philosopher"
+  },
+  {
+    words: ["impastoed"],
+    wordType: "noun",
+    def:
+      "the thick application of a pigment to a canvas or panel in painting; also : the body of pigment so applied"
+  },
+  {
+    words: ["albacores"],
+    wordType: "noun",
+    def:
+      "a large pelagic tuna (Thunnus alalunga) with long pectoral fins that is a source of canned tuna; broadly : any of various tunas (such as a bonito)"
+  },
+  {
+    words: ["prelate"],
+    wordType: "noun",
+    def: "a priest having permanent honorary membership in the papal household"
+  },
+  {
+    words: ["slacken"],
+    wordType: "verb",
+    def: "to make less active : slow up"
+  },
+  {
+    words: ["dowse"],
+    wordType: "verb",
+    def: "to plunge into water"
+  },
+  {
+    words: ["improves"],
+    wordType: "verb",
+    def:
+      "to increase the value of (land or property) by making it more useful for humans (as by cultivation or the erection of buildings)"
+  },
+  {
+    words: ["benthic"],
+    wordType: "adjective",
+    def: "of, relating to, or occurring in the depths of the ocean"
+  },
+  {
+    words: ["vagus"],
+    wordType: "noun",
+    def:
+      "either of the 10th pair of cranial nerves that arise from the medulla oblongata and supply chiefly the viscera especially with autonomic sensory and motor fibers —called also vagus"
+  },
+  {
+    words: ["scutellum"],
+    wordType: "noun",
+    def: "the shield-shaped cotyledon of a monocotyledon (such as a grass)"
+  },
+  {
+    words: ["turfmen"],
+    wordType: "noun",
+    def:
+      "a devotee of horse racing; especially : a person who owns and races horses"
+  },
+  {
+    words: ["dentures"],
+    wordType: "noun",
+    def: "a set of teeth"
+  },
+  {
+    words: ["dooms"],
+    wordType: "noun",
+    def: "judgment, decision; especially : a judicial condemnation or sentence"
+  },
+  {
+    words: ["velarizing"],
+    wordType: "verb",
+    def:
+      "to modify (a sound, such as the \\l\\ of \\ˈpül\\ pool) by a simultaneous velar articulation"
+  },
+  {
+    words: ["ventricles"],
+    wordType: "noun",
+    def:
+      "any of a system of communicating cavities in the brain that are continuous with the central canal of the spinal cord"
+  },
+  {
+    words: ["papillate"],
+    wordType: "noun",
+    def:
+      "any of the vascular protuberances of the dermal layer of the skin extending into the epidermal layer and often containing tactile corpuscles"
+  },
+  {
+    words: ["missend"],
+    wordType: "verb",
+    def: "to send incorrectly (as to a wrong destination)"
+  },
+  {
+    words: ["eth"],
+    wordType: "verb suffix",
+    def: "—used to form the archaic third person singular present of verbs"
+  },
+  {
+    words: ["unrolls"],
+    wordType: "verb",
+    def: "to unwind a roll of : open out : uncoil"
+  },
+  {
+    words: ["bristliest"],
+    wordType: "adjective",
+    def: "thickly set with bristles"
+  },
+  {
+    words: ["redeems"],
+    wordType: "verb",
+    def: "to free from what distresses or harms: such as"
+  },
+  {
+    words: ["hardiment"],
+    wordType: "noun",
+    def: "a bold deed"
+  },
+  {
+    words: ["berceuse"],
+    wordType: "noun",
+    def: "lullaby"
+  },
+  {
+    words: ["nellies"],
+    wordType: "adjective",
+    def: "prudish"
+  },
+  {
+    words: ["angel"],
+    wordType: "noun",
+    def:
+      "an angel believed to have special care of a particular individual; broadly : savior, protector"
+  },
+  {
+    words: ["tenantry"],
+    wordType: "noun",
+    def: "a body of tenants"
+  },
+  {
+    words: ["carmine"],
+    wordType: "noun",
+    def: "a rich red to crimson pigment made from cochineal"
+  },
+  {
+    words: ["unpeopling"],
+    wordType: "verb",
+    def: "depopulate"
+  },
+  {
+    words: ["curettes"],
+    wordType: "verb",
+    def: "to perform curettage on"
+  },
+  {
+    words: ["cinching"],
+    wordType: "verb",
+    def: "to put a cinch on"
+  },
+  {
+    words: ["acclaims"],
+    wordType: "verb",
+    def: "applaud, praise"
+  },
+  {
+    words: ["glossitis"],
+    wordType: "noun",
+    def: "inflammation of the tongue"
+  },
+  {
+    words: ["windburns"],
+    wordType: "noun",
+    def: "irritation of the skin caused by wind"
+  },
+  {
+    words: ["pertinency"],
+    wordType: "noun",
+    def: "pertinence"
+  },
+  {
+    words: ["telex"],
+    wordType: "noun",
+    def:
+      "a communication service involving teletypewriters connected by wire through automatic exchanges; also : a teletypewriter used in telex"
+  },
+  {
+    words: ["erne"],
+    wordType: "noun",
+    def:
+      "eagle; especially : a long-winged sea eagle (Haliäetus albicilla) with a short white wedge-shaped tail"
+  },
+  {
+    words: ["raucous"],
+    wordType: "adjective",
+    def: "boisterously disorderly"
+  },
+  {
+    words: ["droughtier"],
+    wordType: "noun",
+    def:
+      "a period of dryness especially when prolonged; specifically : one that causes extensive damage to crops or prevents their successful growth"
+  },
+  {
+    words: ["sew"],
+    wordType: "verb",
+    def: "to close or enclose by sewing"
+  },
+  {
+    words: ["enviably"],
+    wordType: "adjective",
+    def: "highly desirable"
+  },
+  {
+    words: ["horntail"],
+    wordType: "noun",
+    def:
+      "any of various hymenopterous insects (family Siricidae) related to the typical sawflies but having females with a stout hornlike ovipositor and larvae that burrow in woody plants"
+  },
+  {
+    words: ["abasement"],
+    wordType: "noun",
+    def:
+      "a humiliation of oneself : the act of behaving in a way that makes one seem lower or less deserving of respect"
+  },
+  {
+    words: ["retired"],
+    wordType: "verb",
+    def: "to withdraw from action or danger : retreat"
+  },
+  {
+    words: ["splay"],
+    wordType: "noun",
+    def: "spread, expansion"
+  },
+  {
+    words: ["scorchers"],
+    wordType: "noun",
+    def: "one that scorches; especially : a very hot day"
+  },
+  {
+    words: ["coacts"],
+    wordType: "verb",
+    def: "to act or work together"
+  },
+  {
+    words: ["induction"],
+    wordType: "noun",
+    def:
+      "heating of material by means of an electric current that is caused to flow through the material or its container by electromagnetic induction"
+  },
+  {
+    words: ["candent"],
+    wordType: "adjective",
+    def: "glowing from or as if from great heat"
+  },
+  {
+    words: ["anear"],
+    wordType: "idiom",
+    def: "to not listen closely"
+  },
+  {
+    words: ["subaqua"],
+    wordType: "adjective",
+    def: "relating to activities done under water : underwater"
+  },
+  {
+    words: ["lapped"],
+    wordType: "verb",
+    def: "to take in (food or drink) with the tongue —often used with up"
+  },
+  {
+    words: ["pyrethrums"],
+    wordType: "noun",
+    def:
+      "any of several chrysanthemums with finely divided often aromatic leaves including ornamentals as well as important sources of insecticides"
+  },
+  {
+    words: ["dork"],
+    wordType: "noun",
+    def: "nerd; also : jerk"
+  },
+  {
+    words: ["osteomas"],
+    wordType: "noun",
+    def: "a benign tumor composed of bone tissue"
+  },
+  {
+    words: ["prunelles"],
+    wordType: "noun",
+    def: "a heavy woolen fabric used for the uppers of shoes"
+  },
+  {
+    words: ["liquorice"],
+    wordType: "",
+    def: ""
+  },
+  {
+    words: ["termers"],
+    wordType: "noun",
+    def:
+      "a person serving for a specified term (as in a political office or in prison)"
+  },
+  {
+    words: ["entertain"],
+    wordType: "verb",
+    def: "to show hospitality to"
+  },
+  {
+    words: ["quire"],
+    wordType: "noun",
+    def:
+      "a collection of 24 or sometimes 25 sheets of paper of the same size and quality : one twentieth of a ream"
+  },
+  {
+    words: ["signified"],
+    wordType: "verb",
+    def:
+      "to show especially by a conventional token (such as word, signal, or gesture)"
+  },
+  {
+    words: ["verity"],
+    wordType: "noun",
+    def:
+      "something (such as a statement) that is true; especially : a fundamental and inevitably true value"
+  },
+  {
+    words: ["tolerate"],
+    wordType: "verb",
+    def: "to put up with"
+  },
+  {
+    words: ["innocuous"],
+    wordType: "adjective",
+    def: "producing no injury : harmless"
+  },
+  {
+    words: ["feedlots"],
+    wordType: "noun",
+    def: "a plot of land on which livestock are fattened for market"
+  },
+  {
+    words: ["oversleep"],
+    wordType: "verb",
+    def: "to allow (oneself) to oversleep"
+  },
+  {
+    words: ["tolu"],
+    wordType: "combining form",
+    def: "toluene"
+  },
+  {
+    words: ["obvious"],
+    wordType: "noun",
+    def: "something that is easy to understand or recognize"
+  },
+  {
+    words: ["lyophilize"],
+    wordType: "verb",
+    def: "freeze-dry"
+  },
+  {
+    words: ["plops"],
+    wordType: "phrasal verb",
+    def: "to sit or lie down in a heavy or careless way"
+  },
+  {
+    words: ["cochlea"],
+    wordType: "noun",
+    def:
+      "a hollow tube in the inner ear of higher vertebrates that is usually coiled like a snail shell and contains the sensory organ of hearing"
+  },
+  {
+    words: ["duvets"],
+    wordType: "noun",
+    def: "comforter"
+  },
+  {
+    words: ["sinkages"],
+    wordType: "noun",
+    def:
+      "the distance from the top line of a full page to the first line of lowered matter"
+  },
+  {
+    words: ["serous"],
+    wordType: "adjective",
+    def:
+      "of, relating to, or resembling serum; especially : of thin watery constitution"
+  },
+  {
+    words: ["fell"],
+    wordType: "verb",
+    def: "to descend freely by the force of gravity"
+  },
+  {
+    words: ["decomposed"],
+    wordType: "verb",
+    def: "rot"
+  },
+  {
+    words: ["trebling"],
+    wordType: "verb",
+    def: "to sing treble"
+  },
+  {
+    words: ["geology"],
+    wordType: "noun",
+    def: "a study of the solid matter of a celestial body (such as the moon)"
+  },
+  {
+    words: ["siphons"],
+    wordType: "verb",
+    def:
+      "to convey, draw off, or empty by or as if by a siphon —often used with off"
+  },
+  {
+    words: ["scammony"],
+    wordType: "noun",
+    def: "the dried root of scammony"
+  },
+  {
+    words: ["steeving"],
+    wordType: "verb",
+    def:
+      "to incline upward at an angle with the horizon or the line of the keel"
+  },
+  {
+    words: ["pronghorns"],
+    wordType: "noun",
+    def:
+      "a swift horned ruminant mammal (Antilocapra americana) chiefly of grasslands and deserts of western North America that resembles an antelope —called also pronghorn antelope"
+  },
+  {
+    words: ["frank"],
+    wordType: "biographical name",
+    def: "Joachim 1940— American (German-born) biochemist and biophysicist"
+  },
+  {
+    words: ["contrarily"],
+    wordType: "adjective",
+    def: "being not in conformity with what is usual or expected"
+  },
+  {
+    words: ["xylols"],
+    wordType: "noun",
+    def: "xylene"
+  },
+  {
+    words: ["quicksets"],
+    wordType: "noun",
+    def:
+      "plant cuttings set in the ground to grow especially in a hedgerow; also : a hedge or thicket especially of hawthorn grown from quickset"
+  },
+  {
+    words: ["purser"],
+    wordType: "noun",
+    def: "a steward on an airliner"
+  },
+  {
+    words: ["sicking"],
+    wordType: "phrasal verb",
+    def: "to vomit (something)"
+  },
+  {
+    words: ["fragrantly"],
+    wordType: "adjective",
+    def: "having a sweet or pleasant smell"
+  },
+  {
+    words: ["spaciously"],
+    wordType: "adjective",
+    def: "vast or ample in extent : roomy"
+  },
+  {
+    words: ["marmalades"],
+    wordType: "noun",
+    def:
+      "a clear sweetened jelly in which pieces of fruit and fruit rind are suspended"
+  },
+  {
+    words: ["moistures"],
+    wordType: "noun",
+    def: "liquid diffused or condensed in relatively small quantity"
+  },
+  {
+    words: ["redacted"],
+    wordType: "verb",
+    def:
+      "to obscure or remove (text) from a document prior to publication or release"
+  },
+  {
+    words: ["hellbender"],
+    wordType: "noun",
+    def:
+      "a large aquatic usually brownish-gray salamander (Cryptobranchus alleganiensis) of streams of the eastern and central U.S."
+  },
+  {
+    words: ["chaplaincy"],
+    wordType: "noun",
+    def:
+      "a clergyman officially attached to a branch of the military, to an institution, or to a family or court"
+  },
+  {
+    words: ["soothers"],
+    wordType: "verb",
+    def: "relieve, alleviate"
+  },
+  {
+    words: ["memories"],
+    wordType: "noun",
+    def: "ram"
+  },
+  {
+    words: ["fight"],
+    wordType: "noun",
+    def:
+      "a song used to inspire enthusiasm usually during an athletic competition"
+  },
+  {
+    words: ["geoidal"],
+    wordType: "noun",
+    def:
+      "the surface within or around the earth that is everywhere normal to the direction of gravity and coincides with mean sea level in the oceans"
+  },
+  {
+    words: ["combustive"],
+    wordType: "noun",
+    def:
+      "a usually rapid chemical process (such as oxidation) that produces heat and usually light; also : a slower oxidation (as in the body)"
+  },
+  {
+    words: ["allemande"],
+    wordType: "noun",
+    def:
+      "a musical composition or movement (as in a baroque suite) in moderate tempo and duple or quadruple time"
+  },
+  {
+    words: ["larges"],
+    wordType: "noun",
+    def: "liberality, generosity"
+  },
+  {
+    words: ["clipping"],
+    wordType: "noun",
+    def:
+      "something that is clipped off or out of something else; especially : an item clipped from a publication"
+  },
+  {
+    words: ["rejoinder"],
+    wordType: "noun",
+    def: "reply; specifically : an answer to a reply"
+  },
+  {
+    words: ["digitize"],
+    wordType: "verb",
+    def: "to convert (something, such as data or an image) to digital form"
+  },
+  {
+    words: ["accusals"],
+    wordType: "noun",
+    def: "accusation"
+  },
+  {
+    words: ["extern"],
+    wordType: "adjective",
+    def: "external"
+  },
+  {
+    words: ["exonerated"],
+    wordType: "verb",
+    def: "to clear from accusation or blame"
+  },
+  {
+    words: ["monaural"],
+    wordType: "adjective",
+    def: "monophonic"
+  },
+  {
+    words: ["licentious"],
+    wordType: "adjective",
+    def:
+      "lacking legal or moral restraints; especially : disregarding sexual restraints"
+  },
+  {
+    words: ["belie"],
+    wordType: "verb",
+    def: "to show (something) to be false or wrong"
+  },
+  {
+    words: ["disturbing"],
+    wordType: "adjective",
+    def: "causing feelings of worry, concern, or anxiety"
+  },
+  {
+    words: ["hundredth"],
+    wordType: "noun",
+    def: "a great number"
+  },
+  {
+    words: ["gasher"],
+    wordType: "adjective",
+    def: "knowing, witty"
+  },
+  {
+    words: ["asynchrony"],
+    wordType: "noun",
+    def:
+      "the quality or state of being asynchronous : absence or lack of concurrence in time"
+  },
+  {
+    words: ["lagomorph"],
+    wordType: "noun",
+    def:
+      "any of an order (Lagomorpha) of gnawing herbivorous mammals having two pairs of incisors in the upper jaw one behind the other and comprising the rabbits, hares, and pikas"
+  },
+  {
+    words: ["gutless"],
+    wordType: "adjective",
+    def: "lacking courage : cowardly"
+  },
+  {
+    words: ["oncogene"],
+    wordType: "noun",
+    def:
+      "a gene having the potential to cause a normal cell to become cancerous"
+  },
+  {
+    words: ["thalers"],
+    wordType: "noun",
+    def:
+      "any of numerous silver coins issued by various German states from the 15th to the 19th centuries and varying considerably in weight and fineness : a German dollar"
+  },
+  {
+    words: ["shrivel"],
+    wordType: "verb",
+    def: "to draw into wrinkles especially with a loss of moisture"
+  },
+  {
+    words: ["bagman"],
+    wordType: "noun",
+    def: "traveling salesman"
+  },
+  {
+    words: ["buckbeans"],
+    wordType: "noun",
+    def:
+      "a perennial herbaceous plant (Menyanthes trifoliata of the family Menyanthaceae) growing in bogs and having racemes of white or pinkish flowers"
+  },
+  {
+    words: ["expounds"],
+    wordType: "verb",
+    def: "to explain by setting forth in careful and often elaborate detail"
+  },
+  {
+    words: ["manometers"],
+    wordType: "noun",
+    def:
+      "an instrument (such as a pressure gauge) for measuring the pressure of gases and vapors"
+  },
+  {
+    words: ["emphasizes"],
+    wordType: "verb",
+    def: "to emphasize (something) again"
+  },
+  {
+    words: ["abreact"],
+    wordType: "noun",
+    def:
+      "the expression and emotional discharge of unconscious material (such as a repressed idea or emotion) by verbalization especially in the presence of a therapist"
+  },
+  {
+    words: ["alae"],
+    wordType: "noun",
+    def: "a wing or a winglike anatomic part or process"
+  },
+  {
+    words: ["songster"],
+    wordType: "noun",
+    def: "songbook"
+  },
+  {
+    words: ["dowelled"],
+    wordType: "verb",
+    def: "to fasten by or furnish with dowels"
+  },
+  {
+    words: ["embarrass"],
+    wordType: "verb",
+    def: "to involve in financial difficulties"
+  },
+  {
+    words: ["sodalities"],
+    wordType: "noun",
+    def: "brotherhood, community"
+  },
+  {
+    words: ["censed"],
+    wordType: "verb",
+    def: "to perfume especially with a censer"
+  },
+  {
+    words: ["role"],
+    wordType: "verb",
+    def: "to play a role"
+  },
+  {
+    words: ["portals"],
+    wordType: "noun",
+    def: "the approach or entrance to a bridge or tunnel"
+  },
+  {
+    words: ["calenders"],
+    wordType: "verb",
+    def:
+      "to press (cloth, rubber, paper, etc.) between rollers or plates in order to smooth and glaze or to thin into sheets"
+  },
+  {
+    words: ["caramel"],
+    wordType: "noun",
+    def: "a custard that has been baked with caramel sauce"
+  },
+  {
+    words: ["egoist"],
+    wordType: "noun",
+    def: "a believer in egoism"
+  },
+  {
+    words: ["chaffs"],
+    wordType: "noun",
+    def: "light jesting talk : banter"
+  },
+  {
+    words: ["boilersuit"],
+    wordType: "noun",
+    def: "coverall"
+  },
+  {
+    words: ["debuggers"],
+    wordType: "verb",
+    def: "to remove a concealed microphone or wiretapping device from"
+  },
+  {
+    words: ["precisian"],
+    wordType: "noun",
+    def: "puritan"
+  },
+  {
+    words: ["fence"],
+    wordType: "noun",
+    def:
+      "a barrier intended to prevent escape or intrusion or to mark a boundary; especially : such a barrier made of posts and wire or boards"
+  },
+  {
+    words: ["chestfuls"],
+    wordType: "noun",
+    def:
+      "the place where money of a public institution is kept : treasury; also : the fund so kept"
+  },
+  {
+    words: ["foretells"],
+    wordType: "verb",
+    def: "to tell beforehand : predict"
+  },
+  {
+    words: ["bluster"],
+    wordType: "verb",
+    def: "to talk or act with noisy swaggering threats"
+  },
+  {
+    words: ["tungsten"],
+    wordType: "noun",
+    def:
+      "a gray-white heavy high-melting ductile hard polyvalent metallic element that resembles chromium and molybdenum in many of its properties and is used especially in carbide materials and electrical components (such as lamp filaments) and in hardening alloys (such as steel)"
+  },
+  {
+    words: ["lobby"],
+    wordType: "noun",
+    def: "a large hall serving as a foyer (as of a hotel or theater)"
+  },
+  {
+    words: ["spans"],
+    wordType: "noun",
+    def: "an extent, stretch, reach, or spread between two limits: such as"
+  },
+  {
+    words: ["ululated"],
+    wordType: "verb",
+    def:
+      "to utter a loud, usually protracted, high-pitched, rhythmical sound especially as an expression of sorrow, joy, celebration, or reverence : howl"
+  },
+  {
+    words: ["frisked"],
+    wordType: "verb",
+    def:
+      "to search (a person) for something (such as a concealed weapon) by running the hand rapidly over the clothing and through the pockets"
+  },
+  {
+    words: ["rulership"],
+    wordType: "noun",
+    def: "a worker or a machine that rules paper"
+  },
+  {
+    words: ["unbolted"],
+    wordType: "adjective",
+    def: "not fastened by bolts"
+  },
+  {
+    words: ["grassier"],
+    wordType: "adjective",
+    def: "resembling grass especially in color"
+  },
+  {
+    words: ["tadpoles"],
+    wordType: "noun",
+    def:
+      "a larval amphibian; specifically : a frog or toad larva that has a rounded body with a long tail bordered by fins and external gills soon replaced by internal gills and that undergoes a metamorphosis to the adult"
+  },
+  {
+    words: ["oghamic"],
+    wordType: "noun",
+    def:
+      "the alphabetic system of fifth and sixth century Irish in which an alphabet of 20 letters is represented by notches for vowels and lines for consonants and which is known principally from inscriptions cut on the edges of rough standing tombstones"
+  },
+  {
+    words: ["activated"],
+    wordType: "noun",
+    def:
+      "a highly adsorbent powdered or granular carbon made usually by carbonization and chemical activation and used chiefly for purifying by adsorption —called also activated charcoal"
+  },
+  {
+    words: ["beetling"],
+    wordType: "verb",
+    def: "to scurry like a beetle"
+  },
+  {
+    words: ["insulators"],
+    wordType: "noun",
+    def: "one that insulates: such as"
+  },
+  {
+    words: ["snowflakes"],
+    wordType: "noun",
+    def: "a flake or crystal of snow"
+  },
+  {
+    words: ["micturate"],
+    wordType: "verb",
+    def: "urinate"
+  },
+  {
+    words: ["deathsman"],
+    wordType: "noun",
+    def: "executioner"
+  },
+  {
+    words: ["exuberant"],
+    wordType: "adjective",
+    def: "joyously unrestrained and enthusiastic"
+  },
+  {
+    words: ["emergency"],
+    wordType: "noun",
+    def:
+      "a medical specialty concerned with the care and treatment of acutely ill or injured patients who need immediate medical attention"
+  },
+  {
+    words: ["treasons"],
+    wordType: "noun",
+    def: "treason"
+  },
+  {
+    words: ["republish"],
+    wordType: "verb",
+    def: "to publish again or anew"
+  },
+  {
+    words: ["wigwagging"],
+    wordType: "verb",
+    def:
+      "to send a signal by or as if by a flag or light waved according to a code"
+  },
+  {
+    words: ["muenster"],
+    wordType: "noun",
+    def: "a semisoft cheese that may be bland or sharp in flavor"
+  },
+  {
+    words: ["dysentery"],
+    wordType: "noun",
+    def:
+      "acute human intestinal amebiasis caused by an amoeba (Entamoeba histolytica) and marked by dysentery, abdominal pain, and erosion of the intestinal wall"
+  },
+  {
+    words: ["hoofbeats"],
+    wordType: "noun",
+    def: "the sound of a hoof striking a hard surface (such as the ground)"
+  },
+  {
+    words: ["limiters"],
+    wordType: "verb",
+    def: "to restrict the bounds or limits of"
+  },
+  {
+    words: ["adolescent"],
+    wordType: "adjective",
+    def: "emotionally or intellectually immature"
+  },
+  {
+    words: ["profligacy"],
+    wordType: "noun",
+    def: "the quality or state of being profligate"
+  },
+  {
+    words: ["dancers"],
+    wordType: "noun",
+    def:
+      "dancing in which solo dancers perform acrobatics that involve touching various parts of the body (such as the back or head) to the ground"
+  },
+  {
+    words: ["mattered"],
+    wordType: "verb",
+    def: "to be of importance : signify"
+  },
+  {
+    words: ["paravanes"],
+    wordType: "noun",
+    def:
+      "a torpedo-shaped protective device with serrate teeth in its forward end used underwater by a ship in mined areas to sever the moorings of mines"
+  },
+  {
+    words: ["umbilicus"],
+    wordType: "noun",
+    def: "navel"
+  },
+  {
+    words: ["lingo"],
+    wordType: "noun",
+    def: "a foreign language"
+  },
+  {
+    words: ["semaphore"],
+    wordType: "verb",
+    def: "to convey (information) by or as if by semaphore"
+  },
+  {
+    words: ["stitch"],
+    wordType: "noun",
+    def:
+      "a portion of thread left in the material or suture left in the tissue after one stitch"
+  },
+  {
+    words: ["divesting"],
+    wordType: "phrasal verb",
+    def:
+      "to sell or give away (possessions, money, etc.) —old-fashioned when used of clothing"
+  },
+  {
+    words: ["flexile"],
+    wordType: "adjective",
+    def: "flexible"
+  },
+  {
+    words: ["tumping"],
+    wordType: "verb",
+    def: "to cause to tip over : overturn, upset —usually used with over"
+  },
+  {
+    words: ["fieriest"],
+    wordType: "adjective",
+    def: "marked by fire"
+  },
+  {
+    words: ["swaddle"],
+    wordType: "verb",
+    def: "restrain, restrict"
+  },
+  {
+    words: ["trialogue"],
+    wordType: "noun",
+    def: "a scene, discourse, or colloquy in which three persons share"
+  },
+  {
+    words: ["venereal"],
+    wordType: "noun",
+    def:
+      "a contagious disease (such as gonorrhea or syphilis) that is typically acquired in sexual intercourse"
+  },
+  {
+    words: ["repeat"],
+    wordType: "noun",
+    def:
+      "any of several identical DNA segments lying one after the other in a sequence"
+  },
+  {
+    words: ["pica"],
+    wordType: "noun",
+    def:
+      "an abnormal desire to eat substances (such as chalk or ashes) not normally eaten"
+  },
+  {
+    words: ["alkene"],
+    wordType: "noun",
+    def:
+      "any of numerous unsaturated hydrocarbons having one double bond; specifically : any of a series of open-chain hydrocarbons CnH2n (such as ethylene)"
+  },
+  {
+    words: ["compassion"],
+    wordType: "noun",
+    def:
+      "apathy or indifference toward the suffering of others as the result of overexposure to tragic news stories and images and the subsequent appeals for assistance"
+  },
+  {
+    words: ["superoxide"],
+    wordType: "noun",
+    def: "the monovalent anion O2— or a compound containing it"
+  },
+  {
+    words: ["blotting"],
+    wordType: "verb",
+    def: "to make obscure, insignificant, or inconsequential"
+  },
+  {
+    words: ["unstuffy"],
+    wordType: "adjective",
+    def: "not stuffy; especially : not unappealingly formal, pompous, etc."
+  },
+  {
+    words: ["scarphed"],
+    wordType: "verb",
+    def: "scoff:3"
+  },
+  {
+    words: ["hairs"],
+    wordType: "noun",
+    def:
+      "a delicate maidenhair fern (Adiantum capillus-veneris) that grows chiefly on wet calcareous rocks"
+  },
+  {
+    words: ["empathic"],
+    wordType: "adjective",
+    def: "involving, characterized by, or based on empathy : empathetic"
+  },
+  {
+    words: ["mortice"],
+    wordType: "verb",
+    def:
+      "to join or fasten securely; specifically : to join or fasten by a tenon and mortise"
+  },
+  {
+    words: ["kelpies"],
+    wordType: "noun",
+    def:
+      "any of a breed of energetic working dogs developed in Australia from British sheepdogs"
+  },
+  {
+    words: ["scorpio"],
+    wordType: "noun",
+    def: "one born under this sign"
+  },
+  {
+    words: ["nether"],
+    wordType: "plural noun",
+    def: "genitals and buttocks"
+  },
+  {
+    words: ["morphos"],
+    wordType: "noun",
+    def:
+      "any of a genus (Morpho of the family Morphoidae) of large showy tropical American butterflies that typically have a brilliant blue metallic luster on the upper surface of the wings"
+  },
+  {
+    words: ["postcards"],
+    wordType: "noun",
+    def:
+      "a card on which a message may be written for mailing without an envelope and to which the sender must affix a stamp"
+  },
+  {
+    words: ["writhing"],
+    wordType: "verb",
+    def: "to twist (the body or a bodily part) in pain"
+  },
+  {
+    words: ["fiery"],
+    wordType: "adjective",
+    def: "using or carried out with fire"
+  },
+  {
+    words: ["outland"],
+    wordType: "noun",
+    def: "a foreign land"
+  },
+  {
+    words: ["faulted"],
+    wordType: "noun",
+    def:
+      "two consecutive serving faults in tennis that result in the loss of a point"
+  },
+  {
+    words: ["daphnes"],
+    wordType: "noun",
+    def:
+      "any of a genus (Daphne) of Eurasian shrubs of the mezereon family with apetalous flowers whose colored calyx resembles a corolla"
+  },
+  {
+    words: ["sclera"],
+    wordType: "noun",
+    def:
+      "the dense fibrous opaque white outer coat enclosing the eyeball except the part covered by the cornea"
+  },
+  {
+    words: ["zarebas"],
+    wordType: "noun",
+    def:
+      "an improvised stockade constructed in parts of Africa especially of thorny bushes"
+  },
+  {
+    words: ["unfired"],
+    wordType: "adjective",
+    def: "not fired; especially : not baked in a kiln"
+  },
+  {
+    words: ["hobo"],
+    wordType: "noun",
+    def: "a migratory worker"
+  },
+  {
+    words: ["potatoes"],
+    wordType: "noun",
+    def:
+      "potatoes cut into very thin long pieces and fried in deep fat : very thin french fries"
+  },
+  {
+    words: ["propellers"],
+    wordType: "noun",
+    def:
+      "one that propels; especially : a device that consists of a central hub with radiating blades placed and twisted so that each forms part of a helical surface and that is used to propel a vehicle (such as a ship or airplane)"
+  },
+  {
+    words: ["cops"],
+    wordType: "noun",
+    def: "police officer"
+  },
+  {
+    words: ["heedlessly"],
+    wordType: "adjective",
+    def: "not taking heed : inconsiderate, thoughtless"
+  },
+  {
+    words: ["inworks"],
+    wordType: "noun",
+    def:
+      "activity in which one exerts strength or faculties to do or perform something:"
+  },
+  {
+    words: ["appeaser"],
+    wordType: "verb",
+    def: "to bring to a state of peace or quiet : calm"
+  },
+  {
+    words: ["barnyards"],
+    wordType: "noun",
+    def: "a usually fenced area adjoining a barn"
+  },
+  {
+    words: ["duskiest"],
+    wordType: "adjective",
+    def: "marked by slight or deficient light : shadowy"
+  },
+  {
+    words: ["nescience"],
+    wordType: "noun",
+    def: "lack of knowledge or awareness : ignorance"
+  },
+  {
+    words: ["piracies"],
+    wordType: "noun",
+    def: "robbery on the high seas"
+  },
+  {
+    words: ["sellable"],
+    wordType: "verb",
+    def: "to offer for sale"
+  },
+  {
+    words: ["grim"],
+    wordType: "noun",
+    def:
+      "death thought of as a man or skeleton holding a scythe and wearing a dark cloak with a hood"
+  },
+  {
+    words: ["defects"],
+    wordType: "noun",
+    def:
+      "an imperfection or abnormality that impairs quality, function, or utility : shortcoming, flaw"
+  },
+  {
+    words: ["purser"],
+    wordType: "noun",
+    def:
+      "an official on a ship responsible for papers and accounts and on a passenger ship also for the comfort and welfare of passengers"
+  },
+  {
+    words: ["radish"],
+    wordType: "noun",
+    def:
+      "the pungent usually crisp root of a widely cultivated Eurasian plant (Raphanus sativus) of the mustard family usually eaten raw; also : a plant that produces radishes"
+  },
+  {
+    words: ["fulgurated"],
+    wordType: "noun",
+    def: "the act or process of flashing like lightning"
+  },
+  {
+    words: ["daisy"],
+    wordType: "noun",
+    def:
+      "a disk with spokes bearing type that serves as the printing element of an electric typewriter or printer; also : a printer that uses such a disk"
+  },
+  {
+    words: ["innervated"],
+    wordType: "verb",
+    def: "to supply with nerves"
+  },
+  {
+    words: ["revering"],
+    wordType: "verb",
+    def:
+      "to show devoted deferential honor to : regard as worthy of great honor"
+  },
+  {
+    words: ["blueings"],
+    wordType: "noun",
+    def:
+      "a preparation used in laundering to counteract yellowing of white fabrics"
+  },
+  {
+    words: ["premiers"],
+    wordType: "verb",
+    def: "to appear for the first time as a star performer"
+  },
+  {
+    words: ["obligatory"],
+    wordType: "adjective",
+    def: "relating to or enforcing an obligation"
+  },
+  {
+    words: ["fontanels"],
+    wordType: "noun",
+    def:
+      "a membrane-covered opening in bone or between bones; specifically : any of the spaces closed by membranous structures between the uncompleted angles of the parietal bones and the neighboring bones of a fetal or young skull"
+  },
+  {
+    words: ["statocyst"],
+    wordType: "noun",
+    def:
+      "an organ of equilibrium found in usually aquatic invertebrates that is typically a fluid-filled vesicle lined with sensory hairs which detect the position of suspended statoliths"
+  },
+  {
+    words: ["fitches"],
+    wordType: "noun",
+    def: "the fur or pelt of the polecat"
+  },
+  {
+    words: ["pruriency"],
+    wordType: "noun",
+    def: "prurience"
+  },
+  {
+    words: ["unlovingly"],
+    wordType: "adjective",
+    def: "not loving or affectionate"
+  },
+  {
+    words: ["vanner"],
+    wordType: "noun",
+    def: "a person who owns a usually customized van"
+  },
+  {
+    words: ["alkanet"],
+    wordType: "noun",
+    def: "a red dyestuff prepared from the root"
+  },
+  {
+    words: ["celestite"],
+    wordType: "noun",
+    def: "a usually white mineral consisting of the sulfate of strontium"
+  },
+  {
+    words: ["bondsmen"],
+    wordType: "noun",
+    def: "slave, serf"
+  },
+  {
+    words: ["nomes"],
+    wordType: "noun",
+    def: "a province of ancient Egypt"
+  },
+  {
+    words: ["hazelnut"],
+    wordType: "noun",
+    def: "the brown nut of a hazel"
+  },
+  {
+    words: ["screechy"],
+    wordType: "adjective",
+    def: "producing a screech"
+  },
+  {
+    words: ["challis"],
+    wordType: "noun",
+    def:
+      "a lightweight soft clothing fabric made of cotton, wool, or synthetic yarns"
+  },
+  {
+    words: ["dalesmen"],
+    wordType: "noun",
+    def: "one living or born in a dale"
+  },
+  {
+    words: ["plicae"],
+    wordType: "noun",
+    def: "a fold or folded part; especially : a groove or fold of skin"
+  },
+  {
+    words: ["palaces"],
+    wordType: "noun",
+    def:
+      "the official residence of a chief of state (such as a monarch or a president)"
+  },
+  {
+    words: ["sundae"],
+    wordType: "noun",
+    def: "a hot, thick, chocolate sauce that is usually served on ice cream"
+  },
+  {
+    words: ["male"],
+    wordType: "noun",
+    def:
+      "typical hereditary baldness in the male characterized by loss of hair on the crown and temples"
+  },
+  {
+    words: ["mishaps"],
+    wordType: "noun",
+    def: "an unfortunate accident"
+  },
+  {
+    words: ["holiday"],
+    wordType: "noun",
+    def: "yom kippur"
+  },
+  {
+    words: ["drossier"],
+    wordType: "noun",
+    def:
+      "the scum or unwanted material that forms on the surface of molten metal"
+  },
+  {
+    words: ["cabana"],
+    wordType: "noun",
+    def: "a lightweight structure with living facilities"
+  },
+  {
+    words: ["buckoes"],
+    wordType: "noun",
+    def: "a person who is domineering and bullying : swaggerer"
+  },
+  {
+    words: ["sniffier"],
+    wordType: "adjective",
+    def: "having or expressing a haughty attitude : disdainful, supercilious"
+  },
+  {
+    words: ["fermium"],
+    wordType: "noun",
+    def:
+      "a radioactive metallic element produced artificially (as by bombardment of plutonium with neutrons)"
+  },
+  {
+    words: ["tightknit"],
+    wordType: "adjective",
+    def: "closely integrated and bound in love or friendship"
+  },
+  {
+    words: ["trolleying"],
+    wordType: "verb",
+    def: "to convey by a trolley"
+  },
+  {
+    words: ["markers"],
+    wordType: "trademark",
+    def: "—used for a felt-tipped pen"
+  },
+  {
+    words: ["soy"],
+    wordType: "noun",
+    def:
+      "a brown sauce that is made from soybeans and used especially in Chinese and Japanese cooking"
+  },
+  {
+    words: ["titlark"],
+    wordType: "noun",
+    def: "pipit"
+  },
+  {
+    words: ["grouped"],
+    wordType: "verb",
+    def: "to combine in a group"
+  },
+  {
+    words: ["profited"],
+    wordType: "verb",
+    def: "to be of service or advantage : avail"
+  },
+  {
+    words: ["cosmonaut"],
+    wordType: "noun",
+    def: "an astronaut of the Soviet or Russian space program"
+  },
+  {
+    words: ["salicin"],
+    wordType: "noun",
+    def:
+      "a bitter white crystalline glucoside C13H18O7 found in the bark and leaves of several willows and poplars and used in medicine like salicylic acid"
+  },
+  {
+    words: ["atheroma"],
+    wordType: "noun",
+    def: "an abnormal fatty deposit in an artery"
+  },
+  {
+    words: ["aspartame"],
+    wordType: "noun",
+    def:
+      "a crystalline compound C14H18N2O5 that is a diamide synthesized from phenylalanine and aspartic acid and that is used as a low-calorie sweetener"
+  },
+  {
+    words: ["faucet"],
+    wordType: "noun",
+    def:
+      "a fixture for drawing or regulating the flow of liquid especially from a pipe"
+  },
+  {
+    words: ["derived"],
+    wordType: "verb",
+    def: "infer, deduce"
+  },
+  {
+    words: ["evillest"],
+    wordType: "adjective",
+    def: "arising from actual or imputed bad character or conduct"
+  },
+  {
+    words: ["dogcarts"],
+    wordType: "noun",
+    def: "a cart drawn by a dog"
+  },
+  {
+    words: ["phantasms"],
+    wordType: "noun",
+    def: "delusive appearance : illusion"
+  },
+  {
+    words: ["coculture"],
+    wordType: "noun",
+    def:
+      "the act or process of culturing two types of cells or tissue in the same medium"
+  },
+  {
+    words: ["solidagos"],
+    wordType: "noun",
+    def:
+      "any of a genus (Solidago) of chiefly North American composite herbs including the typical goldenrods"
+  },
+  {
+    words: ["fagoting"],
+    wordType: "verb",
+    def: "to make a fagot of : bind together into a bundle"
+  },
+  {
+    words: ["hydrolyze"],
+    wordType: "verb",
+    def: "to subject to hydrolysis"
+  },
+  {
+    words: ["jaunts"],
+    wordType: "noun",
+    def:
+      "a usually short journey or excursion undertaken especially for pleasure"
+  },
+  {
+    words: ["body"],
+    wordType: "noun",
+    def: "a cavity in an animal body; specifically : coelom"
+  },
+  {
+    words: ["hailer"],
+    wordType: "verb",
+    def: "to greet with enthusiastic approval : acclaim"
+  },
+  {
+    words: ["puss"],
+    wordType: "noun",
+    def: "face"
+  },
+  {
+    words: ["euphoric"],
+    wordType: "adjective",
+    def:
+      "marked by a feeling of great happiness and excitement : characterized by, based on, or producing euphoria"
+  },
+  {
+    words: ["merman"],
+    wordType: "noun",
+    def:
+      "a fabled marine creature with the head and upper body of a man and the tail of a fish"
+  },
+  {
+    words: ["emoted"],
+    wordType: "verb",
+    def: "to give expression to emotion especially in acting"
+  },
+  {
+    words: ["ledge"],
+    wordType: "noun",
+    def:
+      "a narrow flat surface or shelf; especially : one that projects from a wall of rock"
+  },
+  {
+    words: ["skag"],
+    wordType: "noun",
+    def: "heroin"
+  },
+  {
+    words: ["homunculus"],
+    wordType: "noun",
+    def:
+      "a miniature adult that in the theory of preformation is held to inhabit the germ cell and to produce a mature individual merely by an increase in size"
+  },
+  {
+    words: ["groan"],
+    wordType: "verb",
+    def:
+      "to make a harsh sound (as of creaking) under sudden or prolonged strain"
+  },
+  {
+    words: ["lusterware"],
+    wordType: "noun",
+    def: "pottery with an iridescent metallic sheen in the glaze"
+  },
+  {
+    words: ["neighborly"],
+    wordType: "adjective",
+    def:
+      "of, relating to, or characteristic of congenial neighbors; especially : friendly"
+  },
+  {
+    words: ["dillybag"],
+    wordType: "noun",
+    def: "an Australian mesh bag made of native fibers"
+  },
+  {
+    words: ["tamara"],
+    wordType: "biographical name",
+    def: "Tamara 1885—1978 Russian dancer"
+  },
+  {
+    words: ["earmarks"],
+    wordType: "noun",
+    def:
+      "a provision in Congressional legislation that allocates a specified amount of money for a specific project, program, or organization"
+  },
+  {
+    words: ["tacet"],
+    wordType: "musical direction",
+    def:
+      "—used as a direction in music to indicate that an instrument is not to play during a movement or long section"
+  },
+  {
+    words: ["incognito"],
+    wordType: "adverb or adjective",
+    def: "with one's identity concealed"
+  },
+  {
+    words: ["curios"],
+    wordType: "noun",
+    def:
+      "something (such as a decorative object) considered novel, rare, or bizarre : curiosity; also : an unusual or bizarre person"
+  },
+  {
+    words: ["coalescing"],
+    wordType: "verb",
+    def: "to unite for a common end : join forces"
+  },
+  {
+    words: ["mirabilis"],
+    wordType: "noun",
+    def: "a remarkable or notable year"
+  },
+  {
+    words: ["janglers"],
+    wordType: "verb",
+    def: "to make a harsh or discordant often ringing sound"
+  },
+  {
+    words: ["dilates"],
+    wordType: "verb",
+    def: "to become wide : swell"
+  },
+  {
+    words: ["ignitrons"],
+    wordType: "noun",
+    def:
+      "a mercury-containing rectifier tube in which the arc is struck again at the beginning of each cycle by a special electrode separately energized by an auxiliary circuit"
+  },
+  {
+    words: ["unrealized"],
+    wordType: "adjective",
+    def: "not effected, accomplished, or fulfilled"
+  },
+  {
+    words: ["obol"],
+    wordType: "noun",
+    def: "an ancient Greek coin or weight equal to 1/6 drachma"
+  },
+  {
+    words: ["heme"],
+    wordType: "",
+    def: ""
+  },
+  {
+    words: ["teased"],
+    wordType: "verb",
+    def:
+      "to obtain by or as if by disentangling or freeing with a pointed instrument"
+  },
+  {
+    words: ["butchering"],
+    wordType: "verb",
+    def: "botch"
+  },
+  {
+    words: ["giga"],
+    wordType: "combining form",
+    def: "billion (109)"
+  },
+  {
+    words: ["bushelling"],
+    wordType: "verb",
+    def: "repair, renovate"
+  },
+  {
+    words: ["ferreting"],
+    wordType: "noun",
+    def: "black-footed ferret"
+  },
+  {
+    words: ["disowns"],
+    wordType: "verb",
+    def: "to repudiate any connection or identification with"
+  },
+  {
+    words: ["rubs"],
+    wordType: "verb",
+    def: "to improve the keenness of (a mental faculty)"
+  },
+  {
+    words: ["virion"],
+    wordType: "noun",
+    def:
+      "a complete virus particle that consists of an RNA or DNA core with a protein coat sometimes with external envelopes and that is the extracellular infectious form of a virus"
+  },
+  {
+    words: ["generates"],
+    wordType: "verb",
+    def:
+      "to generate (something, such as electricity or funds) by or for oneself"
+  },
+  {
+    words: ["germane"],
+    wordType: "adjective",
+    def: "closely akin"
+  },
+  {
+    words: ["poilu"],
+    wordType: "noun",
+    def: "a French soldier; especially : a front-line soldier in World War I"
+  },
+  {
+    words: ["sortieing"],
+    wordType: "noun",
+    def: "foray, raid"
+  },
+  {
+    words: ["whickers"],
+    wordType: "verb",
+    def: "neigh, whinny"
+  },
+  {
+    words: ["subjoining"],
+    wordType: "verb",
+    def: "annex, append"
+  },
+  {
+    words: ["stoutened"],
+    wordType: "verb",
+    def: "to make stout"
+  },
+  {
+    words: ["transeptal"],
+    wordType: "noun",
+    def:
+      "the part of a cruciform church that crosses at right angles to the greatest length between the nave and the apse or choir; also : either of the projecting ends of a transept"
+  },
+  {
+    words: ["homogamous"],
+    wordType: "noun",
+    def: "the mating of like with like"
+  },
+  {
+    words: ["draggles"],
+    wordType: "verb",
+    def: "to trail on the ground"
+  },
+  {
+    words: ["thyroids"],
+    wordType: "noun",
+    def:
+      "a preparation of the thyroid gland of various domestic animals used in treating thyroid disorders"
+  },
+  {
+    words: ["glazes"],
+    wordType: "verb",
+    def: "stare"
+  },
+  {
+    words: ["splinting"],
+    wordType: "verb",
+    def:
+      "to support and immobilize (something, such as a broken bone) with a splint"
+  },
+  {
+    words: ["tyler"],
+    wordType: "geographical name",
+    def: "city in eastern Texas east-southeast of Dallas population 96,900"
+  },
+  {
+    words: ["estimable"],
+    wordType: "adjective",
+    def: "valuable"
+  },
+  {
+    words: ["softness"],
+    wordType: "adjective",
+    def: "not bright or glaring : subdued"
+  },
+  {
+    words: ["shrieking"],
+    wordType: "verb",
+    def: "to utter a sharp shrill sound"
+  },
+  {
+    words: ["thimbleful"],
+    wordType: "noun",
+    def: "as much as a thimble will hold"
+  },
+  {
+    words: ["waxwings"],
+    wordType: "noun",
+    def:
+      "any of a genus (Bombycilla) of American and Eurasian chiefly brown to gray oscine birds (such as a cedar waxwing) having a showy crest, red waxy material on the tips of the secondaries, and a yellow band on the tip of the tail"
+  },
+  {
+    words: ["assholes"],
+    wordType: "noun",
+    def: "a stupid, annoying, or detestable person"
+  },
+  {
+    words: ["sphene"],
+    wordType: "noun",
+    def:
+      "a mineral that is a silicate of calcium and titanium and often contains other elements"
+  },
+  {
+    words: ["fats"],
+    wordType: "noun",
+    def:
+      "a mammalian heat-producing tissue occurring especially in human fetuses and newborn infants and in hibernating animals —called also brown adipose tissue"
+  },
+  {
+    words: ["toyers"],
+    wordType: "verb",
+    def: "to engage in flirtation"
+  },
+  {
+    words: ["tacks"],
+    wordType: "noun",
+    def:
+      "stable gear; especially : articles of harness (such as saddle and bridle) for use on a saddle horse"
+  },
+  {
+    words: ["snippets"],
+    wordType: "noun",
+    def: "a small part, piece, or thing; especially : a brief quotable passage"
+  },
+  {
+    words: ["subedited"],
+    wordType: "noun",
+    def: "copy editor"
+  },
+  {
+    words: ["burps"],
+    wordType: "noun",
+    def: "the act or an instance of belching"
+  },
+  {
+    words: ["bedew"],
+    wordType: "verb",
+    def: "to wet with or as if with dew"
+  },
+  {
+    words: ["madhouse"],
+    wordType: "noun",
+    def: "a place of uproar or confusion"
+  },
+  {
+    words: ["carpet"],
+    wordType: "noun",
+    def:
+      "a greeting or reception marked by ceremonial courtesy —usually used in the phrase roll out the red carpet"
+  },
+  {
+    words: ["reprisal"],
+    wordType: "noun",
+    def:
+      "something (such as a sum of money) given or paid in restitution —usually used in plural"
+  },
+  {
+    words: ["fop"],
+    wordType: "noun",
+    def:
+      "a man who is devoted to or vain about his appearance or dress : coxcomb, dandy"
+  },
+  {
+    words: ["compute"],
+    wordType: "verb",
+    def: "to make calculation : reckon"
+  },
+  {
+    words: ["rifleman"],
+    wordType: "noun",
+    def: "a soldier armed with a rifle"
+  },
+  {
+    words: ["aristate"],
+    wordType: "noun",
+    def: "a bristlelike structure or appendage"
+  },
+  {
+    words: ["potometer"],
+    wordType: "noun",
+    def:
+      "an apparatus for measuring the rate of transpiration in a plant by determining the amount of water absorbed"
+  },
+  {
+    words: ["phanerogam"],
+    wordType: "noun",
+    def: "a seed plant or flowering plant : spermatophyte"
+  },
+  {
+    words: ["exodermis"],
+    wordType: "noun",
+    def:
+      "a layer of the outer living cortical cells of plants that takes over the functions of the epidermis in roots lacking secondary thickening"
   }
 ];
