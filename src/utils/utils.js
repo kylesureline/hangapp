@@ -1,38 +1,7 @@
-export const fetchData = (url, opt) => {
-  const checkStatus = response => {
-    if (response.ok) {
-      return Promise.resolve(response);
-    } else {
-      return Promise.reject(new Error(response.statusText));
-    }
-  };
-
-  return fetch(url, opt)
-    .then(checkStatus)
-    .then(res => res.json())
-    .catch(error => console.log("Looks like there was a problem", error));
-};
-
-/* istanbul ignore next line */
-export const isOnline = () => navigator.onLine;
-
 export const getFromLS = key => JSON.parse(localStorage.getItem(key));
 
 export const saveToLS = (key, value) =>
   localStorage.setItem(key, JSON.stringify(value));
-
-// export const addToCache = word => {
-//   const cache = getFromLS();
-//   localStorage.setItem('db', JSON.stringify([...cache, word]));
-// };
-
-// export const getWordFromCache = () => {
-//   const cache = [...getFromLS()];
-//   const word = cache.shift();
-//   localStorage.setItem('db', JSON.stringify([...cache]));
-//
-//   return word;
-// };
 
 export const formatWordObj = (word, wordType = "", def = "") => ({
   words: [word],

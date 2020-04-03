@@ -4,32 +4,24 @@
 
 ## Description
 
-This app app uses React to create a client for playing hangman games. It fetches data from multiple APIs to build a database of dictionary words and categories. The player can configure their gameplay, activate/deactivate categories, and view their past games. This app is front end only, and relies on localStorage to persist data between sessions.
+This app app uses React to create a client for playing hangman games. It includes a database of dictionary words and categories. The player can configure their gameplay, activate/deactivate categories, and view their past games. This app is front end only and offline ready, and relies on localStorage to persist data between sessions.
 
 ## Required Technologies
 
-* [React](https://reactjs.org)
-* [JSX](https://reactjs.org/docs/introducing-jsx.html)
-* [React Router](https://www.npmjs.com/package/react-router)
-* [Redux](https://www.npmjs.com/package/react-redux)
-* [Create React App](http://create-react-app.dev)
-* [Sass](https://www.sass-lang.com)
-* [React Document Title](https://www.npmjs.com/package/react-document-title)
-* [FetchAPI](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-* [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-* [English Open Word List](http://dreamsteep.com/projects/the-english-open-word-list.html) via [TimTCrouch](https://github.com/TimTCrouch/WordList-JS) (Thanks!)
+- [React](https://reactjs.org)
+- [JSX](https://reactjs.org/docs/introducing-jsx.html)
+- [React Router](https://www.npmjs.com/package/react-router)
+- [Redux](https://www.npmjs.com/package/react-redux)
+- [Create React App](http://create-react-app.dev)
+- [Sass](https://www.sass-lang.com)
+- [React Document Title](https://www.npmjs.com/package/react-document-title)
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- [English Open Word List](http://dreamsteep.com/projects/the-english-open-word-list.html) via [TimTCrouch](https://github.com/TimTCrouch/WordList-JS) (Thanks!)
 
 ## Other Technologies
 
-* [Git](https://git-scm.com)
-* [Atom.io](https://atom.io)
-
-## APIs
-
-* [Merriam-Webster](https://www.dictionaryapi.com)
-* [TheMealDB](https://themealdb.com/api.php)
-* [thedogapi.com](https://thedogapi.com)
-* [thecatapi.com](https://thecatapi.com)
+- [Git](https://git-scm.com)
+- [Atom.io](https://atom.io)
 
 ## How to Use
 

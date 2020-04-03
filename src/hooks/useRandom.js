@@ -1,5 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
-import { UPDATE_WORDS_WITH_DEF, UPDATE_CATEGORY } from "../reducers/actions";
+import { useSelector } from "react-redux";
 import { formatWordObj } from "../utils";
 
 export const useRandom = () => {
@@ -7,7 +6,6 @@ export const useRandom = () => {
     state => state.db
   );
   const { dictionary, categories } = useSelector(state => state.settings);
-  const dispatch = useDispatch();
   // word banks:
   const { withDef, withoutDef } = dictionaryDB;
 
@@ -26,11 +24,6 @@ export const useRandom = () => {
           count++;
         }
         if (!!foundWord && foundWord.words[0].length >= minLength) {
-          dispatch(
-            UPDATE_WORDS_WITH_DEF(
-              withDef.filter(({ words }) => words[0] !== foundWord.words[0])
-            )
-          );
           return foundWord;
         }
       }
@@ -69,36 +62,12 @@ export const useRandom = () => {
         categoriesDB.recipes[
           Math.floor(Math.random() * categoriesDB.recipes.length)
         ];
-      dispatch(
-        UPDATE_CATEGORY(
-          cat,
-          categoriesDB.recipes.filter(
-            recipe => recipe.words.join(" ") !== foundItem.words.join(" ")
-          )
-        )
-      );
     } else if (cat === "dogs" && !!categoriesDB.dogs.length) {
       foundItem =
         categoriesDB.dogs[Math.floor(Math.random() * categoriesDB.dogs.length)];
-      dispatch(
-        UPDATE_CATEGORY(
-          cat,
-          categoriesDB.dogs.filter(
-            dog => dog.words.join(" ") !== foundItem.words.join(" ")
-          )
-        )
-      );
     } else if (cat === "cats" && !!categoriesDB.cats.length) {
       foundItem =
         categoriesDB.cats[Math.floor(Math.random() * categoriesDB.cats.length)];
-      dispatch(
-        UPDATE_CATEGORY(
-          cat,
-          categoriesDB.cats.filter(
-            cat => cat.words.join(" ") !== foundItem.words.join(" ")
-          )
-        )
-      );
     }
 
     return foundItem || getRandomWord();
