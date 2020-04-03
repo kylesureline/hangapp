@@ -26101,5 +26101,264 @@ export const withDef = [
     words: ["streps"],
     wordType: "noun",
     def: "streptococcus"
+  },
+
+  {
+    words: ["fluxing"],
+    wordType: "verb",
+    def: "to treat with a flux"
+  },
+  {
+    words: ["tinamous"],
+    wordType: "noun",
+    def:
+      "any of a family (Tinamidae) of South and Central American ground-dwelling birds that have a deeply keeled sternum and a rudimentary tail and that produce large glossy usually colorful eggs"
+  },
+  {
+    words: ["copepod"],
+    wordType: "noun",
+    def:
+      "any of a large subclass (Copepoda) of usually minute freshwater and marine crustaceans"
+  },
+  {
+    words: ["gigawatts"],
+    wordType: "noun",
+    def: "a unit of power equal to one billion watts"
+  },
+  {
+    words: ["perfumes"],
+    wordType: "noun",
+    def:
+      "a substance that emits a pleasant odor; especially : a fluid preparation of natural essences (as from plants or animals) or synthetics and a fixative used for scenting"
+  },
+  {
+    words: ["disuse"],
+    wordType: "idiom",
+    def: "to stop being used"
+  },
+  {
+    words: ["vaccinated"],
+    wordType: "verb",
+    def: "to administer a vaccine to usually by injection"
+  },
+  {
+    words: ["privatise"],
+    wordType: "",
+    def: ""
+  },
+  {
+    words: ["pyrrhotite"],
+    wordType: "noun",
+    def:
+      "a bronze-colored mineral of metallic luster that consists of ferrous sulfide and is attracted by a magnet"
+  },
+  {
+    words: ["imaginary"],
+    wordType: "noun",
+    def:
+      "a complex number that is solely the product of a real number other than zero and the imaginary unit"
+  },
+  {
+    words: ["reveller"],
+    wordType: "noun",
+    def: "one who engages in revelry"
+  },
+  {
+    words: ["decampment"],
+    wordType: "verb",
+    def: "to depart suddenly : abscond"
+  },
+  {
+    words: ["bereaved"],
+    wordType: "noun",
+    def: "a person or group of people suffering the death of a loved one"
+  },
+  {
+    words: ["pinners"],
+    wordType: "noun",
+    def: "a woman's cap with long lappets worn in the 17th and 18th centuries"
+  },
+  {
+    words: ["arrested"],
+    wordType: "verb",
+    def:
+      "seize, capture; specifically : to take or keep in custody by authority of law"
+  },
+  {
+    words: ["companies"],
+    wordType: "verb",
+    def: "accompany"
+  },
+  {
+    words: ["aldermen"],
+    wordType: "noun",
+    def:
+      "a magistrate formerly ranking next below the mayor in an English or Irish city or borough"
+  },
+  {
+    words: ["frangible"],
+    wordType: "adjective",
+    def: "readily or easily broken"
+  },
+  {
+    words: ["parasitic"],
+    wordType: "adjective",
+    def: "of, relating to, or being a parasite: such as"
+  },
+  {
+    words: ["straggler"],
+    wordType: "verb",
+    def: "to trail off from others of its kind"
+  },
+  {
+    words: ["unbearably"],
+    wordType: "adjective",
+    def: "not bearable : unendurable"
+  },
+  {
+    words: ["pos"],
+    wordType: "abbreviation",
+    def: "point-of-service"
+  },
+  {
+    words: ["possessor"],
+    wordType: "verb",
+    def: "to seize and take control of : take into one's possession"
+  },
+  {
+    words: ["imbibing"],
+    wordType: "verb",
+    def: "to take in or up"
+  },
+  {
+    words: ["sibilant"],
+    wordType: "noun",
+    def:
+      "a sibilant speech sound (such as English \\s\\, \\z\\, \\sh\\, \\zh\\, \\ch(=tsh)\\, or \\j(=dzh)\\)"
+  },
+  {
+    words: ["rigidifies"],
+    wordType: "verb",
+    def: "to make rigid"
+  },
+  {
+    words: ["fest"],
+    wordType: "noun",
+    def:
+      "a gathering, event, or show having a specified focus —often used in combination"
+  },
+  {
+    words: ["reforests"],
+    wordType: "noun",
+    def:
+      "the action of renewing forest cover (as by natural seeding or by the artificial planting of seeds or young trees)"
+  },
+  {
+    words: ["mothiest"],
+    wordType: "noun",
+    def: "clothes moth"
+  },
+  {
+    words: ["upbuilding"],
+    wordType: "verb",
+    def: "build up"
+  },
+  {
+    words: ["twopenny"],
+    wordType: "adjective",
+    def: "costing or worth twopence"
+  },
+  {
+    words: ["uncommon"],
+    wordType: "adjective",
+    def: "not ordinarily encountered : unusual"
+  },
+  {
+    words: ["stirpes"],
+    wordType: "adverb or adjective",
+    def:
+      "in equal shares to each member of a specified class with the share of a deceased member divided proportionately among his or her beneficiaries (such as children)"
+  },
+  {
+    words: ["symbolisms"],
+    wordType: "noun",
+    def:
+      "the use of conventional or traditional signs in the representation of divine beings and spirits"
+  },
+  {
+    words: ["piquet"],
+    wordType: "noun",
+    def: "a two-handed card game played with 32 cards"
+  },
+  {
+    words: ["dexterity"],
+    wordType: "noun",
+    def:
+      "readiness and grace in physical activity; especially : skill and ease in using the hands"
+  },
+  {
+    words: ["terminal"],
+    wordType: "adjective",
+    def: "of or relating to patients with a terminal illness"
+  },
+  {
+    words: ["irenically"],
+    wordType: "adjective",
+    def:
+      "favoring, conducive to, or operating toward peace, moderation, or conciliation"
+  },
+  {
+    words: ["keeks"],
+    wordType: "verb",
+    def: "peep, look"
+  },
+  {
+    words: ["boma"],
+    wordType: "geographical name",
+    def:
+      "city and port on the Congo River in the western part of the Republic of the Congo population 246,207"
+  },
+  {
+    words: ["naughtier"],
+    wordType: "adjective",
+    def: "guilty of disobedience or misbehavior"
+  },
+  {
+    words: ["goodly"],
+    wordType: "adjective",
+    def: "pleasantly attractive"
+  },
+  {
+    words: ["expatiates"],
+    wordType: "verb",
+    def: "to speak or write at length or in detail"
+  },
+  {
+    words: ["liveable"],
+    wordType: "adjective",
+    def: "endurable"
+  },
+  {
+    words: ["global"],
+    wordType: "noun",
+    def:
+      "the world viewed as a community in which distance and isolation have been dramatically reduced by electronic media (such as television and the Internet)"
+  },
+  {
+    words: ["ductility"],
+    wordType: "noun",
+    def:
+      "the quality or state of being ductile; especially : the ability of a material to have its shape changed (as by being drawn out into wire or thread) without losing strength or breaking"
+  },
+  {
+    words: ["rewired"],
+    wordType: "verb",
+    def:
+      "to provide or connect (something) with wire again; especially : to replace the electrical wiring of (something, such as a building or electronic device)"
+  },
+  {
+    words: ["gallophile"],
+    wordType: "adjective",
+    def: "francophile"
   }
 ];
