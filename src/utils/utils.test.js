@@ -1,12 +1,6 @@
 import {
-  // fetchData,
-  // getFromLS,
-  // saveToLS,
   formatWordObj,
   numberWithCommas,
-  // savePastGame,
-  // saveCurrentGame,
-  // getCurrentGame,
   toHoursMinutesSeconds,
   toRelevantTimeString
 } from "./utils";

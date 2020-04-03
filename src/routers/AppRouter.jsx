@@ -1,7 +1,6 @@
 import React from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { Navigation } from "../components/Navigation";
-import { LoadingIndicator } from "../components/LoadingIndicator";
 // pages
 import { Play } from "../components/Pages/Play/Play";
 import { Database } from "../components/Pages/Database/Database";
@@ -37,7 +36,5 @@ export const AppRouter = () => (
         <NotFound />
       </Route>
     </Switch>
-    {/* <div>Modal</div> */}
-    <LoadingIndicator />
   </HashRouter>
 );
