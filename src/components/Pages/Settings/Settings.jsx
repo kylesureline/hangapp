@@ -12,7 +12,7 @@ import DocumentTitle from "react-document-title";
 
 export const Settings = () => {
   const { mode, dictionary, categories } = useSelector(state => state.settings);
-  const { isOver } = useSelector(state => state.game);
+  const isOver = useSelector(state => state.game.isOver);
   const dispatch = useDispatch();
   const handleModeChange = e => {
     const { value } = e.target;
@@ -49,7 +49,8 @@ export const Settings = () => {
           {mode === "categories" && (
             <Categories
               onChange={handleCategoriesSettings}
-              categories={categories}
+              activeCategories={categories}
+              availableCategories={["recipes", "dogs", "cats"]}
             />
           )}
         </form>
