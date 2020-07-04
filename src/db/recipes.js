@@ -1,3 +1,5 @@
+// istanbul ignore file
+
 export const recipes = [
   {
     words: ["kapsalon"],

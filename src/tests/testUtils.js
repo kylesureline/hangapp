@@ -1,3 +1,5 @@
+// istanbul ignore file
+
 import React from "react";
 import { render as testingLibraryRender } from "@testing-library/react";
 import { Provider } from "react-redux";

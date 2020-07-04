@@ -1,3 +1,5 @@
+// istanbul ignore file
+
 const chunk1 = [
   "aa",
   "aah",

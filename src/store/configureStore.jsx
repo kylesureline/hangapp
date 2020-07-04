@@ -1,3 +1,5 @@
+// istanbul ignore file
+
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 // reducers
