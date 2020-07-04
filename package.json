@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "coverage": "yarn test --coverage",
-    "coverage-all": "yarn test --coverage --watchAll --notify --silent && open ./coverage/lcov-report/index.html",
+    "coverage-all": "yarn test --coverage --watchAll --notify --silent",
     "deploy": "yarn build && gh-pages -d build"
   },
   "eslintConfig": {
