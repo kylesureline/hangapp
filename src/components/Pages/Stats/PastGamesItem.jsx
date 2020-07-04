@@ -9,9 +9,23 @@ export const PastGamesItem = ({ game }) => {
   return (
     <li className="past-games__item">
       {won ? (
-        <WonSVG className="icon icon--won" />
+        <WonSVG
+          className="icon icon--won"
+          title={`Game won on ${new Date(timestamp).toLocaleString("default", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric"
+          })}`}
+        />
       ) : (
-        <LostSVG className="icon icon--lost" />
+        <LostSVG
+          className="icon icon--lost"
+          title={`Game lost on ${new Date(timestamp).toLocaleString("default", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric"
+          })}`}
+        />
       )}
       <span className="past-games__item__text">{answer.words.join(" ")}</span>
       <span className="past-games__item__timestamp">
